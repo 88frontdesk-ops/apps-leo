@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <header data-i18n="popup_enable_keys@title">
+    <div>
+      <div id="period-container">
+        <label for="enable" data-i18n="popup_enable"></label>
+        <input type="text" id="period" placeholder="hh:mm:ss">
+        <span data-i18n="popup_variation"></span>
+        <input type="number" id="variation" min="0" max="100" data-i18n="popup_variation_hint@title" value="0">
+        %
+      </div>
+      <div id="presets">
+        <span data-i18n="popup_presets"></span>
+        <div id="presets-body"></div>
+      </div>
+    </div>
+    <div data-i18n="popup_forced@title">
+      <input type="checkbox" id="enable">
+      <label for="enable" class="button" data-i18n="popup_start"></label>
+      <label for="enable" class="button" data-i18n="popup_stop"></label>
+    </div>
+  </header>
+
+  <details id="options" style="--gap: 5px">
+    <summary>
+      <div data-i18n="popup_configs"></div>
+      <input id="rate" type="button" data-i18n="popup_rate" data-hide="true" class="button">
+    </summary>
+
+    <div class="four">
+      <input type="checkbox" id="current">
+      <label for="current" data-i18n="popup_active"></label>
+      <input type="checkbox" id="nofocus">
+      <label for="nofocus" data-i18n="popup_nofocus"></label>
+      <input type="checkbox" id="cache">
+      <label for="cache"><a data-href="faq12" target="_blank" data-i18n="popup_cache"></a></label>
+      <input type="checkbox" id="form">
+      <label for="form" data-i18n="popup_form"></label>
+      <input type="checkbox" id="offline">
+      <label for="offline" data-i18n="popup_offline"></label>
+      <input type="checkbox" id="discarded">
+      <label for="discarded" data-i18n="popup_discarded"></label>
+      <input type="checkbox" id="nodiscard" class="chrome">
+      <label for="nodiscard" data-i18n="popup_nodiscard" class="chrome"></label>
+      <input type="checkbox" id="randomize">
+      <label for="randomize" data-i18n="popup_randomize"></label>
+      <input type="checkbox" id="skip-auto-add">
+      <label for="skip-auto-add"><a data-href="faq34" target="_blank"  data-i18n="popup_skip_auto_add"></a></label>
+      <input type="checkbox" id="scroll-to-end" data-permission="true">
+      <label for="scroll-to-end"><span data-i18n="popup_ste"></span><span class="permission" data-i18n="popup_permission@title"> &#9432;</span></label>
+      <input type="checkbox" id="visual-countdown" data-permission="true" class="chrome">
+      <label for="visual-countdown" class="chrome"><span data-i18n="popup_vcd"></span><span class="permission" data-i18n="popup_permission@title"> &#9432;</span></label>
+    </div>
+    <div class="tree">
+      <input type="checkbox" id="switch" data-permission="true">
+      <label for="switch"><span data-i18n="popup_switch"></span><span class="permission" data-i18n="popup_permission@title"> &#9432;</span></label>
+      <span class="button" id="save-as-json" data-i18n="popup_save_as_json|popup_save_as_json_desc@title"></span>
+      <input type="checkbox" id="sound" data-permission="true">
+      <label for="sound"><span data-i18n="popup_sound"></span><span class="permission" data-i18n="popup_permission@title"> &#9432;</span></label>
+      <div id="sound-container">
+        <select id="sound-value" class="button">
+          <option value="1" data-i18n="popup_sound_1">Sound 1</option>
+          <option value="2" data-i18n="popup_sound_2">Sound 2</option>
+          <option value="3" data-i18n="popup_sound_3">Sound 3</option>
+          <option value="4" data-i18n="popup_sound_4">Sound 4</option>
+          <option value="5" data-i18n="popup_sound_5">Sound 5</option>
+          <option value="6" data-i18n="popup_sound_6">Sound 6</option>
+          <option value="7" data-i18n="popup_sound_7">Sound 7</option>
+          <option value="8" data-i18n="popup_sound_8">Sound 8</option>
+        </select>
+        <span class="button" id="test-sound" data-i18n="popup_test_sound"></span>
+      </div>
+      <span></span>
+      <label for="blocked-words" data-i18n="popup_bw"></label>
+      <input type="text" id="blocked-words" placeholder="e.g. /mail/">
+      <span></span>
+      <label for="blocked-period"><a data-href="faq29" data-i18n="popup_period" target="_blank"></a></label>
+      <input type="text" id="blocked-period" placeholder="e.g. Wed 15:00 - Thu 07:30, Thu 15:00 - Fri 07:30, Sat 06:30 - Sat 15:30, Sun 06:30 - Sun 15:30">
+      <input type="checkbox" id="code" data-permission="true">
+      <label for="code">
+        <a data-href="faq26" target="_blank" data-i18n="popup_code"></a>
+        <span class="permission" data-i18n="popup_permission@title"> &#9432;</span>
+      </label>
+      <textarea id="code-value" rows="3" data-i18n="popup_code_desc@placeholder"></textarea>
+      <input type="checkbox" id="pre-code" data-permission="true">
+      <label for="pre-code">
+        <a data-href="faq30" target="_blank" data-i18n="popup_pre_code"></a>
+        <span class="permission" data-i18n="popup_permission@title"> &#9432;</span>
+        <select id="pre-code-inset-example">
+          <option value="0">-</option>
+          <option value="1" data-i18n="popup_pre_code_example_1"></option>
+          <option value="2" data-i18n="popup_pre_code_example_2"></option>
+          <option value="3" data-i18n="popup_pre_code_example_3"></option>
+        </select>
+      </label>
+      <textarea id="pre-code-value" rows="3" data-i18n="popup_pre_code_desc@placeholder"></textarea>
+    </div>
+  </details>
+  <footer id="actives"></footer>
+
+  <div id="timer">
+    <svg viewBox="0 0 32 32" width="32" id="disable">
+      <polygon points="28.71 4.71 27.29 3.29 16 14.59 4.71 3.29 3.29 4.71 14.59 16 3.29 27.29 4.71 28.71 16 17.41 27.29 28.71 28.71 27.29 17.41 16 28.71 4.71"/>
+    </svg>
+    <div></div>
+  </div>
+
+  <script type="text/javascript" src="../locale.js"></script>
+  <script type="text/javascript" src="/defaults.js"></script>
+  <script type="text/javascript" src="/api.js"></script>
+  <script type="text/javascript" src="extra/behave.js"></script>
+  <script type="text/javascript" src="startup.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript" src="actives.js"></script>
+  <script type="text/javascript" src="permission.js"></script>
+  <script type="text/javascript" src="keyboard.js"></script>
+  <script type="text/javascript" src="health.js"></script>
+  <script type="text/javascript" src="rate.js"></script>
+</body>
+</html>

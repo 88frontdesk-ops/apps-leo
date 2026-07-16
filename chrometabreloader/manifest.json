@@ -1,0 +1,65 @@
+{
+   "action": {
+      "default_icon": {
+         "16": "/data/icons/disabled/16.png",
+         "32": "/data/icons/disabled/32.png"
+      },
+      "default_popup": "/data/popup/index.html",
+      "default_title": "Tab Reloader"
+   },
+   "background": {
+      "service_worker": "worker.js"
+   },
+   "commands": {
+      "_execute_action": {
+         "description": "Execute Action"
+      },
+      "reload_all": {
+         "description": "Reload all tabs"
+      },
+      "reload_all_discarded": {
+         "description": "Reload all discarded tabs"
+      },
+      "reload_tabs_left": {
+         "description": "Reload tabs to the left"
+      },
+      "reload_tabs_right": {
+         "description": "Reload tabs to the right"
+      },
+      "reload_window": {
+         "description": "Reload all tabs in the current window"
+      },
+      "reload_window_discarded": {
+         "description": "Reload all discarded tabs in the current window"
+      },
+      "stop_all": {
+         "description": "Stop all Reloading Jobs"
+      }
+   },
+   "default_locale": "en",
+   "description": "__MSG_description__",
+   "homepage_url": "https://webextension.org/listing/tab-reloader.html",
+   "icons": {
+      "128": "/data/icons/128.png",
+      "16": "/data/icons/16.png",
+      "256": "/data/icons/256.png",
+      "32": "/data/icons/32.png",
+      "48": "/data/icons/48.png",
+      "512": "/data/icons/512.png",
+      "64": "/data/icons/64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo2SyWc9i+Yk1XGjIh4inqDDBHowlH65YqhObLTKIsV1Ch/MHi41w+FkmzI1WqpN6UCoXioHwugfNuhJRoPftT3WtMKtAtLcsEAYBfaBKM8MVoVu4qRUwNBiFFu4ugcuIp624If0lDoeGrnfX7bA07shYFPNkBlWWKvxvQAT1dilfqdgXgAIqL/hhP3r57eAKNIbAcR9F0AKgmNav0fuFW37hb1p352l43QNv8mGuu1/ApXrUQpbiB52Zz/d3puPE8h8uRAobKBC/F/7+eOHXIccNSq7ZYVIIWdZGN14iqHZK4phoQvFEXtGyUBYPsm2EuioL0LUmaFBEK3Gq7Xh8nQIDAQAB",
+   "manifest_version": 3,
+   "name": "Tab Reloader (page auto refresh)",
+   "optional_host_permissions": [ "\u003Call_urls>" ],
+   "options_ui": {
+      "open_in_tab": true,
+      "page": "/data/options/index.html"
+   },
+   "permissions": [ "storage", "tabs", "alarms", "webNavigation", "contextMenus", "idle", "scripting", "offscreen", "declarativeNetRequestWithHostAccess" ],
+   "version": "0.6.6",
+   "web_accessible_resources": [ {
+      "matches": [ "*://*/*" ],
+      "resources": [ "data/counter/index.html" ]
+   } ]
+}

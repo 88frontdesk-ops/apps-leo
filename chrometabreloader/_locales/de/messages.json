@@ -1,0 +1,374 @@
+{
+   "bg_all_tabs": {
+      "message": "Alle Tabs"
+   },
+   "bg_csp": {
+      "message": "Content Security Policy - Sicherheitskonzept"
+   },
+   "bg_csp_remove": {
+      "message": "CSP Schutz für diesen Tab entfernen (Inline-Skriptausführung erlauben)"
+   },
+   "bg_csp_reset": {
+      "message": "Zurück auf Standard setzen"
+   },
+   "bg_msg_1": {
+      "message": "Tab hat keine gültige Adresse"
+   },
+   "bg_msg_2": {
+      "message": "Keine Zugriffsberechtigung für diesen Hostnamen"
+   },
+   "bg_msg_3": {
+      "message": "Warnung: Das Entfernen der Content Security Policy (CSP) kann die Website anfällig für Sicherheitsrisiken machen, wie z. B. Cross-Site-Scripting (XSS)-Angriffe.\n\nSind Sie sicher, dass Sie fortfahren möchten?"
+   },
+   "bg_no_reload": {
+      "message": "Gewählte Tabs"
+   },
+   "bg_options": {
+      "message": "Einstellungen"
+   },
+   "bg_reload_all_discarded": {
+      "message": "Alle entladenen Tabs"
+   },
+   "bg_reload_every": {
+      "message": "Gewählte Tabs neu laden"
+   },
+   "bg_reload_every_10s": {
+      "message": "Alle 10s"
+   },
+   "bg_reload_every_15m": {
+      "message": "Alle 15 Minuten"
+   },
+   "bg_reload_every_1h": {
+      "message": "Jede Stunde"
+   },
+   "bg_reload_every_1m": {
+      "message": "Jede Minute"
+   },
+   "bg_reload_every_30s": {
+      "message": "Alle 30s"
+   },
+   "bg_reload_every_5m": {
+      "message": "Alle 5 Minuten"
+   },
+   "bg_reload_tabs": {
+      "message": "Tabs einmal neu laden"
+   },
+   "bg_reload_tabs_left": {
+      "message": "Tabs auf der linken Seite"
+   },
+   "bg_reload_tabs_right": {
+      "message": "Tabs auf der rechten Seite"
+   },
+   "bg_reload_window": {
+      "message": "Alle Tabs im aktuellen Fenster"
+   },
+   "bg_reload_window_discarded": {
+      "message": "Alle entladenen Tabs im aktuellen Fenster"
+   },
+   "bg_restart": {
+      "message": "Erweiterung neu starten"
+   },
+   "bg_stop": {
+      "message": "Reload stoppen"
+   },
+   "bg_stop_all": {
+      "message": "Alle Tabs"
+   },
+   "commands_reload_all": {
+      "message": "Alle Tabs neu laden"
+   },
+   "commands_reload_all_discarded": {
+      "message": "Alle verworfenen Tabs neu laden"
+   },
+   "commands_reload_tabs_left": {
+      "message": "Linke Tabs neu laden"
+   },
+   "commands_reload_tabs_right": {
+      "message": "Rechte Tabs neu laden"
+   },
+   "commands_reload_window": {
+      "message": "Alle Tabs im aktuellen Fenster neu laden"
+   },
+   "commands_reload_window_discarded": {
+      "message": "Alle verworfenen Tabs im aktuellen Fenster neu laden"
+   },
+   "commands_stop": {
+      "message": "Alle Reload Aufräge stoppen"
+   },
+   "description": {
+      "message": "Ein einfach zu bedienender Tab-Reloader mit individuellen Ladezeiten für verschiedene Tabs und vielem mehr!"
+   },
+   "options_badge": {
+      "message": "Anzahl aktiver Jobs in der Symbolleiste anzeigen"
+   },
+   "options_color": {
+      "message": "Symbol Farbe:"
+   },
+   "options_custom_jobs": {
+      "message": "Benutzerdefinierte Aufträge"
+   },
+   "options_default_time": {
+      "message": "Voreingestellte Zeit für das Neuladen:"
+   },
+   "options_default_variation": {
+      "message": "Voreingestellte Variation für das Neuladen: "
+   },
+   "options_defaults": {
+      "message": "Standardwerte"
+   },
+   "options_desc": {
+      "message": "Beschreibung einblenden"
+   },
+   "options_disables": {
+      "message": "Kontextmenüeinträge deaktivieren"
+   },
+   "options_dynamic_json": {
+      "message": "Immer überprüfen, ob Reload-Aufträge aus dem JSON-Objekt aktiviert werden können, wenn eine neue Seite geladen wird."
+   },
+   "options_dynamic_json_desc": {
+      "message": "Wenn diese Option aktiviert ist, aktiviert die Erweiterung einen neuen benutzerdefinierten Auftrag für neue Seiten, die einem der Schlüssel in der Liste entsprechen."
+   },
+   "options_events": {
+      "message": "Unterstützte Events"
+   },
+   "options_export": {
+      "message": "Export"
+   },
+   "options_export_desc": {
+      "message": "Export: Exportiert alle Einstellungen in eine JSON Datei und speichert sie im Download-Verzeichnis"
+   },
+   "options_faqs": {
+      "message": "FAQ-Seite nach einem Update öffnen"
+   },
+   "options_help": {
+      "message": "Erfahren Sie mehr"
+   },
+   "options_import": {
+      "message": "Import"
+   },
+   "options_import_desc": {
+      "message": "Import: Importiert alle Einstellungen aus einer JSON-Datei (dies überschreibt die aktuellen Einstellungen und startet die Erweiterung neu)"
+   },
+   "options_instruction": {
+      "message": "Anleitung zur Verwendung (engl.)"
+   },
+   "options_json_desc": {
+      "message": "Führen Sie Hostnamen im JSON-Format auf, um eine automatische Aktualisierung nach jedem Start einzustellen. Wenn Sie eine URL anstelle eines Hostnamens abgleichen wollen, dann entfernen Sie den Schlüssel \"hostname\" und fügen stattdessen den Schlüssel \"url\" ein. Lesen Sie die FAQ-Seite für weitere Hinweise."
+   },
+   "options_keywords": {
+      "message": "Unterstützte Schlüsselwörter"
+   },
+   "options_misc": {
+      "message": "Verschiedenes"
+   },
+   "options_ofq": {
+      "message": "FAQ-Seite öffnen"
+   },
+   "options_permission": {
+      "message": "Addon-Berechtigungen"
+   },
+   "options_policy": {
+      "message": "Reload Regeln"
+   },
+   "options_pp_cache": {
+      "message": "Standardwert für \"Cache beim Neuladen\""
+   },
+   "options_pp_current": {
+      "message": "Standardwert für \"Nicht neu laden, wenn der Tab aktiv ist\""
+   },
+   "options_pp_discarded": {
+      "message": "Standardwert für \"Tab nicht neu laden, wenn er entladen wurde\""
+   },
+   "options_pp_form": {
+      "message": "Standardwert für \"Übertragung von Formularen umgehen\""
+   },
+   "options_pp_nodiscard": {
+      "message": "Standardwert für \"Verhindern, dass der Tab entladen wird\""
+   },
+   "options_pp_nofocus": {
+      "message": "Standardwert für \"Neu laden, wenn das Fenster keinen Fokus hat\""
+   },
+   "options_pp_offline": {
+      "message": "Standardwert für \"Tab nicht neu laden, wenn er offline ist\""
+   },
+   "options_pp_randomize": {
+      "message": "Standardwert für \"Zufällige Verzögerung beim ersten Neuladen\""
+   },
+   "options_pp_scroll_to_end": {
+      "message": "Standardwert für \"Nach dem Neuladen bis zum Ende blättern\""
+   },
+   "options_pp_visual_countdown": {
+      "message": "Standardwert für \"Visuellen Countdown anzeigen\""
+   },
+   "options_presets": {
+      "message": "Vorgaben"
+   },
+   "options_reassign": {
+      "message": "Versuche einen Reload-Auftrag wieder zuzuweisen, wenn ein Tab einen aktiven Reload-Auftrag hatte."
+   },
+   "options_reset": {
+      "message": "Zurücksetzten auf Standwerte"
+   },
+   "options_reset_desc": {
+      "message": "Zurücksetzten: Setzt alle Einstellungen auf Standard zurück"
+   },
+   "options_sample": {
+      "message": "Beispiel einfügen"
+   },
+   "options_save": {
+      "message": "Einstellungen speichern"
+   },
+   "options_save_reminder": {
+      "message": "Bitte nicht vergessen, die Einstellungen unten über den Button \"Einstellungen speichern\" zu sichern!"
+   },
+   "options_saved": {
+      "message": "Einstellungen gespeichert!"
+   },
+   "options_startup_restore_delay": {
+      "message": "Verzögerung in Sekunden um früherer Aufträge, nach einem Neustart, erneut zu starten:"
+   },
+   "options_support": {
+      "message": "Projekt unterstützen"
+   },
+   "options_title": {
+      "message": "Einstellungen :: Tab Reloader"
+   },
+   "options_tools": {
+      "message": "Werkzeuge"
+   },
+   "popup_active": {
+      "message": "Nicht neu laden, wenn der Tab aktiv ist"
+   },
+   "popup_active_tabs": {
+      "message": "Aktive Tabs"
+   },
+   "popup_bw": {
+      "message": "Nicht neu laden, wenn Adresse/Titel enthält"
+   },
+   "popup_cache": {
+      "message": "Cache verwenden (Zustand wiederherstellen)"
+   },
+   "popup_code": {
+      "message": "JS Code ausführen"
+   },
+   "popup_code_desc": {
+      "message": "JS Code nach jedem Neuladen ausführen"
+   },
+   "popup_configs": {
+      "message": "Einstellungen"
+   },
+   "popup_discarded": {
+      "message": "Tab nicht neu laden, wenn er entladen wurde"
+   },
+   "popup_enable": {
+      "message": "Tab-Auswahl neu laden, alle "
+   },
+   "popup_enable_keys": {
+      "message": "'S'-Taste zum Aktivieren des Reloads\\n'ESC'-Taste zum Deaktivieren des Reloads\\nUmschalttaste + ESC-Taste zum Schließen des Einstellungs-Fensters\\nStrg + 1 bis 10-Tasten zum Auswählen einer Voreinstellung"
+   },
+   "popup_forced": {
+      "message": "Benutze die Umschalttaste (Shift), um Zeiten von weniger als 10 Sekunden zu erzwingen"
+   },
+   "popup_form": {
+      "message": "Übertragung von Formularen umgehen"
+   },
+   "popup_nodiscard": {
+      "message": "Verhindern, dass der Tab entladen wird"
+   },
+   "popup_nofocus": {
+      "message": "Neu laden, wenn das Fenster keinen Fokus hat"
+   },
+   "popup_offline": {
+      "message": "Tab nicht neu laden, wenn er offline ist"
+   },
+   "popup_period": {
+      "message": "Neu laden zwischen"
+   },
+   "popup_permission": {
+      "message": "Berechtigungen für diesen Tab erforderlich"
+   },
+   "popup_pre_code": {
+      "message": "Policy Code ausführen"
+   },
+   "popup_pre_code_desc": {
+      "message": "Falls definiert, muss Funktion \"document.currentScript.dataset.continue = true\" gesetzt sein, damit Neuladen möglich ist"
+   },
+   "popup_pre_code_example_1": {
+      "message": "Nur neu laden, wenn die Seite das Wort \"hello\" enthält"
+   },
+   "popup_pre_code_example_2": {
+      "message": "Seite zufällig neu laden mit einer Rate von 50%"
+   },
+   "popup_pre_code_example_3": {
+      "message": "Seite nur neu laden, wenn sie sichtbar ist"
+   },
+   "popup_presets": {
+      "message": "Vorgaben"
+   },
+   "popup_randomize": {
+      "message": "Zufällige Verzögerung beim ersten Neuladen"
+   },
+   "popup_rate": {
+      "message": "Bewerte mich"
+   },
+   "popup_save_as_json": {
+      "message": "Als benutzerdefinierten Auftrag speichern"
+   },
+   "popup_save_as_json_desc": {
+      "message": "Verwenden Sie die Shift + Mausklick, um einen Abgleich mit der vollständigen URL anstelle des Hostnamens durchzuführen.\nVerwenden Sie Strg + Mausklick oder Command + Mausklick, um einen Abgleich mit der vollständigen URL ohne Parameter durchzuführen."
+   },
+   "popup_saved": {
+      "message": "Gespeichert!"
+   },
+   "popup_sound": {
+      "message": "Ton abspielen, wenn Inhalt sich ändert"
+   },
+   "popup_sound_1": {
+      "message": "Ton 1"
+   },
+   "popup_sound_2": {
+      "message": "Ton 2"
+   },
+   "popup_sound_3": {
+      "message": "Ton 3"
+   },
+   "popup_sound_4": {
+      "message": "Ton 4"
+   },
+   "popup_sound_5": {
+      "message": "Ton 5"
+   },
+   "popup_sound_6": {
+      "message": "Ton 6"
+   },
+   "popup_sound_7": {
+      "message": "Ton 7"
+   },
+   "popup_sound_8": {
+      "message": "Ton 8"
+   },
+   "popup_start": {
+      "message": "Reload starten"
+   },
+   "popup_ste": {
+      "message": "Nach dem Neuladen bis zum Ende blättern"
+   },
+   "popup_stop": {
+      "message": "Reload stoppen"
+   },
+   "popup_switch": {
+      "message": "Zum Tab wechseln bei Änderungen"
+   },
+   "popup_test_sound": {
+      "message": "Test"
+   },
+   "popup_variation": {
+      "message": "mit Variation"
+   },
+   "popup_variation_hint": {
+      "message": "Variation in Prozent, um Tabs zufällig neu zu laden (gilt nach dem ersten Neuladen)"
+   },
+   "popup_vcd": {
+      "message": "Visuellen Countdown anzeigen"
+   }
+}

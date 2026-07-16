@@ -1,0 +1,377 @@
+{
+   "bg_all_tabs": {
+      "message": "All tabs"
+   },
+   "bg_csp": {
+      "message": "Content Security Policy"
+   },
+   "bg_csp_remove": {
+      "message": "Remove CSP Protection for this tab (allow inline script execution)"
+   },
+   "bg_csp_reset": {
+      "message": "Reset to Default"
+   },
+   "bg_msg_1": {
+      "message": "Tab does not have a valid address"
+   },
+   "bg_msg_2": {
+      "message": "Permission to access this hostname is not granted"
+   },
+   "bg_msg_3": {
+      "message": "Warning: Removing the Content Security Policy (CSP) can make the website vulnerable to security risks, such as cross-site scripting (XSS) attacks.\n\nAre you sure you want to proceed?"
+   },
+   "bg_no_reload": {
+      "message": "Selected tabs"
+   },
+   "bg_options": {
+      "message": "Options"
+   },
+   "bg_reload_all_discarded": {
+      "message": "All discarded tabs"
+   },
+   "bg_reload_every": {
+      "message": "Reload selected tabs"
+   },
+   "bg_reload_every_10s": {
+      "message": "Every 10 secs"
+   },
+   "bg_reload_every_15m": {
+      "message": "Every 15 minutes"
+   },
+   "bg_reload_every_1h": {
+      "message": "Every hour"
+   },
+   "bg_reload_every_1m": {
+      "message": "Every minute"
+   },
+   "bg_reload_every_30s": {
+      "message": "Every 30 secs"
+   },
+   "bg_reload_every_5m": {
+      "message": "Every 5 minutes"
+   },
+   "bg_reload_tabs": {
+      "message": "Reload tabs once"
+   },
+   "bg_reload_tabs_left": {
+      "message": "Tabs to the left"
+   },
+   "bg_reload_tabs_right": {
+      "message": "Tabs to the right"
+   },
+   "bg_reload_window": {
+      "message": "All tabs in the current window"
+   },
+   "bg_reload_window_discarded": {
+      "message": "All discarded tabs in the current window"
+   },
+   "bg_restart": {
+      "message": "Restart the extension"
+   },
+   "bg_stop": {
+      "message": "Stop reloading"
+   },
+   "bg_stop_all": {
+      "message": "All tabs"
+   },
+   "commands_reload_all": {
+      "message": "Reload all tabs"
+   },
+   "commands_reload_all_discarded": {
+      "message": "Reload all discarded tabs"
+   },
+   "commands_reload_tabs_left": {
+      "message": "Reload tabs to the left"
+   },
+   "commands_reload_tabs_right": {
+      "message": "Reload tabs to the right"
+   },
+   "commands_reload_window": {
+      "message": "Reload all tabs in the current window"
+   },
+   "commands_reload_window_discarded": {
+      "message": "Reload all discarded tabs in the current window"
+   },
+   "commands_stop": {
+      "message": "Stop all Reloading Jobs"
+   },
+   "description": {
+      "message": "An easy-to-use tab reloader with custom reloading time for individual tabs and more!"
+   },
+   "options_badge": {
+      "message": "Display the total number of active jobs in the badge area"
+   },
+   "options_color": {
+      "message": "Badge color is:"
+   },
+   "options_custom_jobs": {
+      "message": "Custom Jobs"
+   },
+   "options_default_time": {
+      "message": "Default reloading time:"
+   },
+   "options_default_variation": {
+      "message": "Default reloading variation:"
+   },
+   "options_defaults": {
+      "message": "Defaults"
+   },
+   "options_desc": {
+      "message": "Toggle Description"
+   },
+   "options_disables": {
+      "message": "Disable Context Menu Items"
+   },
+   "options_dynamic_json": {
+      "message": "Always check to install reloading jobs from the JSON object when a new page loads."
+   },
+   "options_dynamic_json_desc": {
+      "message": "When this option is enabled, the extension installs a new custom reloading job for new pages matching one of the keys in the list."
+   },
+   "options_events": {
+      "message": "Supported Events"
+   },
+   "options_export": {
+      "message": "Export"
+   },
+   "options_export_desc": {
+      "message": "Export: Export all settings to a JSON file and download it to the default download directory"
+   },
+   "options_faqs": {
+      "message": "Open FAQs page on updates"
+   },
+   "options_help": {
+      "message": "Learn More"
+   },
+   "options_import": {
+      "message": "Import"
+   },
+   "options_import_desc": {
+      "message": "Import: Import settings from a JSON file (this will overwrite current settings and restarts the extension)"
+   },
+   "options_instruction": {
+      "message": "Usage Instruction"
+   },
+   "options_json_desc": {
+      "message": "List hostnames in JSON format to set an automatic refresh after each startup. If you need URL matching instead of hostname matching, remove the \"hostname\" key and append the \"url\" key instead. Read the FAQs page for additional instructions."
+   },
+   "options_keywords": {
+      "message": "Supported Keywords"
+   },
+   "options_misc": {
+      "message": "Misc"
+   },
+   "options_ofq": {
+      "message": "Open FAQs page"
+   },
+   "options_permission": {
+      "message": "Host Permission"
+   },
+   "options_policy": {
+      "message": "Reloading Policy"
+   },
+   "options_pp_cache": {
+      "message": "Default value for \"Use cache while reloading\""
+   },
+   "options_pp_current": {
+      "message": "Default value for \"Do no reload if tab is active\""
+   },
+   "options_pp_discarded": {
+      "message": "Default value for \"Do not reload if discarded\""
+   },
+   "options_pp_form": {
+      "message": "Default value for \"Bypass form submission\""
+   },
+   "options_pp_nodiscard": {
+      "message": "Default value for \"Prevent the tab from discarding\""
+   },
+   "options_pp_nofocus": {
+      "message": "Default value for \"Reload if window is not focused\""
+   },
+   "options_pp_offline": {
+      "message": "Default value for \"Do not reload if offline\""
+   },
+   "options_pp_randomize": {
+      "message": "Default value for \"Random delay on the first reload\""
+   },
+   "options_pp_scroll_to_end": {
+      "message": "Default value for \"Scroll to the end after reload\""
+   },
+   "options_pp_visual_countdown": {
+      "message": "Default value for \"Display visual countdown\""
+   },
+   "options_presets": {
+      "message": "Presets"
+   },
+   "options_reassign": {
+      "message": "Try to assign a reloading job when a new tab used to have an active reloading job."
+   },
+   "options_reset": {
+      "message": "Reset Defaults"
+   },
+   "options_reset_desc": {
+      "message": "Reset: Reset settings to the factory values"
+   },
+   "options_sample": {
+      "message": "Insert a Sample"
+   },
+   "options_save": {
+      "message": "Save Options"
+   },
+   "options_save_reminder": {
+      "message": "Make sure to press the \"Save Options\" button!"
+   },
+   "options_saved": {
+      "message": "Options saved"
+   },
+   "options_startup_restore_delay": {
+      "message": "Delay in seconds to restart previous jobs after restart:"
+   },
+   "options_support": {
+      "message": "Support Development"
+   },
+   "options_title": {
+      "message": "Options Page :: Tab Reloader"
+   },
+   "options_tools": {
+      "message": "Tools"
+   },
+   "popup_active": {
+      "message": "Do not reload if tab is active"
+   },
+   "popup_active_tabs": {
+      "message": "Active Tabs"
+   },
+   "popup_bw": {
+      "message": "Do not reload if the address or title contains"
+   },
+   "popup_cache": {
+      "message": "Use cache while reloading (restore state)"
+   },
+   "popup_code": {
+      "message": "Run JS Code"
+   },
+   "popup_code_desc": {
+      "message": "Run this JS code after each reload"
+   },
+   "popup_configs": {
+      "message": "Settings"
+   },
+   "popup_discarded": {
+      "message": "Do not reload tab if discarded"
+   },
+   "popup_enable": {
+      "message": "Reload selected tabs every"
+   },
+   "popup_enable_keys": {
+      "message": "'S' key to enable reloading\n'Escape' key to disable reloading\nShift + Escape key to close the popup\nCtrl/Command + 1/10 keys to select a preset"
+   },
+   "popup_forced": {
+      "message": "Use Shift key to force periods less than 10 seconds"
+   },
+   "popup_form": {
+      "message": "Bypass form submission"
+   },
+   "popup_nodiscard": {
+      "message": "Prevent the tab from discarding"
+   },
+   "popup_nofocus": {
+      "message": "Reload if window is not focused"
+   },
+   "popup_offline": {
+      "message": "Do not reload tab if offline"
+   },
+   "popup_period": {
+      "message": "Reload between"
+   },
+   "popup_permission": {
+      "message": "Tab's host permission is required"
+   },
+   "popup_pre_code": {
+      "message": "Run Policy Code"
+   },
+   "popup_pre_code_desc": {
+      "message": "If defined, the function must set \"document.currentScript.dataset.continue = true\" for reloading to happen"
+   },
+   "popup_pre_code_example_1": {
+      "message": "Reload only if the page contains \"hello\" word"
+   },
+   "popup_pre_code_example_2": {
+      "message": "Reload the page randomly at 50% rate"
+   },
+   "popup_pre_code_example_3": {
+      "message": "Reload the page only if it is visible"
+   },
+   "popup_presets": {
+      "message": "Presets"
+   },
+   "popup_randomize": {
+      "message": "Random delay on the first reload"
+   },
+   "popup_rate": {
+      "message": "Rate Me"
+   },
+   "popup_save_as_json": {
+      "message": "Save as a Custom Job"
+   },
+   "popup_save_as_json_desc": {
+      "message": "Use Shift + Click to match against the full URL instead of the hostname.\nUse Ctrl + Click or Command + Click to match against the full URL excluding parameters."
+   },
+   "popup_saved": {
+      "message": "Saved!"
+   },
+   "popup_skip_auto_add": {
+      "message": "Don't auto-restart if closed without ending"
+   },
+   "popup_sound": {
+      "message": "Play sound if content changed"
+   },
+   "popup_sound_1": {
+      "message": "Sound 1"
+   },
+   "popup_sound_2": {
+      "message": "Sound 2"
+   },
+   "popup_sound_3": {
+      "message": "Sound 3"
+   },
+   "popup_sound_4": {
+      "message": "Sound 4"
+   },
+   "popup_sound_5": {
+      "message": "Sound 5"
+   },
+   "popup_sound_6": {
+      "message": "Sound 6"
+   },
+   "popup_sound_7": {
+      "message": "Sound 7"
+   },
+   "popup_sound_8": {
+      "message": "Sound 8"
+   },
+   "popup_start": {
+      "message": "Start Reloading"
+   },
+   "popup_ste": {
+      "message": "Scroll to the end after reload"
+   },
+   "popup_stop": {
+      "message": "Stop Reloading"
+   },
+   "popup_switch": {
+      "message": "Switch to the tab if content changed"
+   },
+   "popup_test_sound": {
+      "message": "Test"
+   },
+   "popup_variation": {
+      "message": "with variation"
+   },
+   "popup_variation_hint": {
+      "message": "Set variation in percent to randomize reloading time (applies after the first reload)"
+   },
+   "popup_vcd": {
+      "message": "Display visual countdown"
+   }
+}

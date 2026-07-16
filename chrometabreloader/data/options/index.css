@@ -1,0 +1,131 @@
+:root {
+  color-scheme: dark light;
+
+  --bg: #fff;
+  --bg-desc: #e8e8e8;
+  --fg: #4d5156;
+  --bt: #4d5156;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --fg: #e7eaed;
+    --bg: #202124;
+    --bg-desc: #2b2a33;
+    --bt: #202124;
+  }
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  background-color: var(--bg);
+  color: var(--fg);
+  margin-inline: auto;
+  width: min(100% - 2rem, 70rem);
+}
+
+button {
+  height: 24px;
+  color: var(--bt);
+  background-image: linear-gradient(rgb(237, 237, 237), rgb(237, 237, 237) 38%, rgb(222, 222, 222));
+  box-shadow: rgba(0, 0, 0, 0.08) 0 1px 0, rgba(255, 255, 255, 0.75) 0 1px 2px inset;
+  text-shadow: rgb(240, 240, 240) 0 1px 0;
+  border: solid 1px rgba(0, 0, 0, 0.25);
+  font-size: inherit;
+}
+textarea,
+input[type=text],
+input[type=number] {
+  border: solid 1px rgba(0, 0, 0, 0.25);
+  color: var(--fg);
+}
+textarea {
+  width: 100%;
+  padding: 10px;
+}
+input[type=text] {
+  padding: 5px;
+}
+input[type=number] {
+  width: 45px;
+  padding: 5px;
+}
+h1 {
+  font-size: 18px;
+  font-weight: normal;
+  display: inline-block;
+  margin-top: 30px;
+}
+td {
+  padding: 2px 0;
+}
+td:first-child {
+  vertical-align: top;
+  padding-right: 5px;
+}
+a {
+  text-decoration: none;
+  user-select: none;
+  color: #07c;
+}
+.desc {
+  background-color: var(--bg-desc);
+}
+div.desc,
+.desc td {
+  padding: 10px;
+}
+.hide {
+  display: none;
+}
+
+#example,
+#keywords,
+#events,
+#desc-1,
+#desc-2,
+#desc-3,
+#desc-4 {
+  cursor: pointer;
+  user-select: none;
+  color: #07c;
+}
+
+.grid-1,
+.grid-2,
+.grid-3,
+.grid-4 {
+  display: grid;
+  align-items: center;
+  grid-gap: 5px;
+}
+.grid-1 {
+  grid-template-columns: min-content 1fr;
+}
+.grid-3 {
+  grid-template-columns: min-content 1fr 60px;
+}
+#color,
+#history_timeout {
+  justify-self: end;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.save {
+  text-align: center;
+  padding: 10px;
+  border: solid 1px var(--fg);
+}
+.top {
+  margin-top: 10px;
+}
+
+@supports (-webkit-hyphens: none) and (not (-moz-appearance: none)) {
+  #support {
+    display: none;
+  }
+}
