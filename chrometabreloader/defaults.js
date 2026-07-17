@@ -1,7 +1,7 @@
 const defaults = {};
 
 defaults.profile = {
-  'period': '00:01:00',
+  'period': '00:10:00',
   'variation': 0,
   'current': false,
   'nofocus': false,
@@ -18,7 +18,7 @@ defaults.profile = {
   'sound': false,
   'sound-value': 1,
   'blocked-words': '',
-  'allowed-period': 'Thu 22:30 - Fri 07:30, Fri 15:00 - Fri 23:00, Sat 06:30 - Sat 15:30, Sun 06:30 - Sun 15:30',
+  'allowed-period': 'Wed 22:40 - Thu 07:10, Thu 22:40 - Fri 07:10, Fri 15:00 - Fri 22:30, Sat 06:30 - Sat 15:10, Sun 06:30 - Sun 15:10',
   'code': false,
   'code-value': '',
   'pre-code': false,
