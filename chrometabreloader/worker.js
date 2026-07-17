@@ -91,11 +91,21 @@ const messaging = (request, sender, response = () => {}) => {
     return true;
   }
   else if (request.method === 'add-jobs') {
+    if (request.profile['blocked-period'] && request.profile['allowed-period'] === undefined) {
+      request.profile['allowed-period'] = request.profile['blocked-period'];
+      delete request.profile['blocked-period'];
+    }
     const g = Object.assign({}, defaults.profile, request.profile, {
       timestamp: Date.now()
     });
+    if (g.period === defaults.profile.period) {
+      delete g.period;
+    }
+    if (g['allowed-period'] === defaults.profile['allowed-period']) {
+      delete g['allowed-period'];
+    }
 
-    const period = Math.max(1, api.convert.secods(api.convert.str2obj(g.period)));
+    const period = Math.max(1, api.convert.secods(api.convert.str2obj(g.period || defaults.profile.period)));
 
     const when = Date.now() + (request.now ? 100 : (
       g.randomize ? parseInt(Math.random() * period * 1000) : period * 1000
@@ -400,7 +410,7 @@ async function manageAutoReloadTabs() {
   try {
     for (const config of AUTO_RELOAD_CONFIG) {
       const pattern = config.pattern;
-      const period = config.period || '00:10:00';
+      const period = config.period || '00:01:00';
       const maxActiveTabs = config['max-active-tabs'] || 1;
       
       console.log('[Auto-Reload] Processing pattern:', pattern, 'Period:', period, 'Max tabs:', maxActiveTabs);
@@ -424,7 +434,24 @@ async function manageAutoReloadTabs() {
       for (const tab of tabs) {
         const existing = await api.alarms.get(tab.id.toString());
         console.log('[Auto-Reload] Tab', tab.id, '- has alarm:', !!existing);
+
         if (existing) {
+          const profile = await api.storage.get('job-' + tab.id);
+          const expectedPeriod = config.period || defaults.profile.period;
+          const expectedAllowed = typeof config['allowed-period'] !== 'undefined'
+            ? config['allowed-period']
+            : defaults.profile['allowed-period'];
+          const storedPeriod = profile?.period || defaults.profile.period;
+          const storedAllowed = (profile && profile['allowed-period']) || defaults.profile['allowed-period'];
+
+          if (!profile || storedPeriod !== expectedPeriod || storedAllowed.trim() !== expectedAllowed.trim()) {
+            console.log('[Auto-Reload] Job settings changed for tab', tab.id, '- recreating job');
+            await api.alarms.remove(tab.id.toString());
+            await api.storage.remove('job-' + tab.id);
+            tabsWithoutJobs.push(tab);
+            continue;
+          }
+
           activeJobs.push({tab, alarm: existing});
         } else {
           tabsWithoutJobs.push(tab);
@@ -463,6 +490,15 @@ async function manageAutoReloadTabs() {
             href: tab.url,
             timestamp: Date.now()
           });
+          if (typeof config['allowed-period'] !== 'undefined' && config['allowed-period'] !== '') {
+            profile['allowed-period'] = config['allowed-period'];
+          }
+          if (profile.period === defaults.profile.period) {
+            delete profile.period;
+          }
+          if (profile['allowed-period'] === defaults.profile['allowed-period']) {
+            delete profile['allowed-period'];
+          }
           
           // Create storage entry for this job
           const storageKey = 'job-' + tab.id;

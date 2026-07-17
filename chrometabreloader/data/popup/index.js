@@ -53,7 +53,7 @@ const generate = (forced = false) => {
     'sound': document.getElementById('sound').checked,
     'sound-value': document.getElementById('sound-value').value,
     'blocked-words': document.getElementById('blocked-words').value,
-    'blocked-period': document.getElementById('blocked-period').value,
+    'allowed-period': document.getElementById('allowed-period').value,
     'code': document.getElementById('code').checked,
     'code-value': document.getElementById('code-value').value,
     'pre-code': document.getElementById('pre-code').checked,

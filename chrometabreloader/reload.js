@@ -185,14 +185,16 @@ api.alarms.fired(async o => {
   // only set new alarm if tab still exists
   if (tab) {
     const profile = await api.storage.get('job-' + o.name);
-    console.log('[Reload] Profile found:', !!profile);
+    console.log('[Reload] Profile found:', !!profile, profile);
     if (!profile) {
       console.error('[Reload] ERROR: Profile is null/undefined!');
       return;
     }
 
-    const time = api.convert.str2obj(profile.period);
+    const periodText = profile.period || defaults.profile.period;
+    const time = api.convert.str2obj(periodText);
     const period = Math.max(1, api.convert.secods(time));
+    console.log('[Reload] Profile period:', profile.period, '=>', period, 'seconds');
 
     api.alarms.add(o.name, {
       when: Date.now() + period * 1000,
@@ -244,9 +246,10 @@ api.alarms.fired(async o => {
       'policy': {} // reloading policy
     });
 
-    // schedule
-    if (profile['blocked-period'] && schedule(profile['blocked-period'], prefs)) {
-      return skip('schedule mismatch');
+    // allowed-period: reload only inside the configured allowed windows
+    const allowedPeriod = profile['allowed-period']?.trim() || profile['blocked-period']?.trim() || defaults.profile['allowed-period'];
+    if (allowedPeriod && schedule(allowedPeriod, prefs)) {
+      return skip('outside allowed period');
     }
 
     console.log('[Reload] All checks passed, preparing to reload...');
@@ -310,7 +313,13 @@ api.alarms.fired(async o => {
       }
     }
 
-    console.log('[Reload] PERFORMING RELOAD on tab:', tabId, 'URL:', tab.url, 'Options:', options);
+    console.log('[Reload] About to perform reload', {
+      tabId,
+      url: tab.url,
+      form: profile.form,
+      bypassCache: options.bypassCache,
+      profile
+    });
     api.tabs.reload(tab, options, profile.form);
   }
   else {
@@ -349,8 +358,8 @@ api.tabs.loaded(d => {
       const tabId = Number(o.name);
       const profile = await api.storage.get('job-' + o.name);
 
-      const time = api.convert.str2obj(profile.period);
-      let period = Math.max(1, api.convert.secods(time));
+      const periodText = profile.period || defaults.profile.period;
+      let period = Math.max(1, api.convert.secods(api.convert.str2obj(periodText)));
       // variation
       if (profile.variation) {
         const delta = Math.random() * (profile.variation / 100) * period;

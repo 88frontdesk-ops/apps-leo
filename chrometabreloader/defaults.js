@@ -1,7 +1,7 @@
 const defaults = {};
 
 defaults.profile = {
-  'period': '00:10:00',
+  'period': '00:01:00',
   'variation': 0,
   'current': false,
   'nofocus': false,
@@ -18,7 +18,7 @@ defaults.profile = {
   'sound': false,
   'sound-value': 1,
   'blocked-words': '',
-  'blocked-period': 'Wed 22:30 - Thu 07:30, Thu 22:30 - Fri 07:30, Fri 15:00 - Fri 23:00, Sat 06:30 - Sat 15:30, Sun 06:30 - Sun 15:30',
+  'allowed-period': 'Thu 22:30 - Fri 07:30, Fri 15:00 - Fri 23:00, Sat 06:30 - Sat 15:30, Sun 06:30 - Sun 15:30',
   'code': false,
   'code-value': '',
   'pre-code': false,
@@ -47,6 +47,8 @@ defaults['removed.jobs'] = 5 * 24 * 60 * 60 * 1000; // ms
 defaults['auto-reload-urls'] = [
   {
     pattern: '*://bozzuto.venn.city/*',
-    'max-active-tabs': 1
+    'max-active-tabs': 1,
+    period: defaults.profile.period,
+    'allowed-period': defaults.profile['allowed-period']
   }
 ];

@@ -269,10 +269,18 @@ api.tabs = {
     if (form) {
       chrome.tabs.update(tab.id, {
         url: tab.url.split('#')[0].split('?')[0]
+      }, () => {
+        if (chrome.runtime.lastError) {
+          console.error('[API] tabs.update failed on reload', tab.id, chrome.runtime.lastError.message);
+        }
       });
     }
     else {
-      chrome.tabs.reload(tab.id, options);
+      chrome.tabs.reload(tab.id, options, () => {
+        if (chrome.runtime.lastError) {
+          console.error('[API] tabs.reload failed on reload', tab.id, chrome.runtime.lastError.message);
+        }
+      });
     }
   },
   loaded(c) {

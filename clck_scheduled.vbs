@@ -33,17 +33,17 @@ Function IsAllowedTime()
 
     Select Case d
 
-        ' Wednesday 18:00 PM onwards
+        ' Wednesday 18:10 PM onwards
         Case 4
-            If mins >= (18 * 60 + 00) Then
+            If mins >= (18 * 60 + 10) Then
                 IsAllowedTime = True
             End If
 
         ' Thursday 12:00 AM - 7:10 AM
-        '      and 18:00 PM onwards
+        '      and 18:10 PM onwards
         Case 5
             If mins < (7 * 60 + 10) _
-               Or mins >= (18 * 60 + 00) Then
+               Or mins >= (18 * 60 + 10) Then
                 IsAllowedTime = True
             End If
 
