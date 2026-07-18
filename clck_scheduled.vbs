@@ -1,4 +1,4 @@
-' Keeps the pc awake by sending a Caps Lock keypress
+' Keeps the PC awake by sending a Caps Lock keypress
 
 Set wsc = CreateObject("WScript.Shell")
 
@@ -6,11 +6,12 @@ Do
     If IsAllowedTime() Then
         ' Toggle Caps Lock twice (no visible change)
         wsc.SendKeys "{CAPSLOCK}"
+        WScript.Sleep 1000
         wsc.SendKeys "{CAPSLOCK}"
     End If
 
-    ' Wait 10 minutes before checking again
-    WScript.Sleep 10 * 60 * 1000
+    ' Wait 5 minutes before checking again
+    WScript.Sleep 5 * 60 * 1000
 Loop
 
 Function IsAllowedTime()
