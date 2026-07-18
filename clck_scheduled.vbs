@@ -53,23 +53,23 @@ Function IsAllowedTime()
         '         IsAllowedTime = True
         '     End If
 
-        ' Friday 12:00 AM - 7:10 AM OR 3:00 PM - 11:00 PM
+        ' Friday 12:00 AM - 7:10 AM OR 14:00 PM - 22:00 PM
         Case 6
             If mins < (7 * 60 + 10) _
                Or (mins >= (16 * 60) And mins <= (22 * 60)) Then
                 IsAllowedTime = True
             End If
 
-        ' Saturday 6:10 AM - 15:10 PM
+        ' Saturday 6:30 AM - 15:10 PM
         Case 7
-            If mins >= (6 * 60 + 10) _
+            If mins >= (6 * 60 + 30) _
                And mins < (15 * 60 + 10) Then
                 IsAllowedTime = True
             End If
 
-        ' Sunday 6:10 AM - 15:10 PM
+        ' Sunday 6:30 AM - 15:10 PM
         Case 1
-            If mins >= (6 * 60 + 10) _
+            If mins >= (6 * 60 + 30) _
                And mins < (15 * 60 + 10) Then
                 IsAllowedTime = True
             End If
