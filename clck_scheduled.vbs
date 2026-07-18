@@ -56,7 +56,7 @@ Function IsAllowedTime()
         ' Friday 12:00 AM - 7:10 AM OR 3:00 PM - 11:00 PM
         Case 6
             If mins < (7 * 60 + 10) _
-               Or (mins >= (16 * 60) And mins <= (21 * 60)) Then
+               Or (mins >= (16 * 60) And mins <= (22 * 60)) Then
                 IsAllowedTime = True
             End If
 
