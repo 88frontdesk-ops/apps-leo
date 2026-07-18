@@ -1,3 +1,5 @@
+' Keeps the pc awake by sending a Caps Lock keypress
+
 Set wsc = CreateObject("WScript.Shell")
 
 Do
@@ -56,7 +58,7 @@ Function IsAllowedTime()
         ' Friday 12:00 AM - 7:10 AM OR 14:00 PM - 22:00 PM
         Case 6
             If mins < (7 * 60 + 10) _
-               Or (mins >= (16 * 60) And mins <= (22 * 60)) Then
+               Or (mins >= (16 * 60) And mins <= (23 * 60)) Then
                 IsAllowedTime = True
             End If
 
