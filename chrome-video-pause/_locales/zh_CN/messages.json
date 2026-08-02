@@ -1,0 +1,170 @@
+{
+   "advancedSettings": {
+      "description": "Advanced settings section header",
+      "message": "高级设置"
+   },
+   "audioFading": {
+      "description": "Label for audio fading checkbox",
+      "message": "音频淡入淡出"
+   },
+   "autopause": {
+      "description": "Enable auto pause when switching tabs",
+      "message": "切换标签页时暂停视频"
+   },
+   "autoresume": {
+      "description": "Enable auto resume when returning to tab",
+      "message": "返回标签页时继续播放视频"
+   },
+   "commandSpeedDown": {
+      "description": "Auto-translated",
+      "message": "降低播放速度"
+   },
+   "commandSpeedReset": {
+      "description": "Auto-translated",
+      "message": "重置播放速度"
+   },
+   "commandSpeedUp": {
+      "description": "Auto-translated",
+      "message": "增加播放速度"
+   },
+   "commandToggleExtension": {
+      "description": "Command description for toggling extension",
+      "message": "启用/禁用扩展"
+   },
+   "commandToggleMute": {
+      "description": "Command description for toggling mute",
+      "message": "切换静音"
+   },
+   "commandTogglePlay": {
+      "description": "Command description for toggling play/pause",
+      "message": "切换播放/暂停"
+   },
+   "commandToggleTab": {
+      "description": "Command description for toggling on active tab",
+      "message": "在活动标签页上启用/禁用"
+   },
+   "cursorTracking": {
+      "description": "Enable cursor tracking to pause when cursor leaves window",
+      "message": "光标离开浏览器窗口时暂停"
+   },
+   "debugMode": {
+      "description": "Enable debug mode",
+      "message": "在控制台显示调试消息"
+   },
+   "delays": {
+      "description": "Label for delays section",
+      "message": "延迟 (ms)"
+   },
+   "disableOnFullscreen": {
+      "description": "Disable extension when video is in fullscreen mode",
+      "message": "视频全屏时禁用"
+   },
+   "disabled": {
+      "description": "Disable extension completely",
+      "message": "完全禁用扩展"
+   },
+   "disabledTabs": {
+      "description": "Disable extension for the current tab",
+      "message": "禁用当前标签页的扩展"
+   },
+   "domainExclusions": {
+      "description": "Label for domain exclusions section",
+      "message": "域名排除"
+   },
+   "domainExclusionsDescription": {
+      "description": "Description for domain exclusions textarea",
+      "message": "输入要排除的域名（每行一个）："
+   },
+   "domainInclusionsDescription": {
+      "description": "Auto-translated",
+      "message": "输入要包含的域名（每行一个）："
+   },
+   "domainSettings": {
+      "description": "Auto-translated",
+      "message": "域名设置"
+   },
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "当标签页失去焦点时暂停多个视频服务，并在重新获得焦点时继续播放"
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "视频自动暂停"
+   },
+   "fadeDuration": {
+      "description": "Label for fade duration input",
+      "message": "淡入淡出持续时间（毫秒）"
+   },
+   "focuspause": {
+      "description": "Enable auto pause when browser window loses focus",
+      "message": "浏览器失去焦点时暂停视频"
+   },
+   "focusresume": {
+      "description": "Enable auto resume when browser window gains focus",
+      "message": "浏览器获得焦点时继续播放视频"
+   },
+   "githubSponsors": {
+      "description": "Link text for GitHub Sponsors",
+      "message": "GitHub Sponsors"
+   },
+   "hotkeys": {
+      "description": "Hotkeys section header",
+      "message": "热键"
+   },
+   "hotkeysDescription": {
+      "description": "Description text for hotkeys section",
+      "message": "您可以在扩展菜单中配置热键"
+   },
+   "lockpause": {
+      "description": "Enable auto pause when computer is locked",
+      "message": "计算机锁定时暂停视频"
+   },
+   "lockresume": {
+      "description": "Enable auto resume when computer is unlocked",
+      "message": "计算机解锁时继续播放视频"
+   },
+   "madeWithLove": {
+      "description": "Footer text",
+      "message": "由 ♥ 制作"
+   },
+   "manualPause": {
+      "description": "Manual pause disables auto resume",
+      "message": "防止手动暂停后自动继续播放"
+   },
+   "muteVideo": {
+      "description": "Auto-translated",
+      "message": "静音视频而不是暂停"
+   },
+   "pauseDelay": {
+      "description": "Label for pause delay input",
+      "message": "暂停延迟"
+   },
+   "pipTitle": {
+      "description": "Title text for the PiP button",
+      "message": "切换画中画"
+   },
+   "resumeDelay": {
+      "description": "Label for resume delay input",
+      "message": "恢复延迟"
+   },
+   "scrollpause": {
+      "description": "Enable auto pause when video is scrolled out of viewport",
+      "message": "滚动出视野时暂停视频"
+   },
+   "settings": {
+      "description": "Settings section header",
+      "message": "设置"
+   },
+   "showPipButton": {
+      "description": "Label for PiP button checkbox",
+      "message": "显示画中画按钮"
+   },
+   "supportOnPatreon": {
+      "description": "Link text for Patreon support",
+      "message": "在 Patreon 上支持"
+   },
+   "viewSourceOnGitHub": {
+      "description": "Link text for GitHub repository",
+      "message": "在 GitHub 上查看源码"
+   }
+}

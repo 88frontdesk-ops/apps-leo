@@ -1,0 +1,162 @@
+{
+   "advancedSettings": {
+      "description": "Advanced settings section header",
+      "message": "إعدادات متقدمة"
+   },
+   "audioFading": {
+      "description": "Label for audio fading checkbox",
+      "message": "تلاشي الصوت"
+   },
+   "autopause": {
+      "description": "Enable auto pause when switching tabs",
+      "message": "إيقاف الفيديو مؤقتًا عند تبديل علامات التبويب"
+   },
+   "autoresume": {
+      "description": "Enable auto resume when returning to tab",
+      "message": "استئناف الفيديو عند العودة إلى علامة التبويب"
+   },
+   "commandSpeedDown": {
+      "description": "Auto-translated",
+      "message": "تقليل سرعة التشغيل"
+   },
+   "commandSpeedReset": {
+      "description": "Command description for resetting playback speed",
+      "message": "Reset playback speed"
+   },
+   "commandSpeedUp": {
+      "description": "Auto-translated",
+      "message": "زيادة سرعة التشغيل"
+   },
+   "commandToggleExtension": {
+      "description": "Command description for toggling extension",
+      "message": "تفعيل/تعطيل الإضافة"
+   },
+   "commandToggleMute": {
+      "description": "Command description for toggling mute",
+      "message": "تبديل كتم الصوت"
+   },
+   "commandTogglePlay": {
+      "description": "Command description for toggling play/pause",
+      "message": "تبديل التشغيل/الإيقاف المؤقت"
+   },
+   "commandToggleTab": {
+      "description": "Command description for toggling on active tab",
+      "message": "تفعيل/تعطيل في علامة التبويب الحالية"
+   },
+   "cursorTracking": {
+      "description": "Enable cursor tracking to pause when cursor leaves window",
+      "message": "إيقاف مؤقت عند مغادرة المؤشر لنافذة المتصفح"
+   },
+   "debugMode": {
+      "description": "Enable debug mode",
+      "message": "إظهار رسائل التصحيح في وحدة التحكم"
+   },
+   "delays": {
+      "description": "Label for delays section",
+      "message": "التأخيرات (ms)"
+   },
+   "disableOnFullscreen": {
+      "description": "Disable extension when video is in fullscreen mode",
+      "message": "تعطيل عند ملء الشاشة"
+   },
+   "disabled": {
+      "description": "Disable extension completely",
+      "message": "تعطيل الإضافة تمامًا"
+   },
+   "disabledTabs": {
+      "description": "Disable extension for the current tab",
+      "message": "تعطيل الإضافة لعلامة التبويب الحالية"
+   },
+   "domainExclusions": {
+      "description": "Label for domain exclusions section",
+      "message": "استثناءات المجال"
+   },
+   "domainExclusionsDescription": {
+      "description": "Description for domain exclusions textarea",
+      "message": "أدخل المجالات لاستبعادها (واحد في كل سطر):"
+   },
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "يوقف خدمات الفيديو المتعددة عند فقدان التركيز على علامة التبويب ويستأنف عند التركيز"
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "Video Auto Pause"
+   },
+   "fadeDuration": {
+      "description": "Label for fade duration input",
+      "message": "مدة التلاشي (ms)"
+   },
+   "focuspause": {
+      "description": "Enable auto pause when browser window loses focus",
+      "message": "إيقاف الفيديو مؤقتًا عند فقدان المتصفح للتركيز"
+   },
+   "focusresume": {
+      "description": "Enable auto resume when browser window gains focus",
+      "message": "استئناف الفيديو عند حصول المتصفح على التركيز"
+   },
+   "githubSponsors": {
+      "description": "Link text for GitHub Sponsors",
+      "message": "GitHub Sponsors"
+   },
+   "hotkeys": {
+      "description": "Hotkeys section header",
+      "message": "مفاتيح الاختصار"
+   },
+   "hotkeysDescription": {
+      "description": "Description text for hotkeys section",
+      "message": "يمكنك تكوين مفاتيح الاختصار في قائمة الإضافات"
+   },
+   "lockpause": {
+      "description": "Enable auto pause when computer is locked",
+      "message": "إيقاف الفيديو مؤقتًا عند قفل الكمبيوتر"
+   },
+   "lockresume": {
+      "description": "Enable auto resume when computer is unlocked",
+      "message": "استئناف الفيديو عند إلغاء قفل الكمبيوتر"
+   },
+   "madeWithLove": {
+      "description": "Footer text",
+      "message": "صنع بـ ♥ بواسطة"
+   },
+   "manualPause": {
+      "description": "Manual pause disables auto resume",
+      "message": "منع الاستئناف التلقائي بعد الإيقاف المؤقت اليدوي"
+   },
+   "muteVideo": {
+      "description": "Auto-translated",
+      "message": "كتم صوت الفيديو بدلاً من الإيقاف المؤقت"
+   },
+   "pauseDelay": {
+      "description": "Label for pause delay input",
+      "message": "تأخير الإيقاف المؤقت"
+   },
+   "pipTitle": {
+      "description": "Title text for the PiP button",
+      "message": "تبديل صورة داخل صورة"
+   },
+   "resumeDelay": {
+      "description": "Label for resume delay input",
+      "message": "تأخير الاستئناف"
+   },
+   "scrollpause": {
+      "description": "Enable auto pause when video is scrolled out of viewport",
+      "message": "إيقاف الفيديو مؤقتًا عند التمرير خارج العرض"
+   },
+   "settings": {
+      "description": "Settings section header",
+      "message": "الإعدادات"
+   },
+   "showPipButton": {
+      "description": "Label for PiP button checkbox",
+      "message": "إظهار زر صورة داخل صورة"
+   },
+   "supportOnPatreon": {
+      "description": "Link text for Patreon support",
+      "message": "ادعمنا على Patreon"
+   },
+   "viewSourceOnGitHub": {
+      "description": "Link text for GitHub repository",
+      "message": "عرض المصدر على GitHub"
+   }
+}

@@ -1,0 +1,170 @@
+{
+   "advancedSettings": {
+      "description": "Advanced settings section header",
+      "message": "Paramètres avancés"
+   },
+   "audioFading": {
+      "description": "Label for audio fading checkbox",
+      "message": "Fondu audio"
+   },
+   "autopause": {
+      "description": "Enable auto pause when switching tabs",
+      "message": "Mettre en pause lors du changement d'onglet"
+   },
+   "autoresume": {
+      "description": "Enable auto resume when returning to tab",
+      "message": "Reprendre la vidéo lors du retour à l'onglet"
+   },
+   "commandSpeedDown": {
+      "description": "Auto-translated",
+      "message": "Diminuer la vitesse de lecture"
+   },
+   "commandSpeedReset": {
+      "description": "Auto-translated",
+      "message": "Réinitialiser la vitesse de lecture"
+   },
+   "commandSpeedUp": {
+      "description": "Auto-translated",
+      "message": "Augmenter la vitesse de lecture"
+   },
+   "commandToggleExtension": {
+      "description": "Command description for toggling extension",
+      "message": "Activer/désactiver l'extension"
+   },
+   "commandToggleMute": {
+      "description": "Command description for toggling mute",
+      "message": "Basculer muet"
+   },
+   "commandTogglePlay": {
+      "description": "Command description for toggling play/pause",
+      "message": "Basculer lecture/pause"
+   },
+   "commandToggleTab": {
+      "description": "Command description for toggling on active tab",
+      "message": "Activer/désactiver sur l'onglet actif"
+   },
+   "cursorTracking": {
+      "description": "Enable cursor tracking to pause when cursor leaves window",
+      "message": "Mettre en pause lorsque le curseur quitte la fenêtre"
+   },
+   "debugMode": {
+      "description": "Enable debug mode",
+      "message": "Afficher les messages de débogage dans la console"
+   },
+   "delays": {
+      "description": "Label for delays section",
+      "message": "Délais (ms)"
+   },
+   "disableOnFullscreen": {
+      "description": "Disable extension when video is in fullscreen mode",
+      "message": "Désactiver en plein écran"
+   },
+   "disabled": {
+      "description": "Disable extension completely",
+      "message": "Désactiver l'extension complètement"
+   },
+   "disabledTabs": {
+      "description": "Disable extension for the current tab",
+      "message": "Désactiver l'extension pour l'onglet actuel"
+   },
+   "domainExclusions": {
+      "description": "Label for domain exclusions section",
+      "message": "Exclusions de domaine"
+   },
+   "domainExclusionsDescription": {
+      "description": "Description for domain exclusions textarea",
+      "message": "Entrez les domaines à exclure (un par ligne) :"
+   },
+   "domainInclusionsDescription": {
+      "description": "Auto-translated",
+      "message": "Entrez les domaines à inclure (un par ligne):"
+   },
+   "domainSettings": {
+      "description": "Auto-translated",
+      "message": "Paramètres de domaine"
+   },
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "Arrête plusieurs services vidéo lors du changement d'onglet et reprend lors du focus"
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "Video Auto Pause"
+   },
+   "fadeDuration": {
+      "description": "Label for fade duration input",
+      "message": "Durée du fondu (ms)"
+   },
+   "focuspause": {
+      "description": "Enable auto pause when browser window loses focus",
+      "message": "Mettre en pause lorsque le navigateur perd le focus"
+   },
+   "focusresume": {
+      "description": "Enable auto resume when browser window gains focus",
+      "message": "Reprendre lorsque le navigateur gagne le focus"
+   },
+   "githubSponsors": {
+      "description": "Link text for GitHub Sponsors",
+      "message": "GitHub Sponsors"
+   },
+   "hotkeys": {
+      "description": "Hotkeys section header",
+      "message": "Raccourcis clavier"
+   },
+   "hotkeysDescription": {
+      "description": "Description text for hotkeys section",
+      "message": "Vous pouvez configurer les raccourcis dans le menu Extensions"
+   },
+   "lockpause": {
+      "description": "Enable auto pause when computer is locked",
+      "message": "Mettre en pause lorsque l'ordinateur est verrouillé"
+   },
+   "lockresume": {
+      "description": "Enable auto resume when computer is unlocked",
+      "message": "Reprendre lorsque l'ordinateur est déverrouillé"
+   },
+   "madeWithLove": {
+      "description": "Footer text",
+      "message": "Fait avec ♥ par"
+   },
+   "manualPause": {
+      "description": "Manual pause disables auto resume",
+      "message": "Empêcher la reprise auto après une pause manuelle"
+   },
+   "muteVideo": {
+      "description": "Auto-translated",
+      "message": "Couper le son de la vidéo au lieu de mettre en pause"
+   },
+   "pauseDelay": {
+      "description": "Label for pause delay input",
+      "message": "Délai de pause"
+   },
+   "pipTitle": {
+      "description": "Title text for the PiP button",
+      "message": "Basculer Image dans l'image"
+   },
+   "resumeDelay": {
+      "description": "Label for resume delay input",
+      "message": "Délai de reprise"
+   },
+   "scrollpause": {
+      "description": "Enable auto pause when video is scrolled out of viewport",
+      "message": "Mettre en pause lors du défilement hors de vue"
+   },
+   "settings": {
+      "description": "Settings section header",
+      "message": "Paramètres"
+   },
+   "showPipButton": {
+      "description": "Label for PiP button checkbox",
+      "message": "Afficher le bouton Image dans l'image"
+   },
+   "supportOnPatreon": {
+      "description": "Link text for Patreon support",
+      "message": "Soutenir sur Patreon"
+   },
+   "viewSourceOnGitHub": {
+      "description": "Link text for GitHub repository",
+      "message": "Voir le code source sur GitHub"
+   }
+}

@@ -1,0 +1,162 @@
+{
+   "advancedSettings": {
+      "description": "Advanced settings section header",
+      "message": "Täpsemad seaded"
+   },
+   "audioFading": {
+      "description": "Label for audio fading checkbox",
+      "message": "Heli hajumine"
+   },
+   "autopause": {
+      "description": "Enable auto pause when switching tabs",
+      "message": "Peata video vahekaardi vahetamisel"
+   },
+   "autoresume": {
+      "description": "Enable auto resume when returning to tab",
+      "message": "Jätka videot vahekaardile naastes"
+   },
+   "commandSpeedDown": {
+      "description": "Auto-translated",
+      "message": "Vähenda taasesituse kiirust"
+   },
+   "commandSpeedReset": {
+      "description": "Command description for resetting playback speed",
+      "message": "Reset playback speed"
+   },
+   "commandSpeedUp": {
+      "description": "Auto-translated",
+      "message": "Suurenda taasesituse kiirust"
+   },
+   "commandToggleExtension": {
+      "description": "Command description for toggling extension",
+      "message": "Luba/keela laiendus"
+   },
+   "commandToggleMute": {
+      "description": "Command description for toggling mute",
+      "message": "Lülita vaigistus"
+   },
+   "commandTogglePlay": {
+      "description": "Command description for toggling play/pause",
+      "message": "Lülita esitus/paus"
+   },
+   "commandToggleTab": {
+      "description": "Command description for toggling on active tab",
+      "message": "Luba/keela aktiivsel vahekaardil"
+   },
+   "cursorTracking": {
+      "description": "Enable cursor tracking to pause when cursor leaves window",
+      "message": "Peata, kui kursor lahkub brauseri aknast"
+   },
+   "debugMode": {
+      "description": "Enable debug mode",
+      "message": "Kuva silumisteated konsoolis"
+   },
+   "delays": {
+      "description": "Label for delays section",
+      "message": "Viivitused (ms)"
+   },
+   "disableOnFullscreen": {
+      "description": "Disable extension when video is in fullscreen mode",
+      "message": "Keela täisekraanil"
+   },
+   "disabled": {
+      "description": "Disable extension completely",
+      "message": "Keela laiendus täielikult"
+   },
+   "disabledTabs": {
+      "description": "Disable extension for the current tab",
+      "message": "Keela laiendus praegusel vahekaardil"
+   },
+   "domainExclusions": {
+      "description": "Label for domain exclusions section",
+      "message": "Domeeni erandid"
+   },
+   "domainExclusionsDescription": {
+      "description": "Description for domain exclusions textarea",
+      "message": "Sisestage välistatavad domeenid (üks rea kohta):"
+   },
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "Peatab mitu videoteenust vahekaardi fookuse kaotamisel ja jätkab fookuse taastumisel"
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "Video Automaatne Paus"
+   },
+   "fadeDuration": {
+      "description": "Label for fade duration input",
+      "message": "Hajutuse kestus (ms)"
+   },
+   "focuspause": {
+      "description": "Enable auto pause when browser window loses focus",
+      "message": "Peata video, kui brauser kaotab fookuse"
+   },
+   "focusresume": {
+      "description": "Enable auto resume when browser window gains focus",
+      "message": "Jätka videot, kui brauser saab fookuse"
+   },
+   "githubSponsors": {
+      "description": "Link text for GitHub Sponsors",
+      "message": "GitHub Sponsors"
+   },
+   "hotkeys": {
+      "description": "Hotkeys section header",
+      "message": "Kiirklahvid"
+   },
+   "hotkeysDescription": {
+      "description": "Description text for hotkeys section",
+      "message": "Saate konfigureerida kiirklahve laienduste menüüs"
+   },
+   "lockpause": {
+      "description": "Enable auto pause when computer is locked",
+      "message": "Peata video arvuti lukustamisel"
+   },
+   "lockresume": {
+      "description": "Enable auto resume when computer is unlocked",
+      "message": "Jätka videot arvuti avamisel"
+   },
+   "madeWithLove": {
+      "description": "Footer text",
+      "message": "Tehtud ♥-ga autori"
+   },
+   "manualPause": {
+      "description": "Manual pause disables auto resume",
+      "message": "Väldi automaatset jätkamist pärast käsitsi peatamist"
+   },
+   "muteVideo": {
+      "description": "Auto-translated",
+      "message": "Vaigista video peatamise asemel"
+   },
+   "pauseDelay": {
+      "description": "Label for pause delay input",
+      "message": "Pausi viivitus"
+   },
+   "pipTitle": {
+      "description": "Title text for the PiP button",
+      "message": "Lülita pilt-pildis"
+   },
+   "resumeDelay": {
+      "description": "Label for resume delay input",
+      "message": "Jätkamise viivitus"
+   },
+   "scrollpause": {
+      "description": "Enable auto pause when video is scrolled out of viewport",
+      "message": "Peata video vaateväljast väljakerimisel"
+   },
+   "settings": {
+      "description": "Settings section header",
+      "message": "Seaded"
+   },
+   "showPipButton": {
+      "description": "Label for PiP button checkbox",
+      "message": "Kuva pilt-pildis nupp"
+   },
+   "supportOnPatreon": {
+      "description": "Link text for Patreon support",
+      "message": "Toeta Patreon'is"
+   },
+   "viewSourceOnGitHub": {
+      "description": "Link text for GitHub repository",
+      "message": "Vaata lähtekoodi GitHubis"
+   }
+}

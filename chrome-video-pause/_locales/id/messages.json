@@ -1,0 +1,162 @@
+{
+   "advancedSettings": {
+      "description": "Advanced settings section header",
+      "message": "Pengaturan Lanjutan"
+   },
+   "audioFading": {
+      "description": "Label for audio fading checkbox",
+      "message": "Pudar Audio"
+   },
+   "autopause": {
+      "description": "Enable auto pause when switching tabs",
+      "message": "Jeda video saat berpindah tab"
+   },
+   "autoresume": {
+      "description": "Enable auto resume when returning to tab",
+      "message": "Lanjutkan video saat kembali ke tab"
+   },
+   "commandSpeedDown": {
+      "description": "Auto-translated",
+      "message": "Kurangi kecepatan pemutaran"
+   },
+   "commandSpeedReset": {
+      "description": "Command description for resetting playback speed",
+      "message": "Reset playback speed"
+   },
+   "commandSpeedUp": {
+      "description": "Auto-translated",
+      "message": "Tingkatkan kecepatan pemutaran"
+   },
+   "commandToggleExtension": {
+      "description": "Command description for toggling extension",
+      "message": "Aktifkan/nonaktifkan ekstensi"
+   },
+   "commandToggleMute": {
+      "description": "Command description for toggling mute",
+      "message": "Bisukan/suarakan"
+   },
+   "commandTogglePlay": {
+      "description": "Command description for toggling play/pause",
+      "message": "Putar/jeda"
+   },
+   "commandToggleTab": {
+      "description": "Command description for toggling on active tab",
+      "message": "Aktifkan/nonaktifkan pada tab aktif"
+   },
+   "cursorTracking": {
+      "description": "Enable cursor tracking to pause when cursor leaves window",
+      "message": "Jeda saat kursor meninggalkan jendela browser"
+   },
+   "debugMode": {
+      "description": "Enable debug mode",
+      "message": "Tampilkan pesan debug di konsol"
+   },
+   "delays": {
+      "description": "Label for delays section",
+      "message": "Penundaan (ms)"
+   },
+   "disableOnFullscreen": {
+      "description": "Disable extension when video is in fullscreen mode",
+      "message": "Nonaktifkan saat video layar penuh"
+   },
+   "disabled": {
+      "description": "Disable extension completely",
+      "message": "Nonaktifkan ekstensi sepenuhnya"
+   },
+   "disabledTabs": {
+      "description": "Disable extension for the current tab",
+      "message": "Nonaktifkan ekstensi untuk tab saat ini"
+   },
+   "domainExclusions": {
+      "description": "Label for domain exclusions section",
+      "message": "Pengecualian Domain"
+   },
+   "domainExclusionsDescription": {
+      "description": "Description for domain exclusions textarea",
+      "message": "Masukkan domain yang akan dikecualikan (satu per baris):"
+   },
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "Menghentikan beberapa layanan video saat tab tidak fokus dan melanjutkan saat fokus"
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "Jeda Video Otomatis"
+   },
+   "fadeDuration": {
+      "description": "Label for fade duration input",
+      "message": "Durasi Pudar (ms)"
+   },
+   "focuspause": {
+      "description": "Enable auto pause when browser window loses focus",
+      "message": "Jeda video saat browser kehilangan fokus"
+   },
+   "focusresume": {
+      "description": "Enable auto resume when browser window gains focus",
+      "message": "Lanjutkan video saat browser mendapat fokus"
+   },
+   "githubSponsors": {
+      "description": "Link text for GitHub Sponsors",
+      "message": "GitHub Sponsors"
+   },
+   "hotkeys": {
+      "description": "Hotkeys section header",
+      "message": "Tombol Pintas"
+   },
+   "hotkeysDescription": {
+      "description": "Description text for hotkeys section",
+      "message": "Anda dapat mengonfigurasi tombol pintas di menu Ekstensi"
+   },
+   "lockpause": {
+      "description": "Enable auto pause when computer is locked",
+      "message": "Jeda video saat komputer dikunci"
+   },
+   "lockresume": {
+      "description": "Enable auto resume when computer is unlocked",
+      "message": "Lanjutkan video saat komputer dibuka"
+   },
+   "madeWithLove": {
+      "description": "Footer text",
+      "message": "Dibuat dengan ♥ oleh"
+   },
+   "manualPause": {
+      "description": "Manual pause disables auto resume",
+      "message": "Cegah lanjut otomatis setelah jeda manual"
+   },
+   "muteVideo": {
+      "description": "Auto-translated",
+      "message": "Bisukan video alih-alih menjeda"
+   },
+   "pauseDelay": {
+      "description": "Label for pause delay input",
+      "message": "Penundaan Jeda"
+   },
+   "pipTitle": {
+      "description": "Title text for the PiP button",
+      "message": "Alihkan Gambar-dalam-Gambar"
+   },
+   "resumeDelay": {
+      "description": "Label for resume delay input",
+      "message": "Penundaan Lanjut"
+   },
+   "scrollpause": {
+      "description": "Enable auto pause when video is scrolled out of viewport",
+      "message": "Jeda video saat digulir keluar tampilan"
+   },
+   "settings": {
+      "description": "Settings section header",
+      "message": "Pengaturan"
+   },
+   "showPipButton": {
+      "description": "Label for PiP button checkbox",
+      "message": "Tampilkan Tombol Gambar-dalam-Gambar"
+   },
+   "supportOnPatreon": {
+      "description": "Link text for Patreon support",
+      "message": "Dukung di Patreon"
+   },
+   "viewSourceOnGitHub": {
+      "description": "Link text for GitHub repository",
+      "message": "Lihat Sumber di GitHub"
+   }
+}

@@ -1,0 +1,162 @@
+{
+   "advancedSettings": {
+      "description": "Advanced settings section header",
+      "message": "Advanced Settings"
+   },
+   "audioFading": {
+      "description": "Label for audio fading checkbox",
+      "message": "Audio Fading"
+   },
+   "autopause": {
+      "description": "Enable auto pause when switching tabs",
+      "message": "Pause video when switching tabs"
+   },
+   "autoresume": {
+      "description": "Enable auto resume when returning to tab",
+      "message": "Resume video when returning to tab"
+   },
+   "commandSpeedDown": {
+      "description": "Command description for decreasing playback speed",
+      "message": "Decrease playback speed"
+   },
+   "commandSpeedReset": {
+      "description": "Command description for resetting playback speed",
+      "message": "Reset playback speed"
+   },
+   "commandSpeedUp": {
+      "description": "Command description for increasing playback speed",
+      "message": "Increase playback speed"
+   },
+   "commandToggleExtension": {
+      "description": "Command description for toggling extension",
+      "message": "Disable/enable extension"
+   },
+   "commandToggleMute": {
+      "description": "Command description for toggling mute",
+      "message": "Toggle mute"
+   },
+   "commandTogglePlay": {
+      "description": "Command description for toggling play/pause",
+      "message": "Toggle play/pause"
+   },
+   "commandToggleTab": {
+      "description": "Command description for toggling on active tab",
+      "message": "Disable/enable on active tab"
+   },
+   "cursorTracking": {
+      "description": "Enable cursor tracking to pause when cursor leaves window",
+      "message": "Pause when cursor leaves browser window"
+   },
+   "debugMode": {
+      "description": "Enable debug mode",
+      "message": "Show debug messages in console"
+   },
+   "delays": {
+      "description": "Label for delays section",
+      "message": "Delays (ms)"
+   },
+   "disableOnFullscreen": {
+      "description": "Disable extension when video is in fullscreen mode",
+      "message": "Disable when video is fullscreen"
+   },
+   "disabled": {
+      "description": "Disable extension completely",
+      "message": "Disable extension completely"
+   },
+   "disabledTabs": {
+      "description": "Disable extension for the current tab",
+      "message": "Disable extension for current tab"
+   },
+   "domainExclusions": {
+      "description": "Label for domain exclusions section",
+      "message": "Domain Exclusions"
+   },
+   "domainExclusionsDescription": {
+      "description": "Description for domain exclusions textarea",
+      "message": "Enter domains to exclude (one per line):"
+   },
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "Stops multiple video services on tab unfocus and continues on focus"
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "VidAutPause"
+   },
+   "fadeDuration": {
+      "description": "Label for fade duration input",
+      "message": "Fade Duration (ms)"
+   },
+   "focuspause": {
+      "description": "Enable auto pause when browser window loses focus",
+      "message": "Pause video when browser loses focus"
+   },
+   "focusresume": {
+      "description": "Enable auto resume when browser window gains focus",
+      "message": "Resume video when browser gains focus"
+   },
+   "githubSponsors": {
+      "description": "Link text for GitHub Sponsors",
+      "message": "GitHub Sponsors"
+   },
+   "hotkeys": {
+      "description": "Hotkeys section header",
+      "message": "Hotkeys"
+   },
+   "hotkeysDescription": {
+      "description": "Description text for hotkeys section",
+      "message": "You can configure hotkeys in the Extensions menu"
+   },
+   "lockpause": {
+      "description": "Enable auto pause when computer is locked",
+      "message": "Pause video when computer is locked"
+   },
+   "lockresume": {
+      "description": "Enable auto resume when computer is unlocked",
+      "message": "Resume video when computer is unlocked"
+   },
+   "madeWithLove": {
+      "description": "Footer text",
+      "message": "Made with ♥ by"
+   },
+   "manualPause": {
+      "description": "Manual pause disables auto resume",
+      "message": "Prevent auto-resume after manual pause"
+   },
+   "muteVideo": {
+      "description": "Enable muting video instead of pausing",
+      "message": "Mute video instead of pausing"
+   },
+   "pauseDelay": {
+      "description": "Label for pause delay input",
+      "message": "Pause Delay"
+   },
+   "pipTitle": {
+      "description": "Title text for the PiP button",
+      "message": "Toggle Picture-in-Picture"
+   },
+   "resumeDelay": {
+      "description": "Label for resume delay input",
+      "message": "Resume Delay"
+   },
+   "scrollpause": {
+      "description": "Enable auto pause when video is scrolled out of viewport",
+      "message": "Pause video when scrolled out of view"
+   },
+   "settings": {
+      "description": "Settings section header",
+      "message": "Settings"
+   },
+   "showPipButton": {
+      "description": "Label for PiP button checkbox",
+      "message": "Show Picture-in-Picture Button"
+   },
+   "supportOnPatreon": {
+      "description": "Link text for Patreon support",
+      "message": "Support on Patreon"
+   },
+   "viewSourceOnGitHub": {
+      "description": "Link text for GitHub repository",
+      "message": "View Source on GitHub"
+   }
+}

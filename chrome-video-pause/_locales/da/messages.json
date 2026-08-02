@@ -1,0 +1,162 @@
+{
+   "advancedSettings": {
+      "description": "Advanced settings section header",
+      "message": "Avancerede indstillinger"
+   },
+   "audioFading": {
+      "description": "Label for audio fading checkbox",
+      "message": "Lydfading"
+   },
+   "autopause": {
+      "description": "Enable auto pause when switching tabs",
+      "message": "Pause video ved skift af fane"
+   },
+   "autoresume": {
+      "description": "Enable auto resume when returning to tab",
+      "message": "Genoptag video, når du vender tilbage til fanen"
+   },
+   "commandSpeedDown": {
+      "description": "Auto-translated",
+      "message": "Sænk afspilningshastighed"
+   },
+   "commandSpeedReset": {
+      "description": "Command description for resetting playback speed",
+      "message": "Reset playback speed"
+   },
+   "commandSpeedUp": {
+      "description": "Auto-translated",
+      "message": "Øg afspilningshastighed"
+   },
+   "commandToggleExtension": {
+      "description": "Command description for toggling extension",
+      "message": "Aktiver/deaktiver udvidelse"
+   },
+   "commandToggleMute": {
+      "description": "Command description for toggling mute",
+      "message": "Skift lydløs"
+   },
+   "commandTogglePlay": {
+      "description": "Command description for toggling play/pause",
+      "message": "Skift afspil/pause"
+   },
+   "commandToggleTab": {
+      "description": "Command description for toggling on active tab",
+      "message": "Aktiver/deaktiver på aktiv fane"
+   },
+   "cursorTracking": {
+      "description": "Enable cursor tracking to pause when cursor leaves window",
+      "message": "Pause, når markøren forlader browservinduet"
+   },
+   "debugMode": {
+      "description": "Enable debug mode",
+      "message": "Vis fejlfindingsmeddelelser i konsollen"
+   },
+   "delays": {
+      "description": "Label for delays section",
+      "message": "Forsinkelser (ms)"
+   },
+   "disableOnFullscreen": {
+      "description": "Disable extension when video is in fullscreen mode",
+      "message": "Deaktiver ved fuld skærm"
+   },
+   "disabled": {
+      "description": "Disable extension completely",
+      "message": "Deaktiver udvidelsen helt"
+   },
+   "disabledTabs": {
+      "description": "Disable extension for the current tab",
+      "message": "Deaktiver udvidelse for nuværende fane"
+   },
+   "domainExclusions": {
+      "description": "Label for domain exclusions section",
+      "message": "Domæneundtagelser"
+   },
+   "domainExclusionsDescription": {
+      "description": "Description for domain exclusions textarea",
+      "message": "Indtast domæner, der skal udelukkes (et pr. linje):"
+   },
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "Stopper flere videotjenester, når fanen mister fokus, og genoptager ved fokus"
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "Video Auto Pause"
+   },
+   "fadeDuration": {
+      "description": "Label for fade duration input",
+      "message": "Fading varighed (ms)"
+   },
+   "focuspause": {
+      "description": "Enable auto pause when browser window loses focus",
+      "message": "Pause video, når browseren mister fokus"
+   },
+   "focusresume": {
+      "description": "Enable auto resume when browser window gains focus",
+      "message": "Genoptag video, når browseren får fokus"
+   },
+   "githubSponsors": {
+      "description": "Link text for GitHub Sponsors",
+      "message": "GitHub Sponsors"
+   },
+   "hotkeys": {
+      "description": "Hotkeys section header",
+      "message": "Genvejstaster"
+   },
+   "hotkeysDescription": {
+      "description": "Description text for hotkeys section",
+      "message": "Du kan konfigurere genvejstaster i menuen Udvidelser"
+   },
+   "lockpause": {
+      "description": "Enable auto pause when computer is locked",
+      "message": "Pause video, når computeren låses"
+   },
+   "lockresume": {
+      "description": "Enable auto resume when computer is unlocked",
+      "message": "Genoptag video, når computeren låses op"
+   },
+   "madeWithLove": {
+      "description": "Footer text",
+      "message": "Lavet med ♥ af"
+   },
+   "manualPause": {
+      "description": "Manual pause disables auto resume",
+      "message": "Undgå automatisk genoptagelse efter manuel pause"
+   },
+   "muteVideo": {
+      "description": "Auto-translated",
+      "message": "Slå lyd fra video i stedet for at pause"
+   },
+   "pauseDelay": {
+      "description": "Label for pause delay input",
+      "message": "Pauseforsinkelse"
+   },
+   "pipTitle": {
+      "description": "Title text for the PiP button",
+      "message": "Skift billede-i-billede"
+   },
+   "resumeDelay": {
+      "description": "Label for resume delay input",
+      "message": "Genoptag forsinkelse"
+   },
+   "scrollpause": {
+      "description": "Enable auto pause when video is scrolled out of viewport",
+      "message": "Pause video, når den rulles ud af syne"
+   },
+   "settings": {
+      "description": "Settings section header",
+      "message": "Indstillinger"
+   },
+   "showPipButton": {
+      "description": "Label for PiP button checkbox",
+      "message": "Vis Billede-i-billede-knap"
+   },
+   "supportOnPatreon": {
+      "description": "Link text for Patreon support",
+      "message": "Støt på Patreon"
+   },
+   "viewSourceOnGitHub": {
+      "description": "Link text for GitHub repository",
+      "message": "Se kildekode på GitHub"
+   }
+}

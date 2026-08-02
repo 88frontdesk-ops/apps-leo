@@ -1,0 +1,162 @@
+{
+   "advancedSettings": {
+      "description": "Advanced settings section header",
+      "message": "Gelişmiş Ayarlar"
+   },
+   "audioFading": {
+      "description": "Label for audio fading checkbox",
+      "message": "Ses Azalması"
+   },
+   "autopause": {
+      "description": "Enable auto pause when switching tabs",
+      "message": "Sekme değiştirildiğinde videoyu duraklat"
+   },
+   "autoresume": {
+      "description": "Enable auto resume when returning to tab",
+      "message": "Sekmeye dönüldüğünde videoyu devam ettir"
+   },
+   "commandSpeedDown": {
+      "description": "Auto-translated",
+      "message": "Oynatma hızını azalt"
+   },
+   "commandSpeedReset": {
+      "description": "Command description for resetting playback speed",
+      "message": "Reset playback speed"
+   },
+   "commandSpeedUp": {
+      "description": "Auto-translated",
+      "message": "Oynatma hızını artır"
+   },
+   "commandToggleExtension": {
+      "description": "Command description for toggling extension",
+      "message": "Uzantıyı etkinleştir/devre dışı bırak"
+   },
+   "commandToggleMute": {
+      "description": "Command description for toggling mute",
+      "message": "Sesi aç/kapat"
+   },
+   "commandTogglePlay": {
+      "description": "Command description for toggling play/pause",
+      "message": "Oynat/Duraklat geçişi"
+   },
+   "commandToggleTab": {
+      "description": "Command description for toggling on active tab",
+      "message": "Aktif sekmede etkinleştir/devre dışı bırak"
+   },
+   "cursorTracking": {
+      "description": "Enable cursor tracking to pause when cursor leaves window",
+      "message": "İmleç tarayıcı penceresinden çıktığında duraklat"
+   },
+   "debugMode": {
+      "description": "Enable debug mode",
+      "message": "Konsolda hata ayıklama mesajlarını göster"
+   },
+   "delays": {
+      "description": "Label for delays section",
+      "message": "Gecikmeler (ms)"
+   },
+   "disableOnFullscreen": {
+      "description": "Disable extension when video is in fullscreen mode",
+      "message": "Video tam ekrandayken devre dışı bırak"
+   },
+   "disabled": {
+      "description": "Disable extension completely",
+      "message": "Uzantıyı tamamen devre dışı bırak"
+   },
+   "disabledTabs": {
+      "description": "Disable extension for the current tab",
+      "message": "Mevcut sekme için uzantıyı devre dışı bırak"
+   },
+   "domainExclusions": {
+      "description": "Label for domain exclusions section",
+      "message": "Alan Adı Hariç Tutmaları"
+   },
+   "domainExclusionsDescription": {
+      "description": "Description for domain exclusions textarea",
+      "message": "Hariç tutulacak alan adlarını girin (satır başına bir tane):"
+   },
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "Sekme odağını kaybettiğinde birden fazla video hizmetini durdurur ve odaklandığında devam ettirir"
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "Video Auto Pause"
+   },
+   "fadeDuration": {
+      "description": "Label for fade duration input",
+      "message": "Azalma Süresi (ms)"
+   },
+   "focuspause": {
+      "description": "Enable auto pause when browser window loses focus",
+      "message": "Tarayıcı odağı kaybettiğinde videoyu duraklat"
+   },
+   "focusresume": {
+      "description": "Enable auto resume when browser window gains focus",
+      "message": "Tarayıcı odağı aldığında videoyu devam ettir"
+   },
+   "githubSponsors": {
+      "description": "Link text for GitHub Sponsors",
+      "message": "GitHub Sponsors"
+   },
+   "hotkeys": {
+      "description": "Hotkeys section header",
+      "message": "Kısayol Tuşları"
+   },
+   "hotkeysDescription": {
+      "description": "Description text for hotkeys section",
+      "message": "Uzantılar menüsünde kısayol tuşlarını yapılandırabilirsiniz"
+   },
+   "lockpause": {
+      "description": "Enable auto pause when computer is locked",
+      "message": "Bilgisayar kilitlendiğinde videoyu duraklat"
+   },
+   "lockresume": {
+      "description": "Enable auto resume when computer is unlocked",
+      "message": "Bilgisayar kilidi açıldığında videoyu devam ettir"
+   },
+   "madeWithLove": {
+      "description": "Footer text",
+      "message": "♥ ile yapıldı"
+   },
+   "manualPause": {
+      "description": "Manual pause disables auto resume",
+      "message": "Manuel duraklatmadan sonra otomatik devam etmeyi önle"
+   },
+   "muteVideo": {
+      "description": "Auto-translated",
+      "message": "Duraklatmak yerine videonun sesini kapat"
+   },
+   "pauseDelay": {
+      "description": "Label for pause delay input",
+      "message": "Duraklatma Gecikmesi"
+   },
+   "pipTitle": {
+      "description": "Title text for the PiP button",
+      "message": "Resim içinde Resim'i Aç/Kapat"
+   },
+   "resumeDelay": {
+      "description": "Label for resume delay input",
+      "message": "Devam Etme Gecikmesi"
+   },
+   "scrollpause": {
+      "description": "Enable auto pause when video is scrolled out of viewport",
+      "message": "Görünüm dışına kaydırıldığında videoyu duraklat"
+   },
+   "settings": {
+      "description": "Settings section header",
+      "message": "Ayarlar"
+   },
+   "showPipButton": {
+      "description": "Label for PiP button checkbox",
+      "message": "Resim içinde Resim Düğmesini Göster"
+   },
+   "supportOnPatreon": {
+      "description": "Link text for Patreon support",
+      "message": "Patreon'da Destekle"
+   },
+   "viewSourceOnGitHub": {
+      "description": "Link text for GitHub repository",
+      "message": "GitHub'da Kaynağı Görüntüle"
+   }
+}

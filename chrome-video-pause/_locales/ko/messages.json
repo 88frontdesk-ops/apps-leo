@@ -1,0 +1,170 @@
+{
+   "advancedSettings": {
+      "description": "Advanced settings section header",
+      "message": "고급 설정"
+   },
+   "audioFading": {
+      "description": "Label for audio fading checkbox",
+      "message": "오디오 페이딩"
+   },
+   "autopause": {
+      "description": "Enable auto pause when switching tabs",
+      "message": "탭 전환 시 동영상 일시중지"
+   },
+   "autoresume": {
+      "description": "Enable auto resume when returning to tab",
+      "message": "탭으로 돌아올 때 동영상 다시 시작"
+   },
+   "commandSpeedDown": {
+      "description": "Auto-translated",
+      "message": "재생 속도 감소"
+   },
+   "commandSpeedReset": {
+      "description": "Auto-translated",
+      "message": "재생 속도 초기화"
+   },
+   "commandSpeedUp": {
+      "description": "Auto-translated",
+      "message": "재생 속도 증가"
+   },
+   "commandToggleExtension": {
+      "description": "Command description for toggling extension",
+      "message": "확장 프로그램 사용/사용 안 함"
+   },
+   "commandToggleMute": {
+      "description": "Command description for toggling mute",
+      "message": "음소거 전환"
+   },
+   "commandTogglePlay": {
+      "description": "Command description for toggling play/pause",
+      "message": "재생/일시중지 전환"
+   },
+   "commandToggleTab": {
+      "description": "Command description for toggling on active tab",
+      "message": "활성 탭에서 사용/사용 안 함"
+   },
+   "cursorTracking": {
+      "description": "Enable cursor tracking to pause when cursor leaves window",
+      "message": "커서가 브라우저 창을 벗어나면 일시중지"
+   },
+   "debugMode": {
+      "description": "Enable debug mode",
+      "message": "콘솔에 디버그 메시지 표시"
+   },
+   "delays": {
+      "description": "Label for delays section",
+      "message": "지연 (ms)"
+   },
+   "disableOnFullscreen": {
+      "description": "Disable extension when video is in fullscreen mode",
+      "message": "전체 화면 시 사용 안 함"
+   },
+   "disabled": {
+      "description": "Disable extension completely",
+      "message": "확장 프로그램 완전히 사용 안 함"
+   },
+   "disabledTabs": {
+      "description": "Disable extension for the current tab",
+      "message": "현재 탭에서 확장 프로그램 사용 안 함"
+   },
+   "domainExclusions": {
+      "description": "Label for domain exclusions section",
+      "message": "도메인 제외"
+   },
+   "domainExclusionsDescription": {
+      "description": "Description for domain exclusions textarea",
+      "message": "제외할 도메인 입력 (한 줄에 하나씩):"
+   },
+   "domainInclusionsDescription": {
+      "description": "Auto-translated",
+      "message": "포함할 도메인 입력 (줄당 하나):"
+   },
+   "domainSettings": {
+      "description": "Auto-translated",
+      "message": "도메인 설정"
+   },
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "탭 포커스를 잃었을 때 동영상 서비스를 중지하고 포커스 시 다시 시작합니다"
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "동영상 자동 일시중지"
+   },
+   "fadeDuration": {
+      "description": "Label for fade duration input",
+      "message": "페이드 지속 시간 (ms)"
+   },
+   "focuspause": {
+      "description": "Enable auto pause when browser window loses focus",
+      "message": "브라우저가 포커스를 잃으면 동영상 일시중지"
+   },
+   "focusresume": {
+      "description": "Enable auto resume when browser window gains focus",
+      "message": "브라우저가 포커스를 얻으면 동영상 다시 시작"
+   },
+   "githubSponsors": {
+      "description": "Link text for GitHub Sponsors",
+      "message": "GitHub Sponsors"
+   },
+   "hotkeys": {
+      "description": "Hotkeys section header",
+      "message": "단축키"
+   },
+   "hotkeysDescription": {
+      "description": "Description text for hotkeys section",
+      "message": "확장 프로그램 메뉴에서 단축키를 구성할 수 있습니다"
+   },
+   "lockpause": {
+      "description": "Enable auto pause when computer is locked",
+      "message": "컴퓨터 잠금 시 동영상 일시중지"
+   },
+   "lockresume": {
+      "description": "Enable auto resume when computer is unlocked",
+      "message": "컴퓨터 잠금 해제 시 동영상 다시 시작"
+   },
+   "madeWithLove": {
+      "description": "Footer text",
+      "message": "♥으로 제작됨"
+   },
+   "manualPause": {
+      "description": "Manual pause disables auto resume",
+      "message": "수동 일시중지 후 자동 다시 시작 방지"
+   },
+   "muteVideo": {
+      "description": "Auto-translated",
+      "message": "일시 중지 대신 비디오 음소거"
+   },
+   "pauseDelay": {
+      "description": "Label for pause delay input",
+      "message": "일시 중지 지연"
+   },
+   "pipTitle": {
+      "description": "Title text for the PiP button",
+      "message": "PIP 전환"
+   },
+   "resumeDelay": {
+      "description": "Label for resume delay input",
+      "message": "재개 지연"
+   },
+   "scrollpause": {
+      "description": "Enable auto pause when video is scrolled out of viewport",
+      "message": "화면 밖으로 스크롤 시 동영상 일시중지"
+   },
+   "settings": {
+      "description": "Settings section header",
+      "message": "설정"
+   },
+   "showPipButton": {
+      "description": "Label for PiP button checkbox",
+      "message": "PIP 버튼 표시"
+   },
+   "supportOnPatreon": {
+      "description": "Link text for Patreon support",
+      "message": "Patreon에서 후원하기"
+   },
+   "viewSourceOnGitHub": {
+      "description": "Link text for GitHub repository",
+      "message": "GitHub에서 소스 보기"
+   }
+}

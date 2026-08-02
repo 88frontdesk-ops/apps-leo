@@ -1,0 +1,170 @@
+{
+   "advancedSettings": {
+      "description": "Advanced settings section header",
+      "message": "Avancerade inställningar"
+   },
+   "audioFading": {
+      "description": "Label for audio fading checkbox",
+      "message": "Ljudtoning"
+   },
+   "autopause": {
+      "description": "Enable auto pause when switching tabs",
+      "message": "Pausa video vid byte av flik"
+   },
+   "autoresume": {
+      "description": "Enable auto resume when returning to tab",
+      "message": "Återuppta video när du återvänder till fliken"
+   },
+   "commandSpeedDown": {
+      "description": "Auto-translated",
+      "message": "Minska uppspelningshastighet"
+   },
+   "commandSpeedReset": {
+      "description": "Auto-translated",
+      "message": "Återställ uppspelningshastighet"
+   },
+   "commandSpeedUp": {
+      "description": "Auto-translated",
+      "message": "Öka uppspelningshastighet"
+   },
+   "commandToggleExtension": {
+      "description": "Command description for toggling extension",
+      "message": "Aktivera/inaktivera tillägg"
+   },
+   "commandToggleMute": {
+      "description": "Command description for toggling mute",
+      "message": "Växla ljudlös"
+   },
+   "commandTogglePlay": {
+      "description": "Command description for toggling play/pause",
+      "message": "Växla spela/pausa"
+   },
+   "commandToggleTab": {
+      "description": "Command description for toggling on active tab",
+      "message": "Aktivera/inaktivera på aktiv flik"
+   },
+   "cursorTracking": {
+      "description": "Enable cursor tracking to pause when cursor leaves window",
+      "message": "Pausa när markören lämnar webbläsarfönstret"
+   },
+   "debugMode": {
+      "description": "Enable debug mode",
+      "message": "Visa debug-meddelanden i konsolen"
+   },
+   "delays": {
+      "description": "Label for delays section",
+      "message": "Fördröjningar (ms)"
+   },
+   "disableOnFullscreen": {
+      "description": "Disable extension when video is in fullscreen mode",
+      "message": "Inaktivera vid helskärmsläge"
+   },
+   "disabled": {
+      "description": "Disable extension completely",
+      "message": "Inaktivera tillägget helt"
+   },
+   "disabledTabs": {
+      "description": "Disable extension for the current tab",
+      "message": "Inaktivera tillägg för nuvarande flik"
+   },
+   "domainExclusions": {
+      "description": "Label for domain exclusions section",
+      "message": "Domänundantag"
+   },
+   "domainExclusionsDescription": {
+      "description": "Description for domain exclusions textarea",
+      "message": "Ange domäner som ska uteslutas (en per rad):"
+   },
+   "domainInclusionsDescription": {
+      "description": "Auto-translated",
+      "message": "Ange domäner att inkludera (en per rad):"
+   },
+   "domainSettings": {
+      "description": "Auto-translated",
+      "message": "Domäninställningar"
+   },
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "Pausar flera videotjänster när fliken tappar fokus och återupptar vid fokus"
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "Video Auto Pause"
+   },
+   "fadeDuration": {
+      "description": "Label for fade duration input",
+      "message": "Toningslängd (ms)"
+   },
+   "focuspause": {
+      "description": "Enable auto pause when browser window loses focus",
+      "message": "Pausa video när webbläsaren tappar fokus"
+   },
+   "focusresume": {
+      "description": "Enable auto resume when browser window gains focus",
+      "message": "Återuppta video när webbläsaren får fokus"
+   },
+   "githubSponsors": {
+      "description": "Link text for GitHub Sponsors",
+      "message": "GitHub Sponsors"
+   },
+   "hotkeys": {
+      "description": "Hotkeys section header",
+      "message": "Kortkommandon"
+   },
+   "hotkeysDescription": {
+      "description": "Description text for hotkeys section",
+      "message": "Du kan konfigurera kortkommandon i menyn Tillägg"
+   },
+   "lockpause": {
+      "description": "Enable auto pause when computer is locked",
+      "message": "Pausa video när datorn låses"
+   },
+   "lockresume": {
+      "description": "Enable auto resume when computer is unlocked",
+      "message": "Återuppta video när datorn låses upp"
+   },
+   "madeWithLove": {
+      "description": "Footer text",
+      "message": "Gjord med ♥ av"
+   },
+   "manualPause": {
+      "description": "Manual pause disables auto resume",
+      "message": "Förhindra automatisk återuppspelning efter manuell paus"
+   },
+   "muteVideo": {
+      "description": "Auto-translated",
+      "message": "Stäng av ljudet på videon istället för att pausa"
+   },
+   "pauseDelay": {
+      "description": "Label for pause delay input",
+      "message": "Pausfördröjning"
+   },
+   "pipTitle": {
+      "description": "Title text for the PiP button",
+      "message": "Växla Bild-i-Bild"
+   },
+   "resumeDelay": {
+      "description": "Label for resume delay input",
+      "message": "Återuppta fördröjning"
+   },
+   "scrollpause": {
+      "description": "Enable auto pause when video is scrolled out of viewport",
+      "message": "Pausa video när den scrollas ur bild"
+   },
+   "settings": {
+      "description": "Settings section header",
+      "message": "Inställningar"
+   },
+   "showPipButton": {
+      "description": "Label for PiP button checkbox",
+      "message": "Visa Bild-i-Bild-knapp"
+   },
+   "supportOnPatreon": {
+      "description": "Link text for Patreon support",
+      "message": "Stöd på Patreon"
+   },
+   "viewSourceOnGitHub": {
+      "description": "Link text for GitHub repository",
+      "message": "Visa källkod på GitHub"
+   }
+}

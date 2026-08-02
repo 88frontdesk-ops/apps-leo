@@ -1,0 +1,73 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "images/icon_disabled_128.png",
+         "16": "images/icon_disabled_16.png",
+         "32": "images/icon_disabled_32.png",
+         "64": "images/icon_disabled_64.png"
+      },
+      "default_popup": "options.html"
+   },
+   "background": {
+      "service_worker": "vap_bs.js"
+   },
+   "commands": {
+      "speed-down": {
+         "description": "__MSG_commandSpeedDown__"
+      },
+      "speed-reset": {
+         "description": "__MSG_commandSpeedReset__"
+      },
+      "speed-up": {
+         "description": "__MSG_commandSpeedUp__"
+      },
+      "toggle-extension": {
+         "description": "__MSG_commandToggleExtension__",
+         "suggested_key": {
+            "default": "Ctrl+Shift+K",
+            "mac": "Command+Shift+K"
+         }
+      },
+      "toggle-play": {
+         "description": "__MSG_commandTogglePlay__",
+         "suggested_key": {
+            "default": "Ctrl+Shift+Space",
+            "mac": "Command+Shift+Space"
+         }
+      },
+      "toggle-tab": {
+         "description": "__MSG_commandToggleTab__",
+         "suggested_key": {
+            "default": "Ctrl+Shift+L",
+            "mac": "Command+Shift+L"
+         }
+      },
+      "toggle_mute": {
+         "description": "__MSG_commandToggleMute__",
+         "suggested_key": {
+            "default": "Ctrl+Shift+O",
+            "mac": "Command+Shift+O"
+         }
+      }
+   },
+   "default_locale": "en",
+   "description": "__MSG_extDescription__",
+   "homepage_url": "https://github.com/drodil/video_auto_pause",
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "images/icon_128.png",
+      "16": "images/icon_16.png",
+      "32": "images/icon_32.png",
+      "64": "images/icon_64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlIk33/QdeWCJ5/nlfudCta5fdOtRNViPjd7kQj/khtMWw+49gNZcOZzDzg6jj1y/elcNvwnK6Dd5ycMZDME2GsrrWn/8ZrvpGJnsAMcHLgyVmpLQBb40N4ymi4AqTrrJqCNDvIMMgYPxyvrcpEXTJ5RK/3KMJO2kS5/m72XZsy1GAyFQUZMXSY16QWyQttHu9IUIaw046jouM+512nTQhyLhTryo59C05nHmDXa8qoxEsm76V+6452Q0gC1IIAYf2zXx8F4+Dd4JNTCizhu+c/dabvrRUI7YUIvep5EMtQW0dnwika1mNiqUKM6UKgJ0L3/aWQkbw84PBOL5XgSvHwIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_extName__",
+   "options_ui": {
+      "open_in_tab": false,
+      "page": "options.html"
+   },
+   "permissions": [ "tabs", "storage", "activeTab", "scripting", "idle" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.13.0"
+}

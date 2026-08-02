@@ -1,0 +1,162 @@
+{
+   "advancedSettings": {
+      "description": "Advanced settings section header",
+      "message": "Cài Đặt Nâng Cao"
+   },
+   "audioFading": {
+      "description": "Label for audio fading checkbox",
+      "message": "Làm mờ âm thanh"
+   },
+   "autopause": {
+      "description": "Enable auto pause when switching tabs",
+      "message": "Tạm dừng video khi chuyển tab"
+   },
+   "autoresume": {
+      "description": "Enable auto resume when returning to tab",
+      "message": "Tiếp tục video khi quay lại tab"
+   },
+   "commandSpeedDown": {
+      "description": "Auto-translated",
+      "message": "Giảm tốc độ phát"
+   },
+   "commandSpeedReset": {
+      "description": "Command description for resetting playback speed",
+      "message": "Reset playback speed"
+   },
+   "commandSpeedUp": {
+      "description": "Auto-translated",
+      "message": "Tăng tốc độ phát"
+   },
+   "commandToggleExtension": {
+      "description": "Command description for toggling extension",
+      "message": "Bật/tắt tiện ích mở rộng"
+   },
+   "commandToggleMute": {
+      "description": "Command description for toggling mute",
+      "message": "Chuyển đổi tắt tiếng"
+   },
+   "commandTogglePlay": {
+      "description": "Command description for toggling play/pause",
+      "message": "Chuyển đổi phát/tạm dừng"
+   },
+   "commandToggleTab": {
+      "description": "Command description for toggling on active tab",
+      "message": "Bật/tắt trên tab hiện tại"
+   },
+   "cursorTracking": {
+      "description": "Enable cursor tracking to pause when cursor leaves window",
+      "message": "Tạm dừng khi con trỏ rời khỏi cửa sổ trình duyệt"
+   },
+   "debugMode": {
+      "description": "Enable debug mode",
+      "message": "Hiển thị thông báo gỡ lỗi trong console"
+   },
+   "delays": {
+      "description": "Label for delays section",
+      "message": "Trì hoãn (ms)"
+   },
+   "disableOnFullscreen": {
+      "description": "Disable extension when video is in fullscreen mode",
+      "message": "Tắt khi video toàn màn hình"
+   },
+   "disabled": {
+      "description": "Disable extension completely",
+      "message": "Tắt tiện ích hoàn toàn"
+   },
+   "disabledTabs": {
+      "description": "Disable extension for the current tab",
+      "message": "Tắt tiện ích cho tab hiện tại"
+   },
+   "domainExclusions": {
+      "description": "Label for domain exclusions section",
+      "message": "Loại trừ tên miền"
+   },
+   "domainExclusionsDescription": {
+      "description": "Description for domain exclusions textarea",
+      "message": "Nhập các tên miền cần loại trừ (mỗi dòng một):"
+   },
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "Dừng nhiều dịch vụ video khi rời khỏi tab và tiếp tục khi quay lại"
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "Tự Động Tạm Dừng Video"
+   },
+   "fadeDuration": {
+      "description": "Label for fade duration input",
+      "message": "Thời gian làm mờ (ms)"
+   },
+   "focuspause": {
+      "description": "Enable auto pause when browser window loses focus",
+      "message": "Tạm dừng video khi trình duyệt mất tiêu điểm"
+   },
+   "focusresume": {
+      "description": "Enable auto resume when browser window gains focus",
+      "message": "Tiếp tục video khi trình duyệt được tiêu điểm"
+   },
+   "githubSponsors": {
+      "description": "Link text for GitHub Sponsors",
+      "message": "GitHub Sponsors"
+   },
+   "hotkeys": {
+      "description": "Hotkeys section header",
+      "message": "Phím Tắt"
+   },
+   "hotkeysDescription": {
+      "description": "Description text for hotkeys section",
+      "message": "Bạn có thể cấu hình phím tắt trong menu Tiện ích"
+   },
+   "lockpause": {
+      "description": "Enable auto pause when computer is locked",
+      "message": "Tạm dừng video khi máy tính bị khóa"
+   },
+   "lockresume": {
+      "description": "Enable auto resume when computer is unlocked",
+      "message": "Tiếp tục video khi máy tính được mở khóa"
+   },
+   "madeWithLove": {
+      "description": "Footer text",
+      "message": "Được tạo với ♥ bởi"
+   },
+   "manualPause": {
+      "description": "Manual pause disables auto resume",
+      "message": "Ngăn tự động tiếp tục sau khi tạm dừng thủ công"
+   },
+   "muteVideo": {
+      "description": "Auto-translated",
+      "message": "Tắt tiếng video thay vì tạm dừng"
+   },
+   "pauseDelay": {
+      "description": "Label for pause delay input",
+      "message": "Trì hoãn tạm dừng"
+   },
+   "pipTitle": {
+      "description": "Title text for the PiP button",
+      "message": "Chuyển đổi Hình-trong-Hình"
+   },
+   "resumeDelay": {
+      "description": "Label for resume delay input",
+      "message": "Trì hoãn tiếp tục"
+   },
+   "scrollpause": {
+      "description": "Enable auto pause when video is scrolled out of viewport",
+      "message": "Tạm dừng video khi cuộn ra ngoài tầm nhìn"
+   },
+   "settings": {
+      "description": "Settings section header",
+      "message": "Cài Đặt"
+   },
+   "showPipButton": {
+      "description": "Label for PiP button checkbox",
+      "message": "Hiển thị nút Hình-trong-Hình"
+   },
+   "supportOnPatreon": {
+      "description": "Link text for Patreon support",
+      "message": "Ủng Hộ trên Patreon"
+   },
+   "viewSourceOnGitHub": {
+      "description": "Link text for GitHub repository",
+      "message": "Xem Mã Nguồn trên GitHub"
+   }
+}

@@ -1,0 +1,162 @@
+{
+   "advancedSettings": {
+      "description": "Advanced settings section header",
+      "message": "Розширені налаштування"
+   },
+   "audioFading": {
+      "description": "Label for audio fading checkbox",
+      "message": "Згасання звуку"
+   },
+   "autopause": {
+      "description": "Enable auto pause when switching tabs",
+      "message": "Призупиняти відео при перемиканні вкладок"
+   },
+   "autoresume": {
+      "description": "Enable auto resume when returning to tab",
+      "message": "Відновлювати відео при поверненні на вкладку"
+   },
+   "commandSpeedDown": {
+      "description": "Auto-translated",
+      "message": "Зменшити швидкість відтворення"
+   },
+   "commandSpeedReset": {
+      "description": "Auto-translated",
+      "message": "Скинути швидкість відтворення"
+   },
+   "commandSpeedUp": {
+      "description": "Auto-translated",
+      "message": "Збільшити швидкість відтворення"
+   },
+   "commandToggleExtension": {
+      "description": "Command description for toggling extension",
+      "message": "Увімкнути/вимкнути розширення"
+   },
+   "commandToggleMute": {
+      "description": "Command description for toggling mute",
+      "message": "Перемкнути звук"
+   },
+   "commandTogglePlay": {
+      "description": "Command description for toggling play/pause",
+      "message": "Перемкнути відтворення/паузу"
+   },
+   "commandToggleTab": {
+      "description": "Command description for toggling on active tab",
+      "message": "Увімкнути/вимкнути на активній вкладці"
+   },
+   "cursorTracking": {
+      "description": "Enable cursor tracking to pause when cursor leaves window",
+      "message": "Призупиняти, коли курсор залишає вікно браузера"
+   },
+   "debugMode": {
+      "description": "Enable debug mode",
+      "message": "Показувати повідомлення налагодження в консолі"
+   },
+   "delays": {
+      "description": "Label for delays section",
+      "message": "Затримки (мс)"
+   },
+   "disableOnFullscreen": {
+      "description": "Disable extension when video is in fullscreen mode",
+      "message": "Вимкнути в повноекранному режимі"
+   },
+   "disabled": {
+      "description": "Disable extension completely",
+      "message": "Повністю вимкнути розширення"
+   },
+   "disabledTabs": {
+      "description": "Disable extension for the current tab",
+      "message": "Вимкнути розширення для поточної вкладки"
+   },
+   "domainExclusions": {
+      "description": "Label for domain exclusions section",
+      "message": "Виключення доменів"
+   },
+   "domainExclusionsDescription": {
+      "description": "Description for domain exclusions textarea",
+      "message": "Введіть домени для виключення (один у рядку):"
+   },
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "Зупиняє кілька відеосервісів при втраті фокусу вкладки та продовжує при відновленні"
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "Video Auto Pause"
+   },
+   "fadeDuration": {
+      "description": "Label for fade duration input",
+      "message": "Тривалість згасання (мс)"
+   },
+   "focuspause": {
+      "description": "Enable auto pause when browser window loses focus",
+      "message": "Призупиняти відео, коли браузер втрачає фокус"
+   },
+   "focusresume": {
+      "description": "Enable auto resume when browser window gains focus",
+      "message": "Відновлювати відео, коли браузер отримує фокус"
+   },
+   "githubSponsors": {
+      "description": "Link text for GitHub Sponsors",
+      "message": "GitHub Sponsors"
+   },
+   "hotkeys": {
+      "description": "Hotkeys section header",
+      "message": "Гарячі клавіші"
+   },
+   "hotkeysDescription": {
+      "description": "Description text for hotkeys section",
+      "message": "Ви можете налаштувати гарячі клавіші в меню розширень"
+   },
+   "lockpause": {
+      "description": "Enable auto pause when computer is locked",
+      "message": "Призупиняти відео при блокуванні комп'ютера"
+   },
+   "lockresume": {
+      "description": "Enable auto resume when computer is unlocked",
+      "message": "Відновлювати відео при розблокуванні комп'ютера"
+   },
+   "madeWithLove": {
+      "description": "Footer text",
+      "message": "Зроблено з ♥"
+   },
+   "manualPause": {
+      "description": "Manual pause disables auto resume",
+      "message": "Запобігати авто-відновленню після ручної паузи"
+   },
+   "muteVideo": {
+      "description": "Auto-translated",
+      "message": "Вимкнути звук відео замість паузи"
+   },
+   "pauseDelay": {
+      "description": "Label for pause delay input",
+      "message": "Затримка паузи"
+   },
+   "pipTitle": {
+      "description": "Title text for the PiP button",
+      "message": "Перемкнути Картинка-в-картинці"
+   },
+   "resumeDelay": {
+      "description": "Label for resume delay input",
+      "message": "Затримка відновлення"
+   },
+   "scrollpause": {
+      "description": "Enable auto pause when video is scrolled out of viewport",
+      "message": "Призупиняти відео при прокручуванні за межі видимості"
+   },
+   "settings": {
+      "description": "Settings section header",
+      "message": "Налаштування"
+   },
+   "showPipButton": {
+      "description": "Label for PiP button checkbox",
+      "message": "Показувати кнопку Картинка-в-картинці"
+   },
+   "supportOnPatreon": {
+      "description": "Link text for Patreon support",
+      "message": "Підтримати на Patreon"
+   },
+   "viewSourceOnGitHub": {
+      "description": "Link text for GitHub repository",
+      "message": "Переглянути вихідний код на GitHub"
+   }
+}

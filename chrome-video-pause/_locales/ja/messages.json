@@ -1,0 +1,170 @@
+{
+   "advancedSettings": {
+      "description": "Advanced settings section header",
+      "message": "詳細設定"
+   },
+   "audioFading": {
+      "description": "Label for audio fading checkbox",
+      "message": "オーディオフェード"
+   },
+   "autopause": {
+      "description": "Enable auto pause when switching tabs",
+      "message": "タブを切り替えたときに動画を一時停止"
+   },
+   "autoresume": {
+      "description": "Enable auto resume when returning to tab",
+      "message": "タブに戻ったときに動画を再開"
+   },
+   "commandSpeedDown": {
+      "description": "Auto-translated",
+      "message": "再生速度を下げる"
+   },
+   "commandSpeedReset": {
+      "description": "Auto-translated",
+      "message": "再生速度をリセット"
+   },
+   "commandSpeedUp": {
+      "description": "Auto-translated",
+      "message": "再生速度を上げる"
+   },
+   "commandToggleExtension": {
+      "description": "Command description for toggling extension",
+      "message": "拡張機能を有効/無効にする"
+   },
+   "commandToggleMute": {
+      "description": "Command description for toggling mute",
+      "message": "ミュートの切り替え"
+   },
+   "commandTogglePlay": {
+      "description": "Command description for toggling play/pause",
+      "message": "再生/一時停止の切り替え"
+   },
+   "commandToggleTab": {
+      "description": "Command description for toggling on active tab",
+      "message": "アクティブなタブで有効/無効にする"
+   },
+   "cursorTracking": {
+      "description": "Enable cursor tracking to pause when cursor leaves window",
+      "message": "カーソルがブラウザウィンドウから離れたときに一時停止"
+   },
+   "debugMode": {
+      "description": "Enable debug mode",
+      "message": "コンソールにデバッグメッセージを表示"
+   },
+   "delays": {
+      "description": "Label for delays section",
+      "message": "遅延 (ms)"
+   },
+   "disableOnFullscreen": {
+      "description": "Disable extension when video is in fullscreen mode",
+      "message": "動画が全画面表示のときに無効にする"
+   },
+   "disabled": {
+      "description": "Disable extension completely",
+      "message": "拡張機能を完全に無効にする"
+   },
+   "disabledTabs": {
+      "description": "Disable extension for the current tab",
+      "message": "現在のタブで拡張機能を無効にする"
+   },
+   "domainExclusions": {
+      "description": "Label for domain exclusions section",
+      "message": "ドメインの除外"
+   },
+   "domainExclusionsDescription": {
+      "description": "Description for domain exclusions textarea",
+      "message": "除外するドメインを入力してください (1行に1つ):"
+   },
+   "domainInclusionsDescription": {
+      "description": "Auto-translated",
+      "message": "含めるドメインを入力してください（1行に1つ）:"
+   },
+   "domainSettings": {
+      "description": "Auto-translated",
+      "message": "ドメイン設定"
+   },
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "タブのフォーカスが外れたときに複数の動画サービスを停止し、フォーカス時に再開します"
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "ビデオ自動一時停止"
+   },
+   "fadeDuration": {
+      "description": "Label for fade duration input",
+      "message": "フェード期間 (ms)"
+   },
+   "focuspause": {
+      "description": "Enable auto pause when browser window loses focus",
+      "message": "ブラウザがフォーカスを失ったときに動画を一時停止"
+   },
+   "focusresume": {
+      "description": "Enable auto resume when browser window gains focus",
+      "message": "ブラウザがフォーカスを得たときに動画を再開"
+   },
+   "githubSponsors": {
+      "description": "Link text for GitHub Sponsors",
+      "message": "GitHub Sponsors"
+   },
+   "hotkeys": {
+      "description": "Hotkeys section header",
+      "message": "ホットキー"
+   },
+   "hotkeysDescription": {
+      "description": "Description text for hotkeys section",
+      "message": "拡張機能メニューでホットキーを設定できます"
+   },
+   "lockpause": {
+      "description": "Enable auto pause when computer is locked",
+      "message": "コンピューターがロックされたときに動画を一時停止"
+   },
+   "lockresume": {
+      "description": "Enable auto resume when computer is unlocked",
+      "message": "コンピューターがロック解除されたときに動画を再開"
+   },
+   "madeWithLove": {
+      "description": "Footer text",
+      "message": "♥ を込めて作成"
+   },
+   "manualPause": {
+      "description": "Manual pause disables auto resume",
+      "message": "手動一時停止後の自動再開を防止"
+   },
+   "muteVideo": {
+      "description": "Auto-translated",
+      "message": "一時停止の代わりにビデオをミュート"
+   },
+   "pauseDelay": {
+      "description": "Label for pause delay input",
+      "message": "一時停止の遅延"
+   },
+   "pipTitle": {
+      "description": "Title text for the PiP button",
+      "message": "ピクチャーインピクチャーを切り替え"
+   },
+   "resumeDelay": {
+      "description": "Label for resume delay input",
+      "message": "再開の遅延"
+   },
+   "scrollpause": {
+      "description": "Enable auto pause when video is scrolled out of viewport",
+      "message": "スクロールして見えなくなったときに動画を一時停止"
+   },
+   "settings": {
+      "description": "Settings section header",
+      "message": "設定"
+   },
+   "showPipButton": {
+      "description": "Label for PiP button checkbox",
+      "message": "ピクチャーインピクチャーボタンを表示"
+   },
+   "supportOnPatreon": {
+      "description": "Link text for Patreon support",
+      "message": "Patreonでサポート"
+   },
+   "viewSourceOnGitHub": {
+      "description": "Link text for GitHub repository",
+      "message": "GitHubでソースを表示"
+   }
+}

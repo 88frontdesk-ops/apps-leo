@@ -1,0 +1,170 @@
+{
+   "advancedSettings": {
+      "description": "Advanced settings section header",
+      "message": "Расширенные настройки"
+   },
+   "audioFading": {
+      "description": "Label for audio fading checkbox",
+      "message": "Звуковое затухание"
+   },
+   "autopause": {
+      "description": "Enable auto pause when switching tabs",
+      "message": "Приостанавливать видео при переключении вкладок"
+   },
+   "autoresume": {
+      "description": "Enable auto resume when returning to tab",
+      "message": "Возобновлять видео при возврате на вкладку"
+   },
+   "commandSpeedDown": {
+      "description": "Auto-translated",
+      "message": "Уменьшить скорость воспроизведения"
+   },
+   "commandSpeedReset": {
+      "description": "Auto-translated",
+      "message": "Сбросить скорость воспроизведения"
+   },
+   "commandSpeedUp": {
+      "description": "Auto-translated",
+      "message": "Увеличить скорость воспроизведения"
+   },
+   "commandToggleExtension": {
+      "description": "Command description for toggling extension",
+      "message": "Включить/отключить расширение"
+   },
+   "commandToggleMute": {
+      "description": "Command description for toggling mute",
+      "message": "Переключить звук"
+   },
+   "commandTogglePlay": {
+      "description": "Command description for toggling play/pause",
+      "message": "Переключить воспроизведение/паузу"
+   },
+   "commandToggleTab": {
+      "description": "Command description for toggling on active tab",
+      "message": "Включить/отключить на активной вкладке"
+   },
+   "cursorTracking": {
+      "description": "Enable cursor tracking to pause when cursor leaves window",
+      "message": "Приостанавливать при выходе курсора из окна браузера"
+   },
+   "debugMode": {
+      "description": "Enable debug mode",
+      "message": "Показывать отладочные сообщения в консоли"
+   },
+   "delays": {
+      "description": "Label for delays section",
+      "message": "Задержки (мс)"
+   },
+   "disableOnFullscreen": {
+      "description": "Disable extension when video is in fullscreen mode",
+      "message": "Отключить при полноэкранном режиме видео"
+   },
+   "disabled": {
+      "description": "Disable extension completely",
+      "message": "Полностью отключить расширение"
+   },
+   "disabledTabs": {
+      "description": "Disable extension for the current tab",
+      "message": "Отключить расширение для текущей вкладки"
+   },
+   "domainExclusions": {
+      "description": "Label for domain exclusions section",
+      "message": "Исключения доменов"
+   },
+   "domainExclusionsDescription": {
+      "description": "Description for domain exclusions textarea",
+      "message": "Введите домены для исключения (по одному в строке):"
+   },
+   "domainInclusionsDescription": {
+      "description": "Auto-translated",
+      "message": "Введите домены для включения (по одному в строке):"
+   },
+   "domainSettings": {
+      "description": "Auto-translated",
+      "message": "Настройки домена"
+   },
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "Останавливает несколько видеосервисов при потере фокуса вкладки и продолжает при возврате"
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "Автопауза Видео"
+   },
+   "fadeDuration": {
+      "description": "Label for fade duration input",
+      "message": "Длительность затухания (мс)"
+   },
+   "focuspause": {
+      "description": "Enable auto pause when browser window loses focus",
+      "message": "Приостанавливать видео при потере фокуса браузера"
+   },
+   "focusresume": {
+      "description": "Enable auto resume when browser window gains focus",
+      "message": "Возобновлять видео при получении фокуса браузера"
+   },
+   "githubSponsors": {
+      "description": "Link text for GitHub Sponsors",
+      "message": "GitHub Sponsors"
+   },
+   "hotkeys": {
+      "description": "Hotkeys section header",
+      "message": "Горячие клавиши"
+   },
+   "hotkeysDescription": {
+      "description": "Description text for hotkeys section",
+      "message": "Вы можете настроить горячие клавиши в меню Расширения"
+   },
+   "lockpause": {
+      "description": "Enable auto pause when computer is locked",
+      "message": "Приостанавливать видео при блокировке компьютера"
+   },
+   "lockresume": {
+      "description": "Enable auto resume when computer is unlocked",
+      "message": "Возобновлять видео при разблокировке компьютера"
+   },
+   "madeWithLove": {
+      "description": "Footer text",
+      "message": "Сделано с ♥"
+   },
+   "manualPause": {
+      "description": "Manual pause disables auto resume",
+      "message": "Предотвращать автовозобновление после ручной паузы"
+   },
+   "muteVideo": {
+      "description": "Auto-translated",
+      "message": "Отключить звук видео вместо паузы"
+   },
+   "pauseDelay": {
+      "description": "Label for pause delay input",
+      "message": "Задержка паузы"
+   },
+   "pipTitle": {
+      "description": "Title text for the PiP button",
+      "message": "Переключить Картинка-в-картинке"
+   },
+   "resumeDelay": {
+      "description": "Label for resume delay input",
+      "message": "Задержка возобновления"
+   },
+   "scrollpause": {
+      "description": "Enable auto pause when video is scrolled out of viewport",
+      "message": "Приостанавливать видео при прокрутке за пределы видимости"
+   },
+   "settings": {
+      "description": "Settings section header",
+      "message": "Настройки"
+   },
+   "showPipButton": {
+      "description": "Label for PiP button checkbox",
+      "message": "Показать кнопку Картинка-в-картинке"
+   },
+   "supportOnPatreon": {
+      "description": "Link text for Patreon support",
+      "message": "Поддержать на Patreon"
+   },
+   "viewSourceOnGitHub": {
+      "description": "Link text for GitHub repository",
+      "message": "Посмотреть исходный код на GitHub"
+   }
+}

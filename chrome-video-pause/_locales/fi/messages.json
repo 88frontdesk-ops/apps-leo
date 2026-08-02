@@ -1,0 +1,170 @@
+{
+   "advancedSettings": {
+      "description": "Advanced settings section header",
+      "message": "Lisäasetukset"
+   },
+   "audioFading": {
+      "description": "Label for audio fading checkbox",
+      "message": "Äänen häivytys"
+   },
+   "autopause": {
+      "description": "Enable auto pause when switching tabs",
+      "message": "Keskeytä video välilehteä vaihdettaessa"
+   },
+   "autoresume": {
+      "description": "Enable auto resume when returning to tab",
+      "message": "Jatka videota palatessa välilehdelle"
+   },
+   "commandSpeedDown": {
+      "description": "Auto-translated",
+      "message": "Vähennä toistonopeutta"
+   },
+   "commandSpeedReset": {
+      "description": "Auto-translated",
+      "message": "Nollaa toistonopeus"
+   },
+   "commandSpeedUp": {
+      "description": "Auto-translated",
+      "message": "Lisää toistonopeutta"
+   },
+   "commandToggleExtension": {
+      "description": "Command description for toggling extension",
+      "message": "Ota laajennus käyttöön/pois käytöstä"
+   },
+   "commandToggleMute": {
+      "description": "Command description for toggling mute",
+      "message": "Mykistä/poista mykistys"
+   },
+   "commandTogglePlay": {
+      "description": "Command description for toggling play/pause",
+      "message": "Toista/keskeytä"
+   },
+   "commandToggleTab": {
+      "description": "Command description for toggling on active tab",
+      "message": "Ota käyttöön/pois käytöstä nykyisellä välilehdellä"
+   },
+   "cursorTracking": {
+      "description": "Enable cursor tracking to pause when cursor leaves window",
+      "message": "Keskeytä kun kursori poistuu selainikkunasta"
+   },
+   "debugMode": {
+      "description": "Enable debug mode",
+      "message": "Näytä virheenkorjausviestit konsolissa"
+   },
+   "delays": {
+      "description": "Label for delays section",
+      "message": "Viiveet (ms)"
+   },
+   "disableOnFullscreen": {
+      "description": "Disable extension when video is in fullscreen mode",
+      "message": "Poista käytöstä kun video on koko näytöllä"
+   },
+   "disabled": {
+      "description": "Disable extension completely",
+      "message": "Poista laajennus kokonaan käytöstä"
+   },
+   "disabledTabs": {
+      "description": "Disable extension for the current tab",
+      "message": "Poista laajennus käytöstä nykyisellä välilehdellä"
+   },
+   "domainExclusions": {
+      "description": "Label for domain exclusions section",
+      "message": "Domain poikkeukset"
+   },
+   "domainExclusionsDescription": {
+      "description": "Description for domain exclusions textarea",
+      "message": "Syötä poissuljettavat domainit (yksi per rivi):"
+   },
+   "domainInclusionsDescription": {
+      "description": "Auto-translated",
+      "message": "Syötä sisällytettävät verkkotunnukset (yksi per rivi):"
+   },
+   "domainSettings": {
+      "description": "Auto-translated",
+      "message": "Verkkotunnusasetukset"
+   },
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "Pysäyttää useita videopalveluita välilehden taustaessa ja jatkaa fokusoinnissa"
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "Video Auto Pause"
+   },
+   "fadeDuration": {
+      "description": "Label for fade duration input",
+      "message": "Häivytyksen kesto (ms)"
+   },
+   "focuspause": {
+      "description": "Enable auto pause when browser window loses focus",
+      "message": "Keskeytä video kun selain menettää fokuksen"
+   },
+   "focusresume": {
+      "description": "Enable auto resume when browser window gains focus",
+      "message": "Jatka videota kun selain saa fokuksen"
+   },
+   "githubSponsors": {
+      "description": "Link text for GitHub Sponsors",
+      "message": "GitHub Sponsors"
+   },
+   "hotkeys": {
+      "description": "Hotkeys section header",
+      "message": "Pikanäppäimet"
+   },
+   "hotkeysDescription": {
+      "description": "Description text for hotkeys section",
+      "message": "Voit määrittää pikanäppäimet Laajennukset-valikossa"
+   },
+   "lockpause": {
+      "description": "Enable auto pause when computer is locked",
+      "message": "Keskeytä video kun tietokone lukitaan"
+   },
+   "lockresume": {
+      "description": "Enable auto resume when computer is unlocked",
+      "message": "Jatka videota kun tietokoneen lukitus avataan"
+   },
+   "madeWithLove": {
+      "description": "Footer text",
+      "message": "Tehty ♥:lla"
+   },
+   "manualPause": {
+      "description": "Manual pause disables auto resume",
+      "message": "Estä automaattinen jatko manuaalisen keskeytyksen jälkeen"
+   },
+   "muteVideo": {
+      "description": "Auto-translated",
+      "message": "Mykistä video tauottamisen sijaan"
+   },
+   "pauseDelay": {
+      "description": "Label for pause delay input",
+      "message": "Keskeytysviive"
+   },
+   "pipTitle": {
+      "description": "Title text for the PiP button",
+      "message": "Vaihda Kuva kuvassa -tilaa"
+   },
+   "resumeDelay": {
+      "description": "Label for resume delay input",
+      "message": "Jatkamisviive"
+   },
+   "scrollpause": {
+      "description": "Enable auto pause when video is scrolled out of viewport",
+      "message": "Keskeytä video kun vieritetään pois näkyvistä"
+   },
+   "settings": {
+      "description": "Settings section header",
+      "message": "Asetukset"
+   },
+   "showPipButton": {
+      "description": "Label for PiP button checkbox",
+      "message": "Näytä Kuva kuvassa -painike"
+   },
+   "supportOnPatreon": {
+      "description": "Link text for Patreon support",
+      "message": "Tue Patreonissa"
+   },
+   "viewSourceOnGitHub": {
+      "description": "Link text for GitHub repository",
+      "message": "Näytä lähdekoodi GitHubissa"
+   }
+}

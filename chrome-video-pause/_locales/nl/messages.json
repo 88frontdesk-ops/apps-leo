@@ -1,0 +1,170 @@
+{
+   "advancedSettings": {
+      "description": "Advanced settings section header",
+      "message": "Geavanceerde instellingen"
+   },
+   "audioFading": {
+      "description": "Label for audio fading checkbox",
+      "message": "Audio Fading"
+   },
+   "autopause": {
+      "description": "Enable auto pause when switching tabs",
+      "message": "Video pauzeren bij wisselen van tabblad"
+   },
+   "autoresume": {
+      "description": "Enable auto resume when returning to tab",
+      "message": "Video hervatten bij terugkeren naar tabblad"
+   },
+   "commandSpeedDown": {
+      "description": "Auto-translated",
+      "message": "Afspeelsnelheid verlagen"
+   },
+   "commandSpeedReset": {
+      "description": "Auto-translated",
+      "message": "Afspeelsnelheid resetten"
+   },
+   "commandSpeedUp": {
+      "description": "Auto-translated",
+      "message": "Afspeelsnelheid verhogen"
+   },
+   "commandToggleExtension": {
+      "description": "Command description for toggling extension",
+      "message": "Extensie inschakelen/uitschakelen"
+   },
+   "commandToggleMute": {
+      "description": "Command description for toggling mute",
+      "message": "Dempen wisselen"
+   },
+   "commandTogglePlay": {
+      "description": "Command description for toggling play/pause",
+      "message": "Afspelen/pauzeren wisselen"
+   },
+   "commandToggleTab": {
+      "description": "Command description for toggling on active tab",
+      "message": "Inschakelen/uitschakelen op actief tabblad"
+   },
+   "cursorTracking": {
+      "description": "Enable cursor tracking to pause when cursor leaves window",
+      "message": "Pauzeren wanneer cursor browservenster verlaat"
+   },
+   "debugMode": {
+      "description": "Enable debug mode",
+      "message": "Toon debug-berichten in console"
+   },
+   "delays": {
+      "description": "Label for delays section",
+      "message": "Vertragingen (ms)"
+   },
+   "disableOnFullscreen": {
+      "description": "Disable extension when video is in fullscreen mode",
+      "message": "Uitschakelen bij volledig scherm"
+   },
+   "disabled": {
+      "description": "Disable extension completely",
+      "message": "Extensie volledig uitschakelen"
+   },
+   "disabledTabs": {
+      "description": "Disable extension for the current tab",
+      "message": "Extensie uitschakelen voor huidig tabblad"
+   },
+   "domainExclusions": {
+      "description": "Label for domain exclusions section",
+      "message": "Domeinuitzonderingen"
+   },
+   "domainExclusionsDescription": {
+      "description": "Description for domain exclusions textarea",
+      "message": "Voer domeinen in om uit te sluiten (één per regel):"
+   },
+   "domainInclusionsDescription": {
+      "description": "Auto-translated",
+      "message": "Voer domeinen in om op te nemen (één per regel):"
+   },
+   "domainSettings": {
+      "description": "Auto-translated",
+      "message": "Domeininstellingen"
+   },
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "Stopt meerdere videoservices bij tabblad-onscherpte en gaat door bij focus"
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "Video Auto Pause"
+   },
+   "fadeDuration": {
+      "description": "Label for fade duration input",
+      "message": "Fading duur (ms)"
+   },
+   "focuspause": {
+      "description": "Enable auto pause when browser window loses focus",
+      "message": "Video pauzeren wanneer browser focus verliest"
+   },
+   "focusresume": {
+      "description": "Enable auto resume when browser window gains focus",
+      "message": "Video hervatten wanneer browser focus krijgt"
+   },
+   "githubSponsors": {
+      "description": "Link text for GitHub Sponsors",
+      "message": "GitHub Sponsors"
+   },
+   "hotkeys": {
+      "description": "Hotkeys section header",
+      "message": "Sneltoetsen"
+   },
+   "hotkeysDescription": {
+      "description": "Description text for hotkeys section",
+      "message": "Je kunt sneltoetsen configureren in het Extensies-menu"
+   },
+   "lockpause": {
+      "description": "Enable auto pause when computer is locked",
+      "message": "Video pauzeren wanneer computer vergrendeld is"
+   },
+   "lockresume": {
+      "description": "Enable auto resume when computer is unlocked",
+      "message": "Video hervatten wanneer computer ontgrendeld is"
+   },
+   "madeWithLove": {
+      "description": "Footer text",
+      "message": "Gemaakt met ♥ door"
+   },
+   "manualPause": {
+      "description": "Manual pause disables auto resume",
+      "message": "Voorkom automatisch hervatten na handmatige pauze"
+   },
+   "muteVideo": {
+      "description": "Auto-translated",
+      "message": "Video dempen in plaats van pauzeren"
+   },
+   "pauseDelay": {
+      "description": "Label for pause delay input",
+      "message": "Pauzevertraging"
+   },
+   "pipTitle": {
+      "description": "Title text for the PiP button",
+      "message": "Schakel Beeld-in-Beeld in/uit"
+   },
+   "resumeDelay": {
+      "description": "Label for resume delay input",
+      "message": "Hervattingsvertraging"
+   },
+   "scrollpause": {
+      "description": "Enable auto pause when video is scrolled out of viewport",
+      "message": "Video pauzeren wanneer uit beeld gescrold"
+   },
+   "settings": {
+      "description": "Settings section header",
+      "message": "Instellingen"
+   },
+   "showPipButton": {
+      "description": "Label for PiP button checkbox",
+      "message": "Toon Beeld-in-Beeld-knop"
+   },
+   "supportOnPatreon": {
+      "description": "Link text for Patreon support",
+      "message": "Steun op Patreon"
+   },
+   "viewSourceOnGitHub": {
+      "description": "Link text for GitHub repository",
+      "message": "Bekijk broncode op GitHub"
+   }
+}
