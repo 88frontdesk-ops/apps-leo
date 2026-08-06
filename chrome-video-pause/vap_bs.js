@@ -28,7 +28,14 @@ let options = {
   resumeDelay: 0,
   excludedDomains: [],
   includedDomains: [],
-  allowedPeriod: "",
+  allowedPeriod:
+    "Wed 22:00 - Wed 23:59\n" +
+    "Thu 01:00 - Thu 07:10\n" +
+    "Thu 22:00 - Thu 23:59\n" +
+    "Fri 00:00 - Fri 07:10\n" +
+    "Fri 14:30 - Fri 23:00\n" +
+    "Sat 05:30 - Sat 15:10\n" +
+    "Sun 05:30 - Sun 15:10",
 };
 
 function debugLog(message) {
@@ -39,15 +46,30 @@ function debugLog(message) {
 
 // Initialize settings from storage
 refresh_settings();
-env.scripting.registerContentScripts([
-  {
-    id: "video_auto_pause",
-    matches: ["<all_urls>"],
-    js: ["video_auto_pause.js"],
-    runAt: "document_start",
-    allFrames: true,
-  },
-]);
+
+async function registerContentScriptIfNeeded() {
+  try {
+    const registered = await env.scripting.getRegisteredContentScripts();
+    if (!registered.some((script) => script.id === "video_auto_pause")) {
+      await env.scripting.registerContentScripts([
+        {
+          id: "video_auto_pause",
+          matches: ["<all_urls>"],
+          js: ["video_auto_pause.js"],
+          runAt: "document_start",
+          allFrames: true,
+        },
+      ]);
+    }
+  } catch (error) {
+    console.warn(
+      "Failed to register content script or check existing scripts:",
+      error,
+    );
+  }
+}
+
+registerContentScriptIfNeeded();
 
 async function refresh_settings() {
   const result = await env.storage.sync.get(Object.keys(options));

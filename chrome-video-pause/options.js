@@ -34,7 +34,14 @@ const options = {
   resumeDelay: 0,
   excludedDomains: [],
   includedDomains: [],
-  allowedPeriod: "",
+  allowedPeriod:
+    "Wed 22:00 - Wed 23:59\n" +
+    "Thu 01:00 - Thu 07:10\n" +
+    "Thu 22:00 - Thu 23:59\n" +
+    "Fri 00:00 - Fri 07:10\n" +
+    "Fri 14:30 - Fri 23:00\n" +
+    "Sat 05:30 - Sat 15:10\n" +
+    "Sun 05:30 - Sun 15:10",
   audioFading: false,
   fadeDuration: 200,
   audioFading: false,
@@ -52,8 +59,6 @@ async function save_options() {
       storage[option] = domains
         .map((domain) => domain.trim())
         .filter((domain) => domain.length > 0);
-    } else if (option === "allowedPeriod") {
-      storage[option] = document.getElementById(option).value.trim();
     } else if (
       option === "pauseDelay" ||
       option === "resumeDelay" ||
@@ -87,8 +92,6 @@ async function restore_options() {
   for (const opt in items) {
     if (opt === "excludedDomains" || opt === "includedDomains") {
       document.getElementById(opt).value = items[opt].join("\n");
-    } else if (opt === "allowedPeriod") {
-      document.getElementById(opt).value = items[opt] ?? "";
     } else if (
       opt === "pauseDelay" ||
       opt === "resumeDelay" ||
