@@ -18,11 +18,11 @@ function localizeUI() {
 
 const options = {
   autopause: true,
-  autoresume: true,
+  autoresume: false,
   muteVideo: false,
   scrollpause: false,
   lockpause: true,
-  lockresume: true,
+  lockresume: false,
   focuspause: false,
   focusresume: false,
   disabled: false,
@@ -37,7 +37,7 @@ const options = {
   audioFading: false,
   fadeDuration: 200,
   audioFading: false,
-  fadeDuration: 200,
+  fadeDuration: 100,
   showPipButton: false,
 };
 
