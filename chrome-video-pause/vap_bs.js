@@ -12,12 +12,12 @@ let state = "active";
 // Default options
 let options = {
   autopause: true,
-  autoresume: true,
+  autoresume: false,
 
   muteVideo: false,
   scrollpause: false,
   lockpause: true,
-  lockresume: true,
+  lockresume: false,
   focuspause: false,
   focusresume: false,
   disabled: false,
@@ -29,13 +29,13 @@ let options = {
   excludedDomains: [],
   includedDomains: [],
   allowedPeriod:
-    "Wed 22:00 - Wed 23:59\n" +
-    "Thu 01:00 - Thu 07:10\n" +
-    "Thu 22:00 - Thu 23:59\n" +
+    "Wed 22:30 - Wed 23:59\n" +
+    "Thu 00:00 - Thu 07:10\n" +
+    "Thu 22:30 - Thu 23:59\n" +
     "Fri 00:00 - Fri 07:10\n" +
     "Fri 14:30 - Fri 23:00\n" +
-    "Sat 05:30 - Sat 15:10\n" +
-    "Sun 05:30 - Sun 15:10",
+    "Sat 06:30 - Sat 15:10\n" +
+    "Sun 06:30 - Sun 15:10",
 };
 
 function debugLog(message) {

@@ -34,14 +34,6 @@ const options = {
   resumeDelay: 0,
   excludedDomains: [],
   includedDomains: [],
-  allowedPeriod:
-    "Wed 22:00 - Wed 23:59\n" +
-    "Thu 01:00 - Thu 07:10\n" +
-    "Thu 22:00 - Thu 23:59\n" +
-    "Fri 00:00 - Fri 07:10\n" +
-    "Fri 14:30 - Fri 23:00\n" +
-    "Sat 05:30 - Sat 15:10\n" +
-    "Sun 05:30 - Sun 15:10",
   audioFading: false,
   fadeDuration: 200,
   audioFading: false,
