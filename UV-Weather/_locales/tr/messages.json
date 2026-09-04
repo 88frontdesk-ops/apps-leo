@@ -1,0 +1,1886 @@
+{
+   "accuFeel": {
+      "message": "AccuFeel"
+   },
+   "accuFeelInShade": {
+      "message": "AccuFeel (gölgede)"
+   },
+   "accuFeelShade": {
+      "message": "AccuFeel / Gölge"
+   },
+   "accuFeelTooltip": {
+      "message": "Hassas Hissedilen Sıcaklık"
+   },
+   "addEditLocations": {
+      "message": "Konum Ekle veya Düzenle"
+   },
+   "addMultipleLocations": {
+      "message": "Birden Fazla Konum Ekle"
+   },
+   "addNewLocation": {
+      "message": "Yeni Konum Ekle"
+   },
+   "affectedArea": {
+      "message": "Etkilenen Bölge"
+   },
+   "airQuality": {
+      "message": "Hava Kalitesi"
+   },
+   "applySunscreen": {
+      "message": "Güneş kremi sürün"
+   },
+   "aqiDangerous": {
+      "message": "Tehlikeli"
+   },
+   "aqiDangerousVal": {
+      "message": "Tehlikeli ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "aqiExcellent": {
+      "message": "Mükemmel"
+   },
+   "aqiExcellentVal": {
+      "message": "Mükemmel ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "aqiFair": {
+      "message": "Orta"
+   },
+   "aqiFairVal": {
+      "message": "Orta ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "aqiGood": {
+      "message": "Mevcut kirleticilere göre, hava kalitesi çoğu kişi için idealdir; normal açık hava aktivitelerinizin keyfini çıkarın."
+   },
+   "aqiHazardous": {
+      "message": "Mevcut kirleticilere göre, havaya birkaç dakikalık maruziyet bile herkes için ciddi sağlık etkileri yaratabilir. Açık hava aktivitelerinden kaçının."
+   },
+   "aqiModerate": {
+      "message": "Mevcut kirleticilere göre, hava kalitesi çoğu kişi için genel olarak kabul edilebilir düzeydedir. Ancak hassas gruplar uzun süreli maruziyetten hafif ila orta derecede semptomlar yaşayabilir."
+   },
+   "aqiPoor": {
+      "message": "Kötü"
+   },
+   "aqiPoorVal": {
+      "message": "Kötü ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "aqiUnhealthy": {
+      "message": "Sağlıksız"
+   },
+   "aqiUnhealthyLabel": {
+      "message": "Sağlıksız (100-149)"
+   },
+   "aqiUnhealthySensitive": {
+      "message": "Mevcut kirleticilere göre, hava yüksek kirlilik seviyesine ulaşmıştır ve hassas gruplar için sağlıksızdır. Nefes darlığı veya boğaz tahrişi gibi semptomlar hissediyorsanız dışarıda geçirdiğiniz süreyi azaltın."
+   },
+   "aqiUnhealthyVal": {
+      "message": "Sağlıksız ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "aqiVeryUnhealthy": {
+      "message": "Çok Sağlıksız"
+   },
+   "aqiVeryUnhealthyLabel": {
+      "message": "Çok Sağlıksız (150-249)"
+   },
+   "aqiVeryUnhealthyVal": {
+      "message": "Çok Sağlıksız ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "astro": {
+      "message": "Astro"
+   },
+   "avoidExertion": {
+      "message": "Efordan Kaçının"
+   },
+   "beaufortCalm": {
+      "message": "Sakin."
+   },
+   "beaufortFreshBreeze": {
+      "message": "Taze esinti."
+   },
+   "beaufortGale": {
+      "message": "Fırtına."
+   },
+   "beaufortGentleBreeze": {
+      "message": "Yumuşak esinti."
+   },
+   "beaufortHighWind": {
+      "message": "Sert rüzgar."
+   },
+   "beaufortHurricane": {
+      "message": "Kasırga."
+   },
+   "beaufortLightAir": {
+      "message": "Hafif hava."
+   },
+   "beaufortLightBreeze": {
+      "message": "Hafif esinti."
+   },
+   "beaufortModerateBreeze": {
+      "message": "Orta esinti."
+   },
+   "beaufortStorm": {
+      "message": "Bora."
+   },
+   "beaufortStrongGale": {
+      "message": "Kuvvetli fırtına."
+   },
+   "beaufortStrongWinds": {
+      "message": "Kuvvetli rüzgar."
+   },
+   "beaufortViolentStorm": {
+      "message": "Şiddetli bora."
+   },
+   "breakInPrecip": {
+      "message": "$1 $2 dk içinde kesilecek.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "byLexi": {
+      "message": "Lexi tarafından"
+   },
+   "calendarPageTitle": {
+      "message": "UV Weather | $1, $2, ",
+      "placeholders": {
+         "city": {
+            "content": "$1"
+         },
+         "country": {
+            "content": "$2"
+         }
+      }
+   },
+   "card0Button": {
+      "message": "Yeni Konum Ekle"
+   },
+   "card0Heading": {
+      "message": "Hızlı İpuçları"
+   },
+   "card0Text": {
+      "message": "Doğru hava tahminleri için yeni bir konum ekleyin veya mevcut konumunuzu güncelleyin."
+   },
+   "card0Title": {
+      "message": "Hassasiyet İçin Konum"
+   },
+   "card10Button": {
+      "message": "Küresel Havayı Keşfet"
+   },
+   "card10Heading": {
+      "message": "Hızlı İpuçları"
+   },
+   "card10Text": {
+      "message": "Dinamik Hava Haritası deneyimimizde dünya genelinde canlı hava durumunu keşfedin."
+   },
+   "card10Title": {
+      "message": "Küresel Hava Genel Bakışı"
+   },
+   "card11Button": {
+      "message": "Zamanlamaların Kilidini Aç"
+   },
+   "card11Heading": {
+      "message": "Pro Özellik"
+   },
+   "card11Text": {
+      "message": "Gün doğumu, gün batımı, ay doğumu ve ay batımı dahil günlük ay ve güneş zamanlamalarını alın."
+   },
+   "card11Title": {
+      "message": "Günlük Ay & Güneş Zamanlamaları"
+   },
+   "card12Button": {
+      "message": "Bulut Örtüsünü Gör"
+   },
+   "card12Heading": {
+      "message": "Hızlı İpuçları"
+   },
+   "card12Text": {
+      "message": "Hava radarı sayfasında güncel ve geçmiş bulut örtüsü alanlarını keşfedin."
+   },
+   "card12Title": {
+      "message": "Bulut Örtüsü Bilgileri"
+   },
+   "card13Button": {
+      "message": "Pro Ayarlarını Aç"
+   },
+   "card13Heading": {
+      "message": "Pro Özellik"
+   },
+   "card13Text": {
+      "message": "Araç çubuğu rozetinde UV İndeksini gösterin, ekstra tıklama olmadan gerçek zamanlı UVI kontrol edin."
+   },
+   "card13Title": {
+      "message": "Araç Çubuğu Rozetinde UV İndeksi"
+   },
+   "card14Button": {
+      "message": "Temanızı Renklendirin"
+   },
+   "card14Heading": {
+      "message": "Hızlı İpuçları"
+   },
+   "card14Text": {
+      "message": "Kişisel bir dokunuş için temalar seçin, benzersiz renklerle özelleştirin."
+   },
+   "card14Title": {
+      "message": "Kişiselleştirilmiş Temalar"
+   },
+   "card15Button": {
+      "message": "Pro Ayarlarını Aç"
+   },
+   "card15Heading": {
+      "message": "Pro Özellik"
+   },
+   "card15Text": {
+      "message": "Artan doğruluk için birkaç dakikada bir daha sık hava güncellemeleri alın."
+   },
+   "card15Title": {
+      "message": "Daha Sık Veri Güncellemeleri"
+   },
+   "card16Button": {
+      "message": "AQI Seviyelerini Keşfet"
+   },
+   "card16Heading": {
+      "message": "Hızlı İpuçları"
+   },
+   "card16Text": {
+      "message": "Hava Kalitesi sayfamızda gerçek zamanlı Hava Kalitesi İndeksi ve kirletici seviyelerini alın."
+   },
+   "card16Title": {
+      "message": "Hava Kalitesi Takibi"
+   },
+   "card17Button": {
+      "message": "Pro Ayarlarını Aç"
+   },
+   "card17Heading": {
+      "message": "Pro Özellik"
+   },
+   "card17Text": {
+      "message": "Yerel gündüz ve gece döngülerine göre otomatik karanlık ve aydınlık modlar deneyimleyin."
+   },
+   "card17Title": {
+      "message": "Uyarlanabilir Renk Teması"
+   },
+   "card18Button": {
+      "message": "Ay Zamanlamasını Keşfet"
+   },
+   "card18Heading": {
+      "message": "Hızlı İpuçları"
+   },
+   "card18Text": {
+      "message": "Göksel bilgelik için Astro sayfamızda bugünün ay zamanlamasına göz atın."
+   },
+   "card18Title": {
+      "message": "Bugünün Ay Bilgileri"
+   },
+   "card1Button": {
+      "message": "Risksiz Denemeyi Dene"
+   },
+   "card1Heading": {
+      "message": "Özel Teklif"
+   },
+   "card1Text": {
+      "message": "Premium özelliklerle UV Weather Pro paketine sınırsız erişim elde edin."
+   },
+   "card1Title": {
+      "message": "Pro Özelliklerin Kilidini Aç"
+   },
+   "card2Button": {
+      "message": "Günlük Hava Tahmini"
+   },
+   "card2Heading": {
+      "message": "Hızlı İpuçları"
+   },
+   "card2Text": {
+      "message": "Günlük sayfadaki 16 günden herhangi birine dokunarak ayrıntılı günlük tahminlere erişin."
+   },
+   "card2Title": {
+      "message": "Günlük Ayrıntıları Keşfedin"
+   },
+   "card3Button": {
+      "message": "45 Günlük Tahmini Aç"
+   },
+   "card3Heading": {
+      "message": "Pro Özellik"
+   },
+   "card3Text": {
+      "message": "45 günlük hava tahmini ile hazır olun – akıllı kullanıcılarımız için bir Pro özellik!"
+   },
+   "card3Title": {
+      "message": "45 Günlük Pro Görünüm"
+   },
+   "card4Button": {
+      "message": "Güncel AccuFeel'i Gör"
+   },
+   "card4Heading": {
+      "message": "Hızlı İpuçları"
+   },
+   "card4Text": {
+      "message": "Güncel Artı sayfasında AccuFeel ile bugünün 'hissedilen' sıcaklığını bulun."
+   },
+   "card4Title": {
+      "message": "Hassas Hissedilen Sıcaklık"
+   },
+   "card5Button": {
+      "message": "Canlı Radar Haritasını Aç"
+   },
+   "card5Heading": {
+      "message": "Pro Özellik"
+   },
+   "card5Text": {
+      "message": "Bulut örtüsünün uydu görünümü ve radar tahmini için gelişmiş radar haritamıza göz atın!"
+   },
+   "card5Title": {
+      "message": "Gelişmiş Radar Haritası"
+   },
+   "card6Button": {
+      "message": "Varsayılan Temayı Değiştir"
+   },
+   "card6Heading": {
+      "message": "Hızlı İpuçları"
+   },
+   "card6Text": {
+      "message": "Şık ve göz dostu bir deneyim için Karanlık Mod temasına geçin."
+   },
+   "card6Title": {
+      "message": "Karanlık Tarafı Kucaklayın"
+   },
+   "card7Button": {
+      "message": "5x Saatlik Yükseltme"
+   },
+   "card7Heading": {
+      "message": "Pro Özellik"
+   },
+   "card7Text": {
+      "message": "240 saatlik ayrıntılı hava durumu ve saatlik hava kalitesi tahminleri için Pro'ya yükseltin!"
+   },
+   "card7Title": {
+      "message": "240 Saatlik Tahmin"
+   },
+   "card8Button": {
+      "message": "Bugünün Altın Saatleri"
+   },
+   "card8Heading": {
+      "message": "Hızlı İpuçları"
+   },
+   "card8Text": {
+      "message": "Astro sayfasında Altın Saatler sırasında mükemmel fotoğraf zamanlamasını keşfedin."
+   },
+   "card8Title": {
+      "message": "Bugünün Altın Zaman Dilimi"
+   },
+   "card9Button": {
+      "message": "Bugünün Raporunu Aç"
+   },
+   "card9Heading": {
+      "message": "Pro Özellik"
+   },
+   "card9Text": {
+      "message": "Lexi tarafından sunulan yapay zeka destekli, kişiselleştirilmiş haber tarzı hava raporlarını deneyimleyin!"
+   },
+   "card9Title": {
+      "message": "Kişiselleştirilmiş Hava Raporu"
+   },
+   "caution": {
+      "message": "Dikkat"
+   },
+   "chanceOfPrecip": {
+      "message": "Yağış İhtimali"
+   },
+   "chartHeavy": {
+      "message": "Şiddetli"
+   },
+   "chartLight": {
+      "message": "Hafif"
+   },
+   "chartModerate": {
+      "message": "Orta"
+   },
+   "chartNow": {
+      "message": "Şimdi"
+   },
+   "cloudCover": {
+      "message": "Bulut Örtüsü"
+   },
+   "cloudCoverage": {
+      "message": "Bulut Örtüsü"
+   },
+   "comfortable": {
+      "message": "Konforlu"
+   },
+   "comparisonUv": {
+      "message": "$1 UV",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "compassE": {
+      "message": "Doğu"
+   },
+   "compassENE": {
+      "message": "Doğu-Kuzeydoğu"
+   },
+   "compassESE": {
+      "message": "Doğu-Güneydoğu"
+   },
+   "compassN": {
+      "message": "Kuzey"
+   },
+   "compassNE": {
+      "message": "Kuzeydoğu"
+   },
+   "compassNNE": {
+      "message": "Kuzey-Kuzeydoğu"
+   },
+   "compassNNW": {
+      "message": "Kuzey-Kuzeybatı"
+   },
+   "compassNW": {
+      "message": "Kuzeybatı"
+   },
+   "compassS": {
+      "message": "Güney"
+   },
+   "compassSE": {
+      "message": "Güneydoğu"
+   },
+   "compassSSE": {
+      "message": "Güney-Güneydoğu"
+   },
+   "compassSSW": {
+      "message": "Güney-Güneybatı"
+   },
+   "compassSW": {
+      "message": "Güneybatı"
+   },
+   "compassW": {
+      "message": "Batı"
+   },
+   "compassWNW": {
+      "message": "Batı-Kuzeybatı"
+   },
+   "compassWSW": {
+      "message": "Batı-Güneybatı"
+   },
+   "condition": {
+      "message": "Durum"
+   },
+   "conditionClear": {
+      "message": "Açık gökyüzü"
+   },
+   "conditionCloudy": {
+      "message": "Bulutlu gökyüzü"
+   },
+   "conditionCold": {
+      "message": "Soğuk koşullar"
+   },
+   "conditionContinueAllDay": {
+      "message": "$1 günün geri kalanında devam edecek. Rüzgar esintileri $2'ye kadar çıkıyor.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "windGust": {
+            "content": "$2"
+         }
+      }
+   },
+   "conditionContinueUntil": {
+      "message": "$1 $2'ye kadar devam edecek.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "time": {
+            "content": "$2"
+         }
+      }
+   },
+   "conditionExpectedAround": {
+      "message": "$1 $2 civarında bekleniyor.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "time": {
+            "content": "$2"
+         }
+      }
+   },
+   "conditionExpectedAroundAllDay": {
+      "message": "$1 $2 civarında bekleniyor ve günün geri kalanında devam edecek.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "time": {
+            "content": "$2"
+         }
+      }
+   },
+   "conditionExpectedFromTo": {
+      "message": "$1 $2 ile $3 arası bekleniyor.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "endTime": {
+            "content": "$3"
+         },
+         "startTime": {
+            "content": "$2"
+         }
+      }
+   },
+   "conditionFoggy": {
+      "message": "Sisli koşullar"
+   },
+   "conditionHot": {
+      "message": "Sıcak koşullar"
+   },
+   "conditionPartlyCloudy": {
+      "message": "Parçalı bulutlu gökyüzü"
+   },
+   "conditionRainy": {
+      "message": "Yağmurlu koşullar"
+   },
+   "conditionSnowy": {
+      "message": "Karlı koşullar"
+   },
+   "conditionStormy": {
+      "message": "Fırtınalı koşullar"
+   },
+   "conditionWindy": {
+      "message": "Rüzgarlı koşullar"
+   },
+   "continueForHour": {
+      "message": "$1 önümüzdeki bir saat boyunca devam etmesi bekleniyor.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         }
+      }
+   },
+   "continueForHourShort": {
+      "message": "$1 önümüzdeki bir saat boyunca.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         }
+      }
+   },
+   "cool": {
+      "message": "Serin"
+   },
+   "current": {
+      "message": "Güncel"
+   },
+   "currentAirQuality": {
+      "message": "Güncel Hava Kalitesi"
+   },
+   "currentPlus": {
+      "message": "Güncel"
+   },
+   "daily": {
+      "message": "Günlük"
+   },
+   "dailyComparison": {
+      "message": "Günlük Karşılaştırma"
+   },
+   "danger": {
+      "message": "Tehlike"
+   },
+   "dangerous": {
+      "message": "Tehlikeli"
+   },
+   "darkMode": {
+      "message": "Karanlık Mod"
+   },
+   "day": {
+      "message": "Gündüz"
+   },
+   "dewPoint": {
+      "message": "Çiğ Noktası"
+   },
+   "durationHrPlural": {
+      "message": "$1 sa",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "durationHrSingular": {
+      "message": "$1 sa",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "durationLessThan1Min": {
+      "message": "1 dk'dan az"
+   },
+   "durationMinPlural": {
+      "message": "$1 dk",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "durationMinSingular": {
+      "message": "$1 dk",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "endingIn": {
+      "message": "$1 $2 dk içinde sona eriyor.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "eveningGoldenHour": {
+      "message": "Akşam Altın Saati"
+   },
+   "expectedStartIn": {
+      "message": "$1 $2 dk içinde başlaması bekleniyor.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "expectedStopIn": {
+      "message": "$1 $2 dk içinde durması bekleniyor.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "exploreFullFeatures": {
+      "message": "Tüm Özellikleri Keşfedin"
+   },
+   "expressUpgrade": {
+      "message": "Hızlı Yükseltme"
+   },
+   "extDescription": {
+      "message": "Real time weather forecasts with live radar, minute by minute rain, multi-location support, air quality, and AI reports"
+   },
+   "extName": {
+      "message": "UV Weather"
+   },
+   "extremeCaution": {
+      "message": "Aşırı Dikkat"
+   },
+   "extremeDanger": {
+      "message": "Aşırı Tehlike"
+   },
+   "firstLightLastLight": {
+      "message": "İlk Işık | Son Işık"
+   },
+   "fullMoonDay": {
+      "message": "Gün"
+   },
+   "fullMoonDays": {
+      "message": "Gün"
+   },
+   "getDetailedInfo": {
+      "message": "+ Ayrıntılı Bilgi Al"
+   },
+   "getNotificationsSevere": {
+      "message": "Şiddetli hava için bildirim alın"
+   },
+   "getWeatherCurrentIp": {
+      "message": "Mevcut IP Adresim İçin Hava Durumu Al"
+   },
+   "goAdFree": {
+      "message": "Pro ile reklamsız olun"
+   },
+   "goldenHourTooltip": {
+      "message": "Yumuşak ışık, fotoğraf için en iyi zaman"
+   },
+   "healthInformation": {
+      "message": "Sağlık Bilgisi"
+   },
+   "heatStroke": {
+      "message": "Sıcak Çarpması"
+   },
+   "heavy": {
+      "message": "Şiddetli"
+   },
+   "home": {
+      "message": "Ana Sayfa"
+   },
+   "hourly": {
+      "message": "Saatlik"
+   },
+   "hourlyAirQuality": {
+      "message": "Saatlik Hava Kalitesi"
+   },
+   "hourlyAqiForecast": {
+      "message": "Saatlik Hava Kalitesi Tahmini"
+   },
+   "hourlyBreakdown": {
+      "message": "Saatlik Döküm"
+   },
+   "humidex": {
+      "message": "Humidex"
+   },
+   "humidity": {
+      "message": "Nem"
+   },
+   "humidityAvg": {
+      "message": "Nem (Ort.)"
+   },
+   "humidityDewPoint": {
+      "message": "Nem (Çiğ Noktası)"
+   },
+   "inCanada": {
+      "message": "Kanada'da"
+   },
+   "issuedBy": {
+      "message": "Yayınlayan"
+   },
+   "largeNumberBadge": {
+      "message": "Büyük Sayı Rozeti"
+   },
+   "lexiCoffeeBreak": {
+      "message": "Lexi 30 saniyelik kahve molasında, hemen döner!"
+   },
+   "light": {
+      "message": "Hafif"
+   },
+   "lightColorBadge": {
+      "message": "Açık Renkli Rozet"
+   },
+   "lunarInCity": {
+      "message": " $1, $2",
+      "placeholders": {
+         "city": {
+            "content": "$1"
+         },
+         "country": {
+            "content": "$2"
+         }
+      }
+   },
+   "lunarPageTitle": {
+      "message": "UV Weather | $1 Ay Evresi",
+      "placeholders": {
+         "year": {
+            "content": "$1"
+         }
+      }
+   },
+   "madeWith": {
+      "message": "Yapımı"
+   },
+   "manageSubDesc": {
+      "message": "Ödeme güncelleme, plan değişikliği, iptal"
+   },
+   "manageSubscription": {
+      "message": "Aboneliğinizi Yönetin"
+   },
+   "medium": {
+      "message": "Orta"
+   },
+   "minAgo": {
+      "message": "$1 dk önce",
+      "placeholders": {
+         "minutes": {
+            "content": "$1"
+         }
+      }
+   },
+   "moonFirstQuarter": {
+      "message": "İlk Dördün"
+   },
+   "moonFullMoon": {
+      "message": "Dolunay"
+   },
+   "moonLastQuarter": {
+      "message": "Son Dördün"
+   },
+   "moonNewMoon": {
+      "message": "Yeni Ay"
+   },
+   "moonPhaseCalendar": {
+      "message": "Ay Evresi Takvimi"
+   },
+   "moonPhaseIllumination": {
+      "message": "Ay Evresi | Aydınlanma"
+   },
+   "moonWaningCrescent": {
+      "message": "Hilal (Küçülen)"
+   },
+   "moonWaningGibbous": {
+      "message": "Şişkin Ay (Küçülen)"
+   },
+   "moonWaxingCrescent": {
+      "message": "Hilal (Büyüyen)"
+   },
+   "moonWaxingGibbous": {
+      "message": "Şişkin Ay (Büyüyen)"
+   },
+   "moonriseMoonset": {
+      "message": "Ay Doğumu | Ay Batımı"
+   },
+   "morningGoldenHour": {
+      "message": "Sabah Altın Saati"
+   },
+   "needOnline": {
+      "message": "Gerçek zamanlı hava durumu verilerini almak için çevrimiçi olmanız gerekiyor."
+   },
+   "next10Days": {
+      "message": "Sonraki 10 Gün"
+   },
+   "next48Hours": {
+      "message": "Sonraki 48 Saat"
+   },
+   "next48HoursVip": {
+      "message": "Sonraki 48 Saate Kadar"
+   },
+   "nextFullMoon": {
+      "message": "Sonraki Dolunay"
+   },
+   "nextMin": {
+      "message": "Sonraki $1 dk",
+      "placeholders": {
+         "minutes": {
+            "content": "$1"
+         }
+      }
+   },
+   "nextUpToHours": {
+      "message": "Sonraki $1 Saate Kadar",
+      "placeholders": {
+         "hours": {
+            "content": "$1"
+         }
+      }
+   },
+   "nextUpdateMinute": {
+      "message": "Sonraki hava güncellemesi 1 dakika içinde. Takipte kalın!"
+   },
+   "nextWeatherUpdate": {
+      "message": "Sonraki hava güncellemesi 1 dakika içinde. Takipte kalın!"
+   },
+   "night": {
+      "message": "Gece"
+   },
+   "noInternet": {
+      "message": "İnternet bağlantısı bulunamadı!"
+   },
+   "noPrecipitation": {
+      "message": "Önümüzdeki saat yağış yok"
+   },
+   "noWeatherAlerts": {
+      "message": "Şu anda hava uyarısı bulunmuyor."
+   },
+   "none": {
+      "message": "Yok"
+   },
+   "now": {
+      "message": "Şimdi"
+   },
+   "oops": {
+      "message": "Hay aksi!"
+   },
+   "optimizedDarkTheme": {
+      "message": "Karanlık tarayıcı teması için optimize edilmiştir"
+   },
+   "outlook": {
+      "message": "Genel Görünüm"
+   },
+   "patience": {
+      "message": "Bazen bu tür şeylerin düzelmesi biraz zaman alır. Sabrınız için teşekkürler!"
+   },
+   "perceptionBitCool": {
+      "message": "Biraz serin"
+   },
+   "perceptionExtremelyCold": {
+      "message": "Aşırı soğuk"
+   },
+   "perceptionFairlyHot": {
+      "message": "Epey sıcak"
+   },
+   "perceptionMildlyWarm": {
+      "message": "Hafif ılık"
+   },
+   "perceptionPrettyWarm": {
+      "message": "Oldukça sıcak"
+   },
+   "perceptionQuiteCold": {
+      "message": "Oldukça soğuk"
+   },
+   "perceptionQuitePleasant": {
+      "message": "Oldukça hoş"
+   },
+   "perceptionSlightlyCool": {
+      "message": "Hafif serin"
+   },
+   "perceptionSuperHot": {
+      "message": "Aşırı sıcak"
+   },
+   "perceptionVeryCold": {
+      "message": "Çok soğuk"
+   },
+   "perceptionVeryHot": {
+      "message": "Çok sıcak"
+   },
+   "photoCredit": {
+      "message": "Fotoğraf Kaynağı"
+   },
+   "planLikePro": {
+      "message": "Profesyonel gibi planlayın"
+   },
+   "plumeAqiTooltip": {
+      "message": "Plume Hava Kalitesi İndeksi"
+   },
+   "poweredBy": {
+      "message": "Destekleyen"
+   },
+   "precipRain": {
+      "message": "Yağmur"
+   },
+   "precipSnow": {
+      "message": "Kar"
+   },
+   "precipitation": {
+      "message": "Yağış"
+   },
+   "precipitationFallback": {
+      "message": "Yağış"
+   },
+   "pressure": {
+      "message": "Basınç"
+   },
+   "pressureTrend": {
+      "message": "Basınç (eğilim)"
+   },
+   "primaryPollutant": {
+      "message": "Birincil Kirletici"
+   },
+   "proMemberLogin": {
+      "message": "Pro Üye Girişi"
+   },
+   "radarMapLast2Hours": {
+      "message": "Son 2 Saatlik Radar Haritası"
+   },
+   "radarWeatherMap": {
+      "message": "Radar Hava Haritası"
+   },
+   "rain": {
+      "message": "Yağmur"
+   },
+   "recommendedSunProtection": {
+      "message": "Önerilen Güneş Koruması"
+   },
+   "redDotAlert": {
+      "message": "Uyarı sırasında rozette kırmızı nokta"
+   },
+   "reduceTimeSun": {
+      "message": "Güneşte geçirilen süreyi azaltın"
+   },
+   "regionNotSupported": {
+      "message": "UV Weather şu anda bölgenizde desteklenmiyor. Takipte kalın!"
+   },
+   "reportAirQuality": {
+      "message": "Bölgedeki hava kalitesi $1 seviyesindedir.",
+      "placeholders": {
+         "level": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportFromLowToHigh": {
+      "message": " en düşük $1'den en yüksek $2'ye",
+      "placeholders": {
+         "high": {
+            "content": "$2"
+         },
+         "low": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportGoodGreeting": {
+      "message": "İyi $1lar",
+      "placeholders": {
+         "time": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportGreetingAfternoon": {
+      "message": "İyi Öğleden Sonralar"
+   },
+   "reportGreetingEvening": {
+      "message": "İyi Akşamlar"
+   },
+   "reportGreetingMorning": {
+      "message": "Günaydın"
+   },
+   "reportHighestTemp": {
+      "message": " en yüksek sıcaklık $1 olacak",
+      "placeholders": {
+         "temp": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportHumidityAround": {
+      "message": " yaklaşık %$1",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportLoading": {
+      "message": "Bir saniye içinde sizinle olacağım."
+   },
+   "reportMissingPlace": {
+      "message": "Eksik Yer Bildir"
+   },
+   "reportPrecipProb": {
+      "message": "Bugün yağış olasılığı %$1.",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportSeverity": {
+      "message": "Şiddet"
+   },
+   "reportSunriseWill": {
+      "message": "gün doğumu saati $1",
+      "placeholders": {
+         "time": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportSunsetTime": {
+      "message": "gün batımı saati $1",
+      "placeholders": {
+         "time": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportTodayMaxUv": {
+      "message": "Bugünkü maksimum UV indeksi $1, $2. $3",
+      "placeholders": {
+         "note": {
+            "content": "$2"
+         },
+         "rec": {
+            "content": "$3"
+         },
+         "uvi": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportUrgency": {
+      "message": "Aciliyet"
+   },
+   "reportWindGust": {
+      "message": " bazı bölgelerde $1'e varan rüzgar esintileri ile",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "restOfDay": {
+      "message": "Günün Kalanı"
+   },
+   "safe": {
+      "message": "Güvenli"
+   },
+   "savedLocationSubtitle": {
+      "message": "Geçiş yapmak için aşağıdaki bir konuma dokunun."
+   },
+   "savedLocations": {
+      "message": "Kayıtlı Konumlar"
+   },
+   "scanQrCode": {
+      "message": "QR kodu tarayın"
+   },
+   "searchDragDrop": {
+      "message": "Doğru hava durumu verileri almak için iğneyi konumunuza sürükleyip bırakın."
+   },
+   "searchMapPoweredBy": {
+      "message": "Arama ve harita sağlayıcısı"
+   },
+   "searchPlaceholder": {
+      "message": "Şehir veya posta kodu girin"
+   },
+   "setDefaultHomepage": {
+      "message": "Varsayılan ana sayfa olarak ayarla"
+   },
+   "settingAbsoluteGm3": {
+      "message": "Mutlak (g/m³)"
+   },
+   "settingAbsoluteGrft3": {
+      "message": "Mutlak (gr/ft³)"
+   },
+   "settingAirPressure": {
+      "message": "Hava Basıncı"
+   },
+   "settingAnimatedIcon": {
+      "message": "Hareketli Simge"
+   },
+   "settingAppearance": {
+      "message": "GÖRÜNÜM"
+   },
+   "settingAutoBrowser": {
+      "message": "Otomatik (Tarayıcı Varsayılanı)"
+   },
+   "settingBackgroundType": {
+      "message": "Arka Plan Türü"
+   },
+   "settingBadgeDisplayInfo": {
+      "message": "Rozet Gösterim Bilgisi"
+   },
+   "settingBadgeUpdateInterval": {
+      "message": "Rozet Güncelleme Aralığı (dk)"
+   },
+   "settingBadgeWeatherDataSource": {
+      "message": "Rozet Hava Verisi Kaynağı"
+   },
+   "settingBft": {
+      "message": "Bft"
+   },
+   "settingBgThemeColors": {
+      "message": "Arka Plan Tema Renkleri"
+   },
+   "settingCardinal": {
+      "message": "Yön (K, G, B, D)"
+   },
+   "settingChromeVersion": {
+      "message": "Chrome $1",
+      "placeholders": {
+         "ver": {
+            "content": "$1"
+         }
+      }
+   },
+   "settingCustomColor": {
+      "message": "Özel Renk"
+   },
+   "settingDark": {
+      "message": "Karanlık"
+   },
+   "settingDarkThemeColor": {
+      "message": "Karanlık Tema Rengi"
+   },
+   "settingDegrees": {
+      "message": "Derece (0°- 360°)"
+   },
+   "settingDistance": {
+      "message": "Mesafe"
+   },
+   "settingDynamicDayNight": {
+      "message": "Dinamik Gündüz-Gece Teması"
+   },
+   "settingHealthSafety": {
+      "message": "Sağlık & Güvenlik Veri Görünümü"
+   },
+   "settingHighAccuracy": {
+      "message": "(Yüksek Doğruluk)"
+   },
+   "settingHourlyForecastedData": {
+      "message": "Saatlik Tahmin Verisi"
+   },
+   "settingHumidity": {
+      "message": "Nem"
+   },
+   "settingImage": {
+      "message": "Görsel"
+   },
+   "settingKnots": {
+      "message": "Knot"
+   },
+   "settingLanguage": {
+      "message": "Dil"
+   },
+   "settingLargeNumberBadge": {
+      "message": "Büyük Sayı Rozeti"
+   },
+   "settingLight": {
+      "message": "Aydınlık"
+   },
+   "settingLightColorBadge": {
+      "message": "Açık Renkli Rozet"
+   },
+   "settingLightThemeColor": {
+      "message": "Aydınlık Tema Rengi"
+   },
+   "settingNearLiveData": {
+      "message": "Neredeyse Canlı Veri"
+   },
+   "settingPrecipitation": {
+      "message": "Yağış"
+   },
+   "settingRelativeHumidity": {
+      "message": "Bağıl (%)"
+   },
+   "settingSevereWeatherBadge": {
+      "message": "Şiddetli Hava Rozeti (kırmızı nokta)"
+   },
+   "settingSevereWeatherNotifications": {
+      "message": "Şiddetli Hava Bildirimleri"
+   },
+   "settingTimeFormat": {
+      "message": "Saat Biçimi"
+   },
+   "settingToolbarBadge": {
+      "message": "ROZET"
+   },
+   "settingUnits": {
+      "message": "BİRİMLER"
+   },
+   "settingUvIndex": {
+      "message": "UV İndeksi"
+   },
+   "settingUvWeatherVersion": {
+      "message": "UV Weather $1",
+      "placeholders": {
+         "ver": {
+            "content": "$1"
+         }
+      }
+   },
+   "settingVisualStyleTheme": {
+      "message": "Görsel Stil Teması"
+   },
+   "settingWindDirection": {
+      "message": "Rüzgar Yönü"
+   },
+   "settingWindSpeed": {
+      "message": "Rüzgar Hızı"
+   },
+   "settings": {
+      "message": "Ayarlar"
+   },
+   "settingsSubtitle": {
+      "message": "Birimler, görünüm, güncelleme aralığı ve daha fazlası"
+   },
+   "severeWeatherBadge": {
+      "message": "Şiddetli Hava Rozeti"
+   },
+   "severeWeatherNotifications": {
+      "message": "Şiddetli Hava Bildirimleri"
+   },
+   "severity": {
+      "message": "Şiddet"
+   },
+   "severityDesExtreme": {
+      "message": "Hayat veya mülk için olağanüstü tehdit."
+   },
+   "severityDesMinor": {
+      "message": "Hayat veya mülk için minimum ila sıfır bilinen tehdit."
+   },
+   "severityDesModerate": {
+      "message": "Hayat veya mülk için olası tehdit."
+   },
+   "severityDesSevere": {
+      "message": "Hayat veya mülk için ciddi tehdit."
+   },
+   "severityExtreme": {
+      "message": "Aşırı"
+   },
+   "severityMinor": {
+      "message": "Hafif"
+   },
+   "severityModerate": {
+      "message": "Orta"
+   },
+   "severitySevere": {
+      "message": "Şiddetli"
+   },
+   "severityUnknown": {
+      "message": "Bilinmiyor"
+   },
+   "sixtyMinWeather": {
+      "message": "60 Dk. Hava Durumu"
+   },
+   "snow": {
+      "message": "Kar"
+   },
+   "snowPrecipitation": {
+      "message": "Kar Yağışı"
+   },
+   "solarHrs": {
+      "message": "HRS"
+   },
+   "solarMin": {
+      "message": "MIN"
+   },
+   "solarNoon": {
+      "message": "Güneş Tepe Noktası"
+   },
+   "solarNoonIn": {
+      "message": "Güneş Tepe Noktası"
+   },
+   "solarNoonInLabel": {
+      "message": "Güneş tepe noktasına"
+   },
+   "solarNoonTooltip": {
+      "message": "Güneş en yüksek konumda"
+   },
+   "solarTo": {
+      "message": "-"
+   },
+   "startFreeTrial": {
+      "message": "Risksiz 3 günlük denemenize bugün başlayın"
+   },
+   "startProTrial": {
+      "message": "Pro denemenizi başlatın, 3 gün ücretsiz"
+   },
+   "startingIn": {
+      "message": "$1 $2 dk içinde başlıyor.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "stayInShade": {
+      "message": "Gölgede kalın"
+   },
+   "sunMoonToday": {
+      "message": "Bugünkü Güneş & Ay"
+   },
+   "sunRisesIn": {
+      "message": "Gün doğumuna"
+   },
+   "sunSetsIn": {
+      "message": "Gün batımına"
+   },
+   "sunrise": {
+      "message": "Gün Doğumu"
+   },
+   "sunriseSunset": {
+      "message": "Gün Doğumu | Gün Batımı"
+   },
+   "sunset": {
+      "message": "Gün Batımı"
+   },
+   "temperature": {
+      "message": "Sıcaklık"
+   },
+   "temperatureMax": {
+      "message": "Sıcaklık (Maks)"
+   },
+   "temperatureMin": {
+      "message": "Sıcaklık (Min)"
+   },
+   "temporaryHiccup": {
+      "message": "En son hava durumu verilerini alırken geçici bir sorun yaşıyoruz."
+   },
+   "timeAfternoon": {
+      "message": "Öğleden Sonra"
+   },
+   "timeEvening": {
+      "message": "Akşam"
+   },
+   "timeMorning": {
+      "message": "Sabah"
+   },
+   "timeNight": {
+      "message": "Gece"
+   },
+   "timelineClear": {
+      "message": "Açık"
+   },
+   "timelineCloudy": {
+      "message": "Bulutlu"
+   },
+   "timelineFog": {
+      "message": "Sis"
+   },
+   "timelinePartlyCloudy": {
+      "message": "Parçalı Bulutlu"
+   },
+   "timelineRain": {
+      "message": "Yağmur"
+   },
+   "timelineSleet": {
+      "message": "Sulu Kar"
+   },
+   "timelineSnow": {
+      "message": "Kar"
+   },
+   "timelineWind": {
+      "message": "Rüzgar"
+   },
+   "toAddMoreRemove": {
+      "message": "Daha fazla eklemek için bazılarını kaldırın."
+   },
+   "toAddMoreRemoveSome": {
+      "message": "Daha fazla eklemek için bazılarını kaldırın."
+   },
+   "today": {
+      "message": "Bugün"
+   },
+   "tomorrow": {
+      "message": "Yarın"
+   },
+   "tomorrowAsCold": {
+      "message": "Yarın bugün kadar soğuk olacak."
+   },
+   "tomorrowAsCool": {
+      "message": "Yarın bugün kadar serin olacak."
+   },
+   "tomorrowAsWarm": {
+      "message": "Yarın bugün kadar sıcak olacak."
+   },
+   "tomorrowColder": {
+      "message": "Yarın bugünden daha soğuk olacak."
+   },
+   "tomorrowCooler": {
+      "message": "Yarın bugünden daha serin olacak."
+   },
+   "tomorrowWarmer": {
+      "message": "Yarın bugünden daha sıcak olacak."
+   },
+   "totalDaylight": {
+      "message": "Toplam Gün Işığı"
+   },
+   "tryAgain": {
+      "message": "Lütfen birkaç saniye içinde tekrar deneyin."
+   },
+   "uncomfortable": {
+      "message": "Rahatsız Edici"
+   },
+   "unlock240Hour": {
+      "message": "240 Saatlik Tahminin Kilidini Aç"
+   },
+   "unlock30Day": {
+      "message": "30 Günlük Tahminin Kilidini Aç"
+   },
+   "unlock45Day": {
+      "message": "45 Günlük Tahminin Kilidini Aç"
+   },
+   "unlockForecastRadar": {
+      "message": "Tahmin Radar Haritasının Kilidini Aç"
+   },
+   "unlockHourlyAqi": {
+      "message": "Saatlik AQI Kilidini Aç"
+   },
+   "unlockProDesc": {
+      "message": "30 günlük tahmin, canlı radar, yapay zeka raporları ve premium özelliklerle sınırsız UV hava paketi."
+   },
+   "unlockProFeatures": {
+      "message": "Pro Özelliklerin Kilidini Aç"
+   },
+   "unlockSolarLunar": {
+      "message": "Günlük Astro Verilerinin Kilidini Aç"
+   },
+   "updatedOn": {
+      "message": "güncellendi"
+   },
+   "upgradeMoreLocations": {
+      "message": "Daha Fazla Konum İçin Şimdi Yükseltin"
+   },
+   "upgradeToUVPro": {
+      "message": "UV Weather Pro'ya Yükseltin"
+   },
+   "urgency": {
+      "message": "Aciliyet"
+   },
+   "urgencyDesExpected": {
+      "message": "Kısa süre içinde (bir saat içinde) müdahale edilmelidir."
+   },
+   "urgencyDesFuture": {
+      "message": "Yakın gelecekte müdahale edilmelidir."
+   },
+   "urgencyDesImmediate": {
+      "message": "Derhal müdahale edilmelidir."
+   },
+   "urgencyDesPast": {
+      "message": "Artık müdahale gerekmiyor."
+   },
+   "urgencyExpected": {
+      "message": "Beklenen"
+   },
+   "urgencyFuture": {
+      "message": "Gelecek"
+   },
+   "urgencyImmediate": {
+      "message": "Acil"
+   },
+   "urgencyPast": {
+      "message": "Geçmiş"
+   },
+   "urgencyUnknown": {
+      "message": "Bilinmiyor"
+   },
+   "uvExtreme": {
+      "message": "Aşırı"
+   },
+   "uvHigh": {
+      "message": "Yüksek"
+   },
+   "uvIndex": {
+      "message": "UV İndeksi"
+   },
+   "uvIndexMax": {
+      "message": "UV İndeksi Maks"
+   },
+   "uvIndexPeak": {
+      "message": "UV İndeksi (Zirve)"
+   },
+   "uvLimitSun": {
+      "message": "Güneşte kalma sürenizi sınırlayın"
+   },
+   "uvLow": {
+      "message": "Düşük"
+   },
+   "uvModerate": {
+      "message": "Orta"
+   },
+   "uvNight": {
+      "message": "gece"
+   },
+   "uvSeekShade": {
+      "message": "Gölge arayın."
+   },
+   "uvStayIndoors": {
+      "message": "Mümkün olduğunca kapalı mekanlarda kalmaya çalışın."
+   },
+   "uvVeryHigh": {
+      "message": "Çok Yüksek"
+   },
+   "visibility": {
+      "message": "Görüş Mesafesi"
+   },
+   "visibilityClear": {
+      "message": "Açık"
+   },
+   "visibilityLimited": {
+      "message": "Sınırlı"
+   },
+   "visibilityPerfectlyClear": {
+      "message": "Tamamen Açık"
+   },
+   "visibilityRestricted": {
+      "message": "Kısıtlı"
+   },
+   "wearHat": {
+      "message": "Şapka takın"
+   },
+   "wearSunClothing": {
+      "message": "Güneş koruyucu kıyafet giyin"
+   },
+   "wearSunglasses": {
+      "message": "UV engelleyici güneş gözlüğü takın"
+   },
+   "weather": {
+      "message": "Hava Durumu"
+   },
+   "weatherAdjBlizzard": {
+      "message": "Tipili"
+   },
+   "weatherAdjBlowingDust": {
+      "message": "Toz fırtınalı"
+   },
+   "weatherAdjBlowingSnow": {
+      "message": "Savrulan karlı"
+   },
+   "weatherAdjBreezy": {
+      "message": "Esintili"
+   },
+   "weatherAdjClear": {
+      "message": "Açık"
+   },
+   "weatherAdjCloudy": {
+      "message": "Bulutlu"
+   },
+   "weatherAdjDrizzle": {
+      "message": "Çiselemeli"
+   },
+   "weatherAdjFlurries": {
+      "message": "Serpintili"
+   },
+   "weatherAdjFoggy": {
+      "message": "Sisli"
+   },
+   "weatherAdjFreezingDrizzle": {
+      "message": "Dondurucu çiselemeli"
+   },
+   "weatherAdjFreezingRain": {
+      "message": "Dondurucu yağmurlu"
+   },
+   "weatherAdjFrigid": {
+      "message": "Dondurucu"
+   },
+   "weatherAdjHail": {
+      "message": "Dolulu"
+   },
+   "weatherAdjHaze": {
+      "message": "Puslu"
+   },
+   "weatherAdjHeavyRain": {
+      "message": "Şiddetli yağmurlu"
+   },
+   "weatherAdjHeavySnow": {
+      "message": "Yoğun karlı"
+   },
+   "weatherAdjHot": {
+      "message": "Sıcak"
+   },
+   "weatherAdjHurricane": {
+      "message": "Kasırgalı"
+   },
+   "weatherAdjMostlyClear": {
+      "message": "Çoğunlukla açık"
+   },
+   "weatherAdjMostlyCloudy": {
+      "message": "Çoğunlukla bulutlu"
+   },
+   "weatherAdjPartlyCloudy": {
+      "message": "Parçalı bulutlu"
+   },
+   "weatherAdjRain": {
+      "message": "Yağmurlu"
+   },
+   "weatherAdjSleet": {
+      "message": "Sulu karlı"
+   },
+   "weatherAdjSmoky": {
+      "message": "Dumanlı"
+   },
+   "weatherAdjSnow": {
+      "message": "Karlı"
+   },
+   "weatherAdjStrongStorms": {
+      "message": "Şiddetli fırtınalı"
+   },
+   "weatherAdjSunFlurries": {
+      "message": "Güneşli serpintili"
+   },
+   "weatherAdjSunShowers": {
+      "message": "Güneşli yağmurlu"
+   },
+   "weatherAdjThunderstorms": {
+      "message": "Fırtınalı"
+   },
+   "weatherAdjTropicalStorm": {
+      "message": "Tropikal fırtınalı"
+   },
+   "weatherAdjWindy": {
+      "message": "Rüzgarlı"
+   },
+   "weatherAdjWintryMix": {
+      "message": "Kışımsı"
+   },
+   "weatherAlertActive": {
+      "message": "Şu anda aktif bir hava uyarısı var."
+   },
+   "weatherAlerts": {
+      "message": "Hava Uyarıları"
+   },
+   "weatherCalendar45": {
+      "message": "45 Günlük Hava Takvimi"
+   },
+   "weatherCondBlizzard": {
+      "message": "Tipi"
+   },
+   "weatherCondBlowingDust": {
+      "message": "Toz fırtınası"
+   },
+   "weatherCondBlowingSnow": {
+      "message": "Savrulan kar"
+   },
+   "weatherCondBreezy": {
+      "message": "Esintili"
+   },
+   "weatherCondClear": {
+      "message": "Açık"
+   },
+   "weatherCondCloudy": {
+      "message": "Bulutlu"
+   },
+   "weatherCondDrizzle": {
+      "message": "Çiseleme"
+   },
+   "weatherCondFlurries": {
+      "message": "Kar serpintisi"
+   },
+   "weatherCondFoggy": {
+      "message": "Sis"
+   },
+   "weatherCondFreezingDrizzle": {
+      "message": "Dondurucu çiseleme"
+   },
+   "weatherCondFreezingRain": {
+      "message": "Dondurucu yağmur"
+   },
+   "weatherCondFrigid": {
+      "message": "Dondurucu soğuk"
+   },
+   "weatherCondHail": {
+      "message": "Dolu"
+   },
+   "weatherCondHaze": {
+      "message": "Puslu hava"
+   },
+   "weatherCondHeavyRain": {
+      "message": "Şiddetli yağmur"
+   },
+   "weatherCondHeavySnow": {
+      "message": "Yoğun kar"
+   },
+   "weatherCondHot": {
+      "message": "Yüksek sıcaklık"
+   },
+   "weatherCondHurricane": {
+      "message": "Kasırga"
+   },
+   "weatherCondMostlyClear": {
+      "message": "Çoğunlukla açık"
+   },
+   "weatherCondMostlyCloudy": {
+      "message": "Çoğunlukla bulutlu"
+   },
+   "weatherCondPartlyCloudy": {
+      "message": "Parçalı bulutlu"
+   },
+   "weatherCondRain": {
+      "message": "Yağmur"
+   },
+   "weatherCondSleet": {
+      "message": "Karla karışık yağmur"
+   },
+   "weatherCondSmoky": {
+      "message": "Dumanlı"
+   },
+   "weatherCondSnow": {
+      "message": "Kar"
+   },
+   "weatherCondSunFlurries": {
+      "message": "Güneşli kar serpintisi"
+   },
+   "weatherCondThunderstorms": {
+      "message": "Gök gürültülü fırtına"
+   },
+   "weatherCondTropicalStorm": {
+      "message": "Tropikal fırtına"
+   },
+   "weatherCondWindy": {
+      "message": "Rüzgarlı"
+   },
+   "weatherCondWintryMix": {
+      "message": "Kış karışımı"
+   },
+   "weatherHealthSafety": {
+      "message": "Hava Durumu Sağlık Güvenliği"
+   },
+   "weatherReport": {
+      "message": "Hava Raporu"
+   },
+   "weatherReportByLexi": {
+      "message": "Lexi Hava Raporu"
+   },
+   "weatherReportLexi": {
+      "message": "Lexi Hava Raporu"
+   },
+   "weatherReportLexiPro": {
+      "message": "Lexi Hava Raporu (Pro özellik)"
+   },
+   "willContinueFor": {
+      "message": "$1 $2 dk daha devam edecek.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "wind": {
+      "message": "Rüzgar"
+   },
+   "windAvg": {
+      "message": "Rüzgar (Ort.)"
+   },
+   "windChill": {
+      "message": "Rüzgar Soğukluğu"
+   },
+   "windDirection": {
+      "message": "Rüzgar Yönü"
+   },
+   "windGusts": {
+      "message": "Rüzgar Esintileri"
+   },
+   "windGustsMax": {
+      "message": "Rüzgar Esintileri (Maks)"
+   },
+   "worldwideWeatherMap": {
+      "message": "Dünya Hava Haritası"
+   },
+   "yesterday": {
+      "message": "Dün"
+   },
+   "yesterdayThisTime": {
+      "message": "Dün"
+   }
+}

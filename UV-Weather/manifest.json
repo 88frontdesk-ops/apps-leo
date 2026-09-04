@@ -1,0 +1,35 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "images/UV_index128.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "__MSG_extName__"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+   },
+   "default_locale": "en",
+   "description": "__MSG_extDescription__",
+   "icons": {
+      "128": "images/UV_index128.png",
+      "16": "images/UV_index16.png",
+      "32": "images/UV_index32.png",
+      "48": "images/UV_index48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzp7KHjjL1Q+MgMgEEtQFNoNjcLaTOohxuHoE05T4WgX6QdQKfOZQi62rt+n8kGhFSZN1iJoHfXkSFCKoi6lNdh4KziBg4UKT0yJVQdj3HsFO1uDEhprNZ6q8ew8UGRJ5u1S5Iv+ymYRFHCiushKNrfWPqkB/oYyRP0VXfHsYhXDZxzSGpZz90NX5oX0jLrNEtP4nTOPwXNau77oub31E1QpRyDytTwpo4vfc7RQwB0OrydY1y1KQ3Ycdm6wR2OwSF/vMMkgiAD9feJpiAh5BNWcWZKIMBpwli1f7c3kMy3PxjNkGJbTc1Qs+NM2AIOSINFq2aouQJRVJ2lQ9ZSLEvQIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_extName__",
+   "optional_permissions": [ "notifications" ],
+   "permissions": [ "storage", "alarms", "idle" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.0.66",
+   "web_accessible_resources": [ {
+      "extension_ids": [  ],
+      "matches": [  ],
+      "resources": [ "fonts/rubik.woff", "fonts/arial.woff", "fonts/helvetica.woff", "libraries/*" ]
+   } ]
+}

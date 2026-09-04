@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Keyshape -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 64 64" style="white-space: pre;">
+        <style>
+            @keyframes f0 { 100% { animation-timing-function: cubic-bezier(0.05,0.05,0.05,0); } 
+                0% 
+                { 
+                    transform: translate(10px,0px); 
+                    opacity: .6;
+                    animation-timing-function: cubic-bezier(0.05,0.05,0.05,0); 
+                } 
+                50% 
+                { 
+                    transform: translate(0px,0px); 
+                    opacity: .6;
+                    animation-timing-function: cubic-bezier(0.05,0.05,0.05,0); 
+                }
+                100% 
+                { 
+                    transform: translate(10px,0px); 
+                    opacity: .6;
+                    animation-timing-function: cubic-bezier(0.05,0.05,0.05,0); 
+                }                 
+            }  
+
+           @keyframes f1 { 100% { animation-timing-function: cubic-bezier(0.05,0.05,0.05,0); } 
+                0% 
+                { 
+                    transform: translate(0px,0px); 
+                    opacity: .6;
+                    animation-timing-function: cubic-bezier(0.05,0.05,0.05,0); 
+                } 
+                50% 
+                { 
+                    transform: translate(15px,0px); 
+                    opacity: .6;
+                    animation-timing-function: cubic-bezier(0.05,0.05,0.05,0); 
+                }
+                100% 
+                { 
+                    transform: translate(0px,0px); 
+                    opacity: .6;
+                    animation-timing-function: cubic-bezier(0.05,0.05,0.05,0); 
+                }                 
+            } 
+
+           @keyframes f2 { 100% { animation-timing-function: cubic-bezier(0.05,0.05,0.05,0); } 
+                0% 
+                { 
+                    transform: translate(15px,0px); 
+                    opacity: .6;
+                    animation-timing-function: cubic-bezier(0.05,0.05,0.05,0); 
+                } 
+                50% 
+                { 
+                    transform: translate(-10px,0px); 
+                    opacity: .6;
+                    animation-timing-function: cubic-bezier(0.05,0.05,0.05,0); 
+                }
+                100% 
+                { 
+                    transform: translate(15px,0px); 
+                    opacity: .6;
+                    animation-timing-function: cubic-bezier(0.05,0.05,0.05,0); 
+                }                 
+            } 
+
+        </style>
+    <g transform="translate(32,27.8455) translate(-20.4509,-16)"/>
+    <g transform="translate(23.1692,50.8367) translate(-0.730772,-1.51026)"/>
+    <g transform="translate(33.3808,50.8367) translate(-0.730772,-1.51026)"/>
+    <g transform="translate(43.6491,50.8367) translate(-0.730772,-1.51026)"/>
+    <g transform="translate(22.4384,46.3455) translate(-2.5,-2.5)"/>
+    <g transform="translate(34.4186,46.3455) translate(-2.5,-2.5)"/>
+    <g transform="translate(45.8271,46.3455) translate(-2.5,-2.5)"/>
+    <g transform="translate(35.3842,50.66) translate(-2.5,-2.5)"/>
+    <g transform="translate(45.4599,50.66) translate(-2.5,-2.5)"/>
+    <g transform="translate(23.1692,50.8367) translate(-0.730772,-1.51026)"/>
+    <g transform="translate(44.2065,57.8367) translate(-0.730772,-1.51026)">
+        <g transform="translate(-20.3065,-5.48974) translate(-0.730772,-1.51026)"/>
+    </g>
+    <g transform="translate(25,25) translate(-7.05427,0)">
+        <path id="_a0" fill="none" stroke="#EBF2F2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M29.4,2.2L5.4,2.2" opacity="1" transform="translate(-9.4,-3.2)" style="animation: 6s linear infinite both f0;"/>
+    </g>
+    <g transform="translate(15,35) translate(-7.05427,0)">
+        <path id="_a1" fill="none" stroke="#EBF2F2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M29.4,2.2L5.4,2.2" opacity="1" transform="translate(-9.4,-3.2)" style="animation: 6s linear infinite both f1;"/>
+    </g>
+    <g transform="translate(25,45) translate(-7.05427,0)">
+        <path id="_a2" fill="none" stroke="#EBF2F2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M29.4,2.2L5.4,2.2" opacity="1" transform="translate(-9.4,-3.2)" style="animation: 6s linear infinite both f2;"/>
+    </g>
+</svg>

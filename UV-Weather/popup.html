@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html>
+<div class="preloader loaded">
+        <div class="preloader_icons">
+                <div class="preloader_icon_cloud"><img src="images/weather_icon/preloader_cloud.svg"
+                                class="preloader_svg_cloud"></div>
+                <div class="preloader_icon_sun"><img src="images/weather_icon/preloader_sun.svg"
+                                class="preloader_svg_sun"></div>
+        </div>
+</div>
+<div class="preloaderLocation loaded"><img src="images/spinner.svg" alt="spinner" class="preloaderLocation_Class"></div>
+
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>UV Weather</title>
+        <link rel="stylesheet" href="/popup.css" media="screen">
+        <script type="text/javascript" src="/components/i18n.js"></script>
+        <script type="text/javascript" src="/components/lazyLoad.js"></script>
+        <link type="text/javascript" rel="preload" href="/popup.js" as="script">
+        <script type="module" src="/libraries/firebase-app.js"></script>
+        <script type="module" src="/libraries/firebase-firestore.js"></script>
+        <script type="module" src="/components/userStatus.js"></script>
+        <script type="text/javascript" src="/libraries/suncalc.js"></script>
+        <script type="text/javascript" src="/components/util.js"></script>
+        <script type="text/javascript" src="/components/elements.js"></script>
+        <script type="text/javascript" rel="preload" src="/popup.js"></script>
+        <script type="text/javascript" src="/components/weatherCast.js"></script>
+        <script type="text/javascript" src="/libraries/moment.js"></script>
+        <script type="text/javascript" src="/libraries/moment-timezone-with-data-10-year-range.min.js"></script>
+        <script type="text/javascript" src="/libraries/tz.js" defer="defer"></script>
+        <script type="text/javascript" src="/components/noData.js"></script>
+        <script type="text/javascript" src="/components/modal.js"></script>
+        <script type="text/javascript" src="/components/home.js"></script>
+        <script type="text/javascript" src="/components/current.js"></script>
+        <script type="text/javascript" src="/components/prev24Hrs.js"></script>
+        <script type="text/javascript" src="/components/favourite.js"></script>
+        <script type="text/javascript" src="/components/update.js"></script>
+        <script type="text/javascript" src="/components/vip.js"></script>
+        <script type="text/javascript" src="/components/temperature.js"></script>
+        <script type="text/javascript" src="/components/solar.js"></script>
+        <script type="text/javascript" src="/components/timeFormat.js"></script>
+        <script type="text/javascript" src="/components/hourly.js"></script>
+        <script type="text/javascript" src="/components/daily.js"></script>
+        <script type="text/javascript" src="/components/flickr.js"></script>
+        <script type="text/javascript" src="/components/theme.js"></script>
+        <script type="text/javascript" src="/components/mp.js"></script>
+        <script type="text/javascript" src="/components/outlook.js"></script>
+        <script type="text/javascript" src="/components/calendar.js"></script>
+        <script type="text/javascript" src="/components/aqi.js"></script>
+        <script type="text/javascript" src="/components/minutely.js"></script>
+        <script type="text/javascript" src="/components/hazard.js"></script>
+        <script type="text/javascript" src="/components/comparison.js"></script>
+        <script type="text/javascript" src="/components/report.js"></script>
+        <script type="text/javascript" src="/components/lunar.js"></script>
+        <script type="text/javascript" src="/components/radar.js"></script>
+        <script type="text/javascript" src="/components/world.js"></script>
+        <script type="text/javascript" src="/components/locations.js"></script>
+        <script type="text/javascript" src="/components/search.js"></script>
+        <script type="text/javascript" src="/components/alert.js"></script>
+        <script type="text/javascript" src="/components/setting.js"></script>
+        <script type="text/javascript" src="/components/toggleActions.js"></script>
+        <script type="text/javascript" src="/components/clickEvents.js"></script>
+</head>
+
+<body>
+        <div id="img-out"></div>
+        <div id="noInternet_popup" class="overlay_popup_Class">
+                <div>
+                        <div class="noData_text_Class"><b>__MSG_oops__</b> __MSG_noInternet__ __MSG_needOnline__</div>
+                        <img class="imgBg404" src="images/bg404.jpg">
+                </div>
+        </div>
+        <div id="overloaded_popup" class="overlay_popup_Class">
+                <div>
+                        <div class="noData_text_Class"><b>__MSG_oops__</b> __MSG_temporaryHiccup__ <b>__MSG_tryAgain__
+                                </b>__MSG_patience__</div><img class="imgBg404" src="images/bg404.jpg">
+                </div>
+        </div>
+        <div id="preload_body">
+                <aside id="image_background" class="image_background_Class"><span class="image_corner_Class">
+                                <div class="search_page kid_icon_hover_Class" id="kid_icon_hover"><a><img
+                                                        src="images/plus_icon.svg" class="kid_icon"
+                                                        id="kid_icon_id"></a></div>
+                                <div class="folding-angle"></div>
+                </aside>
+                <div><a id="photo_credit" class="photo_credit" href="#" target="_blank">Photo Credit</a></div>
+                <div class="header"></div><input type="checkbox" class="openSidebarMenu" id="openSidebarMenu"> <label
+                        for="openSidebarMenu" class="sidebarIconToggle">
+                        <div class="spinner diagonal part-1"></div>
+                        <div class="spinner horizontal"></div>
+                        <div class="spinner diagonal part-2"></div>
+                </label>
+                <div id="sidebarMenu">
+                        <ul class="sidebarMenuInner"><a id="sidebar_search" class="search_page whitelink">
+                                        <li><img src="images/search.svg"
+                                                        class="sidebar_icon_Class">__MSG_addEditLocations__</li>
+                                </a>
+                                <hr class="hr_forecast_menu">
+                                <li>
+                                        <div class="theme-switch-wrapper"><span><img src="images/moon-fill.svg"
+                                                                style="pointer-events:none!important"
+                                                                class="sidebar_icon_Class"> <span
+                                                                style="pointer-events:none!important">__MSG_darkMode__</span>
+                                                </span><label class="theme-switch" for="checkbox_themeSwitch"><input
+                                                                type="checkbox" id="checkbox_themeSwitch">
+                                                        <div class="slider round" data-html2canvas-ignore="true"></div>
+                                                </label></div>
+                                </li>
+                                <hr class="hr_forecast_menu">
+                                <li>
+                                        <div class="theme-switch-wrapper"><span><span class="menu_text_group"><span><img
+                                                                                src="images/cloud-badge.svg"
+                                                                                style="margin-left:-4px!important;width:21px!important;height:21px!important;pointer-events:none!important"
+                                                                                class="sidebar_icon_Class">
+                                                                </span><span>
+                                                                        <div style="pointer-events:none!important">
+                                                                                __MSG_lightColorBadge__</div>
+                                                                        <div class="menu_subTitle">
+                                                                                __MSG_optimizedDarkTheme__</div>
+                                                                </span></span></span><span><label
+                                                                class="theme_switch_white_badge theme-switch"
+                                                                for="checkbox_whiteBadge"><input type="checkbox"
+                                                                        id="checkbox_whiteBadge">
+                                                                <div class="slider round"
+                                                                        data-html2canvas-ignore="true"></div>
+                                                        </label></span></div>
+                                </li>
+                                <hr class="hr_forecast_menu">
+                                <li>
+                                        <div class="theme-switch-wrapper"><span><span class="menu_text_group"><span><img
+                                                                                src="images/white-badge.svg"
+                                                                                style="margin-left:-4px!important;width:21px!important;height:21px!important;pointer-events:none!important"
+                                                                                class="sidebar_icon_Class">
+                                                                </span><span>
+                                                                        <div style="pointer-events:none!important">
+                                                                                __MSG_largeNumberBadge__</div>
+                                                                </span></span></span><span><label
+                                                                class="theme_switch_large_badge theme-switch"
+                                                                for="checkbox_largeBadge"><input type="checkbox"
+                                                                        id="checkbox_largeBadge">
+                                                                <div class="slider round"
+                                                                        data-html2canvas-ignore="true"></div>
+                                                        </label></span></div>
+                                </li>
+                                <hr class="hr_forecast_menu">
+                                <li>
+                                        <div class="theme-switch-wrapper"><span><span class="menu_text_group"><span
+                                                                        class="sidebar_icon_red_dot_Class"><img
+                                                                                src="images/red-badge.svg"
+                                                                                style="border:0;z-index:50;margin-left:-4px!important;margin-bottom:-19px!important;width:21px!important;height:21px!important;pointer-events:none!important">
+                                                                        <img src="images/white-badge.svg"
+                                                                                style="margin-left:-4px!important;width:21px!important;height:21px!important;pointer-events:none!important"
+                                                                                class="sidebar_icon_Class">
+                                                                </span><span>
+                                                                        <div style="pointer-events:none!important">
+                                                                                __MSG_severeWeatherBadge__</div>
+                                                                        <div class="menu_subTitle">__MSG_redDotAlert__
+                                                                        </div>
+                                                                </span></span></span><span><label
+                                                                class="theme_switch_setting_red_badge theme-switch"
+                                                                for="checkbox_redBadge"><input type="checkbox"
+                                                                        id="checkbox_redBadge">
+                                                                <div class="slider round"
+                                                                        data-html2canvas-ignore="true"></div>
+                                                        </label></span></div>
+                                </li>
+                                <hr class="hr_forecast_menu">
+                                <li>
+                                        <div class="theme-switch-wrapper"><span><span class="menu_text_group"><span><img
+                                                                                src="images/notification.svg"
+                                                                                style="margin-left:-4px!important;width:21px!important;height:21px!important;pointer-events:none!important"
+                                                                                class="sidebar_icon_Class">
+                                                                </span><span>
+                                                                        <div style="pointer-events:none!important">
+                                                                                __MSG_severeWeatherNotifications__</div>
+                                                                </span></span></span><span><label
+                                                                class="theme_switch_notification theme-switch"
+                                                                for="checkbox_notification"><input type="checkbox"
+                                                                        id="checkbox_notification">
+                                                                <div class="slider round"
+                                                                        data-html2canvas-ignore="true"></div>
+                                                        </label></span></div>
+                                </li>
+                                <hr class="hr_forecast_menu"><a id="sidebar_setting" class="setting_page whitelink">
+                                        <li><span class="menu_text_group_setting"><span><img src="images/settings.svg"
+                                                                        class="sidebar_icon_Class"> </span><span>
+                                                                <div>__MSG_settings__</div>
+                                                                <div class="menu_subTitle">__MSG_settingsSubtitle__
+                                                                </div>
+                                                        </span></span></li>
+                                </a>
+                                <hr class="hr_forecast_menu"><a id="proLogin" class="hide_pro whitelink">
+                                        <li><img src="images/user.svg" class="sidebar_icon_Class"> <span
+                                                        id="sidebar_text_login">__MSG_proMemberLogin__</span></li>
+                                </a>
+                                <hr class="hr_forecast_menu"><a id="vipSidebar" class="whitelink vip_popup_class">
+                                        <li><span class="menu_text_group_setting"><span
+                                                                style="display:flex;flex-direction:row"><img
+                                                                        src="images/crown-gold.svg"
+                                                                        class="sidebar_icon_vip_Class"> </span><span>
+                                                                <div id="sidebar_text_vip">__MSG_unlockProFeatures__
+                                                                </div>
+                                                                <div id="sidebar_text_vip_subTitle"
+                                                                        class="menu_subTitle">__MSG_startFreeTrial__
+                                                                </div>
+                                                                <div id="vip_user_email" class="menu_subTitle"
+                                                                        style="display:none"></div>
+                                                        </span></span></li>
+                                </a>
+                                <div class="app_information_Class">
+                                        <div class="madein_Class"><span>__MSG_madeWith__ </span><span
+                                                        class="madein_heart_Class"></span> <span>__MSG_inCanada__
+                                                </span><span class="madein_flag_Class"></span></div>
+                                        <div style="margin-top:4px"><span id="title_version_setting"
+                                                        class="title_version_Class">Version 2.0.17</span> <span
+                                                        class="title_version_Class"></span> <span
+                                                        id="chrome_version_setting" class="title_version_Class"
+                                                        style="margin-left:7px">---</span></div>
+                                        <div calsss="attribution_Class" style="margin-top:4px"><span
+                                                        class="title_version_Class">__MSG_poweredBy__ </span><span><a
+                                                                class="blacklink"
+                                                                href="https://developer.apple.com/weatherkit/data-source-attribution/"
+                                                                target="_blank"
+                                                                style="text-decoration:none!important"><span
+                                                                        class="apple_logo_Class"></span> <span
+                                                                        style="font-size:13px">__MSG_weather__</span>
+                                                        </a><a class="blacklink"
+                                                                href="https://azure.microsoft.com/en-us/products/azure-maps"
+                                                                target="_blank"
+                                                                style="text-decoration:none!important"><span
+                                                                        class="microsoft_logo_Class"
+                                                                        style="margin-left:5px"></span> <span
+                                                                        style="font-size:13px">Microsoft
+                                                                        Azure</span></a></span></div>
+                                </div>
+                                <div id="express_qr" class="hide_pro express_qr_Class"><img
+                                                style="max-width:100%;max-height:100%"
+                                                src="https://api.qrserver.com/v1/create-qr-code/?data=https://qr.uvw.workers.dev/?deviceId=00000000-0000-0000-0000-000000000000&size=100x100&color=ffffff&bgcolor=FF642D&format=svg&qzone=1&margin=1">
+                                </div>
+                                <div id="support_Class" class="hide_pro support_Class">
+                                        <div class="email_text1_Class"><span
+                                                        class="email_text2_Class">__MSG_expressUpgrade__</span></div>
+                                        <span id="title_version_setting"><span
+                                                        class="title_version_Class">__MSG_scanQrCode__</span></span>
+                                </div>
+                        </ul>
+                </div>
+                <div id="alert_popup" class="alert_popup_Class">
+                        <div id="alert_popup_close" class="alert_popup_close_Class"></div>
+                        <div class="location_name alert_header_Class search_page"></div>
+                        <div class="title_subtitle_modal_Class" style="margin-bottom:37px">__MSG_weatherAlerts__</div>
+                        <div id="alert_group_0" class="alert_group_Class">
+                                <div id="alert_event_0" class="alert_event_Class">event</div>
+                                <div id="alert_time_0" class="alert_time_Class">start_time - end_time</div>
+                                <div id="alert_description_0" class="alert_description_Class">description</div>
+                                <div id="alert_sender_0" class="alert_sender_Class">sender_name</div>
+                        </div>
+                </div>
+                <div id="report_popup" class="report_popup_Class">
+                        <div id="report_popup_close" class="report_popup_close_Class"></div>
+                        <div class="report_header_Class"><span id="report_header"
+                                        class="title_page_fix_Class">__MSG_weatherReport__<sup
+                                                class="supBeta">__MSG_byLexi__</sup></span></div>
+                        <div class="title_subtitle_modal_Class update_time_subTitle_report"></div>
+                        <div id="report_group" class="report_group_Class">
+                                <div id="report_body" class="report_body_Class" style="overflow-y:scroll">
+                                        __MSG_reportLoading__</div>
+                        </div>
+                        <div id="reportLoadingBar" class="report_loadong_group"></div>
+                        <div id="report_leftSide" class="report_leftSide_group"></div>
+                </div>
+                <div style="position:absolute;top:75px">
+                        <div class="current_condition_group_Class"><span class="current_icon_update"
+                                        data-html2canvas-ignore="true"></span> <span id="current_condition"
+                                        class="current_condition_Class">.</span></div>
+                        <div id="current_temp_groupA" class="current_temp_groupA_Class">
+                                <div id="current_temp_groupC" class="current_temp_groupC_Class">
+                                        <div id="current_temp_maxmin_group" class="current_temp_maxmin_Class"><span
+                                                        id="current_temp_max_group"
+                                                        class="current_temp_max_Class tooltip"><span
+                                                                id="current_temp_max_icon"
+                                                                class="current_temp_max_icon_Class">↑ </span><span
+                                                                id="current_temp_max">-° </span></span><span
+                                                        id="current_temp_min_group"
+                                                        class="current_temp_min_Class tooltip"><span
+                                                                id="current_temp_min_icon"
+                                                                class="current_temp_min_icon_Class">↓ </span><span
+                                                                id="current_temp_min">-°</span></span></div>
+                                        <div class="current_temp_groupD_Class"><span
+                                                        class="current_temp current_temp_Class">- </span><span
+                                                        id="current_temp_sign" class="current_temp_sign_Class">°</span>
+                                        </div>
+                                </div><span class="current_accufeel_location_Class">
+                                        <div class="current_accufeel_Class tooltip"><span
+                                                        class="current_accufeel_Class tooltip"
+                                                        style="font-weight:300">__MSG_accuFeel__ </span><span
+                                                        class="current_accufeel_home current_accufeel_Class tooltip">-°
+                                                </span><span
+                                                        class="tooltiptext tooltip-right">__MSG_accuFeelTooltip__</span>
+                                        </div>
+                                        <div class="current_humidity_Class tooltip"><span class="current_humidity_Class"
+                                                        style="font-weight:300">__MSG_humidity__ </span><span
+                                                        class="current_humidity_home current_humidity_Class">-%</span>
+                                        </div>
+                                </span>
+                        </div>
+                </div>
+                <div class="current_minutely_alert_group"><span id="current_minutely_desc"
+                                class="current_minutely_desc_Class">- </span><span class="tooltip"><img id="alert_icon"
+                                        src="images/alert-red.svg" class="alert_icon_Class"> <span
+                                        id="alert_popup_text"><span class="tooltiptext toolTipTextAlertIcon"
+                                                style="top:0;left:50px;margin-top:20px!important;z-index:15000">__MSG_noWeatherAlerts__
+                                        </span></span></span><span class="tooltip radar_page"><img id="radar_icon"
+                                        src="images/radar.svg" class="radar_icon_Class"> <span
+                                        id="display_radar_popup"><span id="display_radar_text" class="tooltiptext"
+                                                style="margin-left:-50px;margin-top:20px!important;z-index:15000">__MSG_radarWeatherMap__</span></span></span>
+                </div>
+                <div class="arcsine_Class"><canvas id="sunPath_arc" width="300" height="300"></canvas>
+                        <hr class="leftSide">
+                        <hr class="centerSide">
+                        <hr class="rightSide">
+                </div>
+                <div class="arcsineDay_Class"><canvas id="sunPathDay_arc" width="300" height="300"></canvas></div>
+                <div class="pathSun_Class"><img id="pathSunIcon" src="images/path-sun.svg"
+                                class="astro_page pathIcon_Class"></div>
+                <div class="pathMoon_Class"><span class="tooltip"><img id="pathMoonIcon"
+                                        src="images/moon_phase/png/waxing-gibbous.png"
+                                        class="lunar_page pathIcon_Class"> <span id="moon_phases_explain"
+                                        class="tooltiptext"
+                                        style="text-align:center;width:105px;top:60px;left:-50px;z-index:205000!important"></span></span>
+                </div>
+                <div class="arcsineNight_Class"><canvas id="sunPathNight_arc" width="300" height="300"></canvas></div>
+                <div id="sunPathTop" class="sunPathTop_Class"><span class="sunriseGroupTop_Class">
+                                <div id="solar_1_time_mainpage" class="sunriseTime_Class sunriseSunsetData_Class"></div>
+                        </span><span class="sunsetGroupTop_Class">
+                                <div id="solar_2_time_mainpage" class="sunsetTime_Class sunriseSunsetData_Class"></div>
+                        </span></div>
+                <div id="firsLight" class="firsLight_Class">__MSG_solarNoonIn__<br>- hrs - mins</div>
+        </div>
+        <div id="current_button" class="current_button_Class" href="#current_popup"><button
+                        class="button_current_Class">__MSG_currentPlus__</button> <input type="checkbox"
+                        name="openSidebarMenu" class="openSidebarMenu" id="openSidebarMenu"></div>
+        <div id="group_uv" class="group_uv_Class">
+                <div id="current_uv_group" class="current_uv_group_Class"><span id="current_uv_title"
+                                class="current_uv_title_Class">__MSG_uvIndex__</span> <span
+                                class="current_uv current_uv_Class">-</span></div>
+                <div id="icon_uv_top" class="icon_uv_top_Class"><span id="icon_uv" class="icon_uv_Class tooltip"><img
+                                        id="info_icon" src="images/information.svg" class="icon_uv_all_Class"> <span
+                                        class="tooltiptext tooltip-bottom-uv"><span id="icon_uv_title_tooltip"
+                                                class="icon_uv_title_tooltip_Class">__MSG_recommendedSunProtection__<br></span><span
+                                                id="icon_uv_1_tooltip" class="icon_uv_text_tooltip_Class"><img
+                                                        id="icon_uv_1_text_tooltip" src="images/uv_icon/uv_1_g.svg"
+                                                        class="icon_uv_tip_Class">
+                                                __MSG_applySunscreen__<br></span><span id="icon_uv_2_tooltip"
+                                                class="icon_uv_text_tooltip_Class"><img id="icon_uv_2_text_tooltip"
+                                                        src="images/uv_icon/uv_2_g.svg" class="icon_uv_tip_Class">
+                                                __MSG_wearSunglasses__<br></span><span id="icon_uv_3_tooltip"
+                                                class="icon_uv_text_tooltip_Class"><img id="icon_uv_3_text_tooltip"
+                                                        src="images/uv_icon/uv_3_g.svg" class="icon_uv_tip_Class">
+                                                __MSG_wearHat__<br></span><span id="icon_uv_4_tooltip"
+                                                class="icon_uv_text_tooltip_Class"><img id="icon_uv_4_text_tooltip"
+                                                        src="images/uv_icon/uv_4_g.svg" class="icon_uv_tip_Class">
+                                                __MSG_wearSunClothing__<br></span><span id="icon_uv_5_tooltip"
+                                                class="icon_uv_text_tooltip_Class"><img id="icon_uv_5_text_tooltip"
+                                                        src="images/uv_icon/uv_5_g.svg" class="icon_uv_tip_Class">
+                                                __MSG_stayInShade__<br></span><span id="icon_uv_6_tooltip"
+                                                class="icon_uv_text_tooltip_Class"><img id="icon_uv_6_text_tooltip"
+                                                        src="images/uv_icon/uv_6_g.svg" class="icon_uv_tip_Class">
+                                                __MSG_reduceTimeSun__</span></span><span
+                                        style="margin-top:4px;margin-left:2px"><img id="icon_uv_1"
+                                                src="images/uv_icon/uv_1_g.svg" class="icon_uv_all_Class"> <img
+                                                id="icon_uv_2" src="images/uv_icon/uv_2_g.svg"
+                                                class="icon_uv_all_Class"> <img id="icon_uv_3"
+                                                src="images/uv_icon/uv_3_g.svg" class="icon_uv_all_Class"> <img
+                                                id="icon_uv_4" src="images/uv_icon/uv_4_g.svg"
+                                                class="icon_uv_all_Class"> <img id="icon_uv_5"
+                                                src="images/uv_icon/uv_5_g.svg" class="icon_uv_all_Class"> <img
+                                                id="icon_uv_6" src="images/uv_icon/uv_6_g.svg"
+                                                class="icon_uv_all_Class"></span></div>
+        </div>
+        <div class="updatedOn_Class"><span class="updateOn_date"></span></div>
+        <div id="shareGroup_home" class="shareGroup_home_Class" data-html2canvas-ignore="true">
+                <div id="share_download_link_homepage" class="resp-sharing-button__link share_download_link_Class"
+                        href="" target="_blank" rel="noopener" aria-label="">
+                        <div id="share_download"
+                                class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+                                <div aria-hidden="true"
+                                        class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg
+                                                viewBox="0 0 24 24">
+                                                <path d="M0,14.7v6.6c0,0.1,0,0.3,0,0.4C0.2,23.1,1.4,24,2.7,24h18.6c0.1,0,0.3,0,0.5,0c1.3-0.2,2.3-1.4,2.3-2.7v-6.6
+			h-2.7v6.6H2.7v-6.7H0z M12,18.7l6.7-8h-5.3V0h-2.7v10.7H5.3L12,18.7z" />
+                                        </svg></div>
+                        </div>
+                </div><a id="share_facebook_link" class="resp-sharing-button__link"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https://chromewebstore.google.com/detail/uv-weather/ngeokhpbgoadbpdpnplcminbjhdecjeb"
+                        target="_blank" rel="noopener" aria-label="">
+                        <div id="share_facebook"
+                                class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+                                <div aria-hidden="true"
+                                        class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                        d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
+                                        </svg></div>
+                        </div>
+                </a><a id="share_x_link" class="resp-sharing-button__link"
+                        href="https://x.com/intent/tweet?url=https://chromewebstore.google.com/detail/uv-weather/ngeokhpbgoadbpdpnplcminbjhdecjeb&text=AI-Powered%20Weather%20Forecasting&via="
+                        target="_blank" rel="noopener" aria-label="">
+                        <div id="share_x" class="resp-sharing-button resp-sharing-button--x resp-sharing-button--small">
+                                <div aria-hidden="true"
+                                        class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                        d="M14.2,10.4l8.9-10.3H21l-7.7,9l-6.2-9H0l9.3,13.5L0,24.4h2.1l8.1-9.5l6.5,9.5h7.1L14.2,10.4L14.2,10.4z" />
+                                        </svg></div>
+                        </div>
+                </a><a id="share_linkedin_link" class="resp-sharing-button__link"
+                        href="https://www.linkedin.com/shareArticle?url=https://chromewebstore.google.com/detail/uv-weather/ngeokhpbgoadbpdpnplcminbjhdecjeb&title=AI-Powered%20Weather%20Forecasting"
+                        target="_blank" rel="noopener" aria-label="">
+                        <div id="share_linkedin"
+                                class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
+                                <div aria-hidden="true"
+                                        class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                        d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z" />
+                                        </svg></div>
+                        </div>
+                </a><a id="share_reddit_link" class="resp-sharing-button__link"
+                        href="https://reddit.com/submit?url=https://chromewebstore.google.com/detail/uv-weather/ngeokhpbgoadbpdpnplcminbjhdecjeb&title=AI-Powered%20Weather%20Forecasting"
+                        target="_blank" rel="noopener" aria-label="">
+                        <div id="share_reddit"
+                                class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small">
+                                <div aria-hidden="true"
+                                        class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                        d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z" />
+                                        </svg></div>
+                        </div>
+                </a>
+        </div>
+        <div class="header_menu">
+                <div id="nextLocationGroup_home" class="nextLocationGroup_home_Class" style="padding-right:15px"><a
+                                id="nextLocation_home"><img src="images/loop.svg" class="top_menu_icon_Class"
+                                        style="width:30px;height:30px;margin-top:-1px"></a></div>
+                <div id="vipIcon_home" class="hide_pro tooltip vipIcon_home_Class" style="padding-right:18px"><a
+                                id="upgrade_home"><img src="images/crown-gold.svg"
+                                        style="width:22px;height:22px;padding-bottom:3px"> </a><span
+                                class="tooltiptext tooltip-left"
+                                style="margin-top:40px;margin-right:-200px">__MSG_startProTrial__</span></div>
+                <div class="tooltip notification_home_Class" style="padding-right:10px"><img id="notification_icon"
+                                src="images/notification_off.svg" class="top_menu_icon_Class notification_icon_Class"
+                                style="margin-top:-3px;margin-right:3px"> <span id="display_notification_popup"><span
+                                        id="display_notification_text" class="tooltiptext tooltip-left"
+                                        style="margin-top:40px;margin-right:-200px">__MSG_getNotificationsSevere__</span></span>
+                </div>
+                <div id="setting_home" class="setting_page" style="padding-right:15px"><a id="setting_popup_page"><img
+                                        src="images/settings.svg" class="top_menu_icon_Class"></a></div>
+                <div id="search_home" class="search_home_Class"><a id="search_popup_page"
+                                class="search_page search_popup_page_Class"><img src="images/search.svg"
+                                        class="top_menu_icon_Class"></a></div>
+        </div>
+        <div class="cardUpdate_Class">
+                <div id="cardUdate_close" class="cardUpdate_close_Class"><img src="images/close-box.svg"
+                                class="cardupdate_close_img"></div>
+                <div id="cardUdate_upgrade" class="cardUpdate_upgrade_Class">__MSG_goAdFree__</div>
+                <div id="cardUpdate_heading" class="cardUpdate_heading_Class">__MSG_planLikePro__</div>
+                <div id="cardUpdate_title" class="cardUpdate_title_Class">__MSG_unlockProFeatures__</div>
+                <div id="cardUpdate_text" class="cardUpdate_text_Class">__MSG_unlockProDesc__</div>
+                <div id="cardUpdate_button" class="cardUpdate_button_action cardUpdate_button_Class"><span
+                                id="cardUpdate_buttonText">__MSG_exploreFullFeatures__ </span><span><img
+                                        src="images/arrow.svg" class="cardUpdate_button_icon"></span></div>
+        </div>
+        <div class="title_home_Class_setting">
+                <div style="display:flex;flex-direction:row;margin-bottom:6px;font-weight:600;align-items:center"><span
+                                class="title_page_Class_mainPage search_page"><span class="location_name"></span> <img
+                                        src="images/place.svg" class="icon_location_mainPage_Class"></span>
+                        <div class="tooltip" style="padding-left:10px;padding-top:8px"><a id="world_page"><img
+                                                src="images/world.svg" class="world_home_icon_Class"> </a><span
+                                        class="tooltiptext"
+                                        style="margin-left:-25px;margin-top:25px">__MSG_worldwideWeatherMap__</span>
+                        </div>
+                </div>
+                <div class="title_subtitle_modal_Class update_time_subTitle_mainPage"></div>
+        </div><span class="tooltipHazard">
+                <div id="hazard_button" class="hazard_button_Class">
+                        <div class="hazard_button_background_Class"><img id="hazard_icon" src="images/health.svg"
+                                        style="padding:8px;margin-top:2px;margin-left:2px" class="hazard_button_icon">
+                        </div>
+                </div><span class="tooltipHazard">
+                        <div class="hazard_main_Class tooltiptextHazard">
+                                <div style="padding-bottom:10px;display:flex;flex-direction:row;align-items:baseline">
+                                        <span style="width:270px;font-size:16px;font-weight:700;color:#fff">__MSG_weatherHealthSafety__
+                                        </span><span id="update_time_hazard_mainPage"
+                                                style="font-size:13px;font-weight:400;color:#fff">-</span></div>
+                                <div class="hazard_sub"><span class="hazard_title">__MSG_heatStroke__ </span><span
+                                                class="hazard_bar">
+                                                <div id="hazard_heat" class="prog-wrap"><span class="prog-bar"></span>
+                                                </div>
+                                        </span><span id="hazard_value_heat" class="hazard_value">-</span></div>
+                                <div class="hazard_sub"><span class="hazard_title">__MSG_humidex__ </span><span
+                                                class="hazard_bar">
+                                                <div id="hazard_humidex" class="prog-wrap"><span
+                                                                class="prog-bar"></span></div>
+                                        </span><span id="hazard_value_humidex" class="hazard_value">-</span></div>
+                                <div class="hazard_sub"><span class="hazard_title">__MSG_snow__ </span><span
+                                                class="hazard_bar">
+                                                <div id="hazard_snow" class="prog-wrap"><span class="prog-bar"></span>
+                                                </div>
+                                        </span><span id="hazard_value_snow" class="hazard_value">-</span></div>
+                                <div class="hazard_sub"><span class="hazard_title">__MSG_rain__ </span><span
+                                                class="hazard_bar">
+                                                <div id="hazard_rain" class="prog-wrap"><span class="prog-bar"></span>
+                                                </div>
+                                        </span><span id="hazard_value_rain" class="hazard_value">-</span></div>
+                                <div class="hazard_sub"><span class="hazard_title">__MSG_uvIndex__ </span><span
+                                                class="hazard_bar">
+                                                <div id="hazard_uvi" class="prog-wrap"><span class="prog-bar"></span>
+                                                </div>
+                                        </span><span id="hazard_value_uvi" class="hazard_value">-</span></div>
+                                <div class="hazard_sub"><span class="hazard_title">__MSG_visibility__ </span><span
+                                                class="hazard_bar">
+                                                <div id="hazard_visibility" class="prog-wrap"><span
+                                                                class="prog-bar"></span></div>
+                                        </span><span id="hazard_value_visibility" class="hazard_value">-</span></div>
+                                <div class="hazard_sub"><span class="hazard_title">__MSG_windChill__ </span><span
+                                                class="hazard_bar">
+                                                <div id="hazard_chill" class="prog-wrap"><span class="prog-bar"></span>
+                                                </div>
+                                        </span><span id="hazard_value_chill" class="hazard_value">-</span></div>
+                                <div class="hazard_sub"><span class="hazard_title">__MSG_windGusts__ </span><span
+                                                class="hazard_bar">
+                                                <div id="hazard_wind" class="prog-wrap"><span class="prog-bar"></span>
+                                                </div>
+                                        </span><span id="hazard_value_wind" class="hazard_value">-</span></div>
+                        </div>
+                </span>
+        </span><span class="tooltipMins60">
+                <div id="mins60_button" class="mins60_button_Class">
+                        <div class="mins60_button_background_Class"><img id="mins60_icon" src="images/minutely.svg"
+                                        style="padding:8px;margin-top:0" class="mins60_button_icon"></div>
+                </div><span class="tooltipMins60">
+                        <div class="mins60_main_Class tooltiptextMins60">
+                                <div style="padding-bottom:10px;display:flex;flex-direction:row;align-items:baseline">
+                                        <span style="width:270px;font-size:16px;font-weight:700;color:#fff">__MSG_sixtyMinWeather__
+                                        </span><span id="update_time_mins60_mainPage"
+                                                style="font-size:10px;font-weight:400;color:#fff">__MSG_noPrecipitation__</span>
+                                </div>
+                                <div class="chartMins60_container_top">
+                                        <div class="chartMins60_container"><canvas id="mins60Chart"
+                                                        height="140"></canvas></div>
+                                </div>
+                                <div id="mins60_mainPage_daily"
+                                        style="display:flex;align-items:center;line-height:1.4;white-space:normal;width:370px;height:30px;padding-top:8px;font-size:13px;font-weight:400;color:#fff">
+                                        .</div>
+                        </div>
+                </span>
+        </span><span class="tooltipCompar">
+                <div id="compar_button" class="compar_button_Class">
+                        <div class="compar_button_background_Class"><img id="compar_icon" src="images/comparison.svg"
+                                        style="padding:8px;margin-top:0" class="compar_button_icon"></div>
+                </div><span class="tooltipCompar">
+                        <div class="compar_main_Class tooltiptextCompar">
+                                <div style="padding-bottom:10px;display:flex;flex-direction:row;align-items:baseline">
+                                        <span style="width:270px;font-size:16px;font-weight:700;color:#fff">__MSG_dailyComparison__
+                                        </span><span
+                                                style="margin-left:0;font-size:13px;font-weight:400;color:#fff"><span
+                                                        class="compare_value">__MSG_today__ </span><span
+                                                        class="compare_value">__MSG_yesterday__</span></span></div>
+                                <div class="compare_sub"><span style="display:flex;align-items:center"><img
+                                                        class="compare_icon" src="images/elements/humidity.svg"> <span
+                                                        class="compare_title">__MSG_humidityAvg__
+                                                </span></span><span><span id="compare_humi_icon"
+                                                        class="compareNum_icon">≈ </span><span id="compare_humi_t"
+                                                        class="compare_value">-- % </span><span id="compare_humi_y"
+                                                        class="compare_value">-- %</span></span></div>
+                                <hr class="hr_white">
+                                <div class="compare_sub"><span style="display:flex;align-items:center"><img
+                                                        class="compare_icon" src="images/elements/temp_max.svg"> <span
+                                                        class="compare_title">__MSG_temperatureMax__
+                                                </span></span><span><span id="compare_temp_max_icon"
+                                                        class="compareNum_icon">≈ </span><span id="compare_temp_max_t"
+                                                        class="compare_value">--° </span><span id="compare_temp_max_y"
+                                                        class="compare_value">--°</span></span></div>
+                                <hr class="hr_white">
+                                <div class="compare_sub"><span style="display:flex;align-items:center"><img
+                                                        class="compare_icon" src="images/elements/temp_min.svg"> <span
+                                                        class="compare_title">__MSG_temperatureMin__
+                                                </span></span><span><span id="compare_temp_min_icon"
+                                                        class="compareNum_icon">≈ </span><span id="compare_temp_min_t"
+                                                        class="compare_value">--° </span><span id="compare_temp_min_y"
+                                                        class="compare_value">--°</span></span></div>
+                                <hr class="hr_white">
+                                <div class="compare_sub"><span style="display:flex;align-items:center"><img
+                                                        class="compare_icon" src="images/elements/uv.svg"> <span
+                                                        class="compare_title">__MSG_uvIndexPeak__
+                                                </span></span><span><span id="compare_uv_icon" class="compareNum_icon">≈
+                                                </span><span id="compare_uv_t" class="compare_value">-- UV </span><span
+                                                        id="compare_uv_y" class="compare_value">-- UV</span></span>
+                                </div>
+                                <hr class="hr_white">
+                                <div class="compare_sub"><span style="display:flex;align-items:center"><img
+                                                        class="compare_icon" src="images/elements/wind.svg"> <span
+                                                        class="compare_title">__MSG_windAvg__ </span></span><span><span
+                                                        id="compare_wind_icon" class="compareNum_icon">≈ </span><span
+                                                        id="compare_wind_t" class="compare_value">-- mph </span><span
+                                                        id="compare_wind_y" class="compare_value">-- mph</span></span>
+                                </div>
+                                <hr class="hr_white">
+                                <div class="compare_sub"><span style="display:flex;align-items:center"><img
+                                                        class="compare_icon" src="images/elements/wind.svg"> <span
+                                                        class="compare_title">__MSG_windGustsMax__
+                                                </span></span><span><span id="compare_gust_icon"
+                                                        class="compareNum_icon">≈ </span><span id="compare_gust_t"
+                                                        class="compare_value">-- mph </span><span id="compare_gust_y"
+                                                        class="compare_value">-- mph</span></span></div>
+                        </div>
+                </span>
+        </span>
+        <div class="homescreen_today_menu"><span id="outlook_link_mainPage"
+                        class="homescreen_sub_today_menu homescreen_outlook_text"><a target="_blank"
+                                class="whitelink">__MSG_outlook__ </a></span><span id="today_link_mainPage"
+                        class="homescreen_sub_today_menu homescreen_today_text"><a target="_blank"
+                                class="whitelink">__MSG_hourly__ </a></span><span id="week_link_mainPage"
+                        class="homescreen_sub_week_menu homescreen_week_text"><a target="_blank"
+                                class="whitelink">__MSG_daily__</a></span></div>
+        <div class="daily_hourly_page forecast_Class_inner"><span class="forecast_Class_inner_sub">
+                        <div class="forecast_daily_mainScreen_sub">
+                                <div class="forecast_daily_mainScreen_date_group">
+                                        <div class="forecast_0_date forecast_day_Class">1</div><span
+                                                class="forecast_0_date_meridian forecast_hour_meridian_mainScreen_Class"></span>
+                                </div>
+                                <div class="forecast_0_homePage_icon_Class forecast_icon_Class">&#8192</div>
+                                <div class="forecast_0_homePage_temp forecast_temp_homeScreen_Class">-°</div>
+                                <div id="forecast_day_vertical_0" class="forecast_day_vertical_Class">__MSG_tomorrow__
+                                </div>
+                        </div>
+                </span><span class="forecast_Class_inner_sub">
+                        <div class="forecast_daily_mainScreen_sub">
+                                <div class="forecast_daily_mainScreen_date_group">
+                                        <div class="forecast_1_date forecast_day_Class">2</div><span
+                                                class="forecast_1_date_meridian forecast_hour_meridian_mainScreen_Class"></span>
+                                </div>
+                                <div class="forecast_1_homePage_icon_Class forecast_icon_Class">&#8192</div>
+                                <div class="forecast_1_homePage_temp forecast_temp_homeScreen_Class">-°</div>
+                        </div>
+                        <div id="forecast_day_vertical_1" class="forecast_day_vertical_Class">__MSG_tomorrow__</div>
+                </span><span class="forecast_Class_inner_sub">
+                        <div class="forecast_daily_mainScreen_sub">
+                                <div class="forecast_daily_mainScreen_date_group">
+                                        <div class="forecast_2_date forecast_day_Class">3</div><span
+                                                class="forecast_2_date_meridian forecast_hour_meridian_mainScreen_Class"></span>
+                                </div>
+                                <div class="forecast_2_homePage_icon_Class forecast_icon_Class">&#8192</div>
+                                <div class="forecast_2_homePage_temp forecast_temp_homeScreen_Class">-°</div>
+                        </div>
+                        <div id="forecast_day_vertical_2" class="forecast_day_vertical_Class">__MSG_tomorrow__</div>
+                </span><span class="forecast_Class_inner_sub">
+                        <div class="forecast_daily_mainScreen_sub">
+                                <div class="forecast_daily_mainScreen_date_group">
+                                        <div class="forecast_3_date forecast_day_Class">4</div><span
+                                                class="forecast_3_date_meridian forecast_hour_meridian_mainScreen_Class"></span>
+                                </div>
+                                <div class="forecast_3_homePage_icon_Class forecast_icon_Class">&#8192</div>
+                                <div class="forecast_3_homePage_temp forecast_temp_homeScreen_Class">-°</div>
+                        </div>
+                        <div id="forecast_day_vertical_3" class="forecast_day_vertical_Class">__MSG_tomorrow__</div>
+                </span><span class="forecast_Class_inner_sub">
+                        <div class="forecast_daily_mainScreen_sub">
+                                <div class="forecast_daily_mainScreen_date_group">
+                                        <div class="forecast_4_date forecast_day_Class">5</div><span
+                                                class="forecast_4_date_meridian forecast_hour_meridian_mainScreen_Class"></span>
+                                </div>
+                                <div class="forecast_4_homePage_icon_Class forecast_icon_Class">&#8192</div>
+                                <div class="forecast_4_homePage_temp forecast_temp_homeScreen_Class">-°</div>
+                        </div>
+                        <div id="forecast_day_vertical_4" class="forecast_day_vertical_Class">__MSG_tomorrow__</div>
+                </span></div>
+        <div class="weatherReport_homePage_button"><span id="weatherReport_button"><span class="live_icon"></span> <span
+                                id="weatherReport_link_title"
+                                class="weatherReport_homePage_title">__MSG_weatherReportByLexi__</span></span></div>
+        <div id="main_menu" class="main_menu_home_Class">
+                <div class="main_menu_culumn_Class"><span id="sub_menu_daily" class="sub_menu_culumn_Class"><a
+                                        class="daily_page_Class">
+                                        <div><img src="images/menu/calendar.svg" id="daily_icon_popup_page"
+                                                        class="sub_menu_icon_Class"></div>
+                                        <div class="sub_menu_text_Class">__MSG_daily__</div>
+                                </a></span><span id="sub_menu_hourly" class="sub_menu_culumn_Class"><a
+                                        class="hourly_page_Class">
+                                        <div><img src="images/menu/clock.svg" id="hourly_icon_popup_page"
+                                                        class="sub_menu_icon_Class"></div>
+                                        <div class="sub_menu_text_Class">__MSG_hourly__</div>
+                                </a></span><span id="sub_menu_home" class="sub_menu_culumn_Class"><a
+                                        id="home_popup_page">
+                                        <div><img src="images/menu/home.svg" id="home_icon_popup_page"
+                                                        class="sub_menu_icon_Class"></div>
+                                        <div class="sub_menu_text_Class">__MSG_home__</div>
+                                </a></span><span id="sub_menu_solar" class="sub_menu_culumn_Class"><a id="astro_page"
+                                        class="astro_page solar_page_Class">
+                                        <div><img src="images/menu/sun.svg" id="solar_icon_popup_page"
+                                                        class="sub_menu_icon_Class"></div>
+                                        <div class="sub_menu_text_Class">__MSG_astro__</div>
+                                </a></span><span id="sub_menu_aqi" class="sub_menu_culumn_Class"><a id="aqi_page"
+                                        class="aqi_page_Class">
+                                        <div><img src="images/menu/aqi.svg" id="aqi_icon_popup_page"
+                                                        class="sub_menu_icon_Class"></div>
+                                        <div class="sub_menu_text_Class">__MSG_airQuality__</div>
+                                </a></span></div>
+        </div>
+        <div id="search_popup">
+                <div id="mapSearch" class="search_Class"></div><a target="_blank"
+                        href="https://uvweather.net/add-a-place" class="whitelink"><span id="search_popup_title"
+                                class="modal_search_title">__MSG_reportMissingPlace__</span></a>
+        </div>
+        <div id="hourly_popup" class="modal_menu" style="overflow:auto">
+                <div id="favourite_icon_hourly" class="favourite_icon_inactive_Class favourite_icon_action tooltip">
+                        <span class="tooltiptext tooltip-left">__MSG_setDefaultHomepage__</span></div>
+                <div class="title_hourly_group_Class_setting">
+                        <div style="display:flex;flex-direction:row"><span
+                                        class="location_name title_page_Class search_page"></span></div>
+                        <div class="title_subtitle_modal_Class"><span
+                                        id="subtitle_horly_text">__MSG_next48Hours__</span> <span
+                                        class="hide_pro subtitle_upgrade_text extended_hourly_forecast"><a
+                                                target="_blank">__MSG_unlock240Hour__ <img id="link_lock_vip"
+                                                        src="images/crown.svg" style="padding-left:2px"
+                                                        class="link_lock_vip_Class"></a></span></div>
+                </div><span><img src="images/plus.svg" class="hourly_current_button current_button_Class"></span>
+                <div id="forecastTable" class="hourly_table_Class"></div>
+                <div class="timelines_daily_Class">
+                        <div id="timeline_hourly"></div>
+                </div>
+        </div>
+        <div id="map_popup">
+                <div id="favourite_icon_map" class="favourite_icon_map_inactive_Class favourite_icon_action tooltip">
+                        <span class="tooltiptext tooltip-left">__MSG_setDefaultHomepage__</span></div>
+                <div id="map_popup_close" class="modal_map_close"></div>
+                <div id="weatherMap" class="map_Class"></div>
+                <div id="map_popup_title" class="modal_map_title"><span>UV Weather | </span><span><a
+                                        href="https://www.rainviewer.com/api.html" target="_blank"
+                                        style="text-decoration:none;font-weight:400"><span
+                                                class="hyperlink_text">RainViewer | </span></a></span><span><a
+                                        href="https://www.mapbox.com" target="_blank"
+                                        style="text-decoration:none;font-weight:400"><span class="hyperlink_text">Mapbox
+                                                | </span></a></span><span id="map_popup_title_date"></span></div>
+                <div class="radar_legend_background"></div><span id="legend_text" class="legend_text_Class">
+                        <div id="legend_title_snow">__MSG_snow__</div>
+                        <div style="margin-top:23px">__MSG_rain__</div>
+                        <div
+                                style="display:flex;flex-direction:row;justify-content:space-between;margin-top:22px;font-size:11px!important">
+                                <span>__MSG_light__</span> <span>__MSG_medium__</span> <span>__MSG_heavy__</span></div>
+                </span><img id="legend_image" class="legend_image_Class" src="images/legend.png">
+                <div id="radar_kind" class="radar_kind" style="display:none">
+                        <div id="setting_radar_kind" class="setting_kind_row"><span
+                                        class="setting_title_radar_kind">__MSG_cloudCoverage__ </span><label
+                                        class="radar_switch_setting_kind" for="checkbox_kind"><input type="checkbox"
+                                                id="checkbox_kind">
+                                        <div class="slider_setting_radar round"></div>
+                                </label></div>
+                </div>
+                <div id="radar_snow" class="radar_snow">
+                        <div id="setting_radar_snow" class="setting_snow_row"><span
+                                        class="setting_title_radar_snow">__MSG_snowPrecipitation__ </span><label
+                                        class="radar_switch_setting_snow" for="checkbox_snow"><input type="checkbox"
+                                                id="checkbox_snow">
+                                        <div class="slider_setting_radar round"></div>
+                                </label></div>
+                </div>
+                <div class="map_button">
+                        <div style="display:flex;flex-direction:row;padding-bottom:7px;margin-left:15px"><span
+                                        id="map_popup_title_min" class="map_button_min">120 min ago</span> <span
+                                        id="map_popup_title_time" class="map_button_time">--:--</span></div>
+                        <div class="map_button_double"><button type="button" id="backwardButtonRadar"
+                                        class="controlButtonsRadar button_clicked_radar"><svg width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 5.00003V2.21003C12 1.76003 11.46 1.54003 11.15 1.86003L7.35 5.65003C7.15 5.85003 7.15 6.16003 7.35 6.36003L11.14 10.15C11.46 10.46 12 10.24 12 9.79003V7.00003C15.73 7.00003 18.68 10.42 17.86 14.29C17.39 16.56 15.55 18.39 13.29 18.86C9.72 19.61 6.54 17.16 6.06 13.85C5.99 13.37 5.57 13 5.08 13C4.48 13 4 13.53 4.08 14.13C4.7 18.52 8.88 21.77 13.61 20.85C16.73 20.24 19.24 17.73 19.85 14.61C20.84 9.48003 16.94 5.00003 12 5.00003Z"
+                                                        fill="#323232"></path>
+                                        </svg></button> <button type="button" id="forwardButtonRadar"
+                                        class="controlButtonsRadar button_clicked_radar"><svg width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.0759 5.00003V2.21003C12.0759 1.76003 12.6159 1.54003 12.9259 1.86003L16.7259 5.65003C16.9259 5.85003 16.9259 6.16003 16.7259 6.36003L12.9359 10.15C12.6159 10.46 12.0759 10.24 12.0759 9.79003V7.00003C8.3459 7.00003 5.3959 10.42 6.2159 14.29C6.6859 16.56 8.5259 18.39 10.7859 18.86C14.3559 19.61 17.5359 17.16 18.0159 13.85C18.0859 13.37 18.5059 13 18.9959 13C19.5959 13 20.0759 13.53 19.9959 14.13C19.3759 18.52 15.1959 21.77 10.4659 20.85C7.3459 20.24 4.8359 17.73 4.2259 14.61C3.2359 9.48003 7.1359 5.00003 12.0759 5.00003Z"
+                                                        fill="#323232"></path>
+                                        </svg></button> <span style="padding-left:50px"></span> <button type="button"
+                                        id="toggleButtonRadar" aria-label="Play"><img src="images/pause.svg" alt="Play"
+                                                class="radar_play_pause" id="toggleButtonImageRadar"
+                                                style="padding-right:3px"></button></div>
+                </div>
+                <div class="get_forecast_radar">
+                        <div class="hide_pro subtitle_upgrade_text"><a target="_blank">__MSG_unlockForecastRadar__ <img
+                                                id="link_lock_vip" src="images/crown.svg" style="padding-left:2px"
+                                                class="link_lock_vip_Class"></a></div>
+                </div>
+        </div>
+        <div id="world_popup" class="world_modal">
+                <div id="world_popup_close" class="modal_world_close"></div>
+                <div id="globe-overlay"
+                        style="z-index:15;position:absolute;top:0;right:0;bottom:0;left:0;background:#0b0b19;opacity:1.5;transition:opacity 2s ease">
+                </div>
+                <div id="weatherWorld" class="world_Class"></div>
+                <div id="world_popup_title" class="modal_world_title"><span>UV Weather | </span><span><a
+                                        href="https://www.mapbox.com" target="_blank"
+                                        style="text-decoration:none;font-weight:400"><span class="hyperlink_text"
+                                                style="color:#fff!important">Mapbox | </span></a></span><span><a
+                                        href="https://www.rainviewer.com/api.html" target="_blank"
+                                        style="text-decoration:none;font-weight:400"><span class="hyperlink_text"
+                                                style="color:#fff!important">RainViewer | </span></a></span><span
+                                id="world_popup_title_date"></span></div>
+                <div class="hide_pro get_forecast_world">
+                        <div class="subtitle_upgrade_text search_page" style="padding-top:3px"><a
+                                        target="_blank">__MSG_addMultipleLocations__</a></div>
+                </div>
+        </div>
+        <div id="current_popup" class="modal_current">
+                <div id="favourite_icon_current" class="favourite_icon_inactive_Class favourite_icon_action tooltip">
+                        <span class="tooltiptext tooltip-left">__MSG_setDefaultHomepage__</span></div>
+                <div id="current_popup_close" class="modal_close"></div>
+                <div class="title_current_group_Class_current">
+                        <div style="display:flex;flex-direction:row"><span id="title_current_text"
+                                        class="title_page_Class search_page">__MSG_current__</span></div>
+                        <div class="title_subtitle_modal_Class"><span class="update_time_subTitle_current"></span> <span
+                                        class="hide_pro subtitle_upgrade_text" style="padding-top:5px"><a
+                                                target="_blank"
+                                                id="upgrade_subtitle_radar">__MSG_unlockForecastRadar__</a></span></div>
+                        <div class="current_table_Class">
+                                <div class="current_model_Class" style="padding-bottom:20px"><span
+                                                class="current_title_Class"></span> <span
+                                                class="currentTable_value_group"><span
+                                                        class="currentTable_title">__MSG_current__ </span><span
+                                                        class="currentTable_title"
+                                                        style="opacity:.7">__MSG_yesterdayThisTime__</span></span></div>
+                                <div class="current_model_Class"><span id="current_accufeel_title"
+                                                class="current_title_Class">__MSG_accuFeelShade__ </span><span
+                                                class="currentTable_value_group"><span class="currentTable_value"><span
+                                                                class="current_accufeel current_value_Class">-
+                                                        </span><span
+                                                                class="current_accufeel_shade current_explain_Class">-
+                                                        </span></span><span class="yesterdayTable_value"><span
+                                                                class="sameTimeYesterday_accufeel current_value_Class">-
+                                                        </span><span
+                                                                class="sameTimeYesterday_accufeel_shade sameTimeYesterday_explain_Class">-</span></span></span>
+                                </div>
+                                <hr class="hr_forecast_current">
+                                <div class="current_model_Class"><span class="current_title_Class">__MSG_cloudCover__
+                                        </span><span class="currentTable_value_group"><span
+                                                        class="currentTable_value"><span id="current_cloud"
+                                                                class="current_value_Class">- </span></span><span
+                                                        class="yesterdayTable_value"><span id="sameTimeYesterday_cloud"
+                                                                class="current_value_Class">-</span></span></span></div>
+                                <hr class="hr_forecast_current">
+                                <div class="current_model_Class"><span class="current_title_Class">__MSG_condition__
+                                        </span><span class="currentTable_value_group"><span
+                                                        class="currentTable_value"><span id="current_condition_table"
+                                                                class="current_value_Class">- </span></span><span
+                                                        class="yesterdayTable_value"><span
+                                                                id="sameTimeYesterday_condition"
+                                                                class="current_value_Class">-</span></span></span></div>
+                                <hr class="hr_forecast_current">
+                                <div class="current_model_Class"><span
+                                                class="current_title_Class">__MSG_humidityDewPoint__ </span><span
+                                                class="currentTable_value_group"><span class="currentTable_value"><span
+                                                                class="current_humidity current_value_Class">-
+                                                        </span></span><span class="yesterdayTable_value"><span
+                                                                class="sameTimeYesterday_humidity current_value_Class">-</span></span></span>
+                                </div>
+                                <hr class="hr_forecast_current">
+                                <div class="current_model_Class"><span class="current_title_Class">__MSG_pressureTrend__
+                                        </span><span class="currentTable_value_group"><span
+                                                        class="currentTable_value"><span id="current_pressure"
+                                                                class="current_value_Class">- </span><span
+                                                                id="current_pressure_trend"
+                                                                class="current_value_Class">- </span></span><span
+                                                        class="yesterdayTable_value"><span
+                                                                id="sameTimeYesterday_pressure"
+                                                                class="current_value_Class">-</span></span></span></div>
+                                <hr class="hr_forecast_current">
+                                <div class="current_model_Class"><span class="current_title_Class">__MSG_temperature__
+                                        </span><span class="currentTable_value_group"><span
+                                                        class="currentTable_value"><span
+                                                                class="current_air_temp current_value_Class">-
+                                                        </span></span><span class="yesterdayTable_value"><span
+                                                                class="sameTimeYesterday_air_temp current_value_Class">-</span></span></span>
+                                </div>
+                                <hr class="hr_forecast_current">
+                                <div class="current_model_Class"><span class="current_title_Class">__MSG_uvIndex__
+                                        </span><span class="currentTable_value_group"><span
+                                                        class="currentTable_value"><span><span
+                                                                        class="current_uv current_value_Class">-
+                                                                </span><span id="current_uv_note"
+                                                                        class="current_explain_Class">-
+                                                                </span></span></span><span
+                                                        class="yesterdayTable_value"><span><span
+                                                                        class="sameTimeYesterday_uv current_value_Class">-
+                                                                </span><span id="sameTimeYesterday_uv_note"
+                                                                        class="current_explain_Class">-</span></span></span></span>
+                                </div>
+                                <hr class="hr_forecast_current">
+                                <div class="current_model_Class"><span class="current_title_Class">__MSG_visibility__
+                                        </span><span class="currentTable_value_group"><span
+                                                        class="currentTable_value"><span id="current_visibility"
+                                                                class="current_value_Class">- </span></span><span
+                                                        class="yesterdayTable_value"><span
+                                                                id="sameTimeYesterday_visibility"
+                                                                class="current_value_Class">-</span></span></span></div>
+                                <hr class="hr_forecast_current">
+                                <div class="current_model_Class"><span class="current_title_Class">__MSG_wind__
+                                        </span><span class="currentTable_value_group"><span
+                                                        class="currentTable_value"><span><span id="current_wind"
+                                                                        class="current_value_Class">- </span><span
+                                                                        id="current_windBearing_windCompass"
+                                                                        class="current_explain_Class"
+                                                                        style="padding-left:5px">-
+                                                                </span></span></span><span
+                                                        class="yesterdayTable_value"><span><span
+                                                                        id="sameTimeYesterday_wind"
+                                                                        class="current_value_Class">- </span><span
+                                                                        id="sameTimeYesterday_windBearing_windCompass"
+                                                                        class="current_explain_Class"
+                                                                        style="padding-left:5px">-</span></span></span></span>
+                                </div>
+                                <hr class="hr_forecast_current">
+                                <div class="current_model_Class"><span class="current_title_Class">__MSG_windGusts__
+                                        </span><span class="currentTable_value_group"><span
+                                                        class="currentTable_value"><span><span id="current_windGust"
+                                                                        class="current_value_Class">-
+                                                                </span></span></span><span
+                                                        class="yesterdayTable_value"><span><span
+                                                                        id="sameTimeYesterday_windGust"
+                                                                        class="current_value_Class">-</span></span></span></span>
+                                </div>
+                                <hr class="hr_forecast_current">
+                                <div class="current_model_Class radar_page" style="cursor:pointer;margin-top:10px">
+                                        <div style="display:flex;align-items:center"><span
+                                                        style="color:#ff662b;font-size:18px;font-weight:800">+
+                                                </span><span
+                                                        class="current_radar_weather_map current_title_Class plus_hover"
+                                                        style="padding-left:5px">__MSG_radarMapLast2Hours__</span></div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <div id="daily_popup" class="modal_menu" style="overflow:auto">
+                <div id="favourite_icon_daily" class="favourite_icon_inactive_Class favourite_icon_action tooltip"><span
+                                class="tooltiptext tooltip-left">__MSG_setDefaultHomepage__</span></div>
+                <div class="title_group_Class_setting">
+                        <div style="display:flex;flex-direction:row"><span
+                                        class="location_name title_page_Class search_page"></span></div>
+                        <div class="title_subtitle_modal_Class"><span><span id="subtitle_daily_text"
+                                                class="subtitle_tab_active">__MSG_next10Days__</span> <span
+                                                class="hide_basic">| </span><span
+                                                class="hide_basic plus_hover calendar_page"
+                                                style="opacity:.5">__MSG_weatherCalendar45__ </span></span><span
+                                        class="hide_pro subtitle_upgrade_text calendar_page"><a target="_blank"
+                                                id="upgrade_subtitle_daily">__MSG_unlock45Day__ <img id="link_lock_vip"
+                                                        src="images/crown.svg" style="padding-left:2px"
+                                                        class="link_lock_vip_Class"></a></span></div>
+                </div>
+                <div style="display:flex;flex-direction:column">
+                        <div id="daily_table" class="daily_table_Class"></div>
+                </div>
+        </div>
+        <div id="solar_popup" class="modal_menu">
+                <div id="favourite_icon_solar" class="favourite_icon_inactive_Class favourite_icon_action tooltip"><span
+                                class="tooltiptext tooltip-left">__MSG_setDefaultHomepage__</span></div>
+                <div id="title_solar" class="title_group_Class_setting">
+                        <div style="display:flex;flex-direction:row"><span
+                                        class="location_name title_page_Class search_page"></span></div>
+                        <div class="title_subtitle_modal_Class"><span
+                                        class="title_subtitle_container"><span>__MSG_sunMoonToday__</span> <span
+                                                class="hide_basic date_arrow_container" style="margin-left:100px"><span
+                                                        style="margin-top:6px"><img src="images/arrow.svg"
+                                                                id="last_day_button_icon" class="last_day_button_icon">
+                                                </span><span id="astro_date_title"
+                                                        style="display:inline-block;width:150px;text-align:center"></span>
+                                                <span style="margin-top:6px"><img src="images/arrow.svg"
+                                                                id="next_day_button_icon" class="next_day_button_icon">
+                                                </span></span></span><span
+                                        class="hide_pro subtitle_upgrade_text lunar_page"><a target="_blank"
+                                                id="upgrade_subtitle_lunar">__MSG_unlockSolarLunar__ <img
+                                                        id="link_lock_vip" src="images/crown.svg"
+                                                        style="padding-left:2px" class="link_lock_vip_Class"></a></span>
+                        </div>
+                </div>
+                <div class="solar_table_Class">
+                        <div id="solar_1" class="solar_Class"><span class="solar_name_Class">__MSG_firstLightLastLight__
+                                </span><span class="solar_time_Class"><span><span id="solar_dawn_time">-:- -
+                                                </span><span id="solar_dawn_meridian"
+                                                        class="solar_time_meridian_Class"></span> </span><span
+                                                style="padding-left:5px"><span id="solar_dusk_time">-:- - </span><span
+                                                        id="solar_dusk_meridian"
+                                                        class="solar_time_meridian_Class"></span></span></span></div>
+                        <hr class="hr_forecast_solar">
+                        <div id="solar_2" class="solar_Class"><span class="solar_name_Class">__MSG_sunriseSunset__
+                                </span><span class="solar_time_Class"><span><span class="solar_sunrise_time">-:- -
+                                                </span><span
+                                                        class="solar_sunrise_meridian solar_time_meridian_Class"></span>
+                                        </span><span style="padding-left:5px"><span class="solar_sunset_time">-:- -
+                                                </span><span
+                                                        class="solar_sunset_meridian solar_time_meridian_Class"></span></span></span>
+                        </div>
+                        <hr class="hr_forecast_solar">
+                        <div id="solar_10" class="solar_Class"><span id="solar_10_name"
+                                        class="solar_name_Class">__MSG_totalDaylight__ </span><span
+                                        class="solar_time_Class"
+                                        style="display:flex;gap:1px;flex-direction:row;align-items:baseline;justify-content:flex-end;margin-left:25px"><span
+                                                id="solar_daylight_hour" style="font-size:14px">- </span><span
+                                                id="solar_10_time_hour_unit" class="meridiem_Class">__MSG_solarHrs__
+                                        </span><span id="solar_daylight_min" style="font-size:14px;padding-left:5px">-
+                                        </span><span id="solar_10_time_min_unit"
+                                                class="meridiem_Class">__MSG_solarMin__</span></span></div>
+                        <hr class="hr_forecast_solar">
+                        <div id="solar_3" class="solar_Class"><span
+                                        class="solar_name_Class tooltip">__MSG_morningGoldenHour__ <span
+                                                class="tooltiptext tooltip-top">__MSG_goldenHourTooltip__</span>
+                                </span><span class="solar_time_Class"><span><span class="solar_sunrise_time"></span>
+                                                <span class="solar_sunrise_meridian solar_time_meridian_Class"></span>
+                                        </span><span>__MSG_solarTo__ </span><span><span id="solar_morning_time"></span>
+                                                <span id="solar_morning_meridian"
+                                                        class="solar_time_meridian_Class"></span></span></span></div>
+                        <hr class="hr_forecast_solar">
+                        <div id="solar_5" class="solar_Class"><span
+                                        class="solar_name_Class tooltip">__MSG_eveningGoldenHour__ <span
+                                                class="tooltiptext tooltip-top">__MSG_goldenHourTooltip__</span>
+                                </span><span class="solar_time_Class"><span><span id="solar_evening_time">-:- -
+                                                </span><span id="solar_evening_meridian"
+                                                        class="solar_time_meridian_Class"></span>
+                                        </span><span>__MSG_solarTo__ </span><span><span class="solar_sunset_time">-:- -
+                                                </span><span
+                                                        class="solar_sunset_meridian solar_time_meridian_Class"></span></span></span>
+                        </div>
+                        <hr class="hr_forecast_solar">
+                        <div id="solar_4" class="solar_Class"><span class="solar_name_Class tooltip">__MSG_solarNoon__
+                                        <span class="tooltiptext tooltip-top">__MSG_solarNoonTooltip__</span>
+                                </span><span class="solar_time_Class"><span id="solar_noon_time">-:- - </span><span
+                                                id="solar_noon_meridian"
+                                                class="solar_time_meridian_Class"></span></span></div>
+                        <hr class="hr_forecast_solar">
+                        <div id="solar_11" class="solar_Class"><span class="solar_name_Class">__MSG_moonriseMoonset__
+                                </span><span class="solar_time_Class"><span><span id="solar_moonrise_time">-:- -
+                                                </span><span id="solar_moonrise_meridian"
+                                                        class="solar_time_meridian_Class"></span> </span><span></span>
+                                        <span style="padding-left:5px"><span id="solar_moonset_time">-:- - </span><span
+                                                        id="solar_moonset_meridian"
+                                                        class="solar_time_meridian_Class"></span></span></span></div>
+                        <hr class="hr_forecast_solar">
+                        <div class="solar_Class"><span class="solar_name_Class">__MSG_moonPhaseIllumination__
+                                </span><span id="solar_moon_phase" class="solar_time_Class">--</span></div>
+                        <hr class="hr_forecast_solar">
+                        <div class="solar_Class"><span class="solar_name_Class">__MSG_nextFullMoon__ </span><span
+                                        id="solar_next_full_moon" class="solar_time_Class">-</span></div>
+                        <hr class="hr_forecast_solar">
+                        <div id="solar_moon_calendar" class="solar_Class lunar_page"
+                                style="cursor:pointer;margin-top:10px">
+                                <div class="solar_name_Class plus_hover"
+                                        style="display:flex;justify-content:flex-start"><span
+                                                style="color:#ff662b;font-size:18px;font-weight:800">+ </span><span
+                                                style="padding-left:5px;font-weight:600">__MSG_moonPhaseCalendar__</span>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <div id="aqi_popup" class="modal_menu">
+                <div id="favourite_icon_aqi" class="favourite_icon_inactive_Class favourite_icon_action tooltip"><span
+                                class="tooltiptext tooltip-left">__MSG_setDefaultHomepage__</span></div>
+                <div id="title_aqi" class="title_group_Class_setting">
+                        <div style="display:flex;flex-direction:row"><span
+                                        class="location_name title_page_Class search_page"></span></div>
+                        <div class="title_subtitle_modal_Class"><span><span
+                                                class="subtitle_tab_active">__MSG_currentAirQuality__ </span><span
+                                                class="hide_basic">| </span><span
+                                                class="hide_basic aqi_forecast_page plus_hover"
+                                                style="opacity:.5">__MSG_hourlyAirQuality__</span></span>
+                                <div></div><span class="hide_pro subtitle_upgrade_text aqi_forecast_page"><a
+                                                target="_blank" id="upgrade_subtitle_air">__MSG_unlockHourlyAqi__ <img
+                                                        id="link_lock_vip" src="images/crown.svg"
+                                                        style="padding-left:2px" class="link_lock_vip_Class"></a></span>
+                        </div>
+                </div>
+                <div id="aqi">
+                        <div class="rectangle">
+                                <div class="part" style="background-color:#90be6d"></div>
+                                <div class="part" style="background-color:#f9c74f"></div>
+                                <div class="part" style="background-color:#f8961e"></div>
+                                <div class="part" style="background-color:#f3722c"></div>
+                                <div class="part" style="background-color:#6d597a"></div>
+                                <div class="part" style="background-color:#723d46"></div>
+                        </div>
+                        <div class="aqi_table_text_group">
+                                <div id="aqi_text_good"><span>__MSG_aqiExcellent__</span></div>
+                                <div id="aqi_text_moderate" class="aqi_table_text"><span>__MSG_aqiFair__</span></div>
+                                <div id="aqi_text_unhealthy_sen" class="aqi_table_text"><span>__MSG_aqiPoor__</span>
+                                </div>
+                                <div id="aqi_text_unhealthy" class="aqi_table_text">
+                                        <span>__MSG_aqiUnhealthyLabel__</span></div>
+                                <div id="aqi_text_veryUnhealthy" class="aqi_table_text">
+                                        <span>__MSG_aqiVeryUnhealthyLabel__</span></div>
+                                <div id="aqi_text_hazardous" class="aqi_table_text"><span>__MSG_aqiDangerous__</span>
+                                </div>
+                        </div>
+                        <div class="aqiHealthInfo_Class">
+                                <div style="margin-bottom:20px">
+                                        <div style="display:flex;flex-direction:row"><span
+                                                        class="aqiHealthTitle_Class">PAQI</span> <span
+                                                        class="tooltip"><img id="info_icon_aqi"
+                                                                src="images/information-fill.svg"
+                                                                class="info_icon_Class" style="margin-left:5px"> <a
+                                                                class="blacklink"
+                                                                href="https://air.plumelabs.com/learn/en/what-is-an-aqi"
+                                                                target="_blank"
+                                                                style="text-decoration:none!important"><span
+                                                                        class="tooltiptext tooltip-bottom">__MSG_plumeAqiTooltip__</span></a></span>
+                                        </div>
+                                        <div id="current_aqi_subTitle"></div>
+                                </div>
+                                <div class="aqiHealthTitle_Class">__MSG_primaryPollutant__</div>
+                                <div id="aqiDominantPollutant" class="aqiDominantPollutant_Class"></div>
+                                <div id="aqiHealthTitle" class="aqiHealthTitle_Class">__MSG_healthInformation__</div>
+                                <div id="aqiHealthDes" class="aqiHealthDes_Class"></div>
+                        </div>
+                </div>
+        </div>
+        <div id="aqi_forecast_popup" class="aqi_forecast_popup_Class">
+                <div id="aqi_forecast_popup_close" class="aqi_forecast_popup_close_Class"></div>
+                <div id="title_aqi" class="title_group_Class_setting">
+                        <div style="display:flex;flex-direction:row"><span
+                                        class="location_name_aqi_forecast aqi_forecast_header_Class"></span></div>
+                        <div class="title_subtitle_modal_Class">__MSG_hourlyAqiForecast__</div>
+                </div>
+                <div class="chartAqi_container_top">
+                        <div class="chartAqi_container"><canvas id="chartAqi_forecast"></canvas></div>
+                </div>
+        </div>
+        <div id="calendar_popup">
+                <div id="calendar">
+                        <div id="favourite_icon_calendar"
+                                class="favourite_icon_calendar_inactive_Class favourite_icon_action tooltip"><span
+                                        class="tooltiptext tooltip-left">__MSG_setDefaultHomepage__</span></div>
+                        <div id="calendar_popup_close" class="modal_calendar_close"></div>
+                        <div id="calendar_id" class="calendar_Class">
+                                <ol class="calendar" id="calendarList"></ol>
+                                <div class="updatedOn_calendar_Class"><span class="calendar_city"></span> <span
+                                                class="updateOn_date"></span></div>
+                                <div id="shareGroup_calendar" class="shareGroup_calendar_Class"
+                                        data-html2canvas-ignore="true">
+                                        <div id="share_download_link_calendar"
+                                                class="resp-sharing-button__link share_download_link_Class" href=""
+                                                target="_blank" rel="noopener" aria-label="">
+                                                <div id="share_download"
+                                                        class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+                                                        <div aria-hidden="true"
+                                                                class="resp-sharing-button__icon resp-sharing-button__icon--solid_calendar">
+                                                                <svg viewBox="0 0 24 24">
+                                                                        <path d="M0,14.7v6.6c0,0.1,0,0.3,0,0.4C0.2,23.1,1.4,24,2.7,24h18.6c0.1,0,0.3,0,0.5,0c1.3-0.2,2.3-1.4,2.3-2.7v-6.6
+                        h-2.7v6.6H2.7v-6.7H0z M12,18.7l6.7-8h-5.3V0h-2.7v10.7H5.3L12,18.7z" />
+                                                                </svg></div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <div id="lunar_popup">
+                <div id="lunar">
+                        <div id="favourite_icon_lunar"
+                                class="favourite_icon_lunar_inactive_Class favourite_icon_action tooltip"><span
+                                        class="tooltiptext tooltip-left">__MSG_setDefaultHomepage__</span></div>
+                        <div id="lunar_popup_close" class="modal_lunar_close"></div>
+                        <div id="lunar_id" class="lunar_Class">
+                                <ol class="lunar" id="lunarList"></ol>
+                                <div class="updatedOn_lunar_Class"><span class="updateOn_date_lunar"></span> <span
+                                                class="lunar_city"></span></div>
+                                <div id="shareGroup_lunar" class="shareGroup_lunar_Class"
+                                        data-html2canvas-ignore="true">
+                                        <div id="share_download_link_lunar"
+                                                class="resp-sharing-button__link share_download_link_Class" href=""
+                                                target="_blank" rel="noopener" aria-label="">
+                                                <div id="share_download"
+                                                        class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+                                                        <div aria-hidden="true"
+                                                                class="resp-sharing-button__icon resp-sharing-button__icon--solid_lunar">
+                                                                <svg viewBox="0 0 24 24">
+                                                                        <path d="M0,14.7v6.6c0,0.1,0,0.3,0,0.4C0.2,23.1,1.4,24,2.7,24h18.6c0.1,0,0.3,0,0.5,0c1.3-0.2,2.3-1.4,2.3-2.7v-6.6
+                        h-2.7v6.6H2.7v-6.7H0z M12,18.7l6.7-8h-5.3V0h-2.7v10.7H5.3L12,18.7z" />
+                                                                </svg></div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <div id="setting_popup" class="modal_setting">
+                <div id="setting_popup_close" class="modal_setting_close"></div>
+                <div class="title_page_fix_Class" style="margin-top:70px;margin-left:55px">__MSG_settings__</div>
+                <div class="tabs" style="margin-top:30px;width:700px!important;margin-left:50px">
+                        <div class="tab_setting"><label for="tab_setting_unit"
+                                        style="display:block">__MSG_settingUnits__</label> <input id="tab_setting_unit"
+                                        name="tabs-two" type="radio" checked="checked">
+                                <div style="display:flex;flex-direction:column"><span class="setting_unit_row"><span
+                                                        class="setting_title_section_unit">__MSG_temperature__</span>
+                                                <span class="setting_temp_section_Class"><span
+                                                id="setting_defualt_button_f_all"
+                                                class="setting_section_iner_Class" style="display:none">
+                                                        <input type="radio" id="setting_defualt_button_f" name="radioTemp">
+                                                        <span class="check"></span> <label
+                                                                for="setting_defualt_button_f_label">°F</label>
+                                                        </span><span id="setting_defualt_button_c_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_c" name="radioTemp" checked>
+                                                                <span class="check"></span> <label
+                                                                        for="setting_defualt_button_c_label">°C</label></span></span></span>
+                                        <hr class="hr_setting"><span class="setting_unit_row"><span
+                                                        class="setting_title_section_unit">__MSG_settingTimeFormat__</span>
+                                                <span class="setting_time_section_Class"><span
+                                                                id="setting_defualt_button_12h_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_12h"
+                                                                        name="radioTime"> <span class="check"></span>
+                                                                <label
+                                                                        for="setting_defualt_button_12h_label">12H</label>
+                                                        </span><span id="setting_defualt_button_24h_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_24h"
+                                                                        name="radioTime"> <span class="check"></span>
+                                                                <label
+                                                                        for="setting_defualt_button_24h_label">24H</label></span></span></span>
+                                        <hr class="hr_setting"><span class="setting_unit_row"><span
+                                                        class="setting_title_section_unit">__MSG_settingAirPressure__</span>
+                                                <span class="setting_pressure_section_Class"><span
+                                                                id="setting_defualt_button_inhg_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_inhg"
+                                                                        name="radioPressure"> <span
+                                                                        class="check"></span> <label
+                                                                        for="setting_defualt_button_inhg_label">inHg</label>
+                                                        </span><span id="setting_defualt_button_mb_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_mb"
+                                                                        name="radioPressure"> <span
+                                                                        class="check"></span> <label
+                                                                        for="setting_defualt_button_mb_label">mBar</label>
+                                                        </span><span id="setting_defualt_button_psi_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_psi"
+                                                                        name="radioPressure"> <span
+                                                                        class="check"></span> <label
+                                                                        for="setting_defualt_button_psi_label">psi</label>
+                                                        </span><span id="setting_defualt_button_mmhg_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_mmhg"
+                                                                        name="radioPressure"> <span
+                                                                        class="check"></span> <label
+                                                                        for="setting_defualt_button_mmhg_label">mmHg</label>
+                                                        </span><span id="setting_defualt_button_hpa_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_hpa"
+                                                                        name="radioPressure"> <span
+                                                                        class="check"></span> <label
+                                                                        for="setting_defualt_button_hpa_label">hPa</label>
+                                                        </span><span id="setting_defualt_button_kpa_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_kpa"
+                                                                        name="radioPressure"> <span
+                                                                        class="check"></span> <label
+                                                                        for="setting_defualt_button_kpa_label">kPa</label></span></span></span>
+                                        <hr class="hr_setting"><span class="setting_unit_row"><span
+                                                        class="setting_title_section_unit">__MSG_settingDistance__</span>
+                                                <span class="setting_visibility_section_Class"><span
+                                                                id="setting_defualt_button_mi_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_mi"
+                                                                        name="radioVisibility"> <span
+                                                                        class="check"></span> <label
+                                                                        for="setting_defualt_button_mi_label">mi</label>
+                                                        </span><span id="setting_defualt_button_km_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_km"
+                                                                        name="radioVisibility"> <span
+                                                                        class="check"></span> <label
+                                                                        for="setting_defualt_button_km_label">km</label></span></span></span>
+                                        <hr class="hr_setting"><span class="setting_unit_row"><span
+                                                        class="setting_title_section_unit">__MSG_settingHumidity__</span>
+                                                <span class="setting_visibility_section_Class"><span
+                                                                id="setting_defualt_button_rh_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_rh"
+                                                                        name="radioHumidity"> <span
+                                                                        class="check"></span> <label
+                                                                        for="setting_defualt_button_rh_label">__MSG_settingRelativeHumidity__</label>
+                                                        </span><span id="setting_defualt_button_gm3_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_gm3"
+                                                                        name="radioHumidity"> <span
+                                                                        class="check"></span> <label
+                                                                        for="setting_defualt_button_gm3_label">__MSG_settingAbsoluteGm3__</label>
+                                                        </span><span id="setting_defualt_button_grft_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_grft"
+                                                                        name="radioHumidity"> <span
+                                                                        class="check"></span> <label
+                                                                        for="setting_defualt_button_grft_label">__MSG_settingAbsoluteGrft3__</label></span></span></span>
+                                        <hr class="hr_setting"><span class="setting_unit_row"><span
+                                                        class="setting_title_section_unit">__MSG_settingPrecipitation__</span>
+                                                <span class="setting_precipitation_section_Class"><span
+                                                                id="setting_defualt_button_inph_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_inph"
+                                                                        name="radioPrecipitation"> <span
+                                                                        class="check"></span> <label
+                                                                        for="setting_defualt_button_inph_label">inph</label>
+                                                        </span><span id="setting_defualt_button_mmh_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_mmh"
+                                                                        name="radioPrecipitation"> <span
+                                                                        class="check"></span> <label
+                                                                        for="setting_defualt_button_mmh_label">mm/h</label></span></span></span>
+                                        <hr class="hr_setting"><span class="setting_unit_row"><span
+                                                        class="setting_title_section_unit">__MSG_settingWindDirection__</span>
+                                                <span class="setting_wind_section_Class"><span
+                                                                id="setting_defualt_button_cardinal_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_cardinal"
+                                                                        name="radioWindDir"> <span class="check"></span>
+                                                                <label
+                                                                        for="setting_defualt_button_cardinal_label">__MSG_settingCardinal__</label>
+                                                        </span><span id="setting_defualt_button_degrees_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_degrees"
+                                                                        name="radioWindDir"> <span class="check"></span>
+                                                                <label
+                                                                        for="setting_defualt_button_degrees_label">__MSG_settingDegrees__</label></span></span></span>
+                                        <hr class="hr_setting"><span class="setting_unit_row"><span
+                                                        class="setting_title_section_unit">__MSG_settingWindSpeed__</span>
+                                                <span class="setting_wind_section_Class"><span
+                                                                id="setting_defualt_button_mph_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_mph"
+                                                                        name="radioWind"> <span class="check"></span>
+                                                                <label
+                                                                        for="setting_defualt_button_mph_label">mph</label>
+                                                        </span><span id="setting_defualt_button_kmh_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_kmh"
+                                                                        name="radioWind"> <span class="check"></span>
+                                                                <label
+                                                                        for="setting_defualt_button_kmh_label">km/h</label>
+                                                        </span><span id="setting_defualt_button_ms_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_ms" name="radioWind">
+                                                                <span class="check"></span> <label
+                                                                        for="setting_defualt_button_ms_label">m/s</label>
+                                                        </span><span id="setting_defualt_button_fts_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_fts"
+                                                                        name="radioWind"> <span class="check"></span>
+                                                                <label
+                                                                        for="setting_defualt_button_fts_label">ft/s</label>
+                                                        </span><span id="setting_defualt_button_bft_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_bft"
+                                                                        name="radioWind"> <span class="check"></span>
+                                                                <label
+                                                                        for="setting_defualt_button_bft_label">__MSG_settingBft__</label>
+                                                        </span><span id="setting_defualt_button_kn_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_kn" name="radioWind">
+                                                                <span class="check"></span> <label
+                                                                        for="setting_defualt_button_kn_label">__MSG_settingKnots__</label></span></span></span>
+                                </div>
+                        </div>
+                        <div class="tab_setting"><label for="tab_setting_badge"
+                                        style="display:block">__MSG_settingToolbarBadge__</label> <input
+                                        id="tab_setting_badge" name="tabs-two" type="radio">
+                                <div class="cardSetting" style="display:flex;flex-direction:column;margin-left:-180px">
+                                        <span class="setting_unit_row"><span
+                                                        class="setting_title_section_badge">__MSG_settingBadgeDisplayInfo__</span>
+                                                <span id="setting_defualt_button_t_all"
+                                                        class="setting_section_iner_Class"><input type="radio"
+                                                                id="setting_defualt_button_t" name="radioBadge"> <span
+                                                                class="check"></span> <label
+                                                                for="setting_defualt_button_t_label"
+                                                                style="font-size:16px">__MSG_temperature__</label>
+                                                </span><span id="setting_defualt_button_u_all"
+                                                        class="setting_section_iner_Class"><img id="link_lock_vip"
+                                                                src="images/crown.svg"
+                                                                style="padding-right:3px;margin-top:-8px"
+                                                                class="link_lock_vip_Class"> <input type="radio"
+                                                                id="setting_defualt_button_u" name="radioBadge"> <span
+                                                                class="check"></span> <label
+                                                                for="setting_defualt_button_u_label"
+                                                                style="font-size:16px">__MSG_settingUvIndex__</label></span></span>
+                                        <hr class="hr_setting"><span class="setting_unit_row"><span
+                                                        class="setting_title_section_badge">__MSG_settingLightColorBadge__</span>
+                                                <label class="theme_switch_setting" for="checkbox_whiteIcon"><input
+                                                                type="checkbox" id="checkbox_whiteIcon">
+                                                        <div class="slider_setting round"></div>
+                                                </label></span>
+                                        <hr class="hr_setting"><span
+                                                class="setting_unit_row setting_section_badge_size_Class"><span
+                                                        class="setting_title_section_badge">__MSG_settingLargeNumberBadge__</span>
+                                                <label class="badge_size_switch_setting" for="checkbox_largIcon"><input
+                                                                type="checkbox" id="checkbox_largIcon">
+                                                        <div class="slider_setting round"></div>
+                                                </label></span>
+                                        <hr class="hr_setting">
+                                        <div class="setting_unit_row"><span
+                                                        class="setting_title_section_badge">__MSG_settingBadgeUpdateInterval__</span>
+                                                <span class="setting_interval_section_Class"><span
+                                                                id="setting_defualt_button_15_all"
+                                                                class="setting_section_iner_Class tooltip"><img
+                                                                        id="link_lock_vip" src="images/crown.svg"
+                                                                        style="padding-right:2px;margin-top:-6px"
+                                                                        class="link_lock_vip_Class"> <input type="radio"
+                                                                        id="setting_defualt_button_15"
+                                                                        name="radioInterval"> <span
+                                                                        class="check tooltip setting_defualt_button_15_sub"></span>
+                                                                <label for="setting_defualt_button_15_label"
+                                                                        class="setting_defualt_button_15_sub_label">15</label>
+                                                        </span><span id="setting_defualt_button_30_all"
+                                                                class="setting_section_iner_Class tooltip"><img
+                                                                        id="link_lock_vip" src="images/crown.svg"
+                                                                        style="padding-right:2px;margin-top:-6px"
+                                                                        class="link_lock_vip_Class"> <input type="radio"
+                                                                        id="setting_defualt_button_30"
+                                                                        name="radioInterval"> <span
+                                                                        class="check tooltip setting_defualt_button_30_sub"></span>
+                                                                <label for="setting_defualt_button_30_label"
+                                                                        class="setting_defualt_button_30_sub_label">30</label>
+                                                        </span><span id="setting_defualt_button_60_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_60"
+                                                                        name="radioInterval"> <span
+                                                                        class="check"></span> <label
+                                                                        for="setting_defualt_button_60_label">60</label>
+                                                        </span><span id="setting_defualt_button_90_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_90"
+                                                                        name="radioInterval"> <span
+                                                                        class="check"></span> <label
+                                                                        for="setting_defualt_button_90_label">90</label>
+                                                        </span><span id="setting_defualt_button_120_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_120"
+                                                                        name="radioInterval"> <span
+                                                                        class="check"></span> <label
+                                                                        for="setting_defualt_button_120_label">120</label></span></span>
+                                        </div>
+                                        <hr class="hr_setting"><span class="setting_unit_row"><span
+                                                        class="setting_title_section_badge">__MSG_settingBadgeWeatherDataSource__</span>
+                                                <span id="setting_badge_source_modeled_all"
+                                                        class="setting_section_iner_Class"><input type="radio"
+                                                                id="setting_badge_source_modeled" name="radioSource">
+                                                        <span class="check"></span> <label
+                                                                for="setting_badge_source_modeled">__MSG_settingHourlyForecastedData__
+                                                                <span style="font-size:12px"></span></label>
+                                                </span><span id="setting_badge_source_realtime_all"
+                                                        class="setting_section_iner_Class"><img id="link_lock_vip"
+                                                                src="images/crown.svg"
+                                                                style="padding-right:3px;margin-top:-8px"
+                                                                class="link_lock_vip_Class"> <input type="radio"
+                                                                id="setting_badge_source_realtime" name="radioSource">
+                                                        <span class="check"></span> <label
+                                                                for="setting_badge_source_realtime">__MSG_settingNearLiveData__
+                                                                <span
+                                                                        style="font-size:12px">__MSG_settingHighAccuracy__</span></label></span></span>
+                                        <hr class="hr_setting"><span class="setting_unit_row"><span
+                                                        class="setting_title_section_badge"
+                                                        style="width:250px">__MSG_settingSevereWeatherBadge__
+                                                </span><label class="theme_switch_setting_sever_badge"
+                                                        for="checkbox_sever_badge"><input type="checkbox"
+                                                                id="checkbox_sever_badge">
+                                                        <div class="slider_setting round"></div>
+                                                </label></span>
+                                        <hr class="hr_setting"><span id="setting_sever_alert_notification"
+                                                class="setting_unit_row"><span
+                                                        class="setting_title_section_badge">__MSG_settingSevereWeatherNotifications__
+                                                </span><label class="theme_switch_setting_sever"
+                                                        for="checkbox_sever"><input type="checkbox" id="checkbox_sever">
+                                                        <div class="slider_setting round"></div>
+                                                </label></span>
+                                </div>
+                        </div>
+                        <div class="tab_setting"><label for="tab_setting_appe"
+                                        style="display:block">__MSG_settingAppearance__</label> <input
+                                        id="tab_setting_appe" name="tabs-two" type="radio">
+                                <div class="cardSetting" style="display:flex;flex-direction:column"><span
+                                                class="setting_unit_row"><span
+                                                        class="setting_title_section_app">__MSG_settingVisualStyleTheme__</span>
+                                                <span id="setting_defualt_theme_d_all"
+                                                        class="setting_section_iner_Class"><input type="radio"
+                                                                id="setting_defualt_theme_d" name="radioBadgeColor">
+                                                        <span class="check"></span> <label
+                                                                for="setting_defualt_theme_d_label">__MSG_settingDark__</label>
+                                                </span><span id="setting_defualt_theme_l_all"
+                                                        class="setting_section_iner_Class"><input type="radio"
+                                                                id="setting_defualt_theme_l" name="radioBadgeColor">
+                                                        <span class="check"></span> <label
+                                                                for="setting_defualt_theme_l_label"
+                                                                class="setting_defualt_theme_l_Class">__MSG_settingLight__</label></span></span>
+                                        <hr class="hr_setting"><span id="setting_section_auto_dark"
+                                                class="setting_unit_row"><span
+                                                        class="setting_section_title_auto_dark_Class setting_title_section_app">__MSG_settingDynamicDayNight__
+                                                </span><img id="link_lock_vip" src="images/crown.svg"
+                                                        style="cursor:default;padding-right:5px;margin-top:-8px"
+                                                        class="link_lock_vip_Class"> <label
+                                                        class="theme_switch_setting_auto_dark"
+                                                        for="checkbox_autoDark"><input type="checkbox"
+                                                                id="checkbox_autoDark" disabled="disabled">
+                                                        <div class="slider_setting round"></div>
+                                                </label></span>
+                                        <hr class="hr_setting">
+                                        <div class="setting_unit_row"><span
+                                                        class="setting_title_section_app">__MSG_settingBackgroundType__
+                                                </span><span><span id="setting_defualt_button_image_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_image"
+                                                                        name="radioImage"> <span class="check"></span>
+                                                                <label
+                                                                        for="setting_defualt_button_image_label">__MSG_settingImage__</label>
+                                                        </span><span id="setting_defualt_button_color_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_color"
+                                                                        name="radioImage"> <span class="check"></span>
+                                                                <label
+                                                                        for="setting_defualt_button_color_label">__MSG_settingCustomColor__</label></span></span>
+                                        </div>
+                                        <hr class="hr_setting">
+                                        <div class="setting_unit_row"><span
+                                                        class="setting_title_section_app">__MSG_settingBgThemeColors__</span>
+                                                <span class="fullBgColor_dark"><input id="background_color_dark"
+                                                                class="bg_color_input_Class background_dark_Class"
+                                                                type="text" value="#202124" data-coloris> </span><span
+                                                        style="margin-left:10px;margin-right:45px">__MSG_settingDarkThemeColor__
+                                                </span><span class="fullBgColor_light"><input
+                                                                id="background_color_light"
+                                                                class="bg_color_input_Class background_light_Class"
+                                                                type="text" value="#ffffff" data-coloris> </span><span
+                                                        style="margin-left:10px">__MSG_settingLightThemeColor__</span>
+                                        </div>
+                                        <hr class="hr_setting"><span class="setting_unit_row"><span
+                                                        class="setting_title_section_app">__MSG_settingAnimatedIcon__</span>
+                                                <label class="theme_switch_setting_animated_icon"
+                                                        for="checkbox_animatedIcon"><input type="checkbox"
+                                                                id="checkbox_animatedIcon">
+                                                        <div class="slider_setting round"></div>
+                                                </label></span>
+                                        <hr class="hr_setting"><span class="setting_unit_row"><span
+                                                        class="setting_title_section_app">__MSG_settingHealthSafety__</span>
+                                                <span class="setting_hazard_section_Class"><span
+                                                                id="setting_defualt_button_hazard_today_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_hazard_today"
+                                                                        name="radioHazard"> <span class="check"></span>
+                                                                <label
+                                                                        for="setting_defualt_button_hazard_today_label">__MSG_today__</label>
+                                                        </span><span id="setting_defualt_button_hazard_tomorrow_all"
+                                                                class="setting_section_iner_Class"><input type="radio"
+                                                                        id="setting_defualt_button_hazard_tomorrow"
+                                                                        name="radioHazard"> <span class="check"></span>
+                                                                <label
+                                                                        for="setting_defualt_button_hazard_tomorrow_label">__MSG_tomorrow__</label></span></span></span>
+                                        <hr class="hr_setting"><span class="setting_unit_row"><span
+                                                        class="setting_title_section_app">__MSG_settingLanguage__</span>
+                                                <select id="setting_language_select"
+                                                        class="setting_language_select_Class">
+                                                        <option value="auto">__MSG_settingAutoBrowser__</option>
+                                                        <option value="en">English</option>
+                                                        <option value="es">Español</option>
+                                                        <option value="pt_BR">Português (Brasil)</option>
+                                                        <option value="fr">Français</option>
+                                                        <option value="de">Deutsch</option>
+                                                        <option value="ja">日本語</option>
+                                                        <option value="hi">हिन्दी</option>
+                                                        <option value="ar">العربية</option>
+                                                        <option value="zh_CN">中文 (简体)</option>
+                                                        <option value="tr">Türkçe</option>
+                                                        <option value="it">Italiano</option>
+                                                        <option value="ru">Русский</option>
+                                                </select></span>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <div id="addLocation_popup" class="addLocation_popup_Class">
+                <div id="search_popup_close" class="addLocation_close"></div>
+                <div class="addLocationNew_title_group_Class"><span
+                                class="addLocationNew_title">__MSG_addNewLocation__</span> <span class="tooltip"><a><img
+                                                src="images/myLocation.svg" class="myLocationIp_icon_Class"
+                                                id="myLocationIp_icon"></a><span class="tooltiptext"
+                                        style="top:10px;left:10px;margin-top:20px!important;z-index:15000;width:260px">__MSG_getWeatherCurrentIp__</span></span>
+                </div>
+                <div id="geocoder" class="geocoder"></div>
+                <div class="addLocation_title_group_Class"><span class="addLocation_title">__MSG_savedLocations__</span>
+                </div>
+                <div class="addLocation_subtitle">__MSG_savedLocationSubtitle__</div>
+                <div id="locationList" class="locationList_Class">
+                        <div class="locationNameGroup_Class" id="locationNameGroup"></div>
+                </div>
+                <div class="addLocation_bottomText">__MSG_searchMapPoweredBy__ <a href="https://www.mapbox.com"
+                                target="_blank" style="text-decoration:none;font-weight:400"><span
+                                        class="hyperlink_text">Mapbox</span></a></div>
+        </div>
+        <div id="maximumNumber" class="maximumNumber_Class">__MSG_toAddMoreRemoveSome__</div>
+        <script src="/components/i18n-dom.js"></script>
+</body>
+
+</html>

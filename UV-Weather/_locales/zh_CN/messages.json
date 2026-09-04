@@ -1,0 +1,1886 @@
+{
+   "accuFeel": {
+      "message": "AccuFeel"
+   },
+   "accuFeelInShade": {
+      "message": "AccuFeel（阴凉处）"
+   },
+   "accuFeelShade": {
+      "message": "AccuFeel / 阴凉处"
+   },
+   "accuFeelTooltip": {
+      "message": "精准体感温度"
+   },
+   "addEditLocations": {
+      "message": "添加或编辑位置"
+   },
+   "addMultipleLocations": {
+      "message": "添加多个位置"
+   },
+   "addNewLocation": {
+      "message": "添加新位置"
+   },
+   "affectedArea": {
+      "message": "受影响区域"
+   },
+   "airQuality": {
+      "message": "空气质量"
+   },
+   "applySunscreen": {
+      "message": "涂抹防晒霜"
+   },
+   "aqiDangerous": {
+      "message": "危险"
+   },
+   "aqiDangerousVal": {
+      "message": "危险 ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "aqiExcellent": {
+      "message": "优"
+   },
+   "aqiExcellentVal": {
+      "message": "优 ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "aqiFair": {
+      "message": "良"
+   },
+   "aqiFairVal": {
+      "message": "良 ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "aqiGood": {
+      "message": "根据当前污染物水平，空气质量对大多数人来说是理想的；请正常享受户外活动。"
+   },
+   "aqiHazardous": {
+      "message": "根据当前污染物水平，即使短暂几分钟的空气暴露也可能对所有人造成严重的健康影响。请避免户外活动。"
+   },
+   "aqiModerate": {
+      "message": "根据当前污染物水平，空气质量对大多数人来说总体上是可以接受的。但敏感人群长时间暴露可能会出现轻微至中度症状。"
+   },
+   "aqiPoor": {
+      "message": "差"
+   },
+   "aqiPoorVal": {
+      "message": "差 ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "aqiUnhealthy": {
+      "message": "不健康"
+   },
+   "aqiUnhealthyLabel": {
+      "message": "不健康 (100-149)"
+   },
+   "aqiUnhealthySensitive": {
+      "message": "根据当前污染物水平，空气已达到较高污染水平，对敏感人群不健康。如果您感到呼吸困难或喉咙不适等症状，请减少户外活动时间。"
+   },
+   "aqiUnhealthyVal": {
+      "message": "不健康 ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "aqiVeryUnhealthy": {
+      "message": "非常不健康"
+   },
+   "aqiVeryUnhealthyLabel": {
+      "message": "非常不健康 (150-249)"
+   },
+   "aqiVeryUnhealthyVal": {
+      "message": "非常不健康 ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "astro": {
+      "message": "天文"
+   },
+   "avoidExertion": {
+      "message": "避免剧烈运动"
+   },
+   "beaufortCalm": {
+      "message": "无风。"
+   },
+   "beaufortFreshBreeze": {
+      "message": "清风。"
+   },
+   "beaufortGale": {
+      "message": "大风。"
+   },
+   "beaufortGentleBreeze": {
+      "message": "微风。"
+   },
+   "beaufortHighWind": {
+      "message": "疾风。"
+   },
+   "beaufortHurricane": {
+      "message": "飓风。"
+   },
+   "beaufortLightAir": {
+      "message": "软风。"
+   },
+   "beaufortLightBreeze": {
+      "message": "轻风。"
+   },
+   "beaufortModerateBreeze": {
+      "message": "和风。"
+   },
+   "beaufortStorm": {
+      "message": "狂风。"
+   },
+   "beaufortStrongGale": {
+      "message": "烈风。"
+   },
+   "beaufortStrongWinds": {
+      "message": "强风。"
+   },
+   "beaufortViolentStorm": {
+      "message": "暴风。"
+   },
+   "breakInPrecip": {
+      "message": "$1将在 $2 分钟后暂停。",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "byLexi": {
+      "message": "由 Lexi 提供"
+   },
+   "calendarPageTitle": {
+      "message": "UV Weather | $1，$2，",
+      "placeholders": {
+         "city": {
+            "content": "$1"
+         },
+         "country": {
+            "content": "$2"
+         }
+      }
+   },
+   "card0Button": {
+      "message": "添加新位置"
+   },
+   "card0Heading": {
+      "message": "快捷提示"
+   },
+   "card0Text": {
+      "message": "添加新位置或更新当前位置，以获取精准天气预报。"
+   },
+   "card0Title": {
+      "message": "精确定位"
+   },
+   "card10Button": {
+      "message": "探索全球天气"
+   },
+   "card10Heading": {
+      "message": "快捷提示"
+   },
+   "card10Text": {
+      "message": "在我们的动态天气地图上发现全球实时天气。"
+   },
+   "card10Title": {
+      "message": "全球天气概览"
+   },
+   "card11Button": {
+      "message": "解锁时刻数据"
+   },
+   "card11Heading": {
+      "message": "Pro 功能"
+   },
+   "card11Text": {
+      "message": "获取每日日月时刻数据，包括日出、日落、月出和月落。"
+   },
+   "card11Title": {
+      "message": "每日日月时刻"
+   },
+   "card12Button": {
+      "message": "查看云量"
+   },
+   "card12Heading": {
+      "message": "快捷提示"
+   },
+   "card12Text": {
+      "message": "在天气雷达页面查看当前和过去的云层覆盖区域。"
+   },
+   "card12Title": {
+      "message": "云量分析"
+   },
+   "card13Button": {
+      "message": "解锁 Pro 设置"
+   },
+   "card13Heading": {
+      "message": "Pro 功能"
+   },
+   "card13Text": {
+      "message": "在工具栏徽标中显示 UV 指数，无需额外点击即可查看实时 UVI。"
+   },
+   "card13Title": {
+      "message": "工具栏 UV 指数徽标"
+   },
+   "card14Button": {
+      "message": "自定义主题颜色"
+   },
+   "card14Heading": {
+      "message": "快捷提示"
+   },
+   "card14Text": {
+      "message": "选择主题，自定义独特颜色，打造专属风格。"
+   },
+   "card14Title": {
+      "message": "个性化主题"
+   },
+   "card15Button": {
+      "message": "解锁 Pro 设置"
+   },
+   "card15Heading": {
+      "message": "Pro 功能"
+   },
+   "card15Text": {
+      "message": "获取更频繁的天气更新以提高精确度，每几分钟更新一次。"
+   },
+   "card15Title": {
+      "message": "更频繁的数据更新"
+   },
+   "card16Button": {
+      "message": "查看 AQI 等级"
+   },
+   "card16Heading": {
+      "message": "快捷提示"
+   },
+   "card16Text": {
+      "message": "在空气质量页面获取实时空气质量指数和污染物水平。"
+   },
+   "card16Title": {
+      "message": "空气质量追踪"
+   },
+   "card17Button": {
+      "message": "解锁 Pro 设置"
+   },
+   "card17Heading": {
+      "message": "Pro 功能"
+   },
+   "card17Text": {
+      "message": "体验基于当地昼夜周期的自动深浅色模式切换。"
+   },
+   "card17Title": {
+      "message": "自适应颜色主题"
+   },
+   "card18Button": {
+      "message": "探索月球时刻"
+   },
+   "card18Heading": {
+      "message": "快捷提示"
+   },
+   "card18Text": {
+      "message": "在天文页面查看今日月亮时刻，获取一份天体智慧。"
+   },
+   "card18Title": {
+      "message": "今日月相信息"
+   },
+   "card1Button": {
+      "message": "开始免费试用"
+   },
+   "card1Heading": {
+      "message": "专属优惠"
+   },
+   "card1Text": {
+      "message": "获取 UV Weather Pro 套餐的无限访问权限，享受高级功能。"
+   },
+   "card1Title": {
+      "message": "解锁 Pro 功能"
+   },
+   "card2Button": {
+      "message": "逐日天气预报"
+   },
+   "card2Heading": {
+      "message": "快捷提示"
+   },
+   "card2Text": {
+      "message": "在逐日页面点击任意一天，查看16天内的详细天气预报。"
+   },
+   "card2Title": {
+      "message": "探索每日详情"
+   },
+   "card3Button": {
+      "message": "解锁45天预报"
+   },
+   "card3Heading": {
+      "message": "Pro 功能"
+   },
+   "card3Text": {
+      "message": "借助我们的45天天气预报做好准备——这是专为高级用户打造的 Pro 功能！"
+   },
+   "card3Title": {
+      "message": "45天 Pro 展望"
+   },
+   "card4Button": {
+      "message": "查看当前 AccuFeel"
+   },
+   "card4Heading": {
+      "message": "快捷提示"
+   },
+   "card4Text": {
+      "message": "在详细实况页面通过 AccuFeel 查看今日体感温度。"
+   },
+   "card4Title": {
+      "message": "精准体感温度"
+   },
+   "card5Button": {
+      "message": "解锁实时雷达地图"
+   },
+   "card5Heading": {
+      "message": "Pro 功能"
+   },
+   "card5Text": {
+      "message": "查看我们的高级雷达地图，获取云层覆盖和雷达预报的卫星视图！"
+   },
+   "card5Title": {
+      "message": "高级雷达地图"
+   },
+   "card6Button": {
+      "message": "更改默认主题"
+   },
+   "card6Heading": {
+      "message": "快捷提示"
+   },
+   "card6Text": {
+      "message": "切换到深色模式主题，享受精致且护眼的体验。"
+   },
+   "card6Title": {
+      "message": "拥抱深色模式"
+   },
+   "card7Button": {
+      "message": "5倍逐时升级"
+   },
+   "card7Heading": {
+      "message": "Pro 功能"
+   },
+   "card7Text": {
+      "message": "升级到 Pro，获取240小时详细天气和逐小时空气质量预报！"
+   },
+   "card7Title": {
+      "message": "240小时逐时预报"
+   },
+   "card8Button": {
+      "message": "今日黄金时段"
+   },
+   "card8Heading": {
+      "message": "快捷提示"
+   },
+   "card8Text": {
+      "message": "在天文页面发现黄金时段的完美摄影时机。"
+   },
+   "card8Title": {
+      "message": "今日黄金时段"
+   },
+   "card9Button": {
+      "message": "解锁今日报告"
+   },
+   "card9Heading": {
+      "message": "Pro 功能"
+   },
+   "card9Text": {
+      "message": "体验由 Lexi 提供的个性化AI新闻风格天气报告！"
+   },
+   "card9Title": {
+      "message": "个性化天气报告"
+   },
+   "caution": {
+      "message": "注意"
+   },
+   "chanceOfPrecip": {
+      "message": "降水概率"
+   },
+   "chartHeavy": {
+      "message": "大"
+   },
+   "chartLight": {
+      "message": "小"
+   },
+   "chartModerate": {
+      "message": "中"
+   },
+   "chartNow": {
+      "message": "现在"
+   },
+   "cloudCover": {
+      "message": "云量"
+   },
+   "cloudCoverage": {
+      "message": "云量"
+   },
+   "comfortable": {
+      "message": "舒适"
+   },
+   "comparisonUv": {
+      "message": "$1 UV",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "compassE": {
+      "message": "东"
+   },
+   "compassENE": {
+      "message": "东东北"
+   },
+   "compassESE": {
+      "message": "东东南"
+   },
+   "compassN": {
+      "message": "北"
+   },
+   "compassNE": {
+      "message": "东北"
+   },
+   "compassNNE": {
+      "message": "北东北"
+   },
+   "compassNNW": {
+      "message": "北西北"
+   },
+   "compassNW": {
+      "message": "西北"
+   },
+   "compassS": {
+      "message": "南"
+   },
+   "compassSE": {
+      "message": "东南"
+   },
+   "compassSSE": {
+      "message": "南东南"
+   },
+   "compassSSW": {
+      "message": "南西南"
+   },
+   "compassSW": {
+      "message": "西南"
+   },
+   "compassW": {
+      "message": "西"
+   },
+   "compassWNW": {
+      "message": "西西北"
+   },
+   "compassWSW": {
+      "message": "西西南"
+   },
+   "condition": {
+      "message": "天气状况"
+   },
+   "conditionClear": {
+      "message": "晴朗天气"
+   },
+   "conditionCloudy": {
+      "message": "多云天气"
+   },
+   "conditionCold": {
+      "message": "寒冷天气"
+   },
+   "conditionContinueAllDay": {
+      "message": "$1将持续一整天。阵风可达 $2。",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "windGust": {
+            "content": "$2"
+         }
+      }
+   },
+   "conditionContinueUntil": {
+      "message": "$1将持续至 $2。",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "time": {
+            "content": "$2"
+         }
+      }
+   },
+   "conditionExpectedAround": {
+      "message": "预计 $2 左右出现$1。",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "time": {
+            "content": "$2"
+         }
+      }
+   },
+   "conditionExpectedAroundAllDay": {
+      "message": "预计 $2 左右出现$1，并将持续一整天。",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "time": {
+            "content": "$2"
+         }
+      }
+   },
+   "conditionExpectedFromTo": {
+      "message": "预计$1将从 $2 持续至 $3。",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "endTime": {
+            "content": "$3"
+         },
+         "startTime": {
+            "content": "$2"
+         }
+      }
+   },
+   "conditionFoggy": {
+      "message": "大雾天气"
+   },
+   "conditionHot": {
+      "message": "高温天气"
+   },
+   "conditionPartlyCloudy": {
+      "message": "局部多云"
+   },
+   "conditionRainy": {
+      "message": "降雨天气"
+   },
+   "conditionSnowy": {
+      "message": "降雪天气"
+   },
+   "conditionStormy": {
+      "message": "雷暴天气"
+   },
+   "conditionWindy": {
+      "message": "大风天气"
+   },
+   "continueForHour": {
+      "message": "$1预计将在接下来一小时内持续。",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         }
+      }
+   },
+   "continueForHourShort": {
+      "message": "$1将持续一小时。",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         }
+      }
+   },
+   "cool": {
+      "message": "凉爽"
+   },
+   "current": {
+      "message": "当前"
+   },
+   "currentAirQuality": {
+      "message": "当前空气质量"
+   },
+   "currentPlus": {
+      "message": "当前"
+   },
+   "daily": {
+      "message": "逐日"
+   },
+   "dailyComparison": {
+      "message": "日对比"
+   },
+   "danger": {
+      "message": "危险"
+   },
+   "dangerous": {
+      "message": "危险"
+   },
+   "darkMode": {
+      "message": "深色模式"
+   },
+   "day": {
+      "message": "白天"
+   },
+   "dewPoint": {
+      "message": "露点"
+   },
+   "durationHrPlural": {
+      "message": "$1 小时",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "durationHrSingular": {
+      "message": "$1 小时",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "durationLessThan1Min": {
+      "message": "不到1分钟"
+   },
+   "durationMinPlural": {
+      "message": "$1 分钟",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "durationMinSingular": {
+      "message": "$1 分钟",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "endingIn": {
+      "message": "$1将在 $2 分钟后结束。",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "eveningGoldenHour": {
+      "message": "傍晚黄金时段"
+   },
+   "expectedStartIn": {
+      "message": "$1预计将在 $2 分钟后开始。",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "expectedStopIn": {
+      "message": "$1预计将在 $2 分钟后停止。",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "exploreFullFeatures": {
+      "message": "探索全部功能"
+   },
+   "expressUpgrade": {
+      "message": "快速升级"
+   },
+   "extDescription": {
+      "message": "Real time weather forecasts with live radar, minute by minute rain, multi-location support, air quality, and AI reports"
+   },
+   "extName": {
+      "message": "UV Weather"
+   },
+   "extremeCaution": {
+      "message": "极度注意"
+   },
+   "extremeDanger": {
+      "message": "极度危险"
+   },
+   "firstLightLastLight": {
+      "message": "曙光 | 暮光"
+   },
+   "fullMoonDay": {
+      "message": "天"
+   },
+   "fullMoonDays": {
+      "message": "天"
+   },
+   "getDetailedInfo": {
+      "message": "+ 获取详细信息"
+   },
+   "getNotificationsSevere": {
+      "message": "获取恶劣天气通知"
+   },
+   "getWeatherCurrentIp": {
+      "message": "获取当前 IP 地址的天气"
+   },
+   "goAdFree": {
+      "message": "升级 Pro 去除广告"
+   },
+   "goldenHourTooltip": {
+      "message": "柔和的光线，最佳摄影时间"
+   },
+   "healthInformation": {
+      "message": "健康信息"
+   },
+   "heatStroke": {
+      "message": "中暑"
+   },
+   "heavy": {
+      "message": "大"
+   },
+   "home": {
+      "message": "首页"
+   },
+   "hourly": {
+      "message": "逐小时"
+   },
+   "hourlyAirQuality": {
+      "message": "逐小时空气质量"
+   },
+   "hourlyAqiForecast": {
+      "message": "逐小时空气质量预报"
+   },
+   "hourlyBreakdown": {
+      "message": "逐小时详情"
+   },
+   "humidex": {
+      "message": "酷热指数"
+   },
+   "humidity": {
+      "message": "湿度"
+   },
+   "humidityAvg": {
+      "message": "湿度（平均）"
+   },
+   "humidityDewPoint": {
+      "message": "湿度（露点）"
+   },
+   "inCanada": {
+      "message": "加拿大"
+   },
+   "issuedBy": {
+      "message": "发布机构"
+   },
+   "largeNumberBadge": {
+      "message": "大数字徽标"
+   },
+   "lexiCoffeeBreak": {
+      "message": "Lexi 正在30秒咖啡休息中，马上回来！"
+   },
+   "light": {
+      "message": "小"
+   },
+   "lightColorBadge": {
+      "message": "浅色徽标"
+   },
+   "lunarInCity": {
+      "message": " $1，$2",
+      "placeholders": {
+         "city": {
+            "content": "$1"
+         },
+         "country": {
+            "content": "$2"
+         }
+      }
+   },
+   "lunarPageTitle": {
+      "message": "UV Weather | $1 月相",
+      "placeholders": {
+         "year": {
+            "content": "$1"
+         }
+      }
+   },
+   "madeWith": {
+      "message": "用心制作于"
+   },
+   "manageSubDesc": {
+      "message": "付款更新、计划变更、取消"
+   },
+   "manageSubscription": {
+      "message": "管理您的订阅"
+   },
+   "medium": {
+      "message": "中"
+   },
+   "minAgo": {
+      "message": "$1 分钟前",
+      "placeholders": {
+         "minutes": {
+            "content": "$1"
+         }
+      }
+   },
+   "moonFirstQuarter": {
+      "message": "上弦月"
+   },
+   "moonFullMoon": {
+      "message": "满月"
+   },
+   "moonLastQuarter": {
+      "message": "下弦月"
+   },
+   "moonNewMoon": {
+      "message": "新月"
+   },
+   "moonPhaseCalendar": {
+      "message": "月相日历"
+   },
+   "moonPhaseIllumination": {
+      "message": "月相 | 照度"
+   },
+   "moonWaningCrescent": {
+      "message": "残月"
+   },
+   "moonWaningGibbous": {
+      "message": "亏凸月"
+   },
+   "moonWaxingCrescent": {
+      "message": "峨眉月"
+   },
+   "moonWaxingGibbous": {
+      "message": "盈凸月"
+   },
+   "moonriseMoonset": {
+      "message": "月出 | 月落"
+   },
+   "morningGoldenHour": {
+      "message": "清晨黄金时段"
+   },
+   "needOnline": {
+      "message": "您需要联网才能获取实时天气数据。"
+   },
+   "next10Days": {
+      "message": "未来10天"
+   },
+   "next48Hours": {
+      "message": "未来48小时"
+   },
+   "next48HoursVip": {
+      "message": "未来48小时"
+   },
+   "nextFullMoon": {
+      "message": "下一次满月"
+   },
+   "nextMin": {
+      "message": "未来 $1 分钟",
+      "placeholders": {
+         "minutes": {
+            "content": "$1"
+         }
+      }
+   },
+   "nextUpToHours": {
+      "message": "未来 $1 小时",
+      "placeholders": {
+         "hours": {
+            "content": "$1"
+         }
+      }
+   },
+   "nextUpdateMinute": {
+      "message": "下次天气更新将在1分钟后，请稍候！"
+   },
+   "nextWeatherUpdate": {
+      "message": "下次天气更新将在1分钟后，请稍候！"
+   },
+   "night": {
+      "message": "夜晚"
+   },
+   "noInternet": {
+      "message": "未检测到网络连接！"
+   },
+   "noPrecipitation": {
+      "message": "未来一小时无降水"
+   },
+   "noWeatherAlerts": {
+      "message": "当前没有天气警报。"
+   },
+   "none": {
+      "message": "无"
+   },
+   "now": {
+      "message": "现在"
+   },
+   "oops": {
+      "message": "哎呀！"
+   },
+   "optimizedDarkTheme": {
+      "message": "已针对深色浏览器主题优化"
+   },
+   "outlook": {
+      "message": "展望"
+   },
+   "patience": {
+      "message": "有时候这些问题只需要一点时间来自行解决。感谢您的耐心等待！"
+   },
+   "perceptionBitCool": {
+      "message": "有点凉"
+   },
+   "perceptionExtremelyCold": {
+      "message": "极寒"
+   },
+   "perceptionFairlyHot": {
+      "message": "较热"
+   },
+   "perceptionMildlyWarm": {
+      "message": "温暖"
+   },
+   "perceptionPrettyWarm": {
+      "message": "较暖"
+   },
+   "perceptionQuiteCold": {
+      "message": "相当冷"
+   },
+   "perceptionQuitePleasant": {
+      "message": "十分宜人"
+   },
+   "perceptionSlightlyCool": {
+      "message": "微凉"
+   },
+   "perceptionSuperHot": {
+      "message": "酷热"
+   },
+   "perceptionVeryCold": {
+      "message": "非常寒冷"
+   },
+   "perceptionVeryHot": {
+      "message": "非常热"
+   },
+   "photoCredit": {
+      "message": "图片来源"
+   },
+   "planLikePro": {
+      "message": "像专业人士一样规划"
+   },
+   "plumeAqiTooltip": {
+      "message": "Plume 空气质量指数"
+   },
+   "poweredBy": {
+      "message": "技术支持"
+   },
+   "precipRain": {
+      "message": "雨"
+   },
+   "precipSnow": {
+      "message": "雪"
+   },
+   "precipitation": {
+      "message": "降水"
+   },
+   "precipitationFallback": {
+      "message": "降水"
+   },
+   "pressure": {
+      "message": "气压"
+   },
+   "pressureTrend": {
+      "message": "气压（趋势）"
+   },
+   "primaryPollutant": {
+      "message": "主要污染物"
+   },
+   "proMemberLogin": {
+      "message": "Pro 会员登录"
+   },
+   "radarMapLast2Hours": {
+      "message": "过去2小时雷达地图"
+   },
+   "radarWeatherMap": {
+      "message": "雷达天气地图"
+   },
+   "rain": {
+      "message": "雨"
+   },
+   "recommendedSunProtection": {
+      "message": "建议的防晒措施"
+   },
+   "redDotAlert": {
+      "message": "警报时徽标上显示红点"
+   },
+   "reduceTimeSun": {
+      "message": "减少在阳光下的时间"
+   },
+   "regionNotSupported": {
+      "message": "UV Weather 目前暂不支持您所在的地区。敬请期待！"
+   },
+   "reportAirQuality": {
+      "message": "该地区的空气质量处于$1水平。",
+      "placeholders": {
+         "level": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportFromLowToHigh": {
+      "message": "最低 $1，最高 $2",
+      "placeholders": {
+         "high": {
+            "content": "$2"
+         },
+         "low": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportGoodGreeting": {
+      "message": "$1好",
+      "placeholders": {
+         "time": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportGreetingAfternoon": {
+      "message": "下午好"
+   },
+   "reportGreetingEvening": {
+      "message": "晚上好"
+   },
+   "reportGreetingMorning": {
+      "message": "早上好"
+   },
+   "reportHighestTemp": {
+      "message": "最高温度将达到 $1",
+      "placeholders": {
+         "temp": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportHumidityAround": {
+      "message": "约 $1%",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportLoading": {
+      "message": "稍等片刻，马上就好。"
+   },
+   "reportMissingPlace": {
+      "message": "报告缺失的地点"
+   },
+   "reportPrecipProb": {
+      "message": "今日降水概率为 $1%。",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportSeverity": {
+      "message": "严重程度"
+   },
+   "reportSunriseWill": {
+      "message": "日出时间为 $1",
+      "placeholders": {
+         "time": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportSunsetTime": {
+      "message": "日落时间为 $1",
+      "placeholders": {
+         "time": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportTodayMaxUv": {
+      "message": "今日最大 UV 指数 $1，$2。$3",
+      "placeholders": {
+         "note": {
+            "content": "$2"
+         },
+         "rec": {
+            "content": "$3"
+         },
+         "uvi": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportUrgency": {
+      "message": "紧急程度"
+   },
+   "reportWindGust": {
+      "message": "部分地区阵风可达 $1",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "restOfDay": {
+      "message": "今天剩余时间"
+   },
+   "safe": {
+      "message": "安全"
+   },
+   "savedLocationSubtitle": {
+      "message": "点击以下位置进行切换。"
+   },
+   "savedLocations": {
+      "message": "已保存的位置"
+   },
+   "scanQrCode": {
+      "message": "扫描二维码"
+   },
+   "searchDragDrop": {
+      "message": "将图钉拖放到您的位置 以获取精确的天气数据。"
+   },
+   "searchMapPoweredBy": {
+      "message": "搜索和地图由以下提供支持"
+   },
+   "searchPlaceholder": {
+      "message": "输入城市名或邮编"
+   },
+   "setDefaultHomepage": {
+      "message": "设为默认主页"
+   },
+   "settingAbsoluteGm3": {
+      "message": "绝对 (g/m³)"
+   },
+   "settingAbsoluteGrft3": {
+      "message": "绝对 (gr/ft³)"
+   },
+   "settingAirPressure": {
+      "message": "气压"
+   },
+   "settingAnimatedIcon": {
+      "message": "动画图标"
+   },
+   "settingAppearance": {
+      "message": "外观"
+   },
+   "settingAutoBrowser": {
+      "message": "自动（浏览器默认）"
+   },
+   "settingBackgroundType": {
+      "message": "背景类型"
+   },
+   "settingBadgeDisplayInfo": {
+      "message": "徽标显示信息"
+   },
+   "settingBadgeUpdateInterval": {
+      "message": "徽标更新间隔（分钟）"
+   },
+   "settingBadgeWeatherDataSource": {
+      "message": "徽标天气数据来源"
+   },
+   "settingBft": {
+      "message": "Bft"
+   },
+   "settingBgThemeColors": {
+      "message": "背景主题颜色"
+   },
+   "settingCardinal": {
+      "message": "方位 (N, S, W, E)"
+   },
+   "settingChromeVersion": {
+      "message": "Chrome $1",
+      "placeholders": {
+         "ver": {
+            "content": "$1"
+         }
+      }
+   },
+   "settingCustomColor": {
+      "message": "自定义颜色"
+   },
+   "settingDark": {
+      "message": "深色"
+   },
+   "settingDarkThemeColor": {
+      "message": "深色主题颜色"
+   },
+   "settingDegrees": {
+      "message": "度数 (0°- 360°)"
+   },
+   "settingDistance": {
+      "message": "距离"
+   },
+   "settingDynamicDayNight": {
+      "message": "动态昼夜主题"
+   },
+   "settingHealthSafety": {
+      "message": "健康与安全数据视图"
+   },
+   "settingHighAccuracy": {
+      "message": "（高精度）"
+   },
+   "settingHourlyForecastedData": {
+      "message": "逐小时预报数据"
+   },
+   "settingHumidity": {
+      "message": "湿度"
+   },
+   "settingImage": {
+      "message": "图片"
+   },
+   "settingKnots": {
+      "message": "节"
+   },
+   "settingLanguage": {
+      "message": "语言"
+   },
+   "settingLargeNumberBadge": {
+      "message": "大数字徽标"
+   },
+   "settingLight": {
+      "message": "浅色"
+   },
+   "settingLightColorBadge": {
+      "message": "浅色徽标"
+   },
+   "settingLightThemeColor": {
+      "message": "浅色主题颜色"
+   },
+   "settingNearLiveData": {
+      "message": "准实时数据"
+   },
+   "settingPrecipitation": {
+      "message": "降水"
+   },
+   "settingRelativeHumidity": {
+      "message": "相对 (%)"
+   },
+   "settingSevereWeatherBadge": {
+      "message": "恶劣天气徽标（红点）"
+   },
+   "settingSevereWeatherNotifications": {
+      "message": "恶劣天气通知"
+   },
+   "settingTimeFormat": {
+      "message": "时间格式"
+   },
+   "settingToolbarBadge": {
+      "message": "徽标"
+   },
+   "settingUnits": {
+      "message": "单位"
+   },
+   "settingUvIndex": {
+      "message": "UV 指数"
+   },
+   "settingUvWeatherVersion": {
+      "message": "UV Weather $1",
+      "placeholders": {
+         "ver": {
+            "content": "$1"
+         }
+      }
+   },
+   "settingVisualStyleTheme": {
+      "message": "视觉风格主题"
+   },
+   "settingWindDirection": {
+      "message": "风向"
+   },
+   "settingWindSpeed": {
+      "message": "风速"
+   },
+   "settings": {
+      "message": "设置"
+   },
+   "settingsSubtitle": {
+      "message": "单位、外观、更新间隔等"
+   },
+   "severeWeatherBadge": {
+      "message": "恶劣天气徽标"
+   },
+   "severeWeatherNotifications": {
+      "message": "恶劣天气通知"
+   },
+   "severity": {
+      "message": "严重程度"
+   },
+   "severityDesExtreme": {
+      "message": "对生命或财产构成极端威胁。"
+   },
+   "severityDesMinor": {
+      "message": "对生命或财产几乎没有已知威胁。"
+   },
+   "severityDesModerate": {
+      "message": "可能对生命或财产构成威胁。"
+   },
+   "severityDesSevere": {
+      "message": "对生命或财产构成重大威胁。"
+   },
+   "severityExtreme": {
+      "message": "极端"
+   },
+   "severityMinor": {
+      "message": "轻微"
+   },
+   "severityModerate": {
+      "message": "中等"
+   },
+   "severitySevere": {
+      "message": "严重"
+   },
+   "severityUnknown": {
+      "message": "未知"
+   },
+   "sixtyMinWeather": {
+      "message": "60分钟天气"
+   },
+   "snow": {
+      "message": "雪"
+   },
+   "snowPrecipitation": {
+      "message": "降雪量"
+   },
+   "solarHrs": {
+      "message": "HRS"
+   },
+   "solarMin": {
+      "message": "MIN"
+   },
+   "solarNoon": {
+      "message": "正午"
+   },
+   "solarNoonIn": {
+      "message": "正午时间还有"
+   },
+   "solarNoonInLabel": {
+      "message": "正午还有"
+   },
+   "solarNoonTooltip": {
+      "message": "太阳在最高位置"
+   },
+   "solarTo": {
+      "message": "至"
+   },
+   "startFreeTrial": {
+      "message": "立即开始免费3天试用"
+   },
+   "startProTrial": {
+      "message": "开始 Pro 试用，免费3天"
+   },
+   "startingIn": {
+      "message": "$1将在 $2 分钟后开始。",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "stayInShade": {
+      "message": "待在阴凉处"
+   },
+   "sunMoonToday": {
+      "message": "今日日月"
+   },
+   "sunRisesIn": {
+      "message": "日出还有"
+   },
+   "sunSetsIn": {
+      "message": "日落还有"
+   },
+   "sunrise": {
+      "message": "日出"
+   },
+   "sunriseSunset": {
+      "message": "日出 | 日落"
+   },
+   "sunset": {
+      "message": "日落"
+   },
+   "temperature": {
+      "message": "温度"
+   },
+   "temperatureMax": {
+      "message": "温度（最高）"
+   },
+   "temperatureMin": {
+      "message": "温度（最低）"
+   },
+   "temporaryHiccup": {
+      "message": "获取最新天气数据时似乎遇到了临时故障。"
+   },
+   "timeAfternoon": {
+      "message": "下午"
+   },
+   "timeEvening": {
+      "message": "傍晚"
+   },
+   "timeMorning": {
+      "message": "上午"
+   },
+   "timeNight": {
+      "message": "夜晚"
+   },
+   "timelineClear": {
+      "message": "晴"
+   },
+   "timelineCloudy": {
+      "message": "多云"
+   },
+   "timelineFog": {
+      "message": "雾"
+   },
+   "timelinePartlyCloudy": {
+      "message": "局部多云"
+   },
+   "timelineRain": {
+      "message": "雨"
+   },
+   "timelineSleet": {
+      "message": "雨夹雪"
+   },
+   "timelineSnow": {
+      "message": "雪"
+   },
+   "timelineWind": {
+      "message": "风"
+   },
+   "toAddMoreRemove": {
+      "message": "如需添加更多，请先删除一些。"
+   },
+   "toAddMoreRemoveSome": {
+      "message": "如需添加更多，请先删除一些。"
+   },
+   "today": {
+      "message": "今天"
+   },
+   "tomorrow": {
+      "message": "明天"
+   },
+   "tomorrowAsCold": {
+      "message": "明天和今天一样冷。"
+   },
+   "tomorrowAsCool": {
+      "message": "明天和今天一样凉爽。"
+   },
+   "tomorrowAsWarm": {
+      "message": "明天和今天一样暖和。"
+   },
+   "tomorrowColder": {
+      "message": "明天会比今天更冷。"
+   },
+   "tomorrowCooler": {
+      "message": "明天会比今天更凉爽。"
+   },
+   "tomorrowWarmer": {
+      "message": "明天会比今天更暖和。"
+   },
+   "totalDaylight": {
+      "message": "总日照时长"
+   },
+   "tryAgain": {
+      "message": "请稍后再试。"
+   },
+   "uncomfortable": {
+      "message": "不适"
+   },
+   "unlock240Hour": {
+      "message": "解锁240小时预报"
+   },
+   "unlock30Day": {
+      "message": "解锁30天预报"
+   },
+   "unlock45Day": {
+      "message": "解锁45天预报"
+   },
+   "unlockForecastRadar": {
+      "message": "解锁预报雷达地图"
+   },
+   "unlockHourlyAqi": {
+      "message": "解锁逐小时 AQI"
+   },
+   "unlockProDesc": {
+      "message": "无限 UV 天气套餐，包含30天预报、实时雷达、AI报告和高级功能。"
+   },
+   "unlockProFeatures": {
+      "message": "解锁 Pro 功能"
+   },
+   "unlockSolarLunar": {
+      "message": "解锁每日天文数据"
+   },
+   "updatedOn": {
+      "message": "更新于"
+   },
+   "upgradeMoreLocations": {
+      "message": "立即升级以获取更多位置"
+   },
+   "upgradeToUVPro": {
+      "message": "升级到 UV Weather Pro"
+   },
+   "urgency": {
+      "message": "紧急程度"
+   },
+   "urgencyDesExpected": {
+      "message": "应尽快（一小时内）采取应对行动。"
+   },
+   "urgencyDesFuture": {
+      "message": "应在不久的将来采取应对行动。"
+   },
+   "urgencyDesImmediate": {
+      "message": "应立即采取应对行动。"
+   },
+   "urgencyDesPast": {
+      "message": "无需再采取应对行动。"
+   },
+   "urgencyExpected": {
+      "message": "预期"
+   },
+   "urgencyFuture": {
+      "message": "未来"
+   },
+   "urgencyImmediate": {
+      "message": "立即"
+   },
+   "urgencyPast": {
+      "message": "已过"
+   },
+   "urgencyUnknown": {
+      "message": "未知"
+   },
+   "uvExtreme": {
+      "message": "极高"
+   },
+   "uvHigh": {
+      "message": "高"
+   },
+   "uvIndex": {
+      "message": "UV 指数"
+   },
+   "uvIndexMax": {
+      "message": "UV 指数最大值"
+   },
+   "uvIndexPeak": {
+      "message": "UV 指数（峰值）"
+   },
+   "uvLimitSun": {
+      "message": "限制日晒时间"
+   },
+   "uvLow": {
+      "message": "低"
+   },
+   "uvModerate": {
+      "message": "中等"
+   },
+   "uvNight": {
+      "message": "夜间"
+   },
+   "uvSeekShade": {
+      "message": "请在阴凉处活动。"
+   },
+   "uvStayIndoors": {
+      "message": "请尽量待在室内。"
+   },
+   "uvVeryHigh": {
+      "message": "很高"
+   },
+   "visibility": {
+      "message": "能见度"
+   },
+   "visibilityClear": {
+      "message": "清晰"
+   },
+   "visibilityLimited": {
+      "message": "有限"
+   },
+   "visibilityPerfectlyClear": {
+      "message": "极佳"
+   },
+   "visibilityRestricted": {
+      "message": "受限"
+   },
+   "wearHat": {
+      "message": "佩戴帽子"
+   },
+   "wearSunClothing": {
+      "message": "穿着防晒衣物"
+   },
+   "wearSunglasses": {
+      "message": "佩戴防紫外线太阳镜"
+   },
+   "weather": {
+      "message": "天气"
+   },
+   "weatherAdjBlizzard": {
+      "message": "暴风雪的"
+   },
+   "weatherAdjBlowingDust": {
+      "message": "沙尘漫天的"
+   },
+   "weatherAdjBlowingSnow": {
+      "message": "风雪交加的"
+   },
+   "weatherAdjBreezy": {
+      "message": "微风习习的"
+   },
+   "weatherAdjClear": {
+      "message": "晴朗的"
+   },
+   "weatherAdjCloudy": {
+      "message": "多云的"
+   },
+   "weatherAdjDrizzle": {
+      "message": "细雨蒙蒙的"
+   },
+   "weatherAdjFlurries": {
+      "message": "飘雪的"
+   },
+   "weatherAdjFoggy": {
+      "message": "有雾的"
+   },
+   "weatherAdjFreezingDrizzle": {
+      "message": "冻毛毛雨的"
+   },
+   "weatherAdjFreezingRain": {
+      "message": "冻雨的"
+   },
+   "weatherAdjFrigid": {
+      "message": "严寒的"
+   },
+   "weatherAdjHail": {
+      "message": "有冰雹的"
+   },
+   "weatherAdjHaze": {
+      "message": "有霾的"
+   },
+   "weatherAdjHeavyRain": {
+      "message": "大雨倾盆的"
+   },
+   "weatherAdjHeavySnow": {
+      "message": "大雪纷飞的"
+   },
+   "weatherAdjHot": {
+      "message": "炎热的"
+   },
+   "weatherAdjHurricane": {
+      "message": "飓风级的"
+   },
+   "weatherAdjMostlyClear": {
+      "message": "大部晴朗的"
+   },
+   "weatherAdjMostlyCloudy": {
+      "message": "大部多云的"
+   },
+   "weatherAdjPartlyCloudy": {
+      "message": "局部多云的"
+   },
+   "weatherAdjRain": {
+      "message": "有雨的"
+   },
+   "weatherAdjSleet": {
+      "message": "雨夹雪的"
+   },
+   "weatherAdjSmoky": {
+      "message": "烟雾弥漫的"
+   },
+   "weatherAdjSnow": {
+      "message": "有雪的"
+   },
+   "weatherAdjStrongStorms": {
+      "message": "强雷暴的"
+   },
+   "weatherAdjSunFlurries": {
+      "message": "阵雪纷飞的"
+   },
+   "weatherAdjSunShowers": {
+      "message": "太阳雨的"
+   },
+   "weatherAdjThunderstorms": {
+      "message": "雷雨交加的"
+   },
+   "weatherAdjTropicalStorm": {
+      "message": "热带风暴的"
+   },
+   "weatherAdjWindy": {
+      "message": "大风的"
+   },
+   "weatherAdjWintryMix": {
+      "message": "冬季混合的"
+   },
+   "weatherAlertActive": {
+      "message": "当前有天气警报。"
+   },
+   "weatherAlerts": {
+      "message": "天气警报"
+   },
+   "weatherCalendar45": {
+      "message": "45天天气日历"
+   },
+   "weatherCondBlizzard": {
+      "message": "暴风雪"
+   },
+   "weatherCondBlowingDust": {
+      "message": "扬尘"
+   },
+   "weatherCondBlowingSnow": {
+      "message": "风吹雪"
+   },
+   "weatherCondBreezy": {
+      "message": "微风"
+   },
+   "weatherCondClear": {
+      "message": "晴"
+   },
+   "weatherCondCloudy": {
+      "message": "多云"
+   },
+   "weatherCondDrizzle": {
+      "message": "毛毛雨"
+   },
+   "weatherCondFlurries": {
+      "message": "小雪"
+   },
+   "weatherCondFoggy": {
+      "message": "雾"
+   },
+   "weatherCondFreezingDrizzle": {
+      "message": "冻毛毛雨"
+   },
+   "weatherCondFreezingRain": {
+      "message": "冻雨"
+   },
+   "weatherCondFrigid": {
+      "message": "严寒"
+   },
+   "weatherCondHail": {
+      "message": "冰雹"
+   },
+   "weatherCondHaze": {
+      "message": "霾"
+   },
+   "weatherCondHeavyRain": {
+      "message": "大雨"
+   },
+   "weatherCondHeavySnow": {
+      "message": "大雪"
+   },
+   "weatherCondHot": {
+      "message": "高温"
+   },
+   "weatherCondHurricane": {
+      "message": "飓风"
+   },
+   "weatherCondMostlyClear": {
+      "message": "大部晴朗"
+   },
+   "weatherCondMostlyCloudy": {
+      "message": "大部多云"
+   },
+   "weatherCondPartlyCloudy": {
+      "message": "局部多云"
+   },
+   "weatherCondRain": {
+      "message": "雨"
+   },
+   "weatherCondSleet": {
+      "message": "雨夹雪"
+   },
+   "weatherCondSmoky": {
+      "message": "烟雾"
+   },
+   "weatherCondSnow": {
+      "message": "雪"
+   },
+   "weatherCondSunFlurries": {
+      "message": "阵雪"
+   },
+   "weatherCondThunderstorms": {
+      "message": "雷暴"
+   },
+   "weatherCondTropicalStorm": {
+      "message": "热带风暴"
+   },
+   "weatherCondWindy": {
+      "message": "大风"
+   },
+   "weatherCondWintryMix": {
+      "message": "冬季混合降水"
+   },
+   "weatherHealthSafety": {
+      "message": "天气健康安全"
+   },
+   "weatherReport": {
+      "message": "天气报告"
+   },
+   "weatherReportByLexi": {
+      "message": "Lexi 天气报告"
+   },
+   "weatherReportLexi": {
+      "message": "Lexi 天气报告"
+   },
+   "weatherReportLexiPro": {
+      "message": "Lexi 天气报告（Pro 功能）"
+   },
+   "willContinueFor": {
+      "message": "$1将持续 $2 分钟。",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "wind": {
+      "message": "风"
+   },
+   "windAvg": {
+      "message": "风速（平均）"
+   },
+   "windChill": {
+      "message": "风寒指数"
+   },
+   "windDirection": {
+      "message": "风向"
+   },
+   "windGusts": {
+      "message": "阵风"
+   },
+   "windGustsMax": {
+      "message": "阵风（最大）"
+   },
+   "worldwideWeatherMap": {
+      "message": "全球天气地图"
+   },
+   "yesterday": {
+      "message": "昨天"
+   },
+   "yesterdayThisTime": {
+      "message": "昨天"
+   }
+}

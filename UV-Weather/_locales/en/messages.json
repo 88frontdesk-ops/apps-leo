@@ -1,0 +1,1886 @@
+{
+   "accuFeel": {
+      "message": "AccuFeel"
+   },
+   "accuFeelInShade": {
+      "message": "AccuFeel (in shade)"
+   },
+   "accuFeelShade": {
+      "message": "AccuFeel / Shade"
+   },
+   "accuFeelTooltip": {
+      "message": "An Accurate Feels Like Temperature"
+   },
+   "addEditLocations": {
+      "message": "Add or Edit Locations"
+   },
+   "addMultipleLocations": {
+      "message": "Add Multiple Locations"
+   },
+   "addNewLocation": {
+      "message": "Add New Location"
+   },
+   "affectedArea": {
+      "message": "Affected Area"
+   },
+   "airQuality": {
+      "message": "Air Quality"
+   },
+   "applySunscreen": {
+      "message": "Apply sunscreen"
+   },
+   "aqiDangerous": {
+      "message": "Dangerous"
+   },
+   "aqiDangerousVal": {
+      "message": "Dangerous ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "aqiExcellent": {
+      "message": "Excellent"
+   },
+   "aqiExcellentVal": {
+      "message": "Excellent ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "aqiFair": {
+      "message": "Fair"
+   },
+   "aqiFairVal": {
+      "message": "Fair ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "aqiGood": {
+      "message": "Based on current pollutants, the air quality is ideal for most individuals; enjoy your normal outdoor activities."
+   },
+   "aqiHazardous": {
+      "message": "Based on current pollutants, any exposure to the air, even for a few minutes, can lead to serious health effects on everybody. Avoid outdoor activities."
+   },
+   "aqiModerate": {
+      "message": "Based on current pollutants, the air quality is generally acceptable for most individuals. However, sensitive groups may experience minor to moderate symptoms from long-term exposure."
+   },
+   "aqiPoor": {
+      "message": "Poor"
+   },
+   "aqiPoorVal": {
+      "message": "Poor ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "aqiUnhealthy": {
+      "message": "Unhealthy"
+   },
+   "aqiUnhealthyLabel": {
+      "message": "Unhealthy (100-149)"
+   },
+   "aqiUnhealthySensitive": {
+      "message": "Based on current pollutants, the air has reached a high level of pollution and is unhealthy for sensitive groups. Reduce time spent outside if you are feeling symptoms such as difficulty breathing or throat irritation."
+   },
+   "aqiUnhealthyVal": {
+      "message": "Unhealthy ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "aqiVeryUnhealthy": {
+      "message": "Very Unhealthy"
+   },
+   "aqiVeryUnhealthyLabel": {
+      "message": "Very Unhealthy (150-249)"
+   },
+   "aqiVeryUnhealthyVal": {
+      "message": "Very Unhealthy ($1)",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "astro": {
+      "message": "Astro"
+   },
+   "avoidExertion": {
+      "message": "Avoid Exertion"
+   },
+   "beaufortCalm": {
+      "message": "Calm."
+   },
+   "beaufortFreshBreeze": {
+      "message": "Fresh breeze."
+   },
+   "beaufortGale": {
+      "message": "Gale."
+   },
+   "beaufortGentleBreeze": {
+      "message": "Gentle breeze."
+   },
+   "beaufortHighWind": {
+      "message": "High wind."
+   },
+   "beaufortHurricane": {
+      "message": "Hurricane."
+   },
+   "beaufortLightAir": {
+      "message": "Light air."
+   },
+   "beaufortLightBreeze": {
+      "message": "Light breeze."
+   },
+   "beaufortModerateBreeze": {
+      "message": "Moderate breeze."
+   },
+   "beaufortStorm": {
+      "message": "Storm."
+   },
+   "beaufortStrongGale": {
+      "message": "Strong gale."
+   },
+   "beaufortStrongWinds": {
+      "message": "Strong winds."
+   },
+   "beaufortViolentStorm": {
+      "message": "Violent storm."
+   },
+   "breakInPrecip": {
+      "message": "A break in the $1 in $2 min.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "byLexi": {
+      "message": "by Lexi"
+   },
+   "calendarPageTitle": {
+      "message": "UV Weather | $1, $2, ",
+      "placeholders": {
+         "city": {
+            "content": "$1"
+         },
+         "country": {
+            "content": "$2"
+         }
+      }
+   },
+   "card0Button": {
+      "message": "Add a New Location"
+   },
+   "card0Heading": {
+      "message": "QuickTips Hub"
+   },
+   "card0Text": {
+      "message": "Add a new location or update your current one for accurate weather forecasts."
+   },
+   "card0Title": {
+      "message": "Location for Precision"
+   },
+   "card10Button": {
+      "message": "Discover Global Weather"
+   },
+   "card10Heading": {
+      "message": "QuickTips Hub"
+   },
+   "card10Text": {
+      "message": "Discover live weather worldwide on our dynamic Weather Map experience."
+   },
+   "card10Title": {
+      "message": "Global Weather Overview"
+   },
+   "card11Button": {
+      "message": "Unlock Timings"
+   },
+   "card11Heading": {
+      "message": "Pro Feature"
+   },
+   "card11Text": {
+      "message": "Get daily lunar and solar timings, including sunrise, sunset, moonrise, and moonset."
+   },
+   "card11Title": {
+      "message": "Daily Lunar & Solar Timings"
+   },
+   "card12Button": {
+      "message": "See Cloud Coverage"
+   },
+   "card12Heading": {
+      "message": "QuickTips Hub"
+   },
+   "card12Text": {
+      "message": "Discover current and past areas of cloud coverage on the weather radar page."
+   },
+   "card12Title": {
+      "message": "Cloud Coverage Insights"
+   },
+   "card13Button": {
+      "message": "Unlock Pro Settings"
+   },
+   "card13Heading": {
+      "message": "Pro Feature"
+   },
+   "card13Text": {
+      "message": "Display UV Index in toolbar badge, check real-time UVI without extra clicks."
+   },
+   "card13Title": {
+      "message": "UV Index in Toolbar Badge"
+   },
+   "card14Button": {
+      "message": "Color Your Theme"
+   },
+   "card14Heading": {
+      "message": "QuickTips Hub"
+   },
+   "card14Text": {
+      "message": "Choose themes, customize with unique colors for a personalized touch."
+   },
+   "card14Title": {
+      "message": "Personalized Themes"
+   },
+   "card15Button": {
+      "message": "Unlock Pro Settings"
+   },
+   "card15Heading": {
+      "message": "Pro Feature"
+   },
+   "card15Text": {
+      "message": "Get more frequent weather updates for increased accuracy, every few minutes."
+   },
+   "card15Title": {
+      "message": "More Frequent Data Updates"
+   },
+   "card16Button": {
+      "message": "Explore AQI Levels"
+   },
+   "card16Heading": {
+      "message": "QuickTips Hub"
+   },
+   "card16Text": {
+      "message": "Get real-time Air Quality Index and pollutant levels on our Air Quality page."
+   },
+   "card16Title": {
+      "message": "Air Quality Tracker"
+   },
+   "card17Button": {
+      "message": "Unlock Pro Settings"
+   },
+   "card17Heading": {
+      "message": "Pro Feature"
+   },
+   "card17Text": {
+      "message": "Experience automatic dark and light modes based on local day and night cycles."
+   },
+   "card17Title": {
+      "message": "Adaptive Color Theme"
+   },
+   "card18Button": {
+      "message": "Explore Lunar Timing"
+   },
+   "card18Heading": {
+      "message": "QuickTips Hub"
+   },
+   "card18Text": {
+      "message": "Check out today's lunar timing on our Astro page for a dose of celestial wisdom."
+   },
+   "card18Title": {
+      "message": "Lunar Insights Today"
+   },
+   "card1Button": {
+      "message": "Try Risk-Free Trial"
+   },
+   "card1Heading": {
+      "message": "Exclusive Offer"
+   },
+   "card1Text": {
+      "message": "Get unlimited access to the UV Weather Pro package with premium features."
+   },
+   "card1Title": {
+      "message": "Unlock Pro Features"
+   },
+   "card2Button": {
+      "message": "Daily Weather Forecast"
+   },
+   "card2Heading": {
+      "message": "QuickTips Hub"
+   },
+   "card2Text": {
+      "message": "Access detailed daily forecasts by tapping on any of the 16 days on the daily page."
+   },
+   "card2Title": {
+      "message": "Explore Daily Details"
+   },
+   "card3Button": {
+      "message": "Unlock 45-day Forecast"
+   },
+   "card3Heading": {
+      "message": "Pro Feature"
+   },
+   "card3Text": {
+      "message": "Get ready with our 45-day weather forecast – a Pro feature for our savvy users!"
+   },
+   "card3Title": {
+      "message": "45-Day Pro Outlook"
+   },
+   "card4Button": {
+      "message": "See Current AccuFeel"
+   },
+   "card4Heading": {
+      "message": "QuickTips Hub"
+   },
+   "card4Text": {
+      "message": "Find today's 'feels-like' temperature with AccuFeel on Full Current Plus page."
+   },
+   "card4Title": {
+      "message": "Accurate Feels Like Temp."
+   },
+   "card5Button": {
+      "message": "Unlock Live Radar Map"
+   },
+   "card5Heading": {
+      "message": "Pro Feature"
+   },
+   "card5Text": {
+      "message": "Check out our advanced radar map for a satellite view of cloud cover and radar forecast!"
+   },
+   "card5Title": {
+      "message": "Advanced Radar Map"
+   },
+   "card6Button": {
+      "message": "Change Default Theme"
+   },
+   "card6Heading": {
+      "message": "QuickTips Hub"
+   },
+   "card6Text": {
+      "message": "Switch to Dark Mode theme for a sleek and easy-on-the-eyes experience."
+   },
+   "card6Title": {
+      "message": "Embrace the Dark Side"
+   },
+   "card7Button": {
+      "message": "5x Hourly Upgrade"
+   },
+   "card7Heading": {
+      "message": "Pro Feature"
+   },
+   "card7Text": {
+      "message": "Level up to Pro for 240-hour detailed weather and hourly air quality forecasts!"
+   },
+   "card7Title": {
+      "message": "240 Hourly Forecast"
+   },
+   "card8Button": {
+      "message": "Today Golden Hours"
+   },
+   "card8Heading": {
+      "message": "QuickTips Hub"
+   },
+   "card8Text": {
+      "message": "Discover perfect photography timing during Golden Hours on the Astro page."
+   },
+   "card8Title": {
+      "message": "Today's Golden Timeframe"
+   },
+   "card9Button": {
+      "message": "Unlock Today Report"
+   },
+   "card9Heading": {
+      "message": "Pro Feature"
+   },
+   "card9Text": {
+      "message": "Experience personalized, AI-powered news-style weather reports by Lexi!"
+   },
+   "card9Title": {
+      "message": "Personalized Weather Report"
+   },
+   "caution": {
+      "message": "Caution"
+   },
+   "chanceOfPrecip": {
+      "message": "Chance of Precip."
+   },
+   "chartHeavy": {
+      "message": "Heavy"
+   },
+   "chartLight": {
+      "message": "Light"
+   },
+   "chartModerate": {
+      "message": "Mod."
+   },
+   "chartNow": {
+      "message": "Now"
+   },
+   "cloudCover": {
+      "message": "Cloud Cover"
+   },
+   "cloudCoverage": {
+      "message": "Cloud Coverage"
+   },
+   "comfortable": {
+      "message": "Comfortable"
+   },
+   "comparisonUv": {
+      "message": "$1 UV",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "compassE": {
+      "message": "East"
+   },
+   "compassENE": {
+      "message": "East-Northeast"
+   },
+   "compassESE": {
+      "message": "East-Southeast"
+   },
+   "compassN": {
+      "message": "North"
+   },
+   "compassNE": {
+      "message": "Northeast"
+   },
+   "compassNNE": {
+      "message": "North-Northeast"
+   },
+   "compassNNW": {
+      "message": "North-Northwest"
+   },
+   "compassNW": {
+      "message": "Northwest"
+   },
+   "compassS": {
+      "message": "South"
+   },
+   "compassSE": {
+      "message": "Southeast"
+   },
+   "compassSSE": {
+      "message": "South-Southeast"
+   },
+   "compassSSW": {
+      "message": "South-Southwest"
+   },
+   "compassSW": {
+      "message": "Southwest"
+   },
+   "compassW": {
+      "message": "West"
+   },
+   "compassWNW": {
+      "message": "West-Northwest"
+   },
+   "compassWSW": {
+      "message": "West-Southwest"
+   },
+   "condition": {
+      "message": "Condition"
+   },
+   "conditionClear": {
+      "message": "Clear skies"
+   },
+   "conditionCloudy": {
+      "message": "Cloudy skies"
+   },
+   "conditionCold": {
+      "message": "Cold conditions"
+   },
+   "conditionContinueAllDay": {
+      "message": "$1 will continue for the rest of the day. Wind gusts are up to $2.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "windGust": {
+            "content": "$2"
+         }
+      }
+   },
+   "conditionContinueUntil": {
+      "message": "$1 will continue until $2.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "time": {
+            "content": "$2"
+         }
+      }
+   },
+   "conditionExpectedAround": {
+      "message": "$1 expected around $2.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "time": {
+            "content": "$2"
+         }
+      }
+   },
+   "conditionExpectedAroundAllDay": {
+      "message": "$1 expected around $2 will continue for the rest of the day.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "time": {
+            "content": "$2"
+         }
+      }
+   },
+   "conditionExpectedFromTo": {
+      "message": "$1 expected from $2 to $3.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "endTime": {
+            "content": "$3"
+         },
+         "startTime": {
+            "content": "$2"
+         }
+      }
+   },
+   "conditionFoggy": {
+      "message": "Foggy conditions"
+   },
+   "conditionHot": {
+      "message": "Hot conditions"
+   },
+   "conditionPartlyCloudy": {
+      "message": "Partly cloudy skies"
+   },
+   "conditionRainy": {
+      "message": "Rainy conditions"
+   },
+   "conditionSnowy": {
+      "message": "Snowy conditions"
+   },
+   "conditionStormy": {
+      "message": "Stormy conditions"
+   },
+   "conditionWindy": {
+      "message": "Windy conditions"
+   },
+   "continueForHour": {
+      "message": "$1 is expected to continue for the next hour.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         }
+      }
+   },
+   "continueForHourShort": {
+      "message": "$1 for the next hour.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         }
+      }
+   },
+   "cool": {
+      "message": "Cool"
+   },
+   "current": {
+      "message": "Current"
+   },
+   "currentAirQuality": {
+      "message": "Current Air Quality"
+   },
+   "currentPlus": {
+      "message": "Current Plus"
+   },
+   "daily": {
+      "message": "Daily"
+   },
+   "dailyComparison": {
+      "message": "Daily Comparison"
+   },
+   "danger": {
+      "message": "Danger"
+   },
+   "dangerous": {
+      "message": "Dangerous"
+   },
+   "darkMode": {
+      "message": "Dark Mode"
+   },
+   "day": {
+      "message": "Day"
+   },
+   "dewPoint": {
+      "message": "Dew Point"
+   },
+   "durationHrPlural": {
+      "message": "$1 hrs",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "durationHrSingular": {
+      "message": "$1 hr",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "durationLessThan1Min": {
+      "message": "less than 1 min"
+   },
+   "durationMinPlural": {
+      "message": "$1 mins",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "durationMinSingular": {
+      "message": "$1 min",
+      "placeholders": {
+         "count": {
+            "content": "$1"
+         }
+      }
+   },
+   "endingIn": {
+      "message": "$1 ending in $2 min.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "eveningGoldenHour": {
+      "message": "Evening Golden Hour"
+   },
+   "expectedStartIn": {
+      "message": "$1 is expected to start in $2 min.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "expectedStopIn": {
+      "message": "$1 is expected to stop in $2 min.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "exploreFullFeatures": {
+      "message": "Explore Full Features"
+   },
+   "expressUpgrade": {
+      "message": "Express Upgrade"
+   },
+   "extDescription": {
+      "message": "Real time weather forecasts with live radar, minute by minute rain, multi-location support, air quality, and AI reports"
+   },
+   "extName": {
+      "message": "UV Weather"
+   },
+   "extremeCaution": {
+      "message": "Extreme Caution"
+   },
+   "extremeDanger": {
+      "message": "Extreme Danger"
+   },
+   "firstLightLastLight": {
+      "message": "First Light | Last Light"
+   },
+   "fullMoonDay": {
+      "message": "Day"
+   },
+   "fullMoonDays": {
+      "message": "Days"
+   },
+   "getDetailedInfo": {
+      "message": "+ Get Detailed Information"
+   },
+   "getNotificationsSevere": {
+      "message": "Get notifications for severe weather"
+   },
+   "getWeatherCurrentIp": {
+      "message": "Get Weather for My Current IP Address"
+   },
+   "goAdFree": {
+      "message": "Go ad-free with Pro"
+   },
+   "goldenHourTooltip": {
+      "message": "Soft light, best time for photography"
+   },
+   "healthInformation": {
+      "message": "Health Information"
+   },
+   "heatStroke": {
+      "message": "Heat Stroke"
+   },
+   "heavy": {
+      "message": "Heavy"
+   },
+   "home": {
+      "message": "Home"
+   },
+   "hourly": {
+      "message": "Hourly"
+   },
+   "hourlyAirQuality": {
+      "message": "Hourly Air Quality"
+   },
+   "hourlyAqiForecast": {
+      "message": "Hourly Air Quality Forecast"
+   },
+   "hourlyBreakdown": {
+      "message": "Hourly Breakdown"
+   },
+   "humidex": {
+      "message": "Humidex"
+   },
+   "humidity": {
+      "message": "Humidity"
+   },
+   "humidityAvg": {
+      "message": "Humidity (Ave.)"
+   },
+   "humidityDewPoint": {
+      "message": "Humidity (Dew Point)"
+   },
+   "inCanada": {
+      "message": "in Canada"
+   },
+   "issuedBy": {
+      "message": "Issued By"
+   },
+   "largeNumberBadge": {
+      "message": "Large Number Badge"
+   },
+   "lexiCoffeeBreak": {
+      "message": "Lexi on 30-sec coffee break, back soon!"
+   },
+   "light": {
+      "message": "Light"
+   },
+   "lightColorBadge": {
+      "message": "Light Color Badge"
+   },
+   "lunarInCity": {
+      "message": " in $1, $2",
+      "placeholders": {
+         "city": {
+            "content": "$1"
+         },
+         "country": {
+            "content": "$2"
+         }
+      }
+   },
+   "lunarPageTitle": {
+      "message": "UV Weather | $1 Moon Phase",
+      "placeholders": {
+         "year": {
+            "content": "$1"
+         }
+      }
+   },
+   "madeWith": {
+      "message": "Made with"
+   },
+   "manageSubDesc": {
+      "message": "Payment update, plan change, cancel"
+   },
+   "manageSubscription": {
+      "message": "Manage Your subscription"
+   },
+   "medium": {
+      "message": "Medium"
+   },
+   "minAgo": {
+      "message": "$1 min ago",
+      "placeholders": {
+         "minutes": {
+            "content": "$1"
+         }
+      }
+   },
+   "moonFirstQuarter": {
+      "message": "First Quarter"
+   },
+   "moonFullMoon": {
+      "message": "Full Moon"
+   },
+   "moonLastQuarter": {
+      "message": "Last Quarter"
+   },
+   "moonNewMoon": {
+      "message": "New Moon"
+   },
+   "moonPhaseCalendar": {
+      "message": "Moon Phase Calendar"
+   },
+   "moonPhaseIllumination": {
+      "message": "Moon Phase | Illumination"
+   },
+   "moonWaningCrescent": {
+      "message": "Waning Crescent"
+   },
+   "moonWaningGibbous": {
+      "message": "Waning Gibbous"
+   },
+   "moonWaxingCrescent": {
+      "message": "Waxing Crescent"
+   },
+   "moonWaxingGibbous": {
+      "message": "Waxing Gibbous"
+   },
+   "moonriseMoonset": {
+      "message": "Moonrise | Moonset"
+   },
+   "morningGoldenHour": {
+      "message": "Morning Golden Hour"
+   },
+   "needOnline": {
+      "message": "You need to be online to get the real-time weather data."
+   },
+   "next10Days": {
+      "message": "Next 10 Days"
+   },
+   "next48Hours": {
+      "message": "Next 48 Hours"
+   },
+   "next48HoursVip": {
+      "message": "Next Up to 48 Hours"
+   },
+   "nextFullMoon": {
+      "message": "Next Full Moon"
+   },
+   "nextMin": {
+      "message": "Next $1 min",
+      "placeholders": {
+         "minutes": {
+            "content": "$1"
+         }
+      }
+   },
+   "nextUpToHours": {
+      "message": "Next Up to $1 Hours",
+      "placeholders": {
+         "hours": {
+            "content": "$1"
+         }
+      }
+   },
+   "nextUpdateMinute": {
+      "message": "Next weather update in 1 minute. Stay tuned!"
+   },
+   "nextWeatherUpdate": {
+      "message": "Next weather update in 1 minute. Stay tuned!"
+   },
+   "night": {
+      "message": "Night"
+   },
+   "noInternet": {
+      "message": "No internet connection found!"
+   },
+   "noPrecipitation": {
+      "message": "No precipitation next hour"
+   },
+   "noWeatherAlerts": {
+      "message": "No weather alerts at this time."
+   },
+   "none": {
+      "message": "None"
+   },
+   "now": {
+      "message": "Now"
+   },
+   "oops": {
+      "message": "Oops!"
+   },
+   "optimizedDarkTheme": {
+      "message": "Optimized for dark browser theme"
+   },
+   "outlook": {
+      "message": "Outlook"
+   },
+   "patience": {
+      "message": "Sometimes, these things just need a moment to sort themselves out. Thanks for your patience!"
+   },
+   "perceptionBitCool": {
+      "message": "Bit cool"
+   },
+   "perceptionExtremelyCold": {
+      "message": "Extremely cold"
+   },
+   "perceptionFairlyHot": {
+      "message": "Fairly hot"
+   },
+   "perceptionMildlyWarm": {
+      "message": "Mildly warm"
+   },
+   "perceptionPrettyWarm": {
+      "message": "Pretty warm"
+   },
+   "perceptionQuiteCold": {
+      "message": "Quite cold"
+   },
+   "perceptionQuitePleasant": {
+      "message": "Quite pleasant"
+   },
+   "perceptionSlightlyCool": {
+      "message": "Slightly cool"
+   },
+   "perceptionSuperHot": {
+      "message": "Super hot"
+   },
+   "perceptionVeryCold": {
+      "message": "Very cold"
+   },
+   "perceptionVeryHot": {
+      "message": "Very hot"
+   },
+   "photoCredit": {
+      "message": "Photo Credit"
+   },
+   "planLikePro": {
+      "message": "Plan like a pro"
+   },
+   "plumeAqiTooltip": {
+      "message": "The Plume Air Quality Index"
+   },
+   "poweredBy": {
+      "message": "Powered by"
+   },
+   "precipRain": {
+      "message": "Rain"
+   },
+   "precipSnow": {
+      "message": "Snow"
+   },
+   "precipitation": {
+      "message": "Precipitation"
+   },
+   "precipitationFallback": {
+      "message": "Precipitation"
+   },
+   "pressure": {
+      "message": "Pressure"
+   },
+   "pressureTrend": {
+      "message": "Pressure (trend)"
+   },
+   "primaryPollutant": {
+      "message": "Primary Pollutant"
+   },
+   "proMemberLogin": {
+      "message": "Pro Member Login"
+   },
+   "radarMapLast2Hours": {
+      "message": "Radar Map Last 2 Hours"
+   },
+   "radarWeatherMap": {
+      "message": "Radar Weather Map"
+   },
+   "rain": {
+      "message": "Rain"
+   },
+   "recommendedSunProtection": {
+      "message": "Recommended Sun Protection"
+   },
+   "redDotAlert": {
+      "message": "Red dot on badge during alert"
+   },
+   "reduceTimeSun": {
+      "message": "Reduce time in the sun"
+   },
+   "regionNotSupported": {
+      "message": "UV Weather isn't currently supported in your region. Stay tuned!"
+   },
+   "reportAirQuality": {
+      "message": "Air quality in the area is within $1 levels.",
+      "placeholders": {
+         "level": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportFromLowToHigh": {
+      "message": " from a low of $1 to a high of $2",
+      "placeholders": {
+         "high": {
+            "content": "$2"
+         },
+         "low": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportGoodGreeting": {
+      "message": "Good $1",
+      "placeholders": {
+         "time": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportGreetingAfternoon": {
+      "message": "Good Afternoon"
+   },
+   "reportGreetingEvening": {
+      "message": "Good Evening"
+   },
+   "reportGreetingMorning": {
+      "message": "Good Morning"
+   },
+   "reportHighestTemp": {
+      "message": " the highest temperature will be $1",
+      "placeholders": {
+         "temp": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportHumidityAround": {
+      "message": " around $1%",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportLoading": {
+      "message": "I'll be with you in just a moment."
+   },
+   "reportMissingPlace": {
+      "message": "Report a Missing Place"
+   },
+   "reportPrecipProb": {
+      "message": "Today precipitation probability is $1%.",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportSeverity": {
+      "message": "Severity"
+   },
+   "reportSunriseWill": {
+      "message": "sunrise time will $1",
+      "placeholders": {
+         "time": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportSunsetTime": {
+      "message": "sunset time $1",
+      "placeholders": {
+         "time": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportTodayMaxUv": {
+      "message": "Today's maximum UV index $1, $2. $3",
+      "placeholders": {
+         "note": {
+            "content": "$2"
+         },
+         "rec": {
+            "content": "$3"
+         },
+         "uvi": {
+            "content": "$1"
+         }
+      }
+   },
+   "reportUrgency": {
+      "message": "Urgency"
+   },
+   "reportWindGust": {
+      "message": " with gusts up to $1 in some areas",
+      "placeholders": {
+         "val": {
+            "content": "$1"
+         }
+      }
+   },
+   "restOfDay": {
+      "message": "Rest of Day"
+   },
+   "safe": {
+      "message": "Safe"
+   },
+   "savedLocationSubtitle": {
+      "message": "Tap a location below to switch."
+   },
+   "savedLocations": {
+      "message": "Saved Locations"
+   },
+   "scanQrCode": {
+      "message": "Scan QR code"
+   },
+   "searchDragDrop": {
+      "message": "Drag and drop the pin to your location to get accurate weather data."
+   },
+   "searchMapPoweredBy": {
+      "message": "Search & map powered by"
+   },
+   "searchPlaceholder": {
+      "message": "Enter the city or ZIP code"
+   },
+   "setDefaultHomepage": {
+      "message": "Set as default homepage"
+   },
+   "settingAbsoluteGm3": {
+      "message": "Absolute (g/m³)"
+   },
+   "settingAbsoluteGrft3": {
+      "message": "Absolute (gr/ft³)"
+   },
+   "settingAirPressure": {
+      "message": "Air Pressure"
+   },
+   "settingAnimatedIcon": {
+      "message": "Animated Icon"
+   },
+   "settingAppearance": {
+      "message": "APPEARANCE"
+   },
+   "settingAutoBrowser": {
+      "message": "Auto (Browser Default)"
+   },
+   "settingBackgroundType": {
+      "message": "Background Type"
+   },
+   "settingBadgeDisplayInfo": {
+      "message": "Badge Display Info"
+   },
+   "settingBadgeUpdateInterval": {
+      "message": "Badge Update Interval (mins)"
+   },
+   "settingBadgeWeatherDataSource": {
+      "message": "Badge Weather Data Source"
+   },
+   "settingBft": {
+      "message": "Bft"
+   },
+   "settingBgThemeColors": {
+      "message": "Background Theme Colors"
+   },
+   "settingCardinal": {
+      "message": "Cardinal (N, S, W, E)"
+   },
+   "settingChromeVersion": {
+      "message": "Chrome $1",
+      "placeholders": {
+         "ver": {
+            "content": "$1"
+         }
+      }
+   },
+   "settingCustomColor": {
+      "message": "Custom Color"
+   },
+   "settingDark": {
+      "message": "Dark"
+   },
+   "settingDarkThemeColor": {
+      "message": "Dark Theme Color"
+   },
+   "settingDegrees": {
+      "message": "Degrees (0°- 360°)"
+   },
+   "settingDistance": {
+      "message": "Distance"
+   },
+   "settingDynamicDayNight": {
+      "message": "Dynamic Day-Night Theme"
+   },
+   "settingHealthSafety": {
+      "message": "Health & Safety Data View"
+   },
+   "settingHighAccuracy": {
+      "message": "(High Accuracy)"
+   },
+   "settingHourlyForecastedData": {
+      "message": "Hourly Forecasted Data"
+   },
+   "settingHumidity": {
+      "message": "Humidity"
+   },
+   "settingImage": {
+      "message": "Image"
+   },
+   "settingKnots": {
+      "message": "Knots"
+   },
+   "settingLanguage": {
+      "message": "Language"
+   },
+   "settingLargeNumberBadge": {
+      "message": "Large Number Badge"
+   },
+   "settingLight": {
+      "message": "Light"
+   },
+   "settingLightColorBadge": {
+      "message": "Light Color Badge"
+   },
+   "settingLightThemeColor": {
+      "message": "Light Theme Color"
+   },
+   "settingNearLiveData": {
+      "message": "Near Live Data"
+   },
+   "settingPrecipitation": {
+      "message": "Precipitation"
+   },
+   "settingRelativeHumidity": {
+      "message": "Relative (%)"
+   },
+   "settingSevereWeatherBadge": {
+      "message": "Severe Weather Badge (red dot)"
+   },
+   "settingSevereWeatherNotifications": {
+      "message": "Severe Weather Notifications"
+   },
+   "settingTimeFormat": {
+      "message": "Time Format"
+   },
+   "settingToolbarBadge": {
+      "message": "BADGE"
+   },
+   "settingUnits": {
+      "message": "UNITS"
+   },
+   "settingUvIndex": {
+      "message": "UV Index"
+   },
+   "settingUvWeatherVersion": {
+      "message": "UV Weather $1",
+      "placeholders": {
+         "ver": {
+            "content": "$1"
+         }
+      }
+   },
+   "settingVisualStyleTheme": {
+      "message": "Visual Style Theme"
+   },
+   "settingWindDirection": {
+      "message": "Wind Direction"
+   },
+   "settingWindSpeed": {
+      "message": "Wind Speed"
+   },
+   "settings": {
+      "message": "Settings"
+   },
+   "settingsSubtitle": {
+      "message": "Units, appearance, update interval & more"
+   },
+   "severeWeatherBadge": {
+      "message": "Severe Weather Badge"
+   },
+   "severeWeatherNotifications": {
+      "message": "Severe Weather Notifications"
+   },
+   "severity": {
+      "message": "Severity"
+   },
+   "severityDesExtreme": {
+      "message": "Extraordinary threat to life or property."
+   },
+   "severityDesMinor": {
+      "message": "Minimal to no known threat to life or property."
+   },
+   "severityDesModerate": {
+      "message": "Possible threat to life or property."
+   },
+   "severityDesSevere": {
+      "message": "Significant threat to life or property."
+   },
+   "severityExtreme": {
+      "message": "Extreme"
+   },
+   "severityMinor": {
+      "message": "Minor"
+   },
+   "severityModerate": {
+      "message": "Moderate"
+   },
+   "severitySevere": {
+      "message": "Severe"
+   },
+   "severityUnknown": {
+      "message": "Unknown"
+   },
+   "sixtyMinWeather": {
+      "message": "60 Min. Weather"
+   },
+   "snow": {
+      "message": "Snow"
+   },
+   "snowPrecipitation": {
+      "message": "Snow Precipitation"
+   },
+   "solarHrs": {
+      "message": "HRS"
+   },
+   "solarMin": {
+      "message": "MIN"
+   },
+   "solarNoon": {
+      "message": "Solar Noon"
+   },
+   "solarNoonIn": {
+      "message": "Solar Noon in"
+   },
+   "solarNoonInLabel": {
+      "message": "Solar noon in"
+   },
+   "solarNoonTooltip": {
+      "message": "Sun is in the highest position"
+   },
+   "solarTo": {
+      "message": "to"
+   },
+   "startFreeTrial": {
+      "message": "Start your risk-free 3-day trial today"
+   },
+   "startProTrial": {
+      "message": "Start your Pro trial, free for 3 days"
+   },
+   "startingIn": {
+      "message": "$1 starting in $2 min.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "stayInShade": {
+      "message": "Stay in the shade"
+   },
+   "sunMoonToday": {
+      "message": "Sun & Moon Today"
+   },
+   "sunRisesIn": {
+      "message": "Sun rises in"
+   },
+   "sunSetsIn": {
+      "message": "Sun sets in"
+   },
+   "sunrise": {
+      "message": "Sunrise"
+   },
+   "sunriseSunset": {
+      "message": "Sunrise | Sunset"
+   },
+   "sunset": {
+      "message": "Sunset"
+   },
+   "temperature": {
+      "message": "Temperature"
+   },
+   "temperatureMax": {
+      "message": "Temperature (Max)"
+   },
+   "temperatureMin": {
+      "message": "Temperature (Min)"
+   },
+   "temporaryHiccup": {
+      "message": "It seems we're experiencing a temporary hiccup in getting the latest weather data."
+   },
+   "timeAfternoon": {
+      "message": "Afternoon"
+   },
+   "timeEvening": {
+      "message": "Evening"
+   },
+   "timeMorning": {
+      "message": "Morning"
+   },
+   "timeNight": {
+      "message": "Night"
+   },
+   "timelineClear": {
+      "message": "Clear"
+   },
+   "timelineCloudy": {
+      "message": "Cloudy"
+   },
+   "timelineFog": {
+      "message": "Fog"
+   },
+   "timelinePartlyCloudy": {
+      "message": "Partly Cloudy"
+   },
+   "timelineRain": {
+      "message": "Rain"
+   },
+   "timelineSleet": {
+      "message": "Sleet"
+   },
+   "timelineSnow": {
+      "message": "Snow"
+   },
+   "timelineWind": {
+      "message": "Wind"
+   },
+   "toAddMoreRemove": {
+      "message": "To add more, remove some."
+   },
+   "toAddMoreRemoveSome": {
+      "message": "To add more, remove some."
+   },
+   "today": {
+      "message": "Today"
+   },
+   "tomorrow": {
+      "message": "Tomorrow"
+   },
+   "tomorrowAsCold": {
+      "message": "Tomorrow will be as cold as today."
+   },
+   "tomorrowAsCool": {
+      "message": "Tomorrow will be as cool as today."
+   },
+   "tomorrowAsWarm": {
+      "message": "Tomorrow will be as warm as today."
+   },
+   "tomorrowColder": {
+      "message": "Tomorrow will be colder than today."
+   },
+   "tomorrowCooler": {
+      "message": "Tomorrow will be cooler than today."
+   },
+   "tomorrowWarmer": {
+      "message": "Tomorrow will be warmer than today."
+   },
+   "totalDaylight": {
+      "message": "Total Daylight"
+   },
+   "tryAgain": {
+      "message": "Please try again in a few seconds."
+   },
+   "uncomfortable": {
+      "message": "Uncomfortable"
+   },
+   "unlock240Hour": {
+      "message": "Unlock 240-Hour Forecast"
+   },
+   "unlock30Day": {
+      "message": "Unlock 30-Day Forecast"
+   },
+   "unlock45Day": {
+      "message": "Unlock 45-Day Forecast"
+   },
+   "unlockForecastRadar": {
+      "message": "Unlock Forecast Radar Map"
+   },
+   "unlockHourlyAqi": {
+      "message": "Unlock Hourly AQI"
+   },
+   "unlockProDesc": {
+      "message": "Unlimited UV weather package with 30-day forecasts, live radar, AI reports, and premium features."
+   },
+   "unlockProFeatures": {
+      "message": "Unlock Pro Features"
+   },
+   "unlockSolarLunar": {
+      "message": "Unlock Daily Astro Data"
+   },
+   "updatedOn": {
+      "message": "updated on"
+   },
+   "upgradeMoreLocations": {
+      "message": "Upgrade Now for More Locations"
+   },
+   "upgradeToUVPro": {
+      "message": "Upgrade to UV Weather Pro"
+   },
+   "urgency": {
+      "message": "Urgency"
+   },
+   "urgencyDesExpected": {
+      "message": "Responsive action should be taken soon (within next hour)."
+   },
+   "urgencyDesFuture": {
+      "message": "Responsive action should be taken in the near future."
+   },
+   "urgencyDesImmediate": {
+      "message": "Responsive action should be taken immediately."
+   },
+   "urgencyDesPast": {
+      "message": "Responsive action is no longer required."
+   },
+   "urgencyExpected": {
+      "message": "Expected"
+   },
+   "urgencyFuture": {
+      "message": "Future"
+   },
+   "urgencyImmediate": {
+      "message": "Immediate"
+   },
+   "urgencyPast": {
+      "message": "Past"
+   },
+   "urgencyUnknown": {
+      "message": "Unknown"
+   },
+   "uvExtreme": {
+      "message": "Extreme"
+   },
+   "uvHigh": {
+      "message": "High"
+   },
+   "uvIndex": {
+      "message": "UV Index"
+   },
+   "uvIndexMax": {
+      "message": "UV Index Max"
+   },
+   "uvIndexPeak": {
+      "message": "UV Index (Peak)"
+   },
+   "uvLimitSun": {
+      "message": "Limit your time in the sun"
+   },
+   "uvLow": {
+      "message": "Low"
+   },
+   "uvModerate": {
+      "message": "Moderate"
+   },
+   "uvNight": {
+      "message": "night"
+   },
+   "uvSeekShade": {
+      "message": "Seek shade."
+   },
+   "uvStayIndoors": {
+      "message": "Try to stay indoors as much as possible."
+   },
+   "uvVeryHigh": {
+      "message": "Very High"
+   },
+   "visibility": {
+      "message": "Visibility"
+   },
+   "visibilityClear": {
+      "message": "Clear"
+   },
+   "visibilityLimited": {
+      "message": "Limited"
+   },
+   "visibilityPerfectlyClear": {
+      "message": "Perfectly Clear"
+   },
+   "visibilityRestricted": {
+      "message": "Restricted"
+   },
+   "wearHat": {
+      "message": "Wear a hat"
+   },
+   "wearSunClothing": {
+      "message": "Wear sunprotective clothing"
+   },
+   "wearSunglasses": {
+      "message": "Wear UV blocking sunglasses"
+   },
+   "weather": {
+      "message": "Weather"
+   },
+   "weatherAdjBlizzard": {
+      "message": "Blizzardy"
+   },
+   "weatherAdjBlowingDust": {
+      "message": "Sandstormy"
+   },
+   "weatherAdjBlowingSnow": {
+      "message": "Blowing-snowy"
+   },
+   "weatherAdjBreezy": {
+      "message": "Breezy"
+   },
+   "weatherAdjClear": {
+      "message": "Clear"
+   },
+   "weatherAdjCloudy": {
+      "message": "Cloudy"
+   },
+   "weatherAdjDrizzle": {
+      "message": "Drizzly"
+   },
+   "weatherAdjFlurries": {
+      "message": "Flurry-like"
+   },
+   "weatherAdjFoggy": {
+      "message": "Foggy"
+   },
+   "weatherAdjFreezingDrizzle": {
+      "message": "Freezingly drizzly"
+   },
+   "weatherAdjFreezingRain": {
+      "message": "Freezing-rainy"
+   },
+   "weatherAdjFrigid": {
+      "message": "Frigid"
+   },
+   "weatherAdjHail": {
+      "message": "Haily"
+   },
+   "weatherAdjHaze": {
+      "message": "Hazy"
+   },
+   "weatherAdjHeavyRain": {
+      "message": "Heavy-rainy"
+   },
+   "weatherAdjHeavySnow": {
+      "message": "Heavily snowy"
+   },
+   "weatherAdjHot": {
+      "message": "Hot"
+   },
+   "weatherAdjHurricane": {
+      "message": "Hurricane-like"
+   },
+   "weatherAdjMostlyClear": {
+      "message": "Mostly clear"
+   },
+   "weatherAdjMostlyCloudy": {
+      "message": "Mostly cloudy"
+   },
+   "weatherAdjPartlyCloudy": {
+      "message": "Partly cloudy"
+   },
+   "weatherAdjRain": {
+      "message": "Rainy"
+   },
+   "weatherAdjSleet": {
+      "message": "Sleety"
+   },
+   "weatherAdjSmoky": {
+      "message": "Smoky"
+   },
+   "weatherAdjSnow": {
+      "message": "Snowy"
+   },
+   "weatherAdjStrongStorms": {
+      "message": "Strongly thunderstormy"
+   },
+   "weatherAdjSunFlurries": {
+      "message": "Sunflurry-like"
+   },
+   "weatherAdjSunShowers": {
+      "message": "Sunshowery"
+   },
+   "weatherAdjThunderstorms": {
+      "message": "Thunderstormy"
+   },
+   "weatherAdjTropicalStorm": {
+      "message": "Tropical-stormy"
+   },
+   "weatherAdjWindy": {
+      "message": "Windy"
+   },
+   "weatherAdjWintryMix": {
+      "message": "Wintry"
+   },
+   "weatherAlertActive": {
+      "message": "There is a weather alert currently."
+   },
+   "weatherAlerts": {
+      "message": "Weather Alerts"
+   },
+   "weatherCalendar45": {
+      "message": "45 Days Weather Calendar"
+   },
+   "weatherCondBlizzard": {
+      "message": "Blizzard"
+   },
+   "weatherCondBlowingDust": {
+      "message": "Blowing dust"
+   },
+   "weatherCondBlowingSnow": {
+      "message": "Blowing snow"
+   },
+   "weatherCondBreezy": {
+      "message": "Breezy"
+   },
+   "weatherCondClear": {
+      "message": "Clear"
+   },
+   "weatherCondCloudy": {
+      "message": "Cloudy"
+   },
+   "weatherCondDrizzle": {
+      "message": "Drizzle"
+   },
+   "weatherCondFlurries": {
+      "message": "Flurries"
+   },
+   "weatherCondFoggy": {
+      "message": "Fog"
+   },
+   "weatherCondFreezingDrizzle": {
+      "message": "Freezing drizzle"
+   },
+   "weatherCondFreezingRain": {
+      "message": "Freezing rain"
+   },
+   "weatherCondFrigid": {
+      "message": "Frigid condi."
+   },
+   "weatherCondHail": {
+      "message": "Hail"
+   },
+   "weatherCondHaze": {
+      "message": "Haze"
+   },
+   "weatherCondHeavyRain": {
+      "message": "Heavy rain"
+   },
+   "weatherCondHeavySnow": {
+      "message": "Heavy snow"
+   },
+   "weatherCondHot": {
+      "message": "High temp."
+   },
+   "weatherCondHurricane": {
+      "message": "Hurricane"
+   },
+   "weatherCondMostlyClear": {
+      "message": "Mostly clear"
+   },
+   "weatherCondMostlyCloudy": {
+      "message": "Mostly cloudy"
+   },
+   "weatherCondPartlyCloudy": {
+      "message": "Partly cloudy"
+   },
+   "weatherCondRain": {
+      "message": "Rain"
+   },
+   "weatherCondSleet": {
+      "message": "Sleet"
+   },
+   "weatherCondSmoky": {
+      "message": "Smoky"
+   },
+   "weatherCondSnow": {
+      "message": "Snow"
+   },
+   "weatherCondSunFlurries": {
+      "message": "Snow flurries"
+   },
+   "weatherCondThunderstorms": {
+      "message": "Thunderstorms"
+   },
+   "weatherCondTropicalStorm": {
+      "message": "Tropical storm"
+   },
+   "weatherCondWindy": {
+      "message": "Windy"
+   },
+   "weatherCondWintryMix": {
+      "message": "Wintry mix"
+   },
+   "weatherHealthSafety": {
+      "message": "Weather Health Safety"
+   },
+   "weatherReport": {
+      "message": "Weather Report"
+   },
+   "weatherReportByLexi": {
+      "message": "Weather Report by Lexi"
+   },
+   "weatherReportLexi": {
+      "message": "Weather Report by Lexi"
+   },
+   "weatherReportLexiPro": {
+      "message": "Weather Report by Lexi (Pro feature)"
+   },
+   "willContinueFor": {
+      "message": "$1 will continue for $2 min.",
+      "placeholders": {
+         "condition": {
+            "content": "$1"
+         },
+         "minutes": {
+            "content": "$2"
+         }
+      }
+   },
+   "wind": {
+      "message": "Wind"
+   },
+   "windAvg": {
+      "message": "Wind (Ave.)"
+   },
+   "windChill": {
+      "message": "Wind Chill"
+   },
+   "windDirection": {
+      "message": "Wind Direction"
+   },
+   "windGusts": {
+      "message": "Wind Gusts"
+   },
+   "windGustsMax": {
+      "message": "Wind Gusts (Max)"
+   },
+   "worldwideWeatherMap": {
+      "message": "Worldwide Weather Map"
+   },
+   "yesterday": {
+      "message": "Yesterday"
+   },
+   "yesterdayThisTime": {
+      "message": "Yesterday"
+   }
+}

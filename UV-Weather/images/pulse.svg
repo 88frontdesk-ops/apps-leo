@@ -1,0 +1,10 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="256" cy="256" r="256" fill="rgba(255, 102, 43, 1)" stroke="none">
+    <animate attributeName="opacity" values="1;1;1" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="r" values="100;120;100" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="256" cy="256" r="256" fill="rgba(255, 102, 43, 1)" stroke="none">
+    <animate attributeName="opacity" values="0;.3;0" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="r" values="0;256;256" dur="2s" repeatCount="indefinite" />
+  </circle>
+</svg>
