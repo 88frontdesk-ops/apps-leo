@@ -228,6 +228,7 @@ if (!self.document) {
                 whiteIcon: "1",
                 setSettingFC: "c",
                 theme: "dark",
+                animatedIcon: "1",
                 badgeAlert: true,
               });
               mp_SetProfile();
@@ -280,6 +281,7 @@ if (!self.document) {
                 whiteIcon: "1",
                 setSettingFC: "c",
                 theme: "dark",
+                animatedIcon: "1",
                 badgeAlert: true,
               });
               mp_SetProfile();
@@ -319,6 +321,7 @@ if (!self.document) {
                 whiteIcon: "1",
                 setSettingFC: "c",
                 theme: "dark",
+                animatedIcon: "1",
                 badgeAlert: true,
               });
               mp_SetProfile();
@@ -348,6 +351,7 @@ if (!self.document) {
           whiteIcon: "1",
           setSettingFC: "c",
           theme: "dark",
+          animatedIcon: "1",
           badgeAlert: true,
         });
         mp_SetProfile();
