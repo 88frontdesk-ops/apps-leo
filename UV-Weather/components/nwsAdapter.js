@@ -135,18 +135,22 @@
       const nightForecast = periodToForecast(night);
       const startTime = Date.parse(day.startTime) / 1000;
       const endTime = Date.parse(night.endTime || day.endTime) / 1000;
+      const sunrise = supplementalDaily.sunrise?.[days.length] || day.startTime;
+      const sunset = supplementalDaily.sunset?.[days.length] || night.endTime;
+      const sunriseTime = Date.parse(sunrise) / 1000;
+      const sunsetTime = Date.parse(sunset) / 1000;
       days.push({
         forecastStart: day.startTime,
         temperatureMax: dayForecast.temperature,
         temperatureMin: nightForecast.temperature,
         maxUvIndex: supplementalDaily.uv_index_max?.[days.length] || 0,
-        sunrise: supplementalDaily.sunrise?.[days.length] || day.startTime,
-        sunset: supplementalDaily.sunset?.[days.length] || night.endTime,
-        sunriseCivil: supplementalDaily.sunrise?.[days.length] || day.startTime,
-        sunsetCivil: supplementalDaily.sunset?.[days.length] || night.endTime,
+        sunrise,
+        sunset,
+        sunriseCivil: sunrise,
+        sunsetCivil: sunset,
         sunriseAstronomical: new Date(startTime * 1000).toISOString(),
         sunsetAstronomical: new Date(endTime * 1000).toISOString(),
-        solarNoon: new Date(((startTime + endTime) / 2) * 1000).toISOString(),
+        solarNoon: new Date(((sunriseTime + sunsetTime) / 2) * 1000).toISOString(),
         solarMidnight: new Date(endTime * 1000).toISOString(),
         moonrise: supplementalDaily.moonrise?.[days.length] || day.startTime,
         moonset: supplementalDaily.moonset?.[days.length] || night.endTime,
