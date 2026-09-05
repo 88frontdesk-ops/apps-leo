@@ -227,6 +227,7 @@ if (!self.document) {
                 badgeSize: "0",
                 whiteIcon: "1",
                 setSettingFC: "c",
+                theme: "dark",
                 badgeAlert: true,
               });
               mp_SetProfile();
@@ -278,6 +279,7 @@ if (!self.document) {
                 badgeSize: "0",
                 whiteIcon: "1",
                 setSettingFC: "c",
+                theme: "dark",
                 badgeAlert: true,
               });
               mp_SetProfile();
@@ -313,10 +315,14 @@ if (!self.document) {
                 country: country,
                 ipCountry: country,
                 verUpdate: 1,
-                badgeSize: "1",
+                badgeSize: "0",
+                whiteIcon: "1",
+                setSettingFC: "c",
+                theme: "dark",
                 badgeAlert: true,
               });
               mp_SetProfile();
+              badgeTempUV(latlong, country, timezone);
             } else {
               defaultCity();
             }
@@ -341,6 +347,7 @@ if (!self.document) {
           badgeSize: "0",
           whiteIcon: "1",
           setSettingFC: "c",
+          theme: "dark",
           badgeAlert: true,
         });
         mp_SetProfile();
