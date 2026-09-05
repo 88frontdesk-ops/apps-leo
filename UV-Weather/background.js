@@ -229,7 +229,7 @@ if (!self.document) {
                 setSettingFC: "c",
                 theme: "dark",
                 animatedIcon: "1",
-                badgeDataSource: "modeled",
+                badgeDataSource: "realtime",
                 IntervalUpdate: "15",
                 badgeAlert: true,
               });
@@ -284,7 +284,7 @@ if (!self.document) {
                 setSettingFC: "c",
                 theme: "dark",
                 animatedIcon: "1",
-                badgeDataSource: "modeled",
+                badgeDataSource: "realtime",
                 IntervalUpdate: "15",
                 badgeAlert: true,
               });
@@ -326,7 +326,7 @@ if (!self.document) {
                 setSettingFC: "c",
                 theme: "dark",
                 animatedIcon: "1",
-                badgeDataSource: "modeled",
+                badgeDataSource: "realtime",
                 IntervalUpdate: "15",
                 badgeAlert: true,
               });
@@ -358,7 +358,7 @@ if (!self.document) {
           setSettingFC: "c",
           theme: "dark",
           animatedIcon: "1",
-          badgeDataSource: "modeled",
+          badgeDataSource: "realtime",
           IntervalUpdate: "15",
           badgeAlert: true,
         });

@@ -22,7 +22,7 @@ const refreshBadgeInterval = (interval) => {
 };
 
 const applyBadgeDataSourceSelection = (badgeDataSource) => {
-  const source = badgeDataSource === "realtime" ? "realtime" : "modeled";
+  const source = badgeDataSource === "modeled" ? "modeled" : "realtime";
   document.getElementById(`setting_badge_source_${source}`).checked = true;
 };
 
@@ -52,6 +52,9 @@ document.addEventListener(
 document.addEventListener("DOMContentLoaded", () => {
   chrome.storage.local.get("badgeDataSource", (data) => {
     applyBadgeDataSourceSelection(data.badgeDataSource);
+    if (data.badgeDataSource === undefined) {
+      chrome.storage.local.set({ badgeDataSource: "realtime" });
+    }
   });
 
   chrome.storage.local.get("IntervalUpdate", (data) => {
