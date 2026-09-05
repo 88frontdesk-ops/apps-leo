@@ -229,6 +229,8 @@ if (!self.document) {
                 setSettingFC: "c",
                 theme: "dark",
                 animatedIcon: "1",
+                badgeDataSource: "modeled",
+                IntervalUpdate: "15",
                 badgeAlert: true,
               });
               mp_SetProfile();
@@ -282,6 +284,8 @@ if (!self.document) {
                 setSettingFC: "c",
                 theme: "dark",
                 animatedIcon: "1",
+                badgeDataSource: "modeled",
+                IntervalUpdate: "15",
                 badgeAlert: true,
               });
               mp_SetProfile();
@@ -322,6 +326,8 @@ if (!self.document) {
                 setSettingFC: "c",
                 theme: "dark",
                 animatedIcon: "1",
+                badgeDataSource: "modeled",
+                IntervalUpdate: "15",
                 badgeAlert: true,
               });
               mp_SetProfile();
@@ -352,6 +358,8 @@ if (!self.document) {
           setSettingFC: "c",
           theme: "dark",
           animatedIcon: "1",
+          badgeDataSource: "modeled",
+          IntervalUpdate: "15",
           badgeAlert: true,
         });
         mp_SetProfile();
@@ -522,7 +530,19 @@ if (!self.document) {
     const badgeTempUV = (latlong, country, timezone) => {
       if (!self.document) {
         timeZoneBadge = getTimezoneOffset(timezone);
-        weCast(latlong, country, timezone);
+        chrome.storage.local.get(["badgeDataSource", "IntervalUpdate"], (data) => {
+          const requiresFreshData =
+            data.badgeDataSource === "realtime" ||
+            ["15", "30"].includes(String(data.IntervalUpdate));
+
+          if (requiresFreshData) {
+            chrome.storage.local.remove("wCast", () => {
+              weCast(latlong, country, timezone);
+            });
+          } else {
+            weCast(latlong, country, timezone);
+          }
+        });
       }
     };
 
