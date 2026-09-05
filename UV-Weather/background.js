@@ -524,18 +524,9 @@ if (!self.document) {
 
     chrome.runtime.onInstalled.addListener((details) => {
       if (details.reason == "install") {
-        if (chrome.runtime.setUninstallURL) {
-          chrome.storage.local.clear();
-          var uninstallWebAddress = "https://uvweather.net/goodbye";
-          chrome.runtime.setUninstallURL(uninstallWebAddress);
-        }
         chrome.storage.local.set({
           installTime: Date.now(),
           setSettingFC: "c",
-        });
-        var installWebAddress = "https://uvweather.net/welcome/";
-        chrome.tabs.create({
-          url: installWebAddress,
         });
       }
     });
