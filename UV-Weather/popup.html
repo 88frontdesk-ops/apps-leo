@@ -25,6 +25,7 @@
         <script type="text/javascript" src="/components/util.js"></script>
         <script type="text/javascript" src="/components/elements.js"></script>
         <script type="text/javascript" rel="preload" src="/popup.js"></script>
+        <script type="text/javascript" src="/components/nwsAdapter.js"></script>
         <script type="text/javascript" src="/components/weatherCast.js"></script>
         <script type="text/javascript" src="/libraries/moment.js"></script>
         <script type="text/javascript" src="/libraries/moment-timezone-with-data-10-year-range.min.js"></script>
@@ -485,6 +486,9 @@
                         </div>
                 </div>
                 <div class="title_subtitle_modal_Class update_time_subTitle_mainPage"></div>
+                <div id="weather_api_source"
+                        style="margin-left:50px;margin-top:4px;font-size:11px;color:rgba(255,255,255,.85);text-shadow:1px 1px 2px rgba(0,0,0,.5)">
+                        API: Loading...</div>
         </div><span class="tooltipHazard">
                 <div id="hazard_button" class="hazard_button_Class">
                         <div class="hazard_button_background_Class"><img id="hazard_icon" src="images/health.svg"

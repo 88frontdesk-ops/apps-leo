@@ -6,6 +6,7 @@ if (!self.document) {
       "./libraries/moment-timezone-with-data-10-year-range.min.js",
       "./components/util.js",
       "./libraries/suncalc.js",
+      "./components/nwsAdapter.js",
       "./components/weatherCast.js",
     );
 

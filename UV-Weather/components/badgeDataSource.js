@@ -26,6 +26,13 @@ const applyBadgeDataSourceSelection = (badgeDataSource) => {
   document.getElementById(`setting_badge_source_${source}`).checked = true;
 };
 
+const applyWeatherApiSource = (source) => {
+  const sourceElement = document.getElementById("weather_api_source");
+  if (sourceElement) {
+    sourceElement.textContent = source ? `API: ${source}` : "API: Loading...";
+  }
+};
+
 document.addEventListener(
   "click",
   (event) => {
@@ -50,6 +57,16 @@ document.addEventListener(
 );
 
 document.addEventListener("DOMContentLoaded", () => {
+  chrome.storage.local.get("weatherApiSource", (data) => {
+    applyWeatherApiSource(data.weatherApiSource);
+  });
+
+  chrome.storage.onChanged.addListener((changes, areaName) => {
+    if (areaName === "local" && changes.weatherApiSource) {
+      applyWeatherApiSource(changes.weatherApiSource.newValue);
+    }
+  });
+
   chrome.storage.local.get("badgeDataSource", (data) => {
     applyBadgeDataSourceSelection(data.badgeDataSource);
     if (data.badgeDataSource === undefined) {
