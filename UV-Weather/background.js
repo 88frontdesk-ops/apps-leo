@@ -226,10 +226,11 @@ if (!self.document) {
                 verUpdate: 1,
                 badgeSize: "0",
                 whiteIcon: "1",
+                setSettingFC: "c",
                 badgeAlert: true,
               });
               mp_SetProfile();
-              // badgeTempUV(latlong, country, timezone);
+              badgeTempUV(latlong, country, timezone);
             } else {
               ip2address_alter();
             }
@@ -276,11 +277,12 @@ if (!self.document) {
                 verUpdate: 1,
                 badgeSize: "0",
                 whiteIcon: "1",
+                setSettingFC: "c",
                 badgeAlert: true,
               });
               mp_SetProfile();
 
-              // badgeTempUV(latlong, country, timezone);
+              badgeTempUV(latlong, country, timezone);
             } else {
               ip2address_alter();
             }
@@ -338,11 +340,12 @@ if (!self.document) {
           verUpdate: 1,
           badgeSize: "0",
           whiteIcon: "1",
+          setSettingFC: "c",
           badgeAlert: true,
         });
         mp_SetProfile();
 
-        // badgeTempUV(latlong, country, timezone);
+        badgeTempUV(latlong, country, timezone);
       };
     });
 
