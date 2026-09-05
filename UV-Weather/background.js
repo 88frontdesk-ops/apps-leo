@@ -224,7 +224,8 @@ if (!self.document) {
                 country: country,
                 ipCountry: country,
                 verUpdate: 1,
-                badgeSize: "1",
+                badgeSize: "0",
+                whiteIcon: "1",
                 badgeAlert: true,
               });
               mp_SetProfile();
@@ -273,7 +274,8 @@ if (!self.document) {
                 country: country,
                 ipCountry: country,
                 verUpdate: 1,
-                badgeSize: "1",
+                badgeSize: "0",
+                whiteIcon: "1",
                 badgeAlert: true,
               });
               mp_SetProfile();
@@ -334,7 +336,8 @@ if (!self.document) {
           latlong,
           country,
           verUpdate: 1,
-          badgeSize: "1",
+          badgeSize: "0",
+          whiteIcon: "1",
           badgeAlert: true,
         });
         mp_SetProfile();
