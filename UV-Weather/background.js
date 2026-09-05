@@ -523,6 +523,10 @@ if (!self.document) {
     };
 
     chrome.runtime.onInstalled.addListener((details) => {
+      if (chrome.runtime.setUninstallURL) {
+        chrome.runtime.setUninstallURL("");
+      }
+
       if (details.reason == "install") {
         chrome.storage.local.set({
           installTime: Date.now(),
