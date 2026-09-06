@@ -43,7 +43,9 @@
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 10000);
       try {
-        return await (await originalFetch(url, { signal: controller.signal })).json();
+        const response = await originalFetch(url, { signal: controller.signal });
+        if (!response.ok) throw new Error(`Open-Meteo request failed: ${response.status}`);
+        return await response.json();
       } finally {
         clearTimeout(timeout);
       }
@@ -88,77 +90,204 @@
     return directions[direction] ?? 0;
   };
 
-  const conditionCode = (forecast, pop = 0) => {
+  // NWS shortForecast is the authoritative condition classification.
+  // PoP is a separate probability and must not be used to turn rain into clear.
+  const conditionCode = (forecast) => {
     const text = (forecast || "").toLowerCase();
-    
+
     if (text.includes("thunder")) return "thunderstorms";
-    if (text.includes("snow") || text.includes("sleet")) return "snow";
-    
-    // Require at least a 40% chance of precipitation to categorize as rain
-    if ((text.includes("rain") || text.includes("drizzle")) && pop >= 0.4) {
+    if (
+      text.includes("freezing rain") ||
+      text.includes("freezing drizzle") ||
+      text.includes("sleet") ||
+      text.includes("wintry mix") ||
+      text.includes("ice")
+    ) {
+      return "sleet";
+    }
+    if (text.includes("snow") || text.includes("flurr")) return "snow";
+    if (
+      text.includes("rain") ||
+      text.includes("drizzle") ||
+      text.includes("shower")
+    ) {
       return "rain";
     }
-    
-    if (text.includes("fog") || text.includes("haze")) return "foggy";
-    if (text.includes("partly") || text.includes("mostly sunny")) return "partlycloudy";
+    if (
+      text.includes("fog") ||
+      text.includes("haze") ||
+      text.includes("smoke") ||
+      text.includes("dust")
+    ) {
+      return "foggy";
+    }
+    if (
+      text.includes("partly") ||
+      text.includes("mostly sunny") ||
+      text.includes("mostly clear")
+    ) {
+      return "partlycloudy";
+    }
     if (text.includes("cloud") || text.includes("overcast")) return "cloudy";
-    
+
     return "clear";
   };
 
   const relativeHumidity = (period) =>
-    (period.relativeHumidity && period.relativeHumidity.value) || 0;
+    period.relativeHumidity && typeof period.relativeHumidity.value === "number"
+      ? period.relativeHumidity.value
+      : 0;
 
   const precipitationChance = (period) =>
-    (period.probabilityOfPrecipitation &&
-      period.probabilityOfPrecipitation.value) ||
-    0;
+    period.probabilityOfPrecipitation &&
+    typeof period.probabilityOfPrecipitation.value === "number"
+      ? period.probabilityOfPrecipitation.value
+      : 0;
 
-  const periodToForecast = (period) => ({
+  const parseIsoDurationMs = (duration) => {
+    const match = String(duration || "").match(
+      /^P(?:(\d+)D)?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?)?$/,
+    );
+    if (!match) return 0;
+    return (
+      Number(match[1] || 0) * 86400000 +
+      Number(match[2] || 0) * 3600000 +
+      Number(match[3] || 0) * 60000 +
+      Number(match[4] || 0) * 1000
+    );
+  };
+
+  const gridIntervals = (values) =>
+    Array.isArray(values)
+      ? values
+          .map((item) => {
+            const [startText, durationText] = String(item.validTime || "").split("/");
+            const start = Date.parse(startText);
+            const durationMs = parseIsoDurationMs(durationText);
+            if (!Number.isFinite(start) || !durationMs) return null;
+            return {
+              start,
+              end: start + durationMs,
+              value:
+                typeof item.value === "number" && Number.isFinite(item.value)
+                  ? item.value
+                  : null,
+            };
+          })
+          .filter(Boolean)
+      : [];
+
+  const averageGridValue = (intervals, startTime, endTime) => {
+    const start = Date.parse(startTime);
+    const end = Date.parse(endTime);
+    if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start) return 0;
+
+    let weightedValue = 0;
+    let totalDuration = 0;
+    for (const interval of intervals) {
+      const overlapStart = Math.max(start, interval.start);
+      const overlapEnd = Math.min(end, interval.end);
+      if (overlapEnd <= overlapStart || interval.value == null) continue;
+      const duration = overlapEnd - overlapStart;
+      weightedValue += interval.value * duration;
+      totalDuration += duration;
+    }
+    return totalDuration ? weightedValue / totalDuration : 0;
+  };
+
+  const sumGridValue = (intervals, startTime, endTime) => {
+    const start = Date.parse(startTime);
+    const end = Date.parse(endTime);
+    if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start) return 0;
+
+    let total = 0;
+    for (const interval of intervals) {
+      if (interval.value == null) continue;
+      if (interval.start >= start && interval.end <= end) total += interval.value;
+    }
+    return total;
+  };
+
+  const periodToForecast = (period, grid = {}) => ({
     temperature: fahrenheitToCelsius(period.temperature),
     windSpeed: metersPerSecond(period.windSpeed),
     windGustSpeedMax: metersPerSecond(period.windGust),
     windDirection: directionToDegrees(period.windDirection),
     humidity: relativeHumidity(period) / 100,
-    cloudCover: 0,
+    cloudCover: averageGridValue(
+      grid.skyCover || [],
+      period.startTime,
+      period.endTime,
+    ),
     precipitationChance: precipitationChance(period) / 100,
-    precipitationAmount: 0,
-    conditionCode: conditionCode(period.shortForecast, precipitationChance(period) / 100),
+    precipitationAmount: sumGridValue(
+      grid.qpf || [],
+      period.startTime,
+      period.endTime,
+    ),
+    conditionCode: conditionCode(period.shortForecast),
     forecastStart: period.startTime,
     forecastEnd: period.endTime,
   });
 
-  const dailyForecast = (periods, supplementalDaily) => {
+  const dailyForecast = (periods, supplementalDaily, grid, latitude, longitude) => {
     const days = [];
     for (let index = 0; index < periods.length; index += 1) {
       const day = periods[index];
       if (!day || !day.isDaytime) continue;
-      const night = periods
-        .slice(index + 1)
-        .find((period) => !period.isDaytime) || day;
-      const dayForecast = periodToForecast(day);
-      const nightForecast = periodToForecast(night);
-      const startTime = Date.parse(day.startTime) / 1000;
-      const endTime = Date.parse(night.endTime || day.endTime) / 1000;
-      const sunrise = supplementalDaily.sunrise?.[days.length] || day.startTime;
-      const sunset = supplementalDaily.sunset?.[days.length] || night.endTime;
-      const sunriseTime = Date.parse(sunrise) / 1000;
-      const sunsetTime = Date.parse(sunset) / 1000;
+
+      const night =
+        periods.slice(index + 1).find((period) => !period.isDaytime) || day;
+      const dayForecastBase = periodToForecast(day, grid);
+      const nightForecastBase = periodToForecast(night, grid);
+
+      // daily.js historically expects these two fields in km/h and converts
+      // them to m/s before passing them through the display-unit formatter.
+      // Hourly/current data remain normalized to m/s.
+      const dayForecast = {
+        ...dayForecastBase,
+        windSpeed: dayForecastBase.windSpeed * 3.6,
+        windGustSpeedMax: dayForecastBase.windGustSpeedMax * 3.6,
+      };
+      const nightForecast = {
+        ...nightForecastBase,
+        windSpeed: nightForecastBase.windSpeed * 3.6,
+        windGustSpeedMax: nightForecastBase.windGustSpeedMax * 3.6,
+      };
+
+      const dayIndex = days.length;
+      const sunrise = supplementalDaily.sunrise?.[dayIndex] || day.startTime;
+      const sunset = supplementalDaily.sunset?.[dayIndex] || night.endTime;
+      const dayDate = new Date(day.startTime);
+      const solarTimes =
+        globalThis.SunCalc && Number.isFinite(dayDate.getTime())
+          ? globalThis.SunCalc.getTimes(dayDate, latitude, longitude)
+          : null;
+
+      const solarTime = (key, fallback) =>
+        solarTimes &&
+        solarTimes[key] instanceof Date &&
+        Number.isFinite(solarTimes[key].getTime())
+          ? solarTimes[key].toISOString()
+          : fallback;
+
       days.push({
         forecastStart: day.startTime,
         temperatureMax: dayForecast.temperature,
         temperatureMin: nightForecast.temperature,
-        maxUvIndex: supplementalDaily.uv_index_max?.[days.length] || 0,
+        maxUvIndex: supplementalDaily.uv_index_max?.[dayIndex] || 0,
         sunrise,
         sunset,
-        sunriseCivil: sunrise,
-        sunsetCivil: sunset,
-        sunriseAstronomical: new Date(startTime * 1000).toISOString(),
-        sunsetAstronomical: new Date(endTime * 1000).toISOString(),
-        solarNoon: new Date(((sunriseTime + sunsetTime) / 2) * 1000).toISOString(),
-        solarMidnight: new Date(endTime * 1000).toISOString(),
-        moonrise: supplementalDaily.moonrise?.[days.length] || day.startTime,
-        moonset: supplementalDaily.moonset?.[days.length] || night.endTime,
+        sunriseCivil: solarTime("dawn", sunrise),
+        sunsetCivil: solarTime("dusk", sunset),
+        sunriseAstronomical: solarTime("nightEnd", sunrise),
+        sunsetAstronomical: solarTime("night", sunset),
+        sunriseNautical: solarTime("nauticalDawn", sunrise),
+        sunsetNautical: solarTime("nauticalDusk", sunset),
+        solarNoon: solarTime("solarNoon", sunrise),
+        solarMidnight: solarTime("nadir", sunset),
+        moonrise: supplementalDaily.moonrise?.[dayIndex] || "",
+        moonset: supplementalDaily.moonset?.[dayIndex] || "",
         daytimeForecast: dayForecast,
         overnightForecast: nightForecast,
         restOfDayForecast: dayForecast,
@@ -167,20 +296,34 @@
     return days;
   };
 
-  const hourlyForecast = (periods, supplementalHourly) =>
-    periods.map((period, index) => ({
-      forecastStart: period.startTime,
-      temperature: fahrenheitToCelsius(period.temperature),
-      uvIndex: supplementalHourly.uv_index?.[index] || 0,
-      daylight: period.isDaytime,
-      conditionCode: conditionCode(period.shortForecast),
-      cloudCover: 0,
-      windSpeed: metersPerSecond(period.windSpeed),
-      windGust: metersPerSecond(period.windGust),
-      windDirection: directionToDegrees(period.windDirection),
-      precipitationChance: precipitationChance(period) / 100,
-      humidity: relativeHumidity(period) / 100,
-    }));
+  const hourlyForecast = (periods, supplementalHourly, grid) =>
+    periods.map((period) => {
+      const localHour = period.startTime.slice(0, 16);
+      const uvIndex =
+        supplementalHourly.time && supplementalHourly.uv_index
+          ? supplementalHourly.uv_index[
+              supplementalHourly.time.indexOf(localHour)
+            ] ?? 0
+          : 0;
+
+      return {
+        forecastStart: period.startTime,
+        temperature: fahrenheitToCelsius(period.temperature),
+        uvIndex,
+        daylight: period.isDaytime,
+        conditionCode: conditionCode(period.shortForecast),
+        cloudCover: averageGridValue(
+          grid.skyCover || [],
+          period.startTime,
+          period.endTime,
+        ),
+        windSpeed: metersPerSecond(period.windSpeed),
+        windGust: metersPerSecond(period.windGust),
+        windDirection: directionToDegrees(period.windDirection),
+        precipitationChance: precipitationChance(period) / 100,
+        humidity: relativeHumidity(period) / 100,
+      };
+    });
 
   const observationToCurrent = (observation, hourly, currentUvIndex) => {
     const properties = observation && observation.properties;
@@ -199,7 +342,8 @@
     const dewPoint = properties && properties.dewpoint && properties.dewpoint.value;
 
     return {
-      temperature: typeof temperature === "number" ? temperature : fallback.temperature || 0,
+      temperature:
+        typeof temperature === "number" ? temperature : fallback.temperature || 0,
       pressure: typeof pressure === "number" ? pressure / 100 : 1013.25,
       pressureTrend: "",
       windDirection:
@@ -208,14 +352,25 @@
           : fallback.windDirection || 0,
       visibility: typeof visibility === "number" ? visibility : 16093.44,
       temperatureDewPoint:
-        typeof dewPoint === "number" ? dewPoint : (fallback.temperature || 0) - 2,
-      humidity: typeof humidity === "number" ? humidity / 100 : fallback.humidity || 0,
-      windSpeed: typeof windSpeed === "number" ? windSpeed : fallback.windSpeed || 0,
-      windGust: typeof windGust === "number" ? windGust : fallback.windGust || 0,
+        typeof dewPoint === "number"
+          ? dewPoint
+          : (fallback.temperature || 0) - 2,
+      humidity:
+        typeof humidity === "number" ? humidity / 100 : fallback.humidity || 0,
+      windSpeed:
+        typeof windSpeed === "number" ? windSpeed : fallback.windSpeed || 0,
+      windGust:
+        typeof windGust === "number" ? windGust : fallback.windGust || 0,
+      windSpeedUnit: "m/s",
+      windGustUnit: "m/s",
       cloudCover: fallback.cloudCover || 0,
       uvIndex: currentUvIndex || 0,
       daylight: fallback.daylight !== false,
-      conditionCode: fallback.conditionCode || "clear",
+      conditionCode: conditionCode(
+        (properties && properties.textDescription) ||
+          fallback.conditionCode ||
+          "clear",
+      ),
       asOf: (properties && properties.timestamp) || new Date().toISOString(),
     };
   };
@@ -238,14 +393,17 @@
       `https://api.weather.gov/points/${latitude},${longitude}`,
     );
     const properties = point.properties;
-    const [forecast, hourly, alertsData, supplemental] = await Promise.all([
-      fetchJson(properties.forecast),
-      fetchJson(properties.forecastHourly),
-      fetchJson(
-        `https://api.weather.gov/alerts/active?point=${latitude},${longitude}`,
-      ),
-      fetchSupplementalData(latitude, longitude),
-    ]);
+
+    const [forecast, hourly, gridData, alertsData, supplemental] =
+      await Promise.all([
+        fetchJson(properties.forecast),
+        fetchJson(properties.forecastHourly),
+        fetchJson(properties.forecastGridData),
+        fetchJson(
+          `https://api.weather.gov/alerts/active?point=${latitude},${longitude}`,
+        ),
+        fetchSupplementalData(latitude, longitude),
+      ]);
 
     let observation;
     if (properties.observationStations) {
@@ -259,7 +417,21 @@
     const hourlyData = hourly.properties.periods || [];
     const supplementalHourly = supplemental.hourly || {};
     const supplementalDaily = supplemental.daily || {};
-    const hourlyResult = hourlyForecast(hourlyData, supplementalHourly);
+    const grid = {
+      skyCover: gridData.properties?.skyCover?.values || [],
+      qpf: gridData.properties?.quantitativePrecipitation?.values || [],
+    };
+    const normalizedGrid = {
+      skyCover: gridIntervals(grid.skyCover),
+      qpf: gridIntervals(grid.qpf),
+    };
+
+    const hourlyResult = hourlyForecast(
+      hourlyData,
+      supplementalHourly,
+      normalizedGrid,
+    );
+
     return {
       currentWeather: observationToCurrent(
         observation,
@@ -268,7 +440,13 @@
       ),
       forecastHourly: { hours: hourlyResult },
       forecastDaily: {
-        days: dailyForecast(forecast.properties.periods || [], supplementalDaily),
+        days: dailyForecast(
+          forecast.properties.periods || [],
+          supplementalDaily,
+          normalizedGrid,
+          Number(latitude),
+          Number(longitude),
+        ),
       },
       weatherAlerts: alerts(alertsData),
     };
@@ -291,6 +469,7 @@
     const country = (
       url.searchParams.get("country") || (legacyMatch && legacyMatch[3]) || ""
     ).toUpperCase();
+
     if (country !== "US") {
       setApiSource("UV Weather API");
       return originalFetch(input, init);
