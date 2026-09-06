@@ -88,16 +88,21 @@
     return directions[direction] ?? 0;
   };
 
-  const conditionCode = (forecast) => {
+  const conditionCode = (forecast, pop = 0) => {
     const text = (forecast || "").toLowerCase();
+    
     if (text.includes("thunder")) return "thunderstorms";
     if (text.includes("snow") || text.includes("sleet")) return "snow";
-    if (text.includes("rain") || text.includes("drizzle")) return "rain";
-    if (text.includes("fog") || text.includes("haze")) return "foggy";
-    if (text.includes("partly") || text.includes("mostly sunny")) {
-      return "partlycloudy";
+    
+    // Require at least a 40% chance of precipitation to categorize as rain
+    if ((text.includes("rain") || text.includes("drizzle")) && pop >= 0.4) {
+      return "rain";
     }
-    if (text.includes("cloud")) return "cloudy";
+    
+    if (text.includes("fog") || text.includes("haze")) return "foggy";
+    if (text.includes("partly") || text.includes("mostly sunny")) return "partlycloudy";
+    if (text.includes("cloud") || text.includes("overcast")) return "cloudy";
+    
     return "clear";
   };
 
@@ -118,7 +123,7 @@
     cloudCover: 0,
     precipitationChance: precipitationChance(period) / 100,
     precipitationAmount: 0,
-    conditionCode: conditionCode(period.shortForecast),
+    conditionCode: conditionCode(period.shortForecast, precipitationChance(period) / 100),
     forecastStart: period.startTime,
     forecastEnd: period.endTime,
   });
