@@ -79,29 +79,15 @@
     if (unit.includes("km_h-1") || unit.includes("km/h")) return quantity.value;
     if (unit.includes("mph") || unit.includes("mi_h-1")) return quantity.value * 1.609344;
     if (unit.includes("kn") || unit.includes("knot")) return quantity.value * 1.852;
-    // NWS observations are SI when no unit metadata is supplied.
     return quantity.value * 3.6;
   };
 
   const directionToDegrees = (direction) => {
     if (typeof direction === "number" && Number.isFinite(direction)) return direction;
     const directions = {
-      N: 0,
-      NNE: 22.5,
-      NE: 45,
-      ENE: 67.5,
-      E: 90,
-      ESE: 112.5,
-      SE: 135,
-      SSE: 157.5,
-      S: 180,
-      SSW: 202.5,
-      SW: 225,
-      WSW: 247.5,
-      W: 270,
-      WNW: 292.5,
-      NW: 315,
-      NNW: 337.5,
+      N: 0, NNE: 22.5, NE: 45, ENE: 67.5, E: 90, ESE: 112.5,
+      SE: 135, SSE: 157.5, S: 180, SSW: 202.5, SW: 225,
+      WSW: 247.5, W: 270, WNW: 292.5, NW: 315, NNW: 337.5,
     };
     return directions[String(direction || "").toUpperCase()] ?? 0;
   };
@@ -112,8 +98,7 @@
       : 0;
 
   const precipitationChance = (period) =>
-    period &&
-    period.probabilityOfPrecipitation &&
+    period && period.probabilityOfPrecipitation &&
     typeof period.probabilityOfPrecipitation.value === "number"
       ? period.probabilityOfPrecipitation.value
       : 0;
@@ -123,39 +108,29 @@
       /^P(?:(\d+)D)?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?)?$/,
     );
     if (!match) return 0;
-    return (
-      Number(match[1] || 0) * 86400000 +
-      Number(match[2] || 0) * 3600000 +
-      Number(match[3] || 0) * 60000 +
-      Number(match[4] || 0) * 1000
-    );
+    return Number(match[1] || 0) * 86400000 + Number(match[2] || 0) * 3600000 +
+      Number(match[3] || 0) * 60000 + Number(match[4] || 0) * 1000;
   };
 
   const gridIntervals = (values) =>
     Array.isArray(values)
-      ? values
-          .map((item) => {
-            const [startText, durationText] = String(item.validTime || "").split("/");
-            const start = Date.parse(startText);
-            const durationMs = parseIsoDurationMs(durationText);
-            if (!Number.isFinite(start) || !durationMs) return null;
-            return {
-              start,
-              end: start + durationMs,
-              value:
-                typeof item.value === "number" && Number.isFinite(item.value)
-                  ? item.value
-                  : null,
-            };
-          })
-          .filter(Boolean)
+      ? values.map((item) => {
+          const [startText, durationText] = String(item.validTime || "").split("/");
+          const start = Date.parse(startText);
+          const durationMs = parseIsoDurationMs(durationText);
+          if (!Number.isFinite(start) || !durationMs) return null;
+          return {
+            start,
+            end: start + durationMs,
+            value: typeof item.value === "number" && Number.isFinite(item.value) ? item.value : null,
+          };
+        }).filter(Boolean)
       : [];
 
   const averageGridValue = (intervals, startTime, endTime) => {
     const start = Date.parse(startTime);
     const end = Date.parse(endTime);
     if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start) return 0;
-
     let weightedValue = 0;
     let totalDuration = 0;
     for (const interval of intervals) {
@@ -173,7 +148,6 @@
     const start = Date.parse(startTime);
     const end = Date.parse(endTime);
     if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start) return 0;
-
     let total = 0;
     for (const interval of intervals) {
       if (interval.value == null) continue;
@@ -185,42 +159,33 @@
   const cloudCondition = (cloudCover) => {
     if (!Number.isFinite(cloudCover)) return "clear";
     if (cloudCover <= 5) return "clear";
-    if (cloudCover <= 25) return "partlycloudy";
     if (cloudCover <= 50) return "partlycloudy";
-    if (cloudCover <= 87) return "cloudy";
     return "cloudy";
   };
 
-  const conditionCode = (forecast, cloudCover) => {
+  // NWS shortForecast often says "Slight Chance of Showers" or "Chance of
+  // Showers". The precipitation phrase alone must not turn the whole period
+  // into a rain icon. Keep precipitation as a separate probability signal and
+  // only classify it as the primary condition when PoP is meaningful.
+  const conditionCode = (forecast, cloudCover, pop = null) => {
     const text = String(forecast || "").toLowerCase();
+    const precipitationChanceValue = Number.isFinite(pop) ? pop : null;
+    const lowPrecipitation = precipitationChanceValue !== null && precipitationChanceValue < 50;
 
-    if (text.includes("thunder")) return "thunderstorms";
+    if (text.includes("thunder") && !lowPrecipitation) return "thunderstorms";
     if (
-      text.includes("freezing rain") ||
-      text.includes("freezing drizzle") ||
-      text.includes("sleet") ||
-      text.includes("wintry mix") ||
-      text.includes("ice")
-    ) {
-      return "sleet";
-    }
-    if (text.includes("snow") || text.includes("flurr")) return "snow";
-    if (text.includes("rain") || text.includes("drizzle") || text.includes("shower")) {
-      return "rain";
-    }
-    if (
-      text.includes("fog") ||
-      text.includes("haze") ||
-      text.includes("smoke") ||
-      text.includes("dust")
-    ) {
+      (text.includes("freezing rain") || text.includes("freezing drizzle") ||
+        text.includes("sleet") || text.includes("wintry mix") || text.includes("ice")) &&
+      !lowPrecipitation
+    ) return "sleet";
+    if ((text.includes("snow") || text.includes("flurr")) && !lowPrecipitation) return "snow";
+    if ((text.includes("rain") || text.includes("drizzle") || text.includes("shower")) &&
+        !lowPrecipitation) return "rain";
+    if (text.includes("fog") || text.includes("haze") || text.includes("smoke") || text.includes("dust")) {
       return "foggy";
     }
 
-    // For non-precipitating conditions, use NWS grid sky cover rather than
-    // relying solely on the human-readable forecast phrase.
     if (Number.isFinite(cloudCover)) return cloudCondition(cloudCover);
-
     if (text.includes("partly") || text.includes("mostly sunny") || text.includes("mostly clear")) {
       return "partlycloudy";
     }
@@ -229,11 +194,8 @@
   };
 
   const periodToForecast = (period, grid = {}) => {
-    const cloudCover = averageGridValue(
-      grid.skyCover || [],
-      period.startTime,
-      period.endTime,
-    );
+    const cloudCover = averageGridValue(grid.skyCover || [], period.startTime, period.endTime);
+    const pop = precipitationChance(period);
     return {
       temperature: fahrenheitToCelsius(period.temperature),
       windSpeed: windToKmh(period.windSpeed),
@@ -241,13 +203,9 @@
       windDirection: directionToDegrees(period.windDirection),
       humidity: relativeHumidity(period) / 100,
       cloudCover: Math.max(0, Math.min(1, cloudCover / 100)),
-      precipitationChance: precipitationChance(period) / 100,
-      precipitationAmount: sumGridValue(
-        grid.qpf || [],
-        period.startTime,
-        period.endTime,
-      ),
-      conditionCode: conditionCode(period.shortForecast, cloudCover),
+      precipitationChance: pop / 100,
+      precipitationAmount: sumGridValue(grid.qpf || [], period.startTime, period.endTime),
+      conditionCode: conditionCode(period.shortForecast, cloudCover, pop),
       forecastStart: period.startTime,
       forecastEnd: period.endTime,
     };
@@ -255,28 +213,18 @@
 
   const solarTimesFor = (dateText, latitude, longitude) => {
     const date = new Date(dateText);
-    if (
-      !globalThis.SunCalc ||
-      !Number.isFinite(latitude) ||
-      !Number.isFinite(longitude) ||
-      !Number.isFinite(date.getTime())
-    ) {
-      return null;
-    }
+    if (!globalThis.SunCalc || !Number.isFinite(latitude) || !Number.isFinite(longitude) || !Number.isFinite(date.getTime())) return null;
     return globalThis.SunCalc.getTimes(date, latitude, longitude);
   };
 
   const validIso = (value, fallback) =>
-    value instanceof Date && Number.isFinite(value.getTime())
-      ? value.toISOString()
-      : fallback;
+    value instanceof Date && Number.isFinite(value.getTime()) ? value.toISOString() : fallback;
 
   const dailyForecast = (periods, supplementalDaily, grid, latitude, longitude) => {
     const days = [];
     for (let index = 0; index < periods.length; index += 1) {
       const day = periods[index];
       if (!day || !day.isDaytime) continue;
-
       const night = periods.slice(index + 1).find((period) => !period.isDaytime) || day;
       const dayForecast = periodToForecast(day, grid);
       const nightForecast = periodToForecast(night, grid);
@@ -285,14 +233,11 @@
       const sunset = supplementalDaily.sunset?.[dayIndex] || night.endTime;
       const solar = solarTimesFor(day.startTime, latitude, longitude);
       const fallbackSolarDate = new Date(day.startTime).toISOString();
-
       days.push({
         forecastStart: day.startTime,
         temperatureMax: dayForecast.temperature,
         temperatureMin: nightForecast.temperature,
-        maxUvIndex: Number.isFinite(supplementalDaily.uv_index_max?.[dayIndex])
-          ? supplementalDaily.uv_index_max[dayIndex]
-          : 0,
+        maxUvIndex: Number.isFinite(supplementalDaily.uv_index_max?.[dayIndex]) ? supplementalDaily.uv_index_max[dayIndex] : 0,
         sunrise,
         sunset,
         sunriseCivil: solar ? validIso(solar.dawn, sunrise) : sunrise,
@@ -333,22 +278,19 @@
 
   const hourlyForecast = (periods, supplemental, grid) =>
     periods.map((period) => {
-      const cloudCover = averageGridValue(
-        grid.skyCover || [],
-        period.startTime,
-        period.endTime,
-      );
+      const cloudCover = averageGridValue(grid.skyCover || [], period.startTime, period.endTime);
+      const pop = precipitationChance(period);
       return {
         forecastStart: period.startTime,
         temperature: fahrenheitToCelsius(period.temperature),
         uvIndex: uvForPeriod(period, supplemental),
         daylight: period.isDaytime,
-        conditionCode: conditionCode(period.shortForecast, cloudCover),
+        conditionCode: conditionCode(period.shortForecast, cloudCover, pop),
         cloudCover: Math.max(0, Math.min(1, cloudCover / 100)),
         windSpeed: windToKmh(period.windSpeed),
         windGust: windToKmh(period.windGust),
         windDirection: directionToDegrees(period.windDirection),
-        precipitationChance: precipitationChance(period) / 100,
+        precipitationChance: pop / 100,
         humidity: relativeHumidity(period) / 100,
       };
     });
@@ -379,34 +321,20 @@
     const visibility = properties?.visibility?.value;
     const dewPoint = properties?.dewpoint?.value;
     const cloudCover = fallback.cloudCover || 0;
-
     return {
       temperature: typeof temperature === "number" ? temperature : fallback.temperature || 0,
       pressure: typeof pressure === "number" ? pressure / 100 : 1013.25,
       pressureTrend: properties?.pressureTendency?.value || "",
-      windDirection:
-        typeof properties?.windDirection?.value === "number"
-          ? properties.windDirection.value
-          : fallback.windDirection || 0,
+      windDirection: typeof properties?.windDirection?.value === "number" ? properties.windDirection.value : fallback.windDirection || 0,
       visibility: typeof visibility === "number" ? visibility : 16093.44,
-      temperatureDewPoint:
-        typeof dewPoint === "number" ? dewPoint : (fallback.temperature || 0) - 2,
+      temperatureDewPoint: typeof dewPoint === "number" ? dewPoint : (fallback.temperature || 0) - 2,
       humidity: typeof humidity === "number" ? humidity / 100 : fallback.humidity || 0,
-      windSpeed:
-        typeof properties?.windSpeed?.value === "number"
-          ? quantitativeWindToKmh(properties.windSpeed)
-          : fallback.windSpeed || 0,
-      windGust:
-        typeof properties?.windGust?.value === "number"
-          ? quantitativeWindToKmh(properties.windGust)
-          : fallback.windGust || 0,
+      windSpeed: typeof properties?.windSpeed?.value === "number" ? quantitativeWindToKmh(properties.windSpeed) : fallback.windSpeed || 0,
+      windGust: typeof properties?.windGust?.value === "number" ? quantitativeWindToKmh(properties.windGust) : fallback.windGust || 0,
       cloudCover,
       uvIndex: typeof currentUvIndex === "number" ? currentUvIndex : fallback.uvIndex || 0,
       daylight: fallback.daylight !== false,
-      conditionCode: conditionCode(
-        properties?.textDescription || fallback.conditionCode || "clear",
-        cloudCover * 100,
-      ),
+      conditionCode: conditionCode(properties?.textDescription || fallback.conditionCode || "clear", cloudCover * 100, fallback.precipitationChance * 100),
       asOf: observationTime || new Date().toISOString(),
     };
   };
@@ -427,7 +355,6 @@
   const loadNwsWeather = async (latitude, longitude) => {
     const point = await fetchJson(`https://api.weather.gov/points/${latitude},${longitude}`);
     const properties = point.properties;
-
     const [forecast, hourly, alertsData, supplemental] = await Promise.all([
       fetchJson(properties.forecast),
       fetchJson(properties.forecastHourly),
@@ -435,9 +362,6 @@
       fetchSupplementalData(latitude, longitude),
     ]);
 
-    // Grid data improves cloud cover and QPF, but it is supplemental. If it is
-    // temporarily unavailable, retain the NWS forecast instead of failing the
-    // whole adapter and producing blank UI.
     let gridData = {};
     if (properties.forecastGridData) {
       try {
@@ -464,22 +388,15 @@
     };
     const hourlyData = hourly.properties.periods || [];
     const hourlyResult = hourlyForecast(hourlyData, supplemental, grid);
-    const currentUv =
-      typeof supplemental.current?.uv_index === "number"
-        ? supplemental.current.uv_index
-        : uvForPeriod(nearestHourly(hourlyResult, observation?.properties?.timestamp), supplemental);
+    const currentUv = typeof supplemental.current?.uv_index === "number"
+      ? supplemental.current.uv_index
+      : uvForPeriod(nearestHourly(hourlyResult, observation?.properties?.timestamp), supplemental);
 
     return {
       currentWeather: observationToCurrent(observation, hourlyResult, currentUv),
       forecastHourly: { hours: hourlyResult },
       forecastDaily: {
-        days: dailyForecast(
-          forecast.properties.periods || [],
-          supplemental.daily || {},
-          grid,
-          Number(latitude),
-          Number(longitude),
-        ),
+        days: dailyForecast(forecast.properties.periods || [], supplemental.daily || {}, grid, Number(latitude), Number(longitude)),
       },
       weatherAlerts: alerts(alertsData),
     };
@@ -487,34 +404,22 @@
 
   globalThis.fetch = async (input, init) => {
     const requestUrl = typeof input === "string" ? input : input.url;
-    if (!requestUrl.startsWith("https://weather.uvw.workers.dev/")) {
-      return originalFetch(input, init);
-    }
-
+    if (!requestUrl.startsWith("https://weather.uvw.workers.dev/")) return originalFetch(input, init);
     const url = new URL(requestUrl);
     const pathMatch = url.pathname.match(/^\/?(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)$/);
-    const legacyMatch = url.search.match(
-      /^\?(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)\?country=([^&]+)/,
-    );
+    const legacyMatch = url.search.match(/^\?(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)\?country=([^&]+)/);
     const match = pathMatch || legacyMatch;
-    const country = (
-      url.searchParams.get("country") || (legacyMatch && legacyMatch[3]) || ""
-    ).toUpperCase();
-
+    const country = (url.searchParams.get("country") || (legacyMatch && legacyMatch[3]) || "").toUpperCase();
     if (country !== "US" || !match) {
       setApiSource("UV Weather API");
       return originalFetch(input, init);
     }
-
     try {
       console.info("UV-Weather: requesting US weather from NWS");
       const weather = await loadNwsWeather(match[1], match[2]);
       setApiSource("National Weather Service + Open-Meteo");
       console.info("UV-Weather: NWS weather loaded successfully");
-      return new Response(JSON.stringify(weather), {
-        status: 200,
-        headers: { "Content-Type": "application/json" },
-      });
+      return new Response(JSON.stringify(weather), { status: 200, headers: { "Content-Type": "application/json" } });
     } catch (error) {
       setApiSource("UV Weather API (fallback)");
       console.warn("UV-Weather: NWS adapter failed; using the existing weather source.", error);
