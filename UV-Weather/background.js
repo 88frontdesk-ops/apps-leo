@@ -556,6 +556,7 @@ if (!self.document) {
         chrome.storage.local.set({
           installTime: Date.now(),
           setSettingFC: "c",
+          TimeFormat: "12h",
         });
       }
     });
