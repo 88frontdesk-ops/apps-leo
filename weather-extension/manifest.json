@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Live Weather Badge",
+  "version": "1.0",
+  "description": "Weather extension displaying current weather and dynamic toolbar badges.",
+  "permissions": [
+    "storage",
+    "offscreen"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "offscreen": {
+    "reasons": ["BLOBS"],
+    "justification": "Render canvas icon for extension badge"
+  }
+}

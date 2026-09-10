@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Live Weather Badge</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="search-bar">
+    <input type="text" id="city-input" placeholder="City name or Zip Code...">
+    <button id="search-btn">Search</button>
+    <button id="gps-btn">📍</button>
+  </div>
+
+  <div id="loader">Loading...</div>
+
+  <div id="content" class="hidden">
+    <div id="location-name"></div>
+    
+    <div class="main-card">
+      <div>
+        <div id="current-temp" class="temp">--°C</div>
+        <div id="short-forecast"></div>
+      </div>
+      <img id="weather-icon" src="" alt="icon">
+    </div>
+
+    <div class="hourly-container" id="hourly-forecast"></div>
+
+    <div class="metrics-grid">
+      <div>Max UV Index: <b id="uv-index">--</b></div>
+      <div>Sunrise: <b id="sunrise">--</b></div>
+      <div>Sunset: <b id="sunset">--</b></div>
+      <div>Moonrise: <b id="moonrise">--</b></div>
+      <div>Moonset: <b id="moonset">--</b></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
