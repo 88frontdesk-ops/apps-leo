@@ -1,9 +1,9 @@
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.target === 'offscreen') {
-    renderIcon(message.data.temp, message.data.iconUrl).then((imageData) => {
-      sendResponse({ imageData });
+    renderIcon(message.data.temp, message.data.iconUrl).then((dataUrl) => {
+      sendResponse({ dataUrl });
     });
-    return true;
+    return true; // Keep message channel open for async response
   }
 });
 
@@ -27,6 +27,7 @@ async function renderIcon(temp, iconUrl) {
     }
   }
 
+  // Draw temperature badge overlay
   ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
   ctx.beginPath();
   if (ctx.roundRect) {
@@ -41,5 +42,5 @@ async function renderIcon(temp, iconUrl) {
   ctx.textAlign = 'center';
   ctx.fillText(temp, 19, 32);
 
-  return ctx.getImageData(0, 0, 38, 38);
+  return canvas.toDataURL('image/png');
 }

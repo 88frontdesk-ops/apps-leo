@@ -227,8 +227,8 @@ async function updateExtensionIcon(temp, iconUrl) {
         console.warn(chrome.runtime.lastError.message);
         return;
       }
-      if (response && response.imageData) {
-        chrome.action.setIcon({ imageData: response.imageData });
+      if (response && response.dataUrl) {
+        chrome.action.setIcon({ path: response.dataUrl });
       }
     });
   } catch (e) {

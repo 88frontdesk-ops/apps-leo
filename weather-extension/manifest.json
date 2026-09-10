@@ -5,13 +5,10 @@
   "description": "Weather extension displaying current weather and dynamic toolbar badges.",
   "permissions": [
     "storage",
-    "offscreen"
+    "offscreen",
+    "geolocation"
   ],
   "action": {
     "default_popup": "popup.html"
-  },
-  "offscreen": {
-    "reasons": ["BLOBS"],
-    "justification": "Render canvas icon for extension badge"
   }
 }
