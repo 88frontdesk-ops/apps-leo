@@ -1,73 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <title>Live Weather Badge</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <div class="header">
-    <div class="header-top">
-      <h2>Weather Tracker</h2>
-      <div class="location-badge" id="location-name">Detecting...</div>
-    </div>
-    <div class="search-box">
-      <input type="text" id="city-input" placeholder="Set default city (e.g. Chicago)..." />
-      <button id="search-btn">Set</button>
-      <button id="gps-btn" class="gps-btn" title="Use current GPS">GPS</button>
-    </div>
+  <div class="search-bar">
+    <input type="text" id="city-input" placeholder="City name or Zip Code...">
+    <button id="search-btn">Search</button>
+    <button id="gps-btn">📍</button>
   </div>
 
-  <div id="loader">Fetching live weather data...</div>
+  <div id="loader">Loading...</div>
 
-  <div id="content" class="container hidden">
-    <!-- Hero Current Weather -->
-    <div class="card">
-      <div class="hero-weather">
-        <div class="temp-container">
-          <img id="weather-icon" class="condition-icon" src="" alt="Icon" />
-          <div>
-            <div class="temp-main" id="current-temp">--°C</div>
-            <div id="short-forecast" style="font-size: 12px; font-weight: 600; color: #475569;">--</div>
-          </div>
-        </div>
-        <div style="text-align: right;">
-          <div class="label">Max UV</div>
-          <div class="value" id="uv-index" style="font-size: 22px; color: #ea580c; font-weight: 800;">--</div>
-        </div>
+  <div id="content" class="hidden">
+    <div id="location-name"></div>
+    
+    <div class="main-card">
+      <div>
+        <div id="current-temp" class="temp">--°C</div>
+        <div id="short-forecast"></div>
       </div>
+      <img id="weather-icon" src="" alt="icon">
     </div>
 
-    <!-- 12-Hour Forecast Carousel -->
-    <div class="card">
-      <div class="label">12-Hour Forecast</div>
-      <div class="hourly-container" id="hourly-forecast"></div>
-    </div>
+    <div class="hourly-container" id="hourly-forecast"></div>
 
-    <!-- Primary Narrative Forecast -->
-    <div class="card">
-      <div class="label" id="forecast-period">Forecast</div>
-      <div class="forecast-text" id="detailed-forecast">--</div>
-    </div>
-
-    <!-- Solar & Lunar Metrics -->
-    <div class="card grid-4">
-      <div>
-        <div class="label">Sunrise</div>
-        <div class="value" id="sunrise">--</div>
-      </div>
-      <div>
-        <div class="label">Sunset</div>
-        <div class="value" id="sunset">--</div>
-      </div>
-      <div>
-        <div class="label">Moonrise</div>
-        <div class="value" id="moonrise">--</div>
-      </div>
-      <div>
-        <div class="label">Moonset</div>
-        <div class="value" id="moonset">--</div>
-      </div>
+    <div class="metrics-grid">
+      <div>Max UV Index: <b id="uv-index">--</b></div>
+      <div>Sunrise: <b id="sunrise">--</b></div>
+      <div>Sunset: <b id="sunset">--</b></div>
+      <div>Moonrise: <b id="moonrise">--</b></div>
+      <div>Moonset: <b id="moonset">--</b></div>
     </div>
   </div>
 

@@ -3,13 +3,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     renderIcon(message.data.temp, message.data.iconUrl).then((imageData) => {
       sendResponse({ imageData });
     });
-    return true; // Keeps channel open for async execution
+    return true;
   }
 });
 
 async function renderIcon(temp, iconUrl) {
   const canvas = document.getElementById('canvas');
-  // Pass willReadFrequently option to resolve performance warning
   const ctx = canvas.getContext('2d', { willReadFrequently: true });
   ctx.clearRect(0, 0, 38, 38);
 
@@ -28,7 +27,6 @@ async function renderIcon(temp, iconUrl) {
     }
   }
 
-  // Draw overlay label for temperature
   ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
   ctx.beginPath();
   if (ctx.roundRect) {

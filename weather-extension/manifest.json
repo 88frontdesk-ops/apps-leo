@@ -1,20 +1,17 @@
 {
   "manifest_version": 3,
-  "name": "Weather & UV Tracker",
-  "version": "4.0",
-  "description": "Custom default locations, dynamic action icon with condition graphics, hourly forecast, and astronomical metrics.",
+  "name": "Live Weather Badge",
+  "version": "1.0",
+  "description": "Weather extension displaying current weather and dynamic toolbar badges.",
   "permissions": [
-    "geolocation",
     "storage",
     "offscreen"
   ],
-  "host_permissions": [
-    "https://api.weather.gov/*",
-    "https://api.open-meteo.com/*",
-    "https://geocoding-api.open-meteo.com/*"
-  ],
   "action": {
-    "default_popup": "popup.html",
-    "default_title": "Weather Tracker"
+    "default_popup": "popup.html"
+  },
+  "offscreen": {
+    "reasons": ["BLOBS"],
+    "justification": "Render canvas icon for extension badge"
   }
 }

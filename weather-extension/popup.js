@@ -115,8 +115,6 @@ async function loadLocationData(lat, lon, locationName) {
     
     const mainIcon = document.getElementById('weather-icon');
     mainIcon.src = weatherInfo.icon;
-    mainIcon.style.width = '64px';
-    mainIcon.style.height = '64px';
 
     renderHourlyForecast(weatherData.hourly);
     renderMeteoData(weatherData);
@@ -151,7 +149,7 @@ function renderHourlyForecast(hourly) {
     item.className = 'hourly-item';
     item.innerHTML = `
       <div class="hourly-time">${timeStr}</div>
-      <img class="hourly-icon" src="${condition.icon}" alt="icon" style="width:36px; height:36px;" />
+      <img class="hourly-icon" src="${condition.icon}" alt="icon" />
       <div class="hourly-temp">${tempC}°C</div>
       <div class="hourly-pop">☔ ${pop}%</div>
       <div class="hourly-uv">UV ${Math.round(uv)}</div>
