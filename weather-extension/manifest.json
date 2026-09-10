@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Weather & UV Tracker",
+  "version": "2.0",
+  "description": "US priority weather from NWS with Open-Meteo fallback, UV index, and astronomical data.",
+  "permissions": [
+    "geolocation"
+  ],
+  "host_permissions": [
+    "https://api.weather.gov/*",
+    "https://api.open-meteo.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Weather Tracker"
+  }
+}

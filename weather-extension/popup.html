@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h2>Weather Tracker</h2>
+  <div class="subtitle" id="location-name">Detecting location...</div>
+
+  <div id="loader">Fetching weather data...</div>
+
+  <div id="content" class="hidden">
+    <!-- Current Temp & UV -->
+    <div class="card">
+      <div class="grid-2" style="align-items: center;">
+        <div>
+          <div class="temp-main" id="current-temp">--°F</div>
+          <div id="short-forecast" style="font-size: 13px; font-weight: 500;">--</div>
+        </div>
+        <div style="text-align: right;">
+          <div class="label">Max UV Index</div>
+          <div class="value" id="uv-index" style="font-size: 20px; color: #ea580c;">--</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detailed Forecast -->
+    <div class="card">
+      <div class="label" id="forecast-period">Forecast</div>
+      <div class="forecast-text" id="detailed-forecast" style="margin-top: 4px;">--</div>
+    </div>
+
+    <!-- Sun & Moon Data -->
+    <div class="card grid-2">
+      <div>
+        <div class="label">Sunrise</div>
+        <div class="value" id="sunrise">--</div>
+      </div>
+      <div>
+        <div class="label">Sunset</div>
+        <div class="value" id="sunset">--</div>
+      </div>
+      <div>
+        <div class="label">Moonrise</div>
+        <div class="value" id="moonrise">--</div>
+      </div>
+      <div>
+        <div class="label">Moonset</div>
+        <div class="value" id="moonset">--</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
