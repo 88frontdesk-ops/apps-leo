@@ -47,7 +47,7 @@ const home = () => {
       (maxGroup.className = "current_uv_max_group_Class"),
       (maxGroup.innerHTML =
         '<span class="current_uv_max_title_Class">Today’s max</span> <span id="current_uv_max" class="current_uv_max_Class"></span>'),
-      uvGroup.parentNode.insertBefore(maxGroup, uvGroup.nextSibling));
+      uvGroup.parentNode.insertBefore(maxGroup, uvGroup));
     const maxValue = document.getElementById("current_uv_max");
     maxValue && (maxValue.textContent = Number(maxUvIndex).toFixed(1));
   }
@@ -65,7 +65,7 @@ const home = () => {
       ((elements[i].style.opacity = "1"),
         1 != uvIndex &&
           (elements[i].style.filter =
-            "drop-shadow( 2px 2px 2px rgba(0, 0, 0, .5))"));
+            "drop-shadow( 2px 2px 2px rgba(0, 0, 0, .5)"));
   };
   1 == uvIndex
     ? applyStyleToElements(1, uvIndex)
