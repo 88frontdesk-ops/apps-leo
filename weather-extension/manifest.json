@@ -4,6 +4,11 @@
   "version": "1.0",
   "description": "Weather extension displaying current weather and dynamic toolbar badges.",
   "permissions": ["storage", "offscreen", "geolocation"],
-  "host_permissions": ["https://api.weather.gov/*", "https://geocoding-api.open-meteo.com/*", "https://api.open-meteo.com/*"],
+  "host_permissions": [
+    "https://api.weather.gov/*",
+    "https://geocoding-api.open-meteo.com/*",
+    "https://api.open-meteo.com/*",
+    "https://api.bigdatacloud.net/*"
+  ],
   "action": {"default_popup": "popup.html"}
 }
