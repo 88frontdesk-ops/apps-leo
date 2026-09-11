@@ -2,13 +2,14 @@
   "manifest_version": 3,
   "name": "Live Weather Badge",
   "version": "1.0",
-  "description": "Weather extension displaying current weather and dynamic toolbar badges.",
-  "permissions": ["storage", "offscreen", "geolocation"],
+  "description": "Weather extension displaying current weather and dynamic toolbar weather icons.",
+  "permissions": ["storage", "offscreen", "geolocation", "alarms"],
   "host_permissions": [
     "https://api.weather.gov/*",
     "https://geocoding-api.open-meteo.com/*",
     "https://api.open-meteo.com/*",
     "https://api.bigdatacloud.net/*"
   ],
+  "background": {"service_worker": "background.js"},
   "action": {"default_popup": "popup.html"}
 }
