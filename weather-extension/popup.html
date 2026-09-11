@@ -11,9 +11,9 @@
     </header>
     <div class="search-bar"><span>⌕</span><input id="city-input" placeholder="Search city or place…" autocomplete="off"><button id="search-btn">Search</button></div>
     <div id="search-results-list"></div>
-    <div id="loader" class="loader"><span class="spinner"></span><span>Refreshing weather…</span></div>
+    <div id="loader" class="loader hidden"><span class="spinner"></span><span>Refreshing weather…</span></div>
 
-    <section id="content" class="hidden">
+    <section id="content">
       <section class="hero-card">
         <div class="hero-main">
           <div class="eyebrow"><span class="status-dot"></span><span id="location-name">—</span><span id="updated-at"></span></div>
@@ -69,7 +69,7 @@
     </section>
   </div>
 
-  <div id="settings-panel" class="settings-panel hidden"><div class="settings-head"><b>Settings</b><button id="close-settings">×</button></div><label class="setting"><span><strong>Temperature</strong><small>Celsius is the default.</small></span><select id="temperature-setting"><option value="celsius">Celsius (°C)</option><option value="fahrenheit">Fahrenheit (°F)</option></select></label><label class="setting"><span><strong>Wind</strong><small>Choose speed unit.</small></span><select id="wind-setting"><option value="kmh">km/h</option><option value="mph">mph</option></select></label><label class="setting"><span><strong>Theme</strong><small>Choose appearance.</small></span><select id="theme-setting"><option value="dark">Dark</option><option value="light">Light</option></select></label><button id="use-current-setting" class="primary-setting">Use current location</button><div id="setting-status" class="setting-status">Saved automatically.</div></div>
+  <div id="settings-panel" class="settings-panel hidden"><div class="settings-head"><b>Settings</b><button id="close-settings">×</button></div><label class="setting"><span><strong>Temperature</strong><small>Celsius is the default.</small></span><select id="temperature-setting"><option value="celsius">Celsius (°C)</option><option value="fahrenheit">Fahrenheit (°F)</option></select></label><label class="setting"><span><strong>Wind</strong><small>Choose speed unit.</small></span><select id="wind-setting"><option value="kmh">km/h</option><option value="mph">mph</option></select></label><label class="setting"><span><strong>Theme</strong><small>Choose appearance.</small></span><select id="theme-setting"><option value="dark">Dark</option><option value="light">Light</option></select></select></label><button id="use-current-setting" class="primary-setting">Use current location</button><div id="setting-status" class="setting-status">Saved automatically.</div></div>
 </main>
 <script src="popup.js"></script><script src="ui.js"></script>
 </body></html>
