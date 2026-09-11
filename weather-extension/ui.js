@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded',()=>{
   const bgBase='assets/background/';
   const chooseBackground=()=>{
     const condition=(document.getElementById('short-forecast')?.textContent||'').toLowerCase();
-    const hour=new Date().getHours();
-    const night=hour<6||hour>=19;
+    const icon=document.getElementById('weather-icon')?.getAttribute('src')||'';
+    const night=/night-/.test(icon);
     let kind='clear';
     if(/thunder|storm/.test(condition)) kind='rain';
     else if(/snow|sleet|ice|wintry/.test(condition)) kind='sleet';
@@ -23,7 +23,17 @@ document.addEventListener('DOMContentLoaded',()=>{
     document.body.dataset.weatherNight=night?'1':'0';
   };
   const conditionNode=document.getElementById('short-forecast');
+  const iconNode=document.getElementById('weather-icon');
   if(conditionNode)new MutationObserver(chooseBackground).observe(conditionNode,{childList:true,subtree:true,characterData:true});
+  if(iconNode)new MutationObserver(chooseBackground).observe(iconNode,{attributes:true,attributeFilter:['src']});
   chooseBackground();
   setInterval(chooseBackground,60000);
+
+  const syncDetails=()=>{
+    const pairs=[['feels-like','feels-like-inline'],['humidity','humidity-detail'],['pressure','pressure-detail'],['wind','wind-detail'],['visibility','visibility-detail'],['condition-description','condition-description-detail']];
+    pairs.forEach(([from,to])=>{const a=document.getElementById(from),b=document.getElementById(to);if(a&&b)b.textContent=a.textContent;});
+  };
+  const content=document.getElementById('content');
+  if(content)new MutationObserver(syncDetails).observe(content,{childList:true,subtree:true,characterData:true});
+  syncDetails();
 });
