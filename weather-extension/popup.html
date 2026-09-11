@@ -5,71 +5,21 @@
 <main class="app">
   <div class="weather-backdrop"></div>
   <div class="app-content">
-    <header class="topbar">
-      <div class="brand"><span class="brand-mark">☁</span><div><strong>Live Weather</strong><span id="data-source">Weather</span></div></div>
-      <div class="top-actions"><button id="gps-btn" class="icon-btn" title="Current location">⌖</button><button id="settings-btn" class="icon-btn" title="Settings">⚙</button></div>
-    </header>
+    <header class="topbar"><div class="brand"><span class="brand-mark">☁</span><div><strong>Live Weather</strong><span id="data-source">Weather</span></div></div><div class="top-actions"><button id="gps-btn" class="icon-btn" title="Current location">⌖</button><button id="settings-btn" class="icon-btn" title="Settings">⚙</button></div></header>
     <div class="search-bar"><span>⌕</span><input id="city-input" placeholder="Search city or place…" autocomplete="off"><button id="search-btn">Search</button></div>
     <div id="search-results-list"></div>
     <div id="loader" class="loader hidden"><span class="spinner"></span><span>Refreshing weather…</span></div>
-
     <section id="content">
-      <section class="hero-card">
-        <div class="hero-main">
-          <div class="eyebrow"><span class="status-dot"></span><span id="location-name">—</span><span id="updated-at"></span></div>
-          <div class="hero-temp"><span id="current-temp">--</span><sup id="temp-unit">°C</sup></div>
-          <div id="short-forecast" class="condition">—</div>
-          <div class="range"><span>H <b id="today-high">--°</b></span><span>L <b id="today-low">--°</b></span><span id="feels-like-inline">Feels --°</span></div>
-        </div>
-        <div class="hero-icon-wrap"><img id="weather-icon" src="assets/clear.svg" alt="Weather condition"></div>
-      </section>
-
-      <nav class="view-tabs" aria-label="Weather views">
-        <button class="view-tab active" data-view="overview">Overview</button>
-        <button class="view-tab" data-view="hourly">Hourly</button>
-        <button class="view-tab" data-view="daily">7 Days</button>
-        <button class="view-tab" data-view="details">Details</button>
-      </nav>
-
-      <section class="view-panel active" data-panel="overview">
-        <div class="overview-grid">
-          <div class="overview-card summary-card"><div class="card-kicker">NOW</div><div id="condition-description" class="summary-text">—</div><div class="summary-meta"><span id="precip-prob">--%</span> rain</div></div>
-          <div class="overview-card astro-card"><div><small>Sunrise</small><b id="sunrise">--:--</b></div><div><small>Sunset</small><b id="sunset">--:--</b></div><div><small>UV</small><b id="uv-index">--</b></div></div>
-        </div>
-        <div class="mini-metrics">
-          <div><span>Humidity</span><b id="humidity">--%</b></div><div><span>Wind</span><b id="wind">--</b></div><div><span>Pressure</span><b id="pressure">-- hPa</b></div><div><span>Visibility</span><b id="visibility">-- km</b></div>
-        </div>
-      </section>
-
-      <section class="view-panel" data-panel="hourly">
-        <div class="panel-head"><div><b>Hourly forecast</b><span id="hourly-source">—</span></div><span>Next 6 hours</span></div>
-        <div id="hourly-forecast" class="hourly-container"></div>
-      </section>
-
-      <section class="view-panel" data-panel="daily">
-        <div class="panel-head"><div><b>7-day forecast</b><span id="forecast-source">—</span></div><span>High / Low</span></div>
-        <div id="daily-forecast" class="daily-list"></div>
-      </section>
-
-      <section class="view-panel" data-panel="details">
-        <div class="details-grid">
-          <div class="detail-card"><span class="detail-icon">◉</span><small>Feels like</small><b id="feels-like">--°</b></div>
-          <div class="detail-card"><span class="detail-icon">◌</span><small>Humidity</small><b id="humidity-detail">--%</b></div>
-          <div class="detail-card"><img src="assets/thermometer.svg" class="detail-icon-img"><small>Pressure</small><b id="pressure-detail">-- hPa</b></div>
-          <div class="detail-card"><img src="assets/arrow.svg" class="detail-icon-img" id="wind-arrow"><small>Wind</small><b id="wind-detail">--</b></div>
-          <div class="detail-card"><span class="detail-icon">☁</span><small>Cloud cover</small><b id="cloud-cover">--%</b></div>
-          <div class="detail-card"><span class="detail-icon">◒</span><small>Visibility</small><b id="visibility-detail">-- km</b></div>
-        </div>
-        <div class="details-note"><b>Conditions</b><span id="condition-description-detail">—</span></div>
-        <div class="details-note"><b>Precipitation</b><span id="precip-total">--</span></div>
-        <div class="details-note"><b>Moon</b><span id="moonrise">--:--</span> / <span id="moonset">--:--</span></div>
-      </section>
-
+      <section class="hero-card"><div class="hero-main"><div class="eyebrow"><span class="status-dot"></span><span id="location-name">—</span><span id="updated-at"></span></div><div class="hero-temp"><span id="current-temp">--</span><sup id="temp-unit">°C</sup></div><div id="short-forecast" class="condition">—</div><div class="range"><span>H <b id="today-high">--°</b></span><span>L <b id="today-low">--°</b></span><span id="feels-like-inline">Feels --°</span></div></div><div class="hero-icon-wrap"><img id="weather-icon" src="assets/clear.svg" alt="Weather condition"></div></section>
+      <nav class="view-tabs" aria-label="Weather views"><button class="view-tab active" data-view="overview">Overview</button><button class="view-tab" data-view="hourly">Hourly</button><button class="view-tab" data-view="daily">7 Days</button><button class="view-tab" data-view="details">Details</button></nav>
+      <section class="view-panel active" data-panel="overview"><div class="overview-grid"><div class="overview-card summary-card"><div class="card-kicker">NOW</div><div id="condition-description" class="summary-text">—</div><div class="summary-meta"><span id="precip-prob">--%</span> rain</div></div><div class="overview-card astro-card"><div><small>Sunrise</small><b id="sunrise">--:--</b></div><div><small>Sunset</small><b id="sunset">--:--</b></div><div><small>UV</small><b id="uv-index">--</b></div></div></div><div class="mini-metrics"><div><span>Humidity</span><b id="humidity">--%</b></div><div><span>Wind</span><b id="wind">--</b></div><div><span>Pressure</span><b id="pressure">-- hPa</b></div><div><span>Visibility</span><b id="visibility">-- km</b></div></div></section>
+      <section class="view-panel" data-panel="hourly"><div class="panel-head"><div><b>Hourly forecast</b><span id="hourly-source">—</span></div><span>Next 6 hours</span></div><div id="hourly-forecast" class="hourly-container"></div></section>
+      <section class="view-panel" data-panel="daily"><div class="panel-head"><div><b>7-day forecast</b><span id="forecast-source">—</span></div><span>High / Low</span></div><div id="daily-forecast" class="daily-list"></div></section>
+      <section class="view-panel" data-panel="details"><div class="details-grid"><div class="detail-card"><span class="detail-icon">◉</span><small>Feels like</small><b id="feels-like">--°</b></div><div class="detail-card"><span class="detail-icon">◌</span><small>Humidity</small><b id="humidity-detail">--%</b></div><div class="detail-card"><img src="assets/thermometer.svg" class="detail-icon-img"><small>Pressure</small><b id="pressure-detail">-- hPa</b></div><div class="detail-card"><img src="assets/arrow.svg" class="detail-icon-img" id="wind-arrow"><small>Wind</small><b id="wind-detail">--</b></div><div class="detail-card"><span class="detail-icon">☁</span><small>Cloud cover</small><b id="cloud-cover">--%</b></div><div class="detail-card"><span class="detail-icon">◒</span><small>Visibility</small><b id="visibility-detail">-- km</b></div></div><div class="details-note"><b>Conditions</b><span id="condition-description-detail">—</span></div><div class="details-note"><b>Precipitation</b><span id="precip-total">--</span></div><div class="details-note"><b>Moon</b><span id="moonrise">--:--</span> / <span id="moonset">--:--</span></div></section>
       <footer><span id="last-refresh">—</span><span>Auto refresh · 15 min</span><span id="today-date">—</span></footer>
     </section>
   </div>
-
-  <div id="settings-panel" class="settings-panel hidden"><div class="settings-head"><b>Settings</b><button id="close-settings">×</button></div><label class="setting"><span><strong>Temperature</strong><small>Celsius is the default.</small></span><select id="temperature-setting"><option value="celsius">Celsius (°C)</option><option value="fahrenheit">Fahrenheit (°F)</option></select></label><label class="setting"><span><strong>Wind</strong><small>Choose speed unit.</small></span><select id="wind-setting"><option value="kmh">km/h</option><option value="mph">mph</option></select></label><label class="setting"><span><strong>Theme</strong><small>Choose appearance.</small></span><select id="theme-setting"><option value="dark">Dark</option><option value="light">Light</option></select></select></label><button id="use-current-setting" class="primary-setting">Use current location</button><div id="setting-status" class="setting-status">Saved automatically.</div></div>
+  <div id="settings-panel" class="settings-panel hidden"><div class="settings-head"><b>Settings</b><button id="close-settings">×</button></div><label class="setting"><span><strong>Temperature</strong><small>Celsius is the default.</small></span><select id="temperature-setting"><option value="celsius">Celsius (°C)</option><option value="fahrenheit">Fahrenheit (°F)</option></select></label><label class="setting"><span><strong>Wind</strong><small>Choose speed unit.</small></span><select id="wind-setting"><option value="kmh">km/h</option><option value="mph">mph</option></select></label><label class="setting"><span><strong>Theme</strong><small>Choose appearance.</small></span><select id="theme-setting"><option value="dark">Dark</option><option value="light">Light</option></select></label><button id="use-current-setting" class="primary-setting">Use current location</button><div id="setting-status" class="setting-status">Saved automatically.</div></div>
 </main>
 <script src="popup.js"></script><script src="ui.js"></script>
 </body></html>
