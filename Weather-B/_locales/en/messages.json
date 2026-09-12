@@ -406,7 +406,7 @@
       "message": "Pro Feature"
    },
    "card9Text": {
-      "message": "Experience personalized, AI-powered news-style weather reports by Lexi!"
+      "message": "Experience personalized, AI-powered news-style weather reports NWS and Open-Meteo!"
    },
    "card9Title": {
       "message": "Personalized Weather Report"
@@ -1837,13 +1837,13 @@
       "message": "Weather Report"
    },
    "weatherReportByLexi": {
-      "message": "Weather Report by Lexi"
+      "message": "Weather Report NWS and Open-Meteo"
    },
    "weatherReportLexi": {
-      "message": "Weather Report by Lexi"
+      "message": "Weather Report NWS and Open-Meteo"
    },
    "weatherReportLexiPro": {
-      "message": "Weather Report by Lexi (Pro feature)"
+      "message": "Weather Report NWS and Open-Meteo"
    },
    "willContinueFor": {
       "message": "$1 will continue for $2 min.",

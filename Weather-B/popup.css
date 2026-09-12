@@ -605,7 +605,7 @@ input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 .group_uv_Class {
   display: flex;
   position: absolute;
-  top: 330px;
+  top: 310px;
   width: 300px;
   flex-direction: column;
   align-items: center;
