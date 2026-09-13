@@ -18,9 +18,6 @@
         <script type="text/javascript" src="/components/englishLanguage.js"></script>
         <script type="text/javascript" src="/components/lazyLoad.js"></script>
         <link type="text/javascript" rel="preload" href="/popup.js" as="script">
-        <script type="module" src="/libraries/firebase-app.js"></script>
-        <script type="module" src="/libraries/firebase-firestore.js"></script>
-        <script type="module" src="/components/userStatus.js"></script>
         <script type="text/javascript" src="/libraries/suncalc.js"></script>
         <script type="text/javascript" src="/components/util.js"></script>
         <script type="text/javascript" src="/components/elements.js"></script>
@@ -37,7 +34,6 @@
         <script type="text/javascript" src="/components/prev24Hrs.js"></script>
         <script type="text/javascript" src="/components/favourite.js"></script>
         <script type="text/javascript" src="/components/update.js"></script>
-        <script type="text/javascript" src="/components/vip.js"></script>
         <script type="text/javascript" src="/components/temperature.js"></script>
         <script type="text/javascript" src="/components/solar.js"></script>
         <script type="text/javascript" src="/components/timeFormat.js"></script>
@@ -46,7 +42,6 @@
         <script type="text/javascript" src="/components/daily.js"></script>
         <script type="text/javascript" src="/components/flickr.js"></script>
         <script type="text/javascript" src="/components/theme.js"></script>
-        <script type="text/javascript" src="/components/mp.js"></script>
         <script type="text/javascript" src="/components/outlook.js"></script>
         <script type="text/javascript" src="/components/calendar.js"></script>
         <script type="text/javascript" src="/components/aqi.js"></script>
@@ -193,24 +188,6 @@
                                                                 </div>
                                                         </span></span></li>
                                 </a>
-                                <hr class="hr_forecast_menu"><a id="proLogin" class="hide_pro whitelink">
-                                        <li><img src="images/user.svg" class="sidebar_icon_Class"> <span
-                                                        id="sidebar_text_login">__MSG_proMemberLogin__</span></li>
-                                </a>
-                                <hr class="hr_forecast_menu"><a id="vipSidebar" class="whitelink vip_popup_class">
-                                        <li><span class="menu_text_group_setting"><span
-                                                                style="display:flex;flex-direction:row"><img
-                                                                        src="images/crown-gold.svg"
-                                                                        class="sidebar_icon_vip_Class"> </span><span>
-                                                                <div id="sidebar_text_vip">__MSG_unlockProFeatures__
-                                                                </div>
-                                                                <div id="sidebar_text_vip_subTitle"
-                                                                        class="menu_subTitle">__MSG_startFreeTrial__
-                                                                </div>
-                                                                <div id="vip_user_email" class="menu_subTitle"
-                                                                        style="display:none"></div>
-                                                        </span></span></li>
-                                </a>
                                 <div class="app_information_Class">
                                         <div class="madein_Class"><span>__MSG_madeWith__ </span><span
                                                         class="madein_heart_Class"></span> <span>__MSG_inCanada__
@@ -236,10 +213,6 @@
                                                                         style="margin-left:5px"></span> <span
                                                                         style="font-size:13px">Microsoft
                                                                         Azure</span></a></span></div>
-                                </div>
-                                <div id="express_qr" class="hide_pro express_qr_Class"><img
-                                                style="max-width:100%;max-height:100%"
-                                                src="https://api.qrserver.com/v1/create-qr-code/?data=https://qr.uvw.workers.dev/?deviceId=00000000-0000-0000-0000-000000000000&size=100x100&color=ffffff&bgcolor=FF642D&format=svg&qzone=1&margin=1">
                                 </div>
                                 <div id="support_Class" class="hide_pro support_Class">
                                         <div class="email_text1_Class"><span
