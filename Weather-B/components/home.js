@@ -4,7 +4,7 @@ const home = () => {
   }),
     (document.getElementById("icon_uv").style.display =
       uvIndex < 1 ? "none" : "block"),
-    (icon = getWeIcon(condition, daylight, cloudCover)),
+    (icon = getWeIcon(condition, daylight, (Number(cloudCover) || 0) / 100)),
     chrome.storage.local.get("animatedIcon", (data) => {
       const animatedIcon = "1" === data.animatedIcon;
       currentIcon.style.backgroundImage = animatedIcon
@@ -28,7 +28,7 @@ const home = () => {
       });
     }),
     (document.getElementById("current_condition").textContent =
-      getWeDescription(condition, daylight, cloudCover)),
+      window.wCast?.currentWeather?.description || getWeDescription(condition, daylight, (Number(cloudCover) || 0) / 100)),
     document.querySelectorAll(".current_uv").forEach((item) => {
       item.textContent = uvIndex;
     }),
