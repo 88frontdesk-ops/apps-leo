@@ -1,3 +1,5 @@
 // Weather-B is fully free and does not fetch remote promotional/update feeds.
-// Kept as a compatibility module because popup.html still references this file.
+// Compatibility state for legacy UI paths is kept local only.
+var sunriseTime=NaN,sunsetTime=NaN,noonTime=NaN,solarMidnight=NaN;
+var mp_event=function(){};
 const adCard=()=>{if(typeof cardUpdate!=="undefined"&&cardUpdate)cardUpdate.style.display="none"};
