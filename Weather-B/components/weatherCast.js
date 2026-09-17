@@ -61,9 +61,10 @@ const weCast = (latlong, country, timezone, resolve, reject) => {
     timeZoneBadge = getTimezoneOffset(timezone);
     getOffsetTime(timeZoneBadge, latlong);
 
-    // citys is normally initialized by the popup/background location flow.
-    // Keep weather loading independent from that global so a missing location
-    // label cannot turn a successful provider response into a failed request.
+    // util.js's legacy setBadge() expects country as a global identifier.
+    // Populate that compatibility value from the provider request instead of
+    // allowing UTFC() to throw when the global has not been initialized yet.
+    globalThis.country = typeof country === "string" ? country : "";
     const badgeCity = typeof citys === "string" ? citys : "";
     setBadge(daylight, iconBadge, temperature, updateTime, badgeCity, uvIndex, isWeatherAlert);
 
