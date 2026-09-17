@@ -12,8 +12,6 @@ const weCast = (latlong, country, timezone, resolve, reject) => {
     });
     if (index < 0) index = 0;
 
-    // Open-Meteo returns the hourly series from midnight in the selected local timezone.
-    // The hourly UI should start at the current forecast hour, not at an elapsed hour.
     if (index > 0) wCast = { ...wCast, forecastHourly: { ...wCast.forecastHourly, hours: wCast.forecastHourly.hours.slice(index) } };
 
     if (self.document) window.wCast = wCast;
@@ -81,7 +79,8 @@ const weCast = (latlong, country, timezone, resolve, reject) => {
   useCache().then((data) => {
     const apiInterval = data.subscriptionActive ? 2 : 1;
     const cached = data.wCast;
-    const freshEnough = cached?.currentWeather?.asOf && Date.now() < Date.parse(cached.currentWeather.asOf) + apiInterval * 60 * 60 * 1000;
+    const hasNwsDetails = Array.isArray(cached?.forecastDaily?.days) && cached.forecastDaily.days.some((day) => day?.nwsDetailedForecast?.day || day?.nwsDetailedForecast?.night);
+    const freshEnough = cached?.currentWeather?.asOf && hasNwsDetails && Date.now() < Date.parse(cached.currentWeather.asOf) + apiInterval * 60 * 60 * 1000;
     if (freshEnough) {
       try { const result = applyWeather(cached); resolve && resolve(result); return; }
       catch (error) { console.warn("Cached weather data invalid; refreshing.", error); }
