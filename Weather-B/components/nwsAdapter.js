@@ -13,8 +13,6 @@
     const data = await requestJson(url.toString()); setApiSource("Open-Meteo");
     const current = data.current || {}; const hourly = data.hourly || {}; const daily = data.daily || {};
     const offsetSeconds = Number(data.utc_offset_seconds) || 0;
-    // Open-Meteo returns local wall-clock strings for the requested timezone. Convert
-    // them to real UTC instants so Date.parse(), comparisons, and display offsets agree.
     const localTimeToIso = (value) => { if (!value) return ""; const localAsUtc = Date.parse(`${value}:00Z`); return Number.isFinite(localAsUtc) ? new Date(localAsUtc - offsetSeconds * 1000).toISOString() : ""; };
     const localDateToIso = (value) => localTimeToIso(`${value}T00:00`);
     const times = hourly.time || [];
@@ -23,7 +21,44 @@
     return { currentWeather: { temperature: current.temperature_2m ?? 0, pressure: current.pressure_msl ?? 1013.25, pressureTrend: "", windDirection: directionToDegrees(current.wind_direction_10m), visibility: current.visibility ?? 16093, temperatureDewPoint: current.temperature_2m ?? 0, humidity: clamp01((current.relative_humidity_2m ?? 0) / 100), windSpeed: current.wind_speed_10m ?? 0, windGust: current.wind_gusts_10m ?? 0, cloudCover: clamp01((current.cloud_cover ?? 0) / 100), uvIndex: current.uv_index ?? 0, daylight: Boolean(current.is_day), conditionCode: conditionFromOpenMeteo(current.weather_code), description: openMeteoDescription(current.weather_code), asOf: localTimeToIso(current.time) || new Date().toISOString() }, forecastHourly: { hours }, forecastDaily: { days }, weatherAlerts: { alerts: [] } };
   };
 
+  const fetchNwsForecast = async (latitude, longitude) => {
+    try {
+      const headers = { Accept: "application/geo+json", "User-Agent": "Weather-B weather extension" };
+      const points = await requestJson(`https://api.weather.gov/points/${latitude},${longitude}`, headers);
+      const forecastUrl = points?.properties?.forecast;
+      if (!forecastUrl) return null;
+      const data = await requestJson(forecastUrl, headers);
+      return Array.isArray(data?.properties?.periods) ? data.properties.periods : [];
+    } catch (error) {
+      console.warn("NWS forecast unavailable.", error);
+      return null;
+    }
+  };
+
+  const applyNwsDetailedForecasts = (weather, periods) => {
+    if (!Array.isArray(periods) || !periods.length) return weather;
+    const periodByDate = new Map();
+    periods.forEach((period) => {
+      const date = String(period.startTime || "").slice(0, 10);
+      if (!date) return;
+      const entry = periodByDate.get(date) || {};
+      entry[period.isDaytime ? "day" : "night"] = period;
+      periodByDate.set(date, entry);
+    });
+    weather.forecastDaily.days = weather.forecastDaily.days.map((day) => {
+      const date = new Date(day.forecastStart).toISOString().slice(0, 10);
+      const periodsForDate = periodByDate.get(date);
+      if (!periodsForDate) return day;
+      const dayPeriod = periodsForDate.day;
+      const nightPeriod = periodsForDate.night;
+      const daytimeForecast = dayPeriod?.detailedForecast ? { ...day.daytimeForecast, description: dayPeriod.detailedForecast, detailedForecast: dayPeriod.detailedForecast } : day.daytimeForecast;
+      const overnightForecast = nightPeriod?.detailedForecast ? { ...day.overnightForecast, description: nightPeriod.detailedForecast, detailedForecast: nightPeriod.detailedForecast } : day.overnightForecast;
+      return { ...day, daytimeForecast, overnightForecast, nwsDetailedForecast: { day: dayPeriod?.detailedForecast || "", night: nightPeriod?.detailedForecast || "" } };
+    });
+    return weather;
+  };
+
   const fetchNwsAlerts = async (latitude, longitude) => { try { const data = await requestJson(`https://api.weather.gov/alerts/active?point=${latitude},${longitude}`, { Accept: "application/geo+json", "User-Agent": "Weather-B weather extension" }); return { alerts: (data.features || []).map((feature) => { const p = feature.properties || {}; return { source: p.senderName || "National Weather Service", description: p.event || "Weather alert", effectiveTime: p.effective, expireTime: p.expires, detailsUrl: p.uri, severity: [String(p.severity || "Unknown").toLowerCase()], urgency: [String(p.urgency || "Unknown").toLowerCase()], areaName: [p.areaDesc || ""] }; }) }; } catch (error) { console.warn("NWS alerts unavailable.", error); return { alerts: [] }; } };
-  const loadWeatherData = async ({ latitude, longitude, country, timezone }) => { if (!Number.isFinite(Number(latitude)) || !Number.isFinite(Number(longitude))) throw new Error("Invalid weather coordinates"); const weather = await fetchOpenMeteo(Number(latitude), Number(longitude), timezone); if (String(country || "").toUpperCase() === "US") { weather.weatherAlerts = await fetchNwsAlerts(Number(latitude), Number(longitude)); setApiSource("Open-Meteo + National Weather Service"); } return weather; };
+  const loadWeatherData = async ({ latitude, longitude, country, timezone }) => { if (!Number.isFinite(Number(latitude)) || !Number.isFinite(Number(longitude))) throw new Error("Invalid weather coordinates"); const weather = await fetchOpenMeteo(Number(latitude), Number(longitude), timezone); if (String(country || "").toUpperCase() === "US") { const periods = await fetchNwsForecast(Number(latitude), Number(longitude)); applyNwsDetailedForecasts(weather, periods); weather.weatherAlerts = await fetchNwsAlerts(Number(latitude), Number(longitude)); setApiSource("Open-Meteo + National Weather Service"); } return weather; };
   globalThis.loadWeatherData = loadWeatherData;
 })();
