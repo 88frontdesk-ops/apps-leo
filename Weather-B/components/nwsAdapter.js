@@ -1,425 +1,229 @@
 (() => {
-  const originalFetch = globalThis.fetch.bind(globalThis);
-  const nwsHeaders = {
-    Accept: "application/geo+json",
-    "User-Agent": "UV-Weather/2.0 (weather extension)",
-  };
+  const WEATHER_TIMEOUT_MS = 10000;
 
-  const fetchJson = async (url) => {
+  const requestJson = async (url, headers = {}) => {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10000);
+    const timeout = setTimeout(() => controller.abort(), WEATHER_TIMEOUT_MS);
     try {
-      const response = await originalFetch(url, { headers: nwsHeaders, signal: controller.signal });
+      const response = await fetch(url, {
+        method: "GET",
+        headers,
+        signal: controller.signal,
+      });
       if (!response.ok) throw new Error(`Weather request failed: ${response.status}`);
-      return await response.json();
+      return response.json();
     } finally {
       clearTimeout(timeout);
     }
   };
 
   const setApiSource = (source) => {
-    if (globalThis.chrome && chrome.storage && chrome.storage.local) {
+    if (globalThis.chrome?.storage?.local) {
       chrome.storage.local.set({ weatherApiSource: source });
     }
   };
 
-  const fetchSupplementalData = async (latitude, longitude) => {
+  const clamp01 = (value) => Math.max(0, Math.min(1, value));
+
+  const directionToDegrees = (value) => {
+    if (typeof value === "number" && Number.isFinite(value)) return value;
+    const directions = { N: 0, NNE: 22.5, NE: 45, ENE: 67.5, E: 90, ESE: 112.5, SE: 135, SSE: 157.5, S: 180, SSW: 202.5, SW: 225, WSW: 247.5, W: 270, WNW: 292.5, NW: 315, NNW: 337.5 };
+    return directions[String(value || "").toUpperCase()] ?? 0;
+  };
+
+  const conditionFromNws = (text) => {
+    const value = String(text || "").toLowerCase();
+    if (value.includes("thunder")) return "thunderstorms";
+    if (value.includes("snow") || value.includes("flurr") || value.includes("sleet") || value.includes("freezing")) return "snow";
+    if (value.includes("rain") || value.includes("drizzle") || value.includes("shower")) return "rain";
+    if (value.includes("fog") || value.includes("haze") || value.includes("smoke") || value.includes("dust")) return "foggy";
+    if (value.includes("partly") || value.includes("mostly sunny") || value.includes("mostly clear")) return "partlycloudy";
+    if (value.includes("cloud") || value.includes("overcast")) return "cloudy";
+    return "clear";
+  };
+
+  const openMeteoDescription = (code, isDay = true) => {
+    const descriptions = {
+      0: isDay ? "Clear sky" : "Clear sky",
+      1: isDay ? "Mainly clear" : "Mainly clear",
+      2: "Partly cloudy",
+      3: "Overcast",
+      45: "Fog",
+      48: "Depositing rime fog",
+      51: "Light drizzle",
+      53: "Moderate drizzle",
+      55: "Dense drizzle",
+      56: "Light freezing drizzle",
+      57: "Dense freezing drizzle",
+      61: "Slight rain",
+      63: "Moderate rain",
+      65: "Heavy rain",
+      66: "Light freezing rain",
+      67: "Heavy freezing rain",
+      71: "Slight snow fall",
+      73: "Moderate snow fall",
+      75: "Heavy snow fall",
+      77: "Snow grains",
+      80: "Slight rain showers",
+      81: "Moderate rain showers",
+      82: "Violent rain showers",
+      85: "Slight snow showers",
+      86: "Heavy snow showers",
+      95: "Thunderstorm",
+      96: "Thunderstorm with slight hail",
+      99: "Thunderstorm with heavy hail",
+    };
+    return descriptions[code] || "Unknown";
+  };
+
+  const conditionFromOpenMeteo = (code) => {
+    if ([95, 96, 99].includes(code)) return "thunderstorms";
+    if ([71, 73, 75, 77, 85, 86].includes(code)) return "snow";
+    if ([51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82].includes(code)) return "rain";
+    if ([45, 48].includes(code)) return "foggy";
+    if ([2].includes(code)) return "partlycloudy";
+    if ([3].includes(code)) return "cloudy";
+    return "clear";
+  };
+
+  const fetchOpenMeteo = async (latitude, longitude, timezone) => {
     const url = new URL("https://api.open-meteo.com/v1/forecast");
     url.search = new URLSearchParams({
       latitude,
       longitude,
-      current: "uv_index",
-      hourly: "uv_index",
-      daily: "uv_index_max,sunrise,sunset,moonrise,moonset",
-      timezone: "auto",
+      timezone: timezone || "auto",
       forecast_days: "10",
+      current: "temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,rain,showers,snowfall,weather_code,cloud_cover,pressure_msl,wind_speed_10m,wind_gusts_10m,wind_direction_10m,visibility,uv_index,is_day",
+      hourly: "temperature_2m,relative_humidity_2m,precipitation,precipitation_probability,rain,showers,snowfall,weather_code,cloud_cover,wind_speed_10m,wind_gusts_10m,wind_direction_10m,uv_index,is_day",
+      daily: "weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,uv_index_max,sunrise,sunset,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant,moonrise,moonset",
     });
-    try {
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 10000);
-      try {
-        const response = await originalFetch(url, { signal: controller.signal });
-        if (!response.ok) throw new Error(`Open-Meteo request failed: ${response.status}`);
-        return await response.json();
-      } finally {
-        clearTimeout(timeout);
-      }
-    } catch (error) {
-      console.warn("Supplemental UV/solar data unavailable.", error);
-      return {};
-    }
-  };
+    const data = await requestJson(url.toString());
+    setApiSource("Open-Meteo");
 
-  const fahrenheitToCelsius = (value) =>
-    typeof value === "number" ? (value - 32) * (5 / 9) : 0;
+    const current = data.current || {};
+    const hourly = data.hourly || {};
+    const daily = data.daily || {};
+    const times = hourly.time || [];
+    const hours = times.map((time, index) => {
+      const code = hourly.weather_code?.[index];
+      const description = openMeteoDescription(code, Boolean(hourly.is_day?.[index]));
+      return {
+        forecastStart: `${time}:00Z`,
+        temperature: hourly.temperature_2m?.[index] ?? 0,
+        uvIndex: hourly.uv_index?.[index] ?? 0,
+        daylight: Boolean(hourly.is_day?.[index]),
+        conditionCode: conditionFromOpenMeteo(code),
+        description,
+        cloudCover: clamp01((hourly.cloud_cover?.[index] ?? 0) / 100),
+        windSpeed: hourly.wind_speed_10m?.[index] ?? 0,
+        windGust: hourly.wind_gusts_10m?.[index] ?? 0,
+        windDirection: directionToDegrees(hourly.wind_direction_10m?.[index]),
+        precipitationChance: clamp01((hourly.precipitation_probability?.[index] ?? 0) / 100),
+        precipitationAmount: hourly.precipitation?.[index] ?? 0,
+        humidity: clamp01((hourly.relative_humidity_2m?.[index] ?? 0) / 100),
+      };
+    });
 
-  const windToKmh = (value) => {
-    if (typeof value !== "string") return 0;
-    const number = parseFloat(value);
-    if (!Number.isFinite(number)) return 0;
-    const unit = value.toLowerCase();
-    if (unit.includes("km/h") || unit.includes("kmh")) return number;
-    if (unit.includes("mph")) return number * 1.609344;
-    if (unit.includes("knot") || unit.includes("kn")) return number * 1.852;
-    if (unit.includes("m/s") || unit.includes("m s-1")) return number * 3.6;
-    return number;
-  };
-
-  const quantitativeWindToKmh = (quantity) => {
-    if (!quantity || typeof quantity.value !== "number") return 0;
-    const unit = String(quantity.unitCode || quantity.unit || "").toLowerCase();
-    if (unit.includes("m_s-1") || unit.includes("m/s")) return quantity.value * 3.6;
-    if (unit.includes("km_h-1") || unit.includes("km/h")) return quantity.value;
-    if (unit.includes("mph") || unit.includes("mi_h-1")) return quantity.value * 1.609344;
-    if (unit.includes("kn") || unit.includes("knot")) return quantity.value * 1.852;
-    return quantity.value * 3.6;
-  };
-
-  const directionToDegrees = (direction) => {
-    if (typeof direction === "number" && Number.isFinite(direction)) return direction;
-    const directions = {
-      N: 0, NNE: 22.5, NE: 45, ENE: 67.5, E: 90, ESE: 112.5,
-      SE: 135, SSE: 157.5, S: 180, SSW: 202.5, SW: 225,
-      WSW: 247.5, W: 270, WNW: 292.5, NW: 315, NNW: 337.5,
-    };
-    return directions[String(direction || "").toUpperCase()] ?? 0;
-  };
-
-  const parseIsoDurationMs = (duration) => {
-    const match = String(duration || "").match(/^P(?:(\d+)D)?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?)?$/);
-    if (!match) return 0;
-    return Number(match[1] || 0) * 86400000 + Number(match[2] || 0) * 3600000 + Number(match[3] || 0) * 60000 + Number(match[4] || 0) * 1000;
-  };
-
-  const gridIntervals = (values, converter = (value) => value) =>
-    Array.isArray(values)
-      ? values.map((item) => {
-          const [startText, durationText] = String(item.validTime || "").split("/");
-          const start = Date.parse(startText);
-          const durationMs = parseIsoDurationMs(durationText);
-          if (!Number.isFinite(start) || !durationMs) return null;
-          const value = typeof item.value === "number" && Number.isFinite(item.value) ? converter(item.value) : null;
-          return { start, end: start + durationMs, value };
-        }).filter(Boolean)
-      : [];
-
-  const averageGridValue = (intervals, startTime, endTime) => {
-    const start = Date.parse(startTime);
-    const end = Date.parse(endTime);
-    if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start) return null;
-    let weightedValue = 0;
-    let totalDuration = 0;
-    for (const interval of intervals) {
-      const overlapStart = Math.max(start, interval.start);
-      const overlapEnd = Math.min(end, interval.end);
-      if (overlapEnd <= overlapStart || interval.value == null) continue;
-      const duration = overlapEnd - overlapStart;
-      weightedValue += interval.value * duration;
-      totalDuration += duration;
-    }
-    return totalDuration ? weightedValue / totalDuration : null;
-  };
-
-  const maxGridValue = (intervals, startTime, endTime) => {
-    const start = Date.parse(startTime);
-    const end = Date.parse(endTime);
-    if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start) return null;
-    let maximum = null;
-    for (const interval of intervals) {
-      if (interval.value == null || interval.end <= start || interval.start >= end) continue;
-      maximum = maximum == null ? interval.value : Math.max(maximum, interval.value);
-    }
-    return maximum;
-  };
-
-  const sumGridValue = (intervals, startTime, endTime) => {
-    const start = Date.parse(startTime);
-    const end = Date.parse(endTime);
-    if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start) return 0;
-    let total = 0;
-    for (const interval of intervals) {
-      if (interval.value == null) continue;
-      if (interval.start >= start && interval.end <= end) total += interval.value;
-    }
-    return total;
-  };
-
-  const cloudCondition = (cloudCover) => {
-    if (!Number.isFinite(cloudCover)) return "clear";
-    if (cloudCover <= 5) return "clear";
-    if (cloudCover <= 50) return "partlycloudy";
-    return "cloudy";
-  };
-
-  const conditionCode = (forecast, cloudCover, pop = null) => {
-    const text = String(forecast || "").toLowerCase();
-    const precipitationChanceValue = Number.isFinite(pop) ? pop : null;
-    const lowPrecipitation = precipitationChanceValue !== null && precipitationChanceValue < 50;
-
-    if (text.includes("thunder") && !lowPrecipitation) return "thunderstorms";
-    if ((text.includes("freezing rain") || text.includes("freezing drizzle") || text.includes("sleet") || text.includes("wintry mix") || text.includes("ice")) && !lowPrecipitation) return "sleet";
-    if ((text.includes("snow") || text.includes("flurr")) && !lowPrecipitation) return "snow";
-    if ((text.includes("rain") || text.includes("drizzle") || text.includes("shower")) && !lowPrecipitation) return "rain";
-    if (text.includes("fog") || text.includes("haze") || text.includes("smoke") || text.includes("dust")) return "foggy";
-    if (text.includes("partly") || text.includes("mostly sunny") || text.includes("mostly clear")) return "partlycloudy";
-    if (text.includes("cloud") || text.includes("overcast")) return "cloudy";
-    if (Number.isFinite(cloudCover)) return cloudCondition(cloudCover);
-    return "clear";
-  };
-
-  const relativeHumidity = (period) =>
-    period && period.relativeHumidity && typeof period.relativeHumidity.value === "number"
-      ? period.relativeHumidity.value
-      : null;
-
-  const precipitationChance = (period) =>
-    period && period.probabilityOfPrecipitation && typeof period.probabilityOfPrecipitation.value === "number"
-      ? period.probabilityOfPrecipitation.value
-      : 0;
-
-  const periodToForecast = (period, grid = {}) => {
-    const cloudCover = averageGridValue(grid.skyCover || [], period.startTime, period.endTime);
-    const gridHumidity = averageGridValue(grid.relativeHumidity || [], period.startTime, period.endTime);
-    const gridGust = maxGridValue(grid.windGust || [], period.startTime, period.endTime);
-    const pop = precipitationChance(period);
-    const humidityPercent = gridHumidity != null ? gridHumidity : relativeHumidity(period);
-    const gustKmh = gridGust != null ? gridGust : windToKmh(period.windGust);
-    return {
-      temperature: fahrenheitToCelsius(period.temperature),
-      windSpeed: windToKmh(period.windSpeed),
-      windGustSpeedMax: gustKmh,
-      windDirection: directionToDegrees(period.windDirection),
-      humidity: humidityPercent == null ? null : humidityPercent / 100,
-      cloudCover: cloudCover == null ? 0 : Math.max(0, Math.min(1, cloudCover / 100)),
-      precipitationChance: pop / 100,
-      precipitationAmount: sumGridValue(grid.qpf || [], period.startTime, period.endTime),
-      conditionCode: conditionCode(period.shortForecast, cloudCover, pop),
-      description: period.shortForecast || "",
-      forecastStart: period.startTime,
-      forecastEnd: period.endTime,
-    };
-  };
-
-  const solarTimesFor = (dateText, latitude, longitude) => {
-    const date = new Date(dateText);
-    if (!globalThis.SunCalc || !Number.isFinite(latitude) || !Number.isFinite(longitude) || !Number.isFinite(date.getTime())) return null;
-    return globalThis.SunCalc.getTimes(date, latitude, longitude);
-  };
-
-  const validIso = (value, fallback) => value instanceof Date && Number.isFinite(value.getTime()) ? value.toISOString() : fallback;
-
-  const dailyForecast = (periods, supplementalDaily, grid, latitude, longitude) => {
-    const days = [];
-    for (let index = 0; index < periods.length; index += 1) {
-      const day = periods[index];
-      if (!day || !day.isDaytime) continue;
-      const night = periods.slice(index + 1).find((period) => !period.isDaytime) || day;
-      const dayForecast = periodToForecast(day, grid);
-      const nightForecast = periodToForecast(night, grid);
-      const dayIndex = days.length;
-      const sunrise = supplementalDaily.sunrise?.[dayIndex] || day.startTime;
-      const sunset = supplementalDaily.sunset?.[dayIndex] || night.endTime;
-      const solar = solarTimesFor(day.startTime, latitude, longitude);
-      const fallbackSolarDate = new Date(day.startTime).toISOString();
-      days.push({
-        forecastStart: day.startTime,
-        temperatureMax: dayForecast.temperature,
-        temperatureMin: nightForecast.temperature,
-        maxUvIndex: Number.isFinite(supplementalDaily.uv_index_max?.[dayIndex]) ? supplementalDaily.uv_index_max[dayIndex] : 0,
-        sunrise,
-        sunset,
-        sunriseCivil: solar ? validIso(solar.dawn, sunrise) : sunrise,
-        sunsetCivil: solar ? validIso(solar.dusk, sunset) : sunset,
-        sunriseAstronomical: solar ? validIso(solar.nightEnd, fallbackSolarDate) : fallbackSolarDate,
-        sunsetAstronomical: solar ? validIso(solar.night, fallbackSolarDate) : fallbackSolarDate,
-        sunriseNautical: solar ? validIso(solar.nauticalDawn, sunrise) : sunrise,
-        sunsetNautical: solar ? validIso(solar.nauticalDusk, sunset) : sunset,
-        solarNoon: solar ? validIso(solar.solarNoon, fallbackSolarDate) : fallbackSolarDate,
-        solarMidnight: solar ? validIso(solar.nadir, fallbackSolarDate) : fallbackSolarDate,
-        moonrise: supplementalDaily.moonrise?.[dayIndex] || "",
-        moonset: supplementalDaily.moonset?.[dayIndex] || "",
+    const days = (daily.time || []).map((date, index) => {
+      const code = daily.weather_code?.[index];
+      const description = openMeteoDescription(code, true);
+      const dayForecast = {
+        forecastStart: `${date}T00:00:00`,
+        temperature: daily.temperature_2m_max?.[index] ?? 0,
+        conditionCode: conditionFromOpenMeteo(code),
+        description,
+        precipitationChance: clamp01((daily.precipitation_probability_max?.[index] ?? 0) / 100),
+        precipitationAmount: daily.precipitation_sum?.[index] ?? 0,
+      };
+      const nightForecast = {
+        ...dayForecast,
+        temperature: daily.temperature_2m_min?.[index] ?? 0,
+      };
+      return {
+        forecastStart: `${date}T00:00:00`,
+        temperatureMax: daily.temperature_2m_max?.[index] ?? 0,
+        temperatureMin: daily.temperature_2m_min?.[index] ?? 0,
+        maxUvIndex: daily.uv_index_max?.[index] ?? 0,
+        sunrise: daily.sunrise?.[index] || "",
+        sunset: daily.sunset?.[index] || "",
+        sunriseCivil: daily.sunrise?.[index] || "",
+        sunsetCivil: daily.sunset?.[index] || "",
+        sunriseAstronomical: daily.sunrise?.[index] || "",
+        sunsetAstronomical: daily.sunset?.[index] || "",
+        sunriseNautical: daily.sunrise?.[index] || "",
+        sunsetNautical: daily.sunset?.[index] || "",
+        solarNoon: daily.sunrise?.[index] || "",
+        solarMidnight: daily.sunset?.[index] || "",
+        moonrise: daily.moonrise?.[index] || "",
+        moonset: daily.moonset?.[index] || "",
         daytimeForecast: dayForecast,
         overnightForecast: nightForecast,
         restOfDayForecast: dayForecast,
-      });
-    }
-    return days;
-  };
-
-  const localHourForInstant = (iso, utcOffsetSeconds) => {
-    const date = new Date(iso);
-    if (!Number.isFinite(date.getTime())) return "";
-    const localMs = date.getTime() + (Number(utcOffsetSeconds) || 0) * 1000;
-    return new Date(localMs).toISOString().slice(0, 16);
-  };
-
-  const uvForPeriod = (period, supplemental) => {
-    const hourly = supplemental.hourly || {};
-    const times = Array.isArray(hourly.time) ? hourly.time : [];
-    const values = Array.isArray(hourly.uv_index) ? hourly.uv_index : [];
-    if (!times.length || !values.length) return 0;
-    const key = localHourForInstant(period.startTime, supplemental.utc_offset_seconds);
-    const index = times.indexOf(key);
-    return index >= 0 && typeof values[index] === "number" ? values[index] : 0;
-  };
-
-  const hourlyForecast = (periods, supplemental, grid) => periods.map((period) => {
-    const cloudCover = averageGridValue(grid.skyCover || [], period.startTime, period.endTime);
-    const gridHumidity = averageGridValue(grid.relativeHumidity || [], period.startTime, period.endTime);
-    const gridGust = maxGridValue(grid.windGust || [], period.startTime, period.endTime);
-    const pop = precipitationChance(period);
-    const humidityPercent = gridHumidity != null ? gridHumidity : relativeHumidity(period);
-    const gustKmh = gridGust != null ? gridGust : windToKmh(period.windGust);
-    return {
-      forecastStart: period.startTime,
-      temperature: fahrenheitToCelsius(period.temperature),
-      uvIndex: uvForPeriod(period, supplemental),
-      daylight: period.isDaytime,
-      conditionCode: conditionCode(period.shortForecast, cloudCover, pop),
-      description: period.shortForecast || "",
-      cloudCover: cloudCover == null ? 0 : Math.max(0, Math.min(1, cloudCover / 100)),
-      windSpeed: windToKmh(period.windSpeed),
-      windGust: gustKmh,
-      windDirection: directionToDegrees(period.windDirection),
-      precipitationChance: pop / 100,
-      humidity: humidityPercent == null ? null : humidityPercent / 100,
-    };
-  });
-
-  const nearestHourly = (hours, timestamp) => {
-    if (!hours.length) return {};
-    const target = Date.parse(timestamp || new Date().toISOString());
-    let best = hours[0];
-    let bestDistance = Math.abs(Date.parse(best.forecastStart) - target);
-    for (const hour of hours) {
-      const time = Date.parse(hour.forecastStart);
-      const distance = Math.abs(time - target);
-      if (Number.isFinite(distance) && distance < bestDistance) {
-        best = hour;
-        bestDistance = distance;
-      }
-    }
-    return best;
-  };
-
-  const observationToCurrent = (observation, hourly, currentUvIndex) => {
-    const properties = observation && observation.properties;
-    const observationTime = properties && properties.timestamp;
-    const fallback = nearestHourly(hourly, observationTime);
-    const temperature = properties?.temperature?.value;
-    const pressure = properties?.barometricPressure?.value;
-    const humidity = properties?.relativeHumidity?.value;
-    const visibility = properties?.visibility?.value;
-    const dewPoint = properties?.dewpoint?.value;
-    return {
-      temperature: typeof temperature === "number" ? temperature : fallback.temperature || 0,
-      pressure: typeof pressure === "number" ? pressure / 100 : 1013.25,
-      pressureTrend: properties?.pressureTendency?.value || "",
-      windDirection: typeof properties?.windDirection?.value === "number" ? properties.windDirection.value : fallback.windDirection || 0,
-      visibility: typeof visibility === "number" ? visibility : 16093.44,
-      temperatureDewPoint: typeof dewPoint === "number" ? dewPoint : (fallback.temperature || 0) - 2,
-      humidity: typeof humidity === "number" ? humidity / 100 : (typeof fallback.humidity === "number" ? fallback.humidity : null),
-      windSpeed: typeof properties?.windSpeed?.value === "number" ? quantitativeWindToKmh(properties.windSpeed) : fallback.windSpeed || 0,
-      windGust: typeof properties?.windGust?.value === "number" ? quantitativeWindToKmh(properties.windGust) : (fallback.windGust || 0),
-      cloudCover: typeof fallback.cloudCover === "number" ? fallback.cloudCover : 0,
-      uvIndex: typeof currentUvIndex === "number" ? currentUvIndex : fallback.uvIndex || 0,
-      daylight: fallback.daylight !== false,
-      conditionCode: conditionCode(properties?.textDescription || fallback.description || fallback.conditionCode || "clear", (fallback.cloudCover || 0) * 100, (fallback.precipitationChance || 0) * 100),
-      description: properties?.textDescription || fallback.description || "",
-      asOf: observationTime || new Date().toISOString(),
-    };
-  };
-
-  const alerts = (data) => ({
-    alerts: (data.features || []).map((feature) => ({
-      source: feature.properties.senderName || "National Weather Service",
-      description: feature.properties.event || "Weather alert",
-      effectiveTime: feature.properties.effective,
-      expireTime: feature.properties.expires,
-      detailsUrl: feature.properties.uri,
-      severity: [feature.properties.severity || "Unknown"],
-      urgency: [feature.properties.urgency || "Unknown"],
-      areaName: [feature.properties.areaDesc || ""],
-    })),
-  });
-
-  const loadNwsWeather = async (latitude, longitude) => {
-    const point = await fetchJson(`https://api.weather.gov/points/${latitude},${longitude}`);
-    const properties = point.properties;
-    const [forecast, hourly, alertsData, supplemental] = await Promise.all([
-      fetchJson(properties.forecast),
-      fetchJson(properties.forecastHourly),
-      fetchJson(`https://api.weather.gov/alerts/active?point=${latitude},${longitude}`),
-      fetchSupplementalData(latitude, longitude),
-    ]);
-
-    let gridData = {};
-    if (properties.forecastGridData) {
-      try {
-        gridData = await fetchJson(properties.forecastGridData);
-      } catch (error) {
-        console.warn("NWS grid data unavailable; using forecast text/PoP.", error);
-      }
-    }
-
-    let observation;
-    if (properties.observationStations) {
-      try {
-        const stations = await fetchJson(properties.observationStations);
-        const station = stations.features && stations.features[0];
-        if (station) observation = await fetchJson(`${station.id}/observations/latest`);
-      } catch (error) {
-        console.warn("NWS station observation unavailable; using forecast fallback.", error);
-      }
-    }
-
-    const grid = {
-      skyCover: gridIntervals(gridData.properties?.skyCover?.values),
-      qpf: gridIntervals(gridData.properties?.quantitativePrecipitation?.values),
-      relativeHumidity: gridIntervals(gridData.properties?.relativeHumidity?.values),
-      windGust: gridIntervals(
-        gridData.properties?.windGust?.values,
-        (value) => quantitativeWindToKmh({ value, unitCode: gridData.properties?.windGust?.uom }),
-      ),
-    };
-    const hourlyData = hourly.properties.periods || [];
-    const hourlyResult = hourlyForecast(hourlyData, supplemental, grid);
-    const currentUv = typeof supplemental.current?.uv_index === "number"
-      ? supplemental.current.uv_index
-      : uvForPeriod(nearestHourly(hourlyResult, observation?.properties?.timestamp), supplemental);
+      };
+    });
 
     return {
-      currentWeather: observationToCurrent(observation, hourlyResult, currentUv),
-      forecastHourly: { hours: hourlyResult },
-      forecastDaily: {
-        days: dailyForecast(forecast.properties.periods || [], supplemental.daily || {}, grid, Number(latitude), Number(longitude)),
+      currentWeather: {
+        temperature: current.temperature_2m ?? 0,
+        pressure: current.pressure_msl ?? 1013.25,
+        pressureTrend: "",
+        windDirection: directionToDegrees(current.wind_direction_10m),
+        visibility: current.visibility ?? 16093,
+        temperatureDewPoint: current.temperature_2m ?? 0,
+        humidity: clamp01((current.relative_humidity_2m ?? 0) / 100),
+        windSpeed: current.wind_speed_10m ?? 0,
+        windGust: current.wind_gusts_10m ?? 0,
+        cloudCover: clamp01((current.cloud_cover ?? 0) / 100),
+        uvIndex: current.uv_index ?? 0,
+        daylight: Boolean(current.is_day),
+        conditionCode: conditionFromOpenMeteo(current.weather_code),
+        description: openMeteoDescription(current.weather_code, Boolean(current.is_day)),
+        asOf: current.time ? `${current.time}:00Z` : new Date().toISOString(),
       },
-      weatherAlerts: alerts(alertsData),
+      forecastHourly: { hours },
+      forecastDaily: { days },
+      weatherAlerts: { alerts: [] },
     };
   };
 
-  globalThis.fetch = async (input, init) => {
-    const requestUrl = typeof input === "string" ? input : input.url;
-    if (!requestUrl.startsWith("https://weather.uvw.workers.dev/")) return originalFetch(input, init);
-    const url = new URL(requestUrl);
-    const pathMatch = url.pathname.match(/^\/?(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)$/);
-    const legacyMatch = url.search.match(/^\?(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)\?country=([^&]+)/);
-    const match = pathMatch || legacyMatch;
-    const country = (url.searchParams.get("country") || (legacyMatch && legacyMatch[3]) || "").toUpperCase();
-    if (country !== "US" || !match) {
-      setApiSource("UV Weather API");
-      return originalFetch(input, init);
-    }
+  const fetchNwsAlerts = async (latitude, longitude) => {
     try {
-      console.info("UV-Weather: requesting US weather from NWS");
-      const weather = await loadNwsWeather(match[1], match[2]);
-      setApiSource("National Weather Service + Open-Meteo");
-      console.info("UV-Weather: NWS weather loaded successfully");
-      return new Response(JSON.stringify(weather), { status: 200, headers: { "Content-Type": "application/json" } });
+      const data = await requestJson(`https://api.weather.gov/alerts/active?point=${latitude},${longitude}`, {
+        Accept: "application/geo+json",
+        "User-Agent": "Weather-B weather extension",
+      });
+      return {
+        alerts: (data.features || []).map((feature) => {
+          const p = feature.properties || {};
+          return {
+            source: p.senderName || "National Weather Service",
+            description: p.event || "Weather alert",
+            effectiveTime: p.effective,
+            expireTime: p.expires,
+            detailsUrl: p.uri,
+            severity: [String(p.severity || "Unknown").toLowerCase()],
+            urgency: [String(p.urgency || "Unknown").toLowerCase()],
+            areaName: [p.areaDesc || ""],
+          };
+        }),
+      };
     } catch (error) {
-      setApiSource("UV Weather API (fallback)");
-      console.warn("UV-Weather: NWS adapter failed; using the existing weather source.", error);
-      return originalFetch(input, init);
+      console.warn("NWS alerts unavailable.", error);
+      return { alerts: [] };
     }
   };
+
+  const loadWeatherData = async ({ latitude, longitude, country, timezone }) => {
+    if (!Number.isFinite(Number(latitude)) || !Number.isFinite(Number(longitude))) {
+      throw new Error("Invalid weather coordinates");
+    }
+    const weather = await fetchOpenMeteo(Number(latitude), Number(longitude), timezone);
+    if (String(country || "").toUpperCase() === "US") {
+      weather.weatherAlerts = await fetchNwsAlerts(Number(latitude), Number(longitude));
+      setApiSource("Open-Meteo + National Weather Service");
+    }
+    return weather;
+  };
+
+  globalThis.loadWeatherData = loadWeatherData;
 })();
