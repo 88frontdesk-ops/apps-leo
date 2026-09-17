@@ -60,7 +60,12 @@ const weCast = (latlong, country, timezone, resolve, reject) => {
     isWeatherAlert = Array.isArray(wCast.weatherAlerts?.alerts) && wCast.weatherAlerts.alerts.length > 0;
     timeZoneBadge = getTimezoneOffset(timezone);
     getOffsetTime(timeZoneBadge, latlong);
-    setBadge(daylight, iconBadge, temperature, updateTime, citys, uvIndex, isWeatherAlert);
+
+    // citys is normally initialized by the popup/background location flow.
+    // Keep weather loading independent from that global so a missing location
+    // label cannot turn a successful provider response into a failed request.
+    const badgeCity = typeof citys === "string" ? citys : "";
+    setBadge(daylight, iconBadge, temperature, updateTime, badgeCity, uvIndex, isWeatherAlert);
 
     handleWeatherAlerts(wCast);
     return wCast;
