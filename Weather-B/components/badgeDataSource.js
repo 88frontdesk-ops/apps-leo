@@ -39,6 +39,14 @@ const removeLegacyUvwUi = () => {
   });
 };
 
+const loadDailyDetailedForecastRenderer = () => {
+  if (document.querySelector('script[src="/components/dailyDetailedForecast.js"]')) return;
+  const script = document.createElement("script");
+  script.src = "/components/dailyDetailedForecast.js";
+  script.async = false;
+  (document.head || document.documentElement).appendChild(script);
+};
+
 if (document.documentElement) {
   removeLegacyUvwUi();
   new MutationObserver(removeLegacyUvwUi).observe(document.documentElement, { childList: true, subtree: true });
@@ -59,6 +67,7 @@ document.addEventListener("click", (event) => {
 }, true);
 
 document.addEventListener("DOMContentLoaded", () => {
+  loadDailyDetailedForecastRenderer();
   chrome.storage.local.remove("weatherApiSource");
   chrome.storage.local.get("weatherApiSource", (data) => applyWeatherApiSource(data.weatherApiSource));
 
@@ -94,8 +103,4 @@ const preserveBadgeDataSourceSelection = (handler) => {
 if (typeof basicUser === "function") basicUser = preserveBadgeDataSourceSelection(basicUser);
 if (typeof proUser === "function") proUser = preserveBadgeDataSourceSelection(proUser);
 
-// clickEvents.js historically calls popup() after changing locations/settings.
-// popup.js keeps that function inside its DOMContentLoaded scope, so expose a
-// safe bridge for those legacy callers. Reloading lets popup.js rebuild all
-// location-dependent state from chrome.storage.local.
 globalThis.popup = globalThis.popup || (() => window.location.reload());
