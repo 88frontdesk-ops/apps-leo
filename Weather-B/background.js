@@ -30,21 +30,26 @@ if (!self.document) {
       badgeTempUV(location.latlong, location.country, location.timezone);
     };
 
-    const defaultCity = () =>
-      setLocationDefaults({
-        citys: "New York",
-        latlong: "40.713,-74.0072",
-        timezone: "America/New_York",
-        country: "US",
-      });
+    const defaultCity = () => setLocationDefaults({
+      citys: "New York",
+      latlong: "40.713,-74.0072",
+      timezone: "America/New_York",
+      country: "US",
+    });
 
     const initializeLocation = () => {
       chrome.storage.local.get("verUpdate", (data) => {
         if ([1, 2].includes(data.verUpdate)) return;
 
         const requestLocation = (url, parser, fallback) => {
-          fetchPlus(() => fetch(url, { method: "GET", headers: { Accept: "application/json", "User-Agent": "UV-Weather/2.0 (weather extension)" } }))
-            .then((response) => response.json())
+          fetch(url, {
+            method: "GET",
+            headers: { Accept: "application/json" },
+          })
+            .then((response) => {
+              if (!response.ok) throw new Error(`Location request failed: ${response.status}`);
+              return response.json();
+            })
             .then((result) => {
               const location = parser(result);
               location ? setLocationDefaults(location) : fallback();
@@ -53,34 +58,22 @@ if (!self.document) {
         };
 
         requestLocation(
-          "https://geolocation.uvw.workers.dev",
-          (result) => {
-            if (result?.error) return null;
-            return {
-              citys: truncateCityName(result.city?.charAt(0).toUpperCase() + result.city?.slice(1)),
-              latlong: result.cityLatLong,
-              timezone: result.cityData?.[0]?.timezone,
-              country: result.country === "ZZ" ? "" : result.country,
-            };
+          "https://ipinfo.io/json",
+          (result) => result?.error ? null : {
+            citys: truncateCityName(result.city?.charAt(0).toUpperCase() + result.city?.slice(1)),
+            latlong: result.loc,
+            timezone: result.timezone,
+            country: result.country === "ZZ" ? "" : result.country,
           },
           () => requestLocation(
-            "https://ipinfo.io/json",
-            (result) => result?.error ? null : {
+            "https://api.ip.sb/geoip",
+            (result) => result?.ip ? {
               citys: truncateCityName(result.city?.charAt(0).toUpperCase() + result.city?.slice(1)),
-              latlong: result.loc,
+              latlong: `${result.latitude},${result.longitude}`,
               timezone: result.timezone,
-              country: result.country === "ZZ" ? "" : result.country,
-            },
-            () => requestLocation(
-              "https://api.ip.sb/geoip",
-              (result) => result?.ip ? {
-                citys: truncateCityName(result.city?.charAt(0).toUpperCase() + result.city?.slice(1)),
-                latlong: `${result.latitude},${result.longitude}`,
-                timezone: result.timezone,
-                country: result.country_code === "ZZ" ? "" : result.country_code,
-              } : null,
-              defaultCity,
-            ),
+              country: result.country_code === "ZZ" ? "" : result.country_code,
+            } : null,
+            defaultCity,
           ),
         );
       });
@@ -136,8 +129,9 @@ if (!self.document) {
         chrome.storage.local.get(["latlong", "country"], (data) => {
           if (!data.latlong) return initializeLocation();
           const [lat, lng] = data.latlong.split(",");
-          chrome.storage.local.set({ timezone: tzlookup(lat, lng) });
-          badgeTempUV(data.latlong, data.country, tzlookup(lat, lng));
+          const timezone = tzlookup(lat, lng);
+          chrome.storage.local.set({ timezone });
+          badgeTempUV(data.latlong, data.country, timezone);
         });
       }
     });
@@ -162,7 +156,6 @@ if (!self.document) {
       });
     });
   } catch (e) {
-    // Keep the service worker from failing silently during initialization.
     console.error("Weather-B background initialization failed", e);
   }
 }
