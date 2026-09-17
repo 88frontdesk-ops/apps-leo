@@ -40,41 +40,26 @@ if (!self.document) {
     const initializeLocation = () => {
       chrome.storage.local.get("verUpdate", (data) => {
         if ([1, 2].includes(data.verUpdate)) return;
+        // Do not send the user's IP to a third-party geolocation service.
+        // Use the browser's location permission when available, otherwise use
+        // the existing safe default. Weather providers only receive the
+        // coordinates already selected for Weather-B.
+        if (!navigator.geolocation) return defaultCity();
 
-        const requestLocation = (url, parser, fallback) => {
-          fetch(url, {
-            method: "GET",
-            headers: { Accept: "application/json" },
-          })
-            .then((response) => {
-              if (!response.ok) throw new Error(`Location request failed: ${response.status}`);
-              return response.json();
-            })
-            .then((result) => {
-              const location = parser(result);
-              location ? setLocationDefaults(location) : fallback();
-            })
-            .catch(fallback);
-        };
-
-        requestLocation(
-          "https://ipinfo.io/json",
-          (result) => result?.error ? null : {
-            citys: truncateCityName(result.city?.charAt(0).toUpperCase() + result.city?.slice(1)),
-            latlong: result.loc,
-            timezone: result.timezone,
-            country: result.country === "ZZ" ? "" : result.country,
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            const timezone = tzlookup(latitude, longitude);
+            setLocationDefaults({
+              citys: "Current location",
+              latlong: `${latitude},${longitude}`,
+              timezone,
+              country: "",
+            });
           },
-          () => requestLocation(
-            "https://api.ip.sb/geoip",
-            (result) => result?.ip ? {
-              citys: truncateCityName(result.city?.charAt(0).toUpperCase() + result.city?.slice(1)),
-              latlong: `${result.latitude},${result.longitude}`,
-              timezone: result.timezone,
-              country: result.country_code === "ZZ" ? "" : result.country_code,
-            } : null,
-            defaultCity,
-          ),
+          defaultCity,
+          { enableHighAccuracy: false, maximumAge: 300000, timeout: 10000 },
         );
       });
     };
