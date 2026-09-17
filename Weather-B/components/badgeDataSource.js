@@ -1,7 +1,7 @@
 const refreshBadgeDataSource = (badgeDataSource) => {
   chrome.storage.local.set({ badgeDataSource }, () => {
     chrome.storage.local.remove("wCast", () => {
-      if (typeof popup === "function") popup();
+      if (typeof globalThis.popup === "function") globalThis.popup();
       applyBadgeDataSourceSelection(badgeDataSource);
     });
   });
@@ -11,7 +11,7 @@ const refreshBadgeInterval = (interval) => {
   chrome.storage.local.set({ IntervalUpdate: interval }, () => {
     chrome.runtime.sendMessage({ msg: "intervalUpdateMessage" });
     chrome.storage.local.remove("wCast", () => {
-      if (typeof popup === "function") popup();
+      if (typeof globalThis.popup === "function") globalThis.popup();
       document.getElementById(`setting_defualt_button_${interval}`).checked = true;
     });
   });
@@ -30,12 +30,13 @@ const applyWeatherApiSource = (source) => {
   sourceElement.textContent = allowedSources.includes(source) ? `API: ${source}` : "API: Open-Meteo";
 };
 
-// Remove the legacy Express/UVW QR panel if it is present in an older popup
-// template. This also prevents the legacy panel from remaining visible after
-// an extension update without requiring the user to clear extension data.
 const removeLegacyUvwUi = () => {
   document.getElementById("express_qr")?.remove();
   document.getElementById("support_Class")?.remove();
+  document.querySelectorAll("a[href], img[src]").forEach((element) => {
+    const value = element.href || element.src || "";
+    if (/uvw|uvweather/i.test(value)) element.remove();
+  });
 };
 
 if (document.documentElement) {
@@ -92,3 +93,9 @@ const preserveBadgeDataSourceSelection = (handler) => {
 
 if (typeof basicUser === "function") basicUser = preserveBadgeDataSourceSelection(basicUser);
 if (typeof proUser === "function") proUser = preserveBadgeDataSourceSelection(proUser);
+
+// clickEvents.js historically calls popup() after changing locations/settings.
+// popup.js keeps that function inside its DOMContentLoaded scope, so expose a
+// safe bridge for those legacy callers. Reloading lets popup.js rebuild all
+// location-dependent state from chrome.storage.local.
+globalThis.popup = globalThis.popup || (() => window.location.reload());
