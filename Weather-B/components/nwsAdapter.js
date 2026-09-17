@@ -59,6 +59,16 @@
   };
 
   const fetchNwsAlerts = async (latitude, longitude) => { try { const data = await requestJson(`https://api.weather.gov/alerts/active?point=${latitude},${longitude}`, { Accept: "application/geo+json", "User-Agent": "Weather-B weather extension" }); return { alerts: (data.features || []).map((feature) => { const p = feature.properties || {}; return { source: p.senderName || "National Weather Service", description: p.event || "Weather alert", effectiveTime: p.effective, expireTime: p.expires, detailsUrl: p.uri, severity: [String(p.severity || "Unknown").toLowerCase()], urgency: [String(p.urgency || "Unknown").toLowerCase()], areaName: [p.areaDesc || ""] }; }) }; } catch (error) { console.warn("NWS alerts unavailable.", error); return { alerts: [] }; } };
-  const loadWeatherData = async ({ latitude, longitude, country, timezone }) => { if (!Number.isFinite(Number(latitude)) || !Number.isFinite(Number(longitude))) throw new Error("Invalid weather coordinates"); const weather = await fetchOpenMeteo(Number(latitude), Number(longitude), timezone); if (String(country || "").toUpperCase() === "US") { const periods = await fetchNwsForecast(Number(latitude), Number(longitude)); applyNwsDetailedForecasts(weather, periods); weather.weatherAlerts = await fetchNwsAlerts(Number(latitude), Number(longitude)); setApiSource("Open-Meteo + National Weather Service"); } return weather; };
+  const loadWeatherData = async ({ latitude, longitude, country, timezone }) => {
+    if (!Number.isFinite(Number(latitude)) || !Number.isFinite(Number(longitude))) throw new Error("Invalid weather coordinates");
+    const weather = await fetchOpenMeteo(Number(latitude), Number(longitude), timezone);
+    const periods = await fetchNwsForecast(Number(latitude), Number(longitude));
+    applyNwsDetailedForecasts(weather, periods);
+    if (String(country || "").toUpperCase() === "US" || Array.isArray(periods) && periods.length) {
+      weather.weatherAlerts = await fetchNwsAlerts(Number(latitude), Number(longitude));
+      setApiSource("Open-Meteo + National Weather Service");
+    }
+    return weather;
+  };
   globalThis.loadWeatherData = loadWeatherData;
 })();
