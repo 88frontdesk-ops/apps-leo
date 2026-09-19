@@ -1,5 +1,0 @@
-chrome.runtime.onMessage.addListener((message,sender,sendResponse)=>{if(message.target!=='offscreen')return;renderIcon(message.data.temp,message.data.condition,message.data.iconUrl).then(dataUrl=>sendResponse({dataUrl})).catch(()=>sendResponse({dataUrl:null}));return true});
-async function renderIcon(temp,condition,iconUrl){const canvas=document.getElementById('canvas'),ctx=canvas.getContext('2d');ctx.clearRect(0,0,64,64);ctx.imageSmoothingEnabled=true;if(iconUrl){try{const img=new Image();await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=reject;img.src=iconUrl});ctx.drawImage(img,2,2,60,60)}catch(e){}}
-ctx.fillStyle='rgba(7,15,25,.90)';ctx.beginPath();if(ctx.roundRect)ctx.roundRect(2,39,60,23,6);else ctx.rect(2,39,60,23);ctx.fill();
-ctx.fillStyle='#fff';ctx.font='800 18px system-ui,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(temp,32,50);
-return canvas.toDataURL('image/png')}
