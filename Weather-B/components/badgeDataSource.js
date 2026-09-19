@@ -30,15 +30,6 @@ const applyWeatherApiSource = (source) => {
   sourceElement.textContent = allowedSources.includes(source) ? `API: ${source}` : "API: Open-Meteo";
 };
 
-const removeLegacyUvwUi = () => {
-  document.getElementById("express_qr")?.remove();
-  document.getElementById("support_Class")?.remove();
-  document.querySelectorAll("a[href], img[src]").forEach((element) => {
-    const value = element.href || element.src || "";
-    if (/uvw|uvweather/i.test(value)) element.remove();
-  });
-};
-
 const loadDailyDetailedForecastRenderer = () => {
   if (document.querySelector('script[src="/components/dailyDetailedForecast.js"]')) return;
   const script = document.createElement("script");
@@ -46,11 +37,6 @@ const loadDailyDetailedForecastRenderer = () => {
   script.async = false;
   (document.head || document.documentElement).appendChild(script);
 };
-
-if (document.documentElement) {
-  removeLegacyUvwUi();
-  new MutationObserver(removeLegacyUvwUi).observe(document.documentElement, { childList: true, subtree: true });
-}
 
 document.addEventListener("click", (event) => {
   const sourceOption = event.target.closest(
